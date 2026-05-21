@@ -16,8 +16,11 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         display: ['Space Grotesk', 'sans-serif'],
+        sketch: ['"Patrick Hand"', '"Caveat"', 'cursive'],
       },
       colors: {
+        ink: "hsl(var(--ink))",
+        paper: "hsl(var(--paper))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
