@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
 import { Heart, Play, Sprout, ArrowRight } from 'lucide-react';
-import heroImg from '@/assets/ruana-hero.png';
-import step1 from '@/assets/step-1.png';
-import step2 from '@/assets/step-2.png';
-import step3 from '@/assets/step-3.png';
-import step4 from '@/assets/step-4.png';
+import heroImg from '@/assets/ruana-hero.jpg';
+import step1 from '@/assets/step-1.jpg';
+import step2 from '@/assets/step-2.jpg';
+import step3 from '@/assets/step-3.jpg';
+import step4 from '@/assets/step-4.jpg';
 
 const steps = [
   { n: 1, img: step1, title: 'Crea tu cuenta', desc: 'Es fácil y rápido.' },
