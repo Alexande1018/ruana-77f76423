@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion, useInView, useMotionValue, useTransform, animate, type Variants } from 'framer-motion';
 import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
 import { useRef } from 'react';
 import {
