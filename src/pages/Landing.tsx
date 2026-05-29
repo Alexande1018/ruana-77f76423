@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView, useMotionValue, useTransform, animate, type Variants } from 'framer-motion';
-import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
 import { useRef } from 'react';
 import {
   Network,
@@ -23,9 +22,9 @@ const BG_ALT = '#161B22';
 const GREEN = '#00E676';
 const GREEN_DARK = '#0A2E1A';
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
 };
 
 function Section({ children, className = '', id }: { children: React.ReactNode; className?: string; id?: string }) {
