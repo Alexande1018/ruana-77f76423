@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Lock, CheckCircle2 } from 'lucide-react';
+import { Lock, CheckCircle2, Info } from 'lucide-react';
 import { LandingNavbar, LandingFooter, BG, BG_ALT, GREEN, GREEN_DARK } from '@/components/LandingChrome';
 
 interface FormState {

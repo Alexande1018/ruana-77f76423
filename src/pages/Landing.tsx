@@ -225,16 +225,18 @@ export default function Landing() {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Por qué RUANA es diferente</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {[
               { vs: 'vs. Wallapop / InfoJobs', text: 'No eres uno más entre miles. Aquí tu plaza está protegida.' },
               { vs: 'vs. grupos de WhatsApp', text: 'Trazabilidad, historial y reputación. Todo organizado.' },
               { vs: 'vs. redes sociales', text: 'Sin algoritmos. Sin publicidad. Solo tu red de aliados.' },
+              { vs: 'modelo de comisión', text: 'Sin cuotas. Solo éxito.', detail: 'No pagas nada por estar en la red. El Apoyo RUANA — un 12% sobre el valor del encargo — solo se aplica cuando cierras un trabajo a través de la plataforma. Si no trabajas, no pagas.' },
             ].map((c) => (
               <div key={c.vs} className="rounded-2xl p-7 border h-full"
                 style={{ backgroundColor: BG_ALT, borderColor: 'rgba(255,255,255,0.08)' }}>
                 <div className="text-sm font-semibold mb-3" style={{ color: GREEN }}>{c.vs}</div>
-                <p className="text-lg leading-snug">{c.text}</p>
+                <p className="text-lg leading-snug font-bold text-white">{c.text}</p>
+                {c.detail && <p className="mt-3 text-white/65 text-sm leading-relaxed">{c.detail}</p>}
               </div>
             ))}
           </div>
