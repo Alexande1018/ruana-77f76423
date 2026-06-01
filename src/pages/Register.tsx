@@ -97,6 +97,14 @@ export default function Register() {
                 Completa el formulario y el equipo de RUANA revisará tu solicitud. Si hay plaza disponible en tu zona y oficio, te contactaremos con tu código de acceso.
               </p>
 
+              <div className="mt-6 p-4 rounded-lg border-l-[3px] flex items-start gap-3"
+                style={{ backgroundColor: '#0A2E1A', borderLeftColor: GREEN }}>
+                <Info className="h-5 w-5 shrink-0 mt-0.5" style={{ color: GREEN }} />
+                <p className="text-sm text-white leading-relaxed">
+                  RUANA opera con un Apoyo del 12% sobre el valor del encargo cerrado a través de la red. Este porcentaje solo se aplica cuando un trabajo se cierra con éxito entre aliados. Sin cuotas fijas. Sin suscripciones. Solo pagas si la red te funciona.
+                </p>
+              </div>
+
               <form onSubmit={handleSubmit} className="mt-10 space-y-5" noValidate>
                 <div>
                   <label className={labelCls} htmlFor="name">Nombre completo *</label>
