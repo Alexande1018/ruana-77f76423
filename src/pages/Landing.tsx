@@ -290,14 +290,14 @@ export default function Landing() {
                 Tu Score RUANA trabaja para ti
               </h2>
               <p className="mt-5 text-white/70 text-base md:text-lg leading-relaxed">
-                Cuanto más activo seas en la red, mayor será tu reputación — y mayores serán tus ventajas.
+                El Score RUANA es la memoria de la red. No es gamificación: es el historial que convence a otros aliados de trabajar contigo.
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { icon: TrendingUp, emoji: '📈', title: 'Mayor visibilidad', desc: 'Los aliados con mejor score aparecen primero en el directorio cuando alguien busca tu oficio.' },
-                { icon: Gift, emoji: '🎁', title: 'Beneficios exclusivos', desc: 'A medida que crezcas en la red, accederás a ventajas y recompensas reservadas para los aliados más comprometidos. Próximamente.' },
-                { icon: Link2, emoji: '🔗', title: 'Más conexiones', desc: 'Un score alto genera confianza. Los demás aliados prefieren trabajar con quienes tienen historial probado.' },
+                { icon: TrendingUp, emoji: '📈', title: 'Apareces primero cuando importa', desc: 'Los aliados con mejor Score aparecen primero en el directorio cuando alguien busca tu oficio en tu zona.' },
+                { icon: Gift, emoji: '🎁', title: 'Ventajas para aliados comprometidos', desc: 'A medida que construyes tu reputación, accedes a ventajas reservadas para quienes mantienen la calidad de la red. Próximamente.' },
+                { icon: Link2, emoji: '🔗', title: 'Confianza que genera trabajo real', desc: 'Un Score alto no es un número bonito: es la señal que hace que otros aliados te elijan a ti antes que a cualquier otra opción.' },
               ].map(({ emoji, title, desc }) => (
                 <div key={title} className="rounded-2xl p-6 border transition hover:-translate-y-1"
                   style={{ backgroundColor: BG_ALT, borderColor: 'rgba(0,230,118,0.18)' }}>
