@@ -323,6 +323,53 @@ export default function Landing() {
         </div>
       </Section>
 
+      {/* ASÍ EMPIEZA EL CAMBIO */}
+      <Section className="py-16" id="historias">
+        <div style={{ backgroundColor: BG_ALT }} className="py-16">
+          <div className="max-w-7xl mx-auto px-5 md:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Así empieza el cambio</h2>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  emoji: '🧱',
+                  title: 'Llegué sin conocer a nadie',
+                  text: 'Llevaba 3 meses en la ciudad sin trabajo fijo. Entré a RUANA, activé mi perfil y en dos semanas otro aliado me pasó mi primer encargo. Ahora tengo trabajo constante dentro de la red.',
+                  tag: 'Albañilería · Alicante',
+                },
+                {
+                  emoji: '⚡',
+                  title: 'Sin agenda, sin contactos',
+                  text: 'Como autónomo nuevo no tenía clientes propios. La red me conectó con aliados de mi zona que necesitaban un electricista de confianza. RUANA fue mi primer directorio real.',
+                  tag: 'Electricidad · Valencia',
+                },
+                {
+                  emoji: '💼',
+                  title: 'Empecé de cero en una ciudad nueva',
+                  text: 'Migré con mi oficio pero sin red. RUANA me dio acceso a profesionales que ya conocían la plaza local. En un mes ya formaba parte de la red y empezaban a recomendarme.',
+                  tag: 'Consultoría · Madrid',
+                },
+              ].map((s) => (
+                <div key={s.title} className="rounded-2xl p-7 border h-full flex flex-col"
+                  style={{ backgroundColor: BG, borderColor: 'rgba(255,255,255,0.08)' }}>
+                  <div className="text-3xl mb-4">{s.emoji}</div>
+                  <h3 className="text-lg font-semibold mb-3 text-white">{s.title}</h3>
+                  <p className="text-white/70 text-sm leading-relaxed flex-1">{s.text}</p>
+                  <div className="mt-5 inline-flex self-start px-3 py-1 rounded-full text-xs font-medium"
+                    style={{ backgroundColor: 'rgba(0,230,118,0.12)', color: GREEN }}>
+                    {s.tag}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="text-center mt-8 text-xs md:text-sm italic text-white/50">
+              Estos escenarios representan situaciones reales del tipo de profesional que RUANA quiere apoyar.
+            </p>
+          </div>
+        </div>
+      </Section>
+
       {/* CTA FINAL */}
       <Section className="py-24">
         <div className="max-w-5xl mx-auto px-5 md:px-8 text-center rounded-3xl py-20"
