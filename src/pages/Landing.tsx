@@ -238,8 +238,11 @@ export default function Landing() {
       {/* VENTAJAS */}
       <Section className="py-16" id="ventajas">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Por qué RUANA es diferente</h2>
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Aquí no eres un perfil más</h2>
+            <p className="mt-5 text-white/70 text-base md:text-lg leading-relaxed">
+              RUANA no es una plataforma masiva. Es una red cerrada donde cada aliado tiene nombre, zona y reputación.
+            </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {[
