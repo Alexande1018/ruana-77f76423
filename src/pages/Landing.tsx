@@ -266,23 +266,22 @@ export default function Landing() {
       <Section className="py-16">
         <div style={{ backgroundColor: GREEN_DARK }} className="py-14">
           <div className="max-w-7xl mx-auto px-5 md:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10 text-center">
               {[
-                { value: 11, suffix: '+', label: 'Aliados activos' },
-                { value: 3, suffix: '', label: 'Grupos territoriales' },
-                { value: 39, suffix: '', label: 'Oficios disponibles' },
-              ].map((s) => (
-                <div key={s.label}>
-                  <div className="text-5xl md:text-6xl font-extrabold" style={{ color: GREEN }}>
-                    <Counter to={s.value} suffix={s.suffix} />
+                { icon: TrendingUp, title: 'Red en crecimiento', sub: 'Plazas limitadas por zona' },
+                { icon: MapPin, title: 'Organizada por zonas', sub: 'Cerca de donde tú trabajas' },
+                { icon: LayoutGrid, title: '+39 oficios', sub: 'Desde fontanería hasta consultoría' },
+                { icon: Star, title: 'En tiempo real', sub: 'Score de reputación' },
+              ].map(({ icon: Icon, title, sub }) => (
+                <div key={title} className="flex flex-col items-center">
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4"
+                    style={{ backgroundColor: 'rgba(0,230,118,0.12)' }}>
+                    <Icon className="h-7 w-7" style={{ color: GREEN }} />
                   </div>
-                  <div className="mt-2 text-white/80 text-sm md:text-base">{s.label}</div>
+                  <div className="text-2xl md:text-3xl font-bold" style={{ color: GREEN }}>{title}</div>
+                  <div className="mt-2 text-white/80 text-sm md:text-base">{sub}</div>
                 </div>
               ))}
-              <div>
-                <div className="text-2xl md:text-3xl font-bold" style={{ color: GREEN }}>En tiempo real</div>
-                <div className="mt-2 text-white/80 text-sm md:text-base">Score de reputación</div>
-              </div>
             </div>
             <p className="text-center mt-10 text-white/70">
               Red en crecimiento. Las plazas por zona son limitadas.
