@@ -16,6 +16,9 @@ import {
   TrendingUp,
   Gift,
   Link2,
+  Clock,
+  Users,
+  LayoutGrid,
 } from 'lucide-react';
 import { LandingNavbar, LandingFooter, BG, BG_ALT, GREEN, GREEN_DARK } from '@/components/LandingChrome';
 
@@ -126,6 +129,10 @@ export default function Landing() {
             <p className="mt-4 text-sm text-white/55">
               Sin cuotas fijas. Sin CV perfecto. Te acompañamos paso a paso.
             </p>
+            <p className="mt-2 inline-flex items-center gap-2 text-xs md:text-sm text-white/55">
+              <Clock className="h-3.5 w-3.5" style={{ color: GREEN }} />
+              Las plazas por zona son limitadas. Solo se abre acceso cuando hay disponibilidad en tu área.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -200,10 +207,10 @@ export default function Landing() {
           <div className="max-w-7xl mx-auto px-5 md:px-8">
             <div className="text-center max-w-3xl mx-auto mb-10">
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-                Si trabajas con tus manos o tu talento, RUANA es para ti
+                RUANA es para ti si empezas desde cero
               </h2>
               <p className="mt-5 text-white/70 text-base md:text-lg leading-relaxed">
-                Si acabas de llegar a una ciudad, empiezas desde cero o simplemente no tienes una red de contactos que trabaje por ti, RUANA es para ti.
+                Llevas poco tiempo en la ciudad, no tienes contactos locales o simplemente nunca has tenido una red que trabaje para ti. No necesitas conocer a nadie para empezar.
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
@@ -231,8 +238,11 @@ export default function Landing() {
       {/* VENTAJAS */}
       <Section className="py-16" id="ventajas">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Por qué RUANA es diferente</h2>
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Aquí no eres un perfil más</h2>
+            <p className="mt-5 text-white/70 text-base md:text-lg leading-relaxed">
+              RUANA no es una plataforma masiva. Es una red cerrada donde cada aliado tiene nombre, zona y reputación.
+            </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {[
@@ -256,23 +266,22 @@ export default function Landing() {
       <Section className="py-16">
         <div style={{ backgroundColor: GREEN_DARK }} className="py-14">
           <div className="max-w-7xl mx-auto px-5 md:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10 text-center">
               {[
-                { value: 11, suffix: '+', label: 'Aliados activos' },
-                { value: 3, suffix: '', label: 'Grupos territoriales' },
-                { value: 39, suffix: '', label: 'Oficios disponibles' },
-              ].map((s) => (
-                <div key={s.label}>
-                  <div className="text-5xl md:text-6xl font-extrabold" style={{ color: GREEN }}>
-                    <Counter to={s.value} suffix={s.suffix} />
+                { icon: TrendingUp, title: 'Red en crecimiento', sub: 'Plazas limitadas por zona' },
+                { icon: MapPin, title: 'Organizada por zonas', sub: 'Cerca de donde tú trabajas' },
+                { icon: LayoutGrid, title: '+39 oficios', sub: 'Desde fontanería hasta consultoría' },
+                { icon: Star, title: 'En tiempo real', sub: 'Score de reputación' },
+              ].map(({ icon: Icon, title, sub }) => (
+                <div key={title} className="flex flex-col items-center">
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4"
+                    style={{ backgroundColor: 'rgba(0,230,118,0.12)' }}>
+                    <Icon className="h-7 w-7" style={{ color: GREEN }} />
                   </div>
-                  <div className="mt-2 text-white/80 text-sm md:text-base">{s.label}</div>
+                  <div className="text-2xl md:text-3xl font-bold" style={{ color: GREEN }}>{title}</div>
+                  <div className="mt-2 text-white/80 text-sm md:text-base">{sub}</div>
                 </div>
               ))}
-              <div>
-                <div className="text-2xl md:text-3xl font-bold" style={{ color: GREEN }}>En tiempo real</div>
-                <div className="mt-2 text-white/80 text-sm md:text-base">Score de reputación</div>
-              </div>
             </div>
             <p className="text-center mt-10 text-white/70">
               Red en crecimiento. Las plazas por zona son limitadas.
@@ -309,6 +318,53 @@ export default function Landing() {
             </div>
             <p className="text-center mt-10 text-sm" style={{ color: GREEN }}>
               ⭐ El Score RUANA se construye con cada solicitud atendida, referido activo y valoración recibida.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      {/* ASÍ EMPIEZA EL CAMBIO */}
+      <Section className="py-16" id="historias">
+        <div style={{ backgroundColor: BG_ALT }} className="py-16">
+          <div className="max-w-7xl mx-auto px-5 md:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Así empieza el cambio</h2>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  emoji: '🧱',
+                  title: 'Llegué sin conocer a nadie',
+                  text: 'Llevaba 3 meses en la ciudad sin trabajo fijo. Entré a RUANA, activé mi perfil y en dos semanas otro aliado me pasó mi primer encargo. Ahora tengo trabajo constante dentro de la red.',
+                  tag: 'Albañilería · Alicante',
+                },
+                {
+                  emoji: '⚡',
+                  title: 'Sin agenda, sin contactos',
+                  text: 'Como autónomo nuevo no tenía clientes propios. La red me conectó con aliados de mi zona que necesitaban un electricista de confianza. RUANA fue mi primer directorio real.',
+                  tag: 'Electricidad · Valencia',
+                },
+                {
+                  emoji: '💼',
+                  title: 'Empecé de cero en una ciudad nueva',
+                  text: 'Migré con mi oficio pero sin red. RUANA me dio acceso a profesionales que ya conocían la plaza local. En un mes ya formaba parte de la red y empezaban a recomendarme.',
+                  tag: 'Consultoría · Madrid',
+                },
+              ].map((s) => (
+                <div key={s.title} className="rounded-2xl p-7 border h-full flex flex-col"
+                  style={{ backgroundColor: BG, borderColor: 'rgba(255,255,255,0.08)' }}>
+                  <div className="text-3xl mb-4">{s.emoji}</div>
+                  <h3 className="text-lg font-semibold mb-3 text-white">{s.title}</h3>
+                  <p className="text-white/70 text-sm leading-relaxed flex-1">{s.text}</p>
+                  <div className="mt-5 inline-flex self-start px-3 py-1 rounded-full text-xs font-medium"
+                    style={{ backgroundColor: 'rgba(0,230,118,0.12)', color: GREEN }}>
+                    {s.tag}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="text-center mt-8 text-xs md:text-sm italic text-white/50">
+              Estos escenarios representan situaciones reales del tipo de profesional que RUANA quiere apoyar.
             </p>
           </div>
         </div>
