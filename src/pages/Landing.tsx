@@ -207,10 +207,10 @@ export default function Landing() {
           <div className="max-w-7xl mx-auto px-5 md:px-8">
             <div className="text-center max-w-3xl mx-auto mb-10">
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-                Si trabajas con tus manos o tu talento, RUANA es para ti
+                RUANA es para ti si empezas desde cero
               </h2>
               <p className="mt-5 text-white/70 text-base md:text-lg leading-relaxed">
-                Si acabas de llegar a una ciudad, empiezas desde cero o simplemente no tienes una red de contactos que trabaje por ti, RUANA es para ti.
+                Llevas poco tiempo en la ciudad, no tienes contactos locales o simplemente nunca has tenido una red que trabaje para ti. No necesitas conocer a nadie para empezar.
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
