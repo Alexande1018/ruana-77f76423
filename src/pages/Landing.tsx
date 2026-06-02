@@ -129,6 +129,10 @@ export default function Landing() {
             <p className="mt-4 text-sm text-white/55">
               Sin cuotas fijas. Sin CV perfecto. Te acompañamos paso a paso.
             </p>
+            <p className="mt-2 inline-flex items-center gap-2 text-xs md:text-sm text-white/55">
+              <Clock className="h-3.5 w-3.5" style={{ color: GREEN }} />
+              Las plazas por zona son limitadas. Solo se abre acceso cuando hay disponibilidad en tu área.
+            </p>
           </motion.div>
         </div>
       </section>
