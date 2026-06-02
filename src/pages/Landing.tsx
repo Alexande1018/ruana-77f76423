@@ -202,6 +202,9 @@ export default function Landing() {
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
                 Si trabajas con tus manos o tu talento, RUANA es para ti
               </h2>
+              <p className="mt-5 text-white/70 text-base md:text-lg leading-relaxed">
+                Si acabas de llegar a una ciudad, empiezas desde cero o simplemente no tienes una red de contactos que trabaje por ti, RUANA es para ti.
+              </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
               {[
