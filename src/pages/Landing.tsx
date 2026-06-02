@@ -174,10 +174,10 @@ export default function Landing() {
           </div>
           <div className="grid md:grid-cols-4 gap-8 md:gap-6">
             {[
-              { n: 1, title: 'Recibes un código de invitación', desc: 'Un aliado activo te invita a la red.' },
-              { n: 2, title: 'Creas tu perfil de aliado', desc: 'Registra tu oficio, zona y descripción de tu servicio.' },
-              { n: 3, title: 'Accedes al directorio privado', desc: 'Busca y contacta a profesionales verificados de tu grupo.' },
-              { n: 4, title: 'La red trabaja para ti', desc: 'Cuando alguien del grupo necesita tu oficio, apareces tú primero.' },
+              { n: 1, title: 'Solicitas acceso a la red', desc: 'Con código de un aliado o por solicitud directa. No hace falta conocer a nadie de antemano.' },
+              { n: 2, title: 'Activas tu perfil de aliado', desc: 'Verificamos tu oficio y tu zona. Tu perfil empieza a existir en la red local.' },
+              { n: 3, title: 'La red empieza a moverse contigo', desc: 'Accedes al directorio privado. Otros aliados de tu zona pueden recomendarte, referirte y pasarte encargos.' },
+              { n: 4, title: 'Tu nombre gana peso en el territorio', desc: 'Cada trabajo cerrado, cada referido activo, cada valoración recibida construye tu reputación. La red trabaja para ti.' },
             ].map((s, i, arr) => (
               <div key={s.n} className="relative">
                 <div className="text-5xl md:text-6xl font-extrabold mb-4 leading-none" style={{ color: GREEN }}>
