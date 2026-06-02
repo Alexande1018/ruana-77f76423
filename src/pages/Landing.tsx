@@ -16,6 +16,9 @@ import {
   TrendingUp,
   Gift,
   Link2,
+  Clock,
+  Users,
+  LayoutGrid,
 } from 'lucide-react';
 import { LandingNavbar, LandingFooter, BG, BG_ALT, GREEN, GREEN_DARK } from '@/components/LandingChrome';
 
