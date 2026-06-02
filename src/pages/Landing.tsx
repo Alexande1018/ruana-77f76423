@@ -236,10 +236,10 @@ export default function Landing() {
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { vs: 'vs. Wallapop / InfoJobs', text: 'No eres uno más entre miles. Aquí tu plaza está protegida.' },
-              { vs: 'vs. grupos de WhatsApp', text: 'Trazabilidad, historial y reputación. Todo organizado.' },
-              { vs: 'vs. redes sociales', text: 'Sin algoritmos. Sin publicidad. Solo tu red de aliados.' },
-              { vs: 'modelo de comisión', text: 'Sin cuotas. Solo éxito.', detail: 'No pagas nada por estar en la red. El Apoyo RUANA — un 12% sobre el valor del encargo — solo se aplica cuando cierras un trabajo a través de la plataforma. Si no trabajas, no pagas.' },
+              { vs: 'vs. Wallapop / InfoJobs', text: 'No compites contra cientos de desconocidos. En RUANA tu plaza está protegida por zona y oficio.' },
+              { vs: 'vs. grupos de WhatsApp', text: 'Sin caos. Sin spam. Trazabilidad real, historial verificable y reputación con consecuencias.' },
+              { vs: 'vs. redes sociales', text: 'Sin algoritmos que te ignoren. Sin publicidad. Solo tu red de aliados que te conocen y te recomiendan.' },
+              { vs: 'modelo de comisión', text: 'Pagas solo cuando cobras.', detail: 'No pagas nada por estar en la red. El Apoyo RUANA — un 12% sobre el valor del encargo — solo se aplica cuando cierras un trabajo a través de la plataforma. Si no trabajas, no pagas.' },
             ].map((c) => (
               <div key={c.vs} className="rounded-2xl p-7 border h-full"
                 style={{ backgroundColor: BG_ALT, borderColor: 'rgba(255,255,255,0.08)' }}>
