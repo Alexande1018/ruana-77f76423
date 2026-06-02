@@ -138,17 +138,18 @@ export default function Landing() {
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
                 Una red cerrada. Una comunidad real.
               </h2>
-              <p className="mt-5 text-white/70 text-base md:text-lg leading-relaxed">
-                RUANA es una plataforma privada donde profesionales de distintos oficios se agrupan por zonas geográficas.
-                Cada miembro tiene un perfil verificado, un Score de reputación y acceso a una red de aliados que se
-                recomiendan mutuamente trabajo.
+              <p className="mt-5 text-white/75 text-base md:text-lg leading-relaxed">
+                Si llegas a una ciudad sin agenda, sin apellidos conocidos y sin una lista de contactos, empezar es casi imposible.
+              </p>
+              <p className="mt-4 text-white/70 text-base md:text-lg leading-relaxed">
+                RUANA agrupa a profesionales de confianza por zonas para que, en lugar de tocar puertas solo, entres a una red donde otros aliados hablan de ti, te recomiendan y te pasan tus primeros encargos.
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { icon: Lock, title: 'Red Privada', desc: 'Entras solo con código de aliado o invitación de alguien de la red.' },
-                { icon: MapPin, title: 'Por zonas', desc: 'Grupos organizados por código postal. Tu comunidad, cerca de ti.' },
-                { icon: Star, title: 'Score de reputación', desc: 'Tu historial de respuestas y referencias construye tu reputación en la red.' },
+                { icon: Lock, title: 'Red Privada', desc: 'Accedes por invitación o solicitud directa. Cada nuevo aliado se revisa para proteger la confianza de todos.' },
+                { icon: MapPin, title: 'Por zonas', desc: 'Nos organizamos por códigos postales para que tus oportunidades nazcan cerca: en tu barrio, tu ciudad, tu zona.' },
+                { icon: Star, title: 'Score de reputación', desc: 'Tu Score es la memoria viva de la red: registra a quién ayudas, a quién recomiendas y cómo respondes. No es un número, son consecuencias reales.' },
               ].map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="rounded-2xl p-6 border transition hover:-translate-y-1"
                   style={{ backgroundColor: BG, borderColor: 'rgba(255,255,255,0.08)' }}>
