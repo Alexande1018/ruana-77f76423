@@ -103,12 +103,14 @@ export default function Landing() {
               <Lock className="h-3.5 w-3.5" /> Acceso solo por invitación
             </div>
             <h1 className="font-bold leading-[1.05] tracking-tight text-[38px] md:text-[56px] lg:text-[64px]">
-              La red profesional que trabaja por ti —{' '}
-              <span style={{ color: GREEN }}>solo para quienes son invitados</span>
+              No vuelvas a construir tu futuro profesional{' '}
+              <span style={{ color: GREEN }}>completamente solo.</span>
             </h1>
-            <p className="mt-6 text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">
-              RUANA conecta a profesionales de confianza en tu zona. Sin ruido. Sin competencia desleal.
-              Solo aliados que se respaldan entre sí.
+            <p className="mt-6 text-lg md:text-xl text-white/75 max-w-2xl leading-relaxed">
+              RUANA es la red privada de aliados para quienes llegan a una ciudad sin contactos, empiezan desde cero o trabajan por su cuenta.
+            </p>
+            <p className="mt-3 text-base md:text-lg text-white/65 max-w-2xl leading-relaxed">
+              Aquí no haces networking: aquí tu nombre empieza a correr entre profesionales que quieren verte salir adelante.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
               <Link to="/register"
@@ -121,6 +123,9 @@ export default function Landing() {
                 Ver cómo funciona
               </a>
             </div>
+            <p className="mt-4 text-sm text-white/55">
+              Sin cuotas fijas. Sin CV perfecto. Te acompañamos paso a paso.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -133,17 +138,18 @@ export default function Landing() {
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
                 Una red cerrada. Una comunidad real.
               </h2>
-              <p className="mt-5 text-white/70 text-base md:text-lg leading-relaxed">
-                RUANA es una plataforma privada donde profesionales de distintos oficios se agrupan por zonas geográficas.
-                Cada miembro tiene un perfil verificado, un Score de reputación y acceso a una red de aliados que se
-                recomiendan mutuamente trabajo.
+              <p className="mt-5 text-white/75 text-base md:text-lg leading-relaxed">
+                Si llegas a una ciudad sin agenda, sin apellidos conocidos y sin una lista de contactos, empezar es casi imposible.
+              </p>
+              <p className="mt-4 text-white/70 text-base md:text-lg leading-relaxed">
+                RUANA agrupa a profesionales de confianza por zonas para que, en lugar de tocar puertas solo, entres a una red donde otros aliados hablan de ti, te recomiendan y te pasan tus primeros encargos.
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { icon: Lock, title: 'Red Privada', desc: 'Entras solo con código de aliado o invitación de alguien de la red.' },
-                { icon: MapPin, title: 'Por zonas', desc: 'Grupos organizados por código postal. Tu comunidad, cerca de ti.' },
-                { icon: Star, title: 'Score de reputación', desc: 'Tu historial de respuestas y referencias construye tu reputación en la red.' },
+                { icon: Lock, title: 'Red Privada', desc: 'Accedes por invitación o solicitud directa. Cada nuevo aliado se revisa para proteger la confianza de todos.' },
+                { icon: MapPin, title: 'Por zonas', desc: 'Nos organizamos por códigos postales para que tus oportunidades nazcan cerca: en tu barrio, tu ciudad, tu zona.' },
+                { icon: Star, title: 'Score de reputación', desc: 'Tu Score es la memoria viva de la red: registra a quién ayudas, a quién recomiendas y cómo respondes. No es un número, son consecuencias reales.' },
               ].map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="rounded-2xl p-6 border transition hover:-translate-y-1"
                   style={{ backgroundColor: BG, borderColor: 'rgba(255,255,255,0.08)' }}>
@@ -168,10 +174,10 @@ export default function Landing() {
           </div>
           <div className="grid md:grid-cols-4 gap-8 md:gap-6">
             {[
-              { n: 1, title: 'Recibes un código de invitación', desc: 'Un aliado activo te invita a la red.' },
-              { n: 2, title: 'Creas tu perfil de aliado', desc: 'Registra tu oficio, zona y descripción de tu servicio.' },
-              { n: 3, title: 'Accedes al directorio privado', desc: 'Busca y contacta a profesionales verificados de tu grupo.' },
-              { n: 4, title: 'La red trabaja para ti', desc: 'Cuando alguien del grupo necesita tu oficio, apareces tú primero.' },
+              { n: 1, title: 'Solicitas acceso a la red', desc: 'Con código de un aliado o por solicitud directa. No hace falta conocer a nadie de antemano.' },
+              { n: 2, title: 'Activas tu perfil de aliado', desc: 'Verificamos tu oficio y tu zona. Tu perfil empieza a existir en la red local.' },
+              { n: 3, title: 'La red empieza a moverse contigo', desc: 'Accedes al directorio privado. Otros aliados de tu zona pueden recomendarte, referirte y pasarte encargos.' },
+              { n: 4, title: 'Tu nombre gana peso en el territorio', desc: 'Cada trabajo cerrado, cada referido activo, cada valoración recibida construye tu reputación. La red trabaja para ti.' },
             ].map((s, i, arr) => (
               <div key={s.n} className="relative">
                 <div className="text-5xl md:text-6xl font-extrabold mb-4 leading-none" style={{ color: GREEN }}>
@@ -196,6 +202,9 @@ export default function Landing() {
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
                 Si trabajas con tus manos o tu talento, RUANA es para ti
               </h2>
+              <p className="mt-5 text-white/70 text-base md:text-lg leading-relaxed">
+                Si acabas de llegar a una ciudad, empiezas desde cero o simplemente no tienes una red de contactos que trabaje por ti, RUANA es para ti.
+              </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
               {[
@@ -227,10 +236,10 @@ export default function Landing() {
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { vs: 'vs. Wallapop / InfoJobs', text: 'No eres uno más entre miles. Aquí tu plaza está protegida.' },
-              { vs: 'vs. grupos de WhatsApp', text: 'Trazabilidad, historial y reputación. Todo organizado.' },
-              { vs: 'vs. redes sociales', text: 'Sin algoritmos. Sin publicidad. Solo tu red de aliados.' },
-              { vs: 'modelo de comisión', text: 'Sin cuotas. Solo éxito.', detail: 'No pagas nada por estar en la red. El Apoyo RUANA — un 12% sobre el valor del encargo — solo se aplica cuando cierras un trabajo a través de la plataforma. Si no trabajas, no pagas.' },
+              { vs: 'vs. Wallapop / InfoJobs', text: 'No compites contra cientos de desconocidos. En RUANA tu plaza está protegida por zona y oficio.' },
+              { vs: 'vs. grupos de WhatsApp', text: 'Sin caos. Sin spam. Trazabilidad real, historial verificable y reputación con consecuencias.' },
+              { vs: 'vs. redes sociales', text: 'Sin algoritmos que te ignoren. Sin publicidad. Solo tu red de aliados que te conocen y te recomiendan.' },
+              { vs: 'modelo de comisión', text: 'Pagas solo cuando cobras.', detail: 'No pagas nada por estar en la red. El Apoyo RUANA — un 12% sobre el valor del encargo — solo se aplica cuando cierras un trabajo a través de la plataforma. Si no trabajas, no pagas.' },
             ].map((c) => (
               <div key={c.vs} className="rounded-2xl p-7 border h-full"
                 style={{ backgroundColor: BG_ALT, borderColor: 'rgba(255,255,255,0.08)' }}>
@@ -281,14 +290,14 @@ export default function Landing() {
                 Tu Score RUANA trabaja para ti
               </h2>
               <p className="mt-5 text-white/70 text-base md:text-lg leading-relaxed">
-                Cuanto más activo seas en la red, mayor será tu reputación — y mayores serán tus ventajas.
+                El Score RUANA es la memoria de la red. No es gamificación: es el historial que convence a otros aliados de trabajar contigo.
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { icon: TrendingUp, emoji: '📈', title: 'Mayor visibilidad', desc: 'Los aliados con mejor score aparecen primero en el directorio cuando alguien busca tu oficio.' },
-                { icon: Gift, emoji: '🎁', title: 'Beneficios exclusivos', desc: 'A medida que crezcas en la red, accederás a ventajas y recompensas reservadas para los aliados más comprometidos. Próximamente.' },
-                { icon: Link2, emoji: '🔗', title: 'Más conexiones', desc: 'Un score alto genera confianza. Los demás aliados prefieren trabajar con quienes tienen historial probado.' },
+                { icon: TrendingUp, emoji: '📈', title: 'Apareces primero cuando importa', desc: 'Los aliados con mejor Score aparecen primero en el directorio cuando alguien busca tu oficio en tu zona.' },
+                { icon: Gift, emoji: '🎁', title: 'Ventajas para aliados comprometidos', desc: 'A medida que construyes tu reputación, accedes a ventajas reservadas para quienes mantienen la calidad de la red. Próximamente.' },
+                { icon: Link2, emoji: '🔗', title: 'Confianza que genera trabajo real', desc: 'Un Score alto no es un número bonito: es la señal que hace que otros aliados te elijan a ti antes que a cualquier otra opción.' },
               ].map(({ emoji, title, desc }) => (
                 <div key={title} className="rounded-2xl p-6 border transition hover:-translate-y-1"
                   style={{ backgroundColor: BG_ALT, borderColor: 'rgba(0,230,118,0.18)' }}>
@@ -311,9 +320,11 @@ export default function Landing() {
           style={{ background: `linear-gradient(135deg, ${BG} 0%, ${GREEN_DARK} 100%)` }}>
           <ShieldCheck className="mx-auto h-12 w-12 mb-6" style={{ color: GREEN }} />
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-            ¿Tienes un código de invitación?
+            Tu próxima oportunidad está en alguien que aún no conoces.
           </h2>
-          <p className="mt-5 text-white/75 text-lg">Entra ahora y activa tu perfil de aliado.</p>
+          <p className="mt-5 text-white/75 text-lg max-w-2xl mx-auto">
+            RUANA conecta a profesionales de confianza por zonas. Entra si tienes código o solicita acceso aunque aún no conozcas a nadie dentro.
+          </p>
           <div className="mt-10">
             <a href="https://ruana-4293f.web.app/"
               className="inline-block px-8 py-4 rounded-lg font-semibold text-base text-black transition-all duration-200 hover:shadow-[0_0_20px_rgba(0,230,118,0.4)]"
@@ -330,6 +341,9 @@ export default function Landing() {
             className="inline-block px-8 py-4 rounded-lg font-semibold text-base border border-white/70 text-white hover:bg-white/10 transition-all duration-200">
             Solicitar acceso a la red
           </Link>
+          <p className="mt-4 text-sm text-white/55 max-w-md mx-auto">
+            Evaluamos cada solicitud para mantener la calidad de la red.
+          </p>
         </div>
       </Section>
 
