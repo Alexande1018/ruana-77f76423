@@ -103,12 +103,14 @@ export default function Landing() {
               <Lock className="h-3.5 w-3.5" /> Acceso solo por invitación
             </div>
             <h1 className="font-bold leading-[1.05] tracking-tight text-[38px] md:text-[56px] lg:text-[64px]">
-              La red profesional que trabaja por ti —{' '}
-              <span style={{ color: GREEN }}>solo para quienes son invitados</span>
+              No vuelvas a construir tu futuro profesional{' '}
+              <span style={{ color: GREEN }}>completamente solo.</span>
             </h1>
-            <p className="mt-6 text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">
-              RUANA conecta a profesionales de confianza en tu zona. Sin ruido. Sin competencia desleal.
-              Solo aliados que se respaldan entre sí.
+            <p className="mt-6 text-lg md:text-xl text-white/75 max-w-2xl leading-relaxed">
+              RUANA es la red privada de aliados para quienes llegan a una ciudad sin contactos, empiezan desde cero o trabajan por su cuenta.
+            </p>
+            <p className="mt-3 text-base md:text-lg text-white/65 max-w-2xl leading-relaxed">
+              Aquí no haces networking: aquí tu nombre empieza a correr entre profesionales que quieren verte salir adelante.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
               <Link to="/register"
@@ -121,6 +123,9 @@ export default function Landing() {
                 Ver cómo funciona
               </a>
             </div>
+            <p className="mt-4 text-sm text-white/55">
+              Sin cuotas fijas. Sin CV perfecto. Te acompañamos paso a paso.
+            </p>
           </motion.div>
         </div>
       </section>
