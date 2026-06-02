@@ -320,9 +320,11 @@ export default function Landing() {
           style={{ background: `linear-gradient(135deg, ${BG} 0%, ${GREEN_DARK} 100%)` }}>
           <ShieldCheck className="mx-auto h-12 w-12 mb-6" style={{ color: GREEN }} />
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-            ¿Tienes un código de invitación?
+            Tu próxima oportunidad está en alguien que aún no conoces.
           </h2>
-          <p className="mt-5 text-white/75 text-lg">Entra ahora y activa tu perfil de aliado.</p>
+          <p className="mt-5 text-white/75 text-lg max-w-2xl mx-auto">
+            RUANA conecta a profesionales de confianza por zonas. Entra si tienes código o solicita acceso aunque aún no conozcas a nadie dentro.
+          </p>
           <div className="mt-10">
             <a href="https://ruana-4293f.web.app/"
               className="inline-block px-8 py-4 rounded-lg font-semibold text-base text-black transition-all duration-200 hover:shadow-[0_0_20px_rgba(0,230,118,0.4)]"
@@ -339,6 +341,9 @@ export default function Landing() {
             className="inline-block px-8 py-4 rounded-lg font-semibold text-base border border-white/70 text-white hover:bg-white/10 transition-all duration-200">
             Solicitar acceso a la red
           </Link>
+          <p className="mt-4 text-sm text-white/55 max-w-md mx-auto">
+            Evaluamos cada solicitud para mantener la calidad de la red.
+          </p>
         </div>
       </Section>
 
