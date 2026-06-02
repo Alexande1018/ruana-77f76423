@@ -68,8 +68,8 @@ export function LandingFooter() {
           <span className="text-lg font-bold" style={{ color: GREEN }}>RUANA</span>
         </div>
         <div className="text-center text-white/60 text-sm">
-          <p>© 2026 RUANA · Red Unificada de Alianza de Negocios Aliados</p>
-          <p className="mt-1 text-white/40">Acceso solo por invitación · Red privada de profesionales</p>
+          <p>© 2026 RUANA · Red de Unión y Apoyo para Negocios entre Aliados</p>
+          <p className="mt-1 text-white/40">Acceso solo por invitación · Red cerrada de confianza y apoyo profesional entre aliados.</p>
         </div>
         <div className="flex gap-5 text-sm text-white/50">
           <a href="#" className="hover:text-white transition">Privacidad</a>
