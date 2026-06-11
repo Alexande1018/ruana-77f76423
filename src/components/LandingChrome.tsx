@@ -27,9 +27,10 @@ export function LandingNavbar() {
   };
 
   const navItems = [
+    { id: 'que-es', label: 'Qué es' },
     { id: 'como-funciona', label: 'Cómo funciona' },
-    { id: 'para-quien', label: 'Para quién es' },
-    { id: 'ventajas', label: 'Ventajas' },
+    { id: 'ventajas', label: 'Comparativa' },
+    { id: 'faq', label: 'FAQ' },
   ];
 
   return (
