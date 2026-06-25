@@ -201,12 +201,24 @@ export default function Landing() {
                 Solicitar acceso
               </Link>
               <a
+                href="https://ruana-4293f.web.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3.5 rounded-lg font-semibold text-base border text-white hover:bg-white/[0.06] transition inline-flex items-center gap-2"
+                style={{ borderColor: 'rgba(0,230,118,0.45)', color: GREEN }}
+              >
+                Ya tengo un código <ArrowRight className="h-4 w-4" />
+              </a>
+              <a
                 href="#como-funciona"
                 className="px-6 py-3.5 rounded-lg font-semibold text-base border border-white/25 text-white hover:bg-white/[0.06] transition"
               >
                 Ver cómo funciona
               </a>
             </div>
+            <p className="mt-3 text-sm text-white/50">
+              Accede directamente si ya formas parte de la red.
+            </p>
             <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-white/55">
               <span className="inline-flex items-center gap-2">
                 <ShieldCheck className="h-4 w-4" style={{ color: GREEN }} /> Perfiles verificados
