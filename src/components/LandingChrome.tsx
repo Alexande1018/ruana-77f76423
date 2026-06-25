@@ -58,7 +58,16 @@ export function LandingNavbar() {
             </a>
           ))}
         </nav>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 md:gap-3">
+          <a
+            href="https://ruana-4293f.web.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:inline-block px-3 md:px-4 py-2 rounded-lg font-semibold text-sm border transition hover:bg-white/[0.06]"
+            style={{ borderColor: 'rgba(0,230,118,0.45)', color: GREEN }}
+          >
+            Ya tengo código
+          </a>
           <Link
             to="/register"
             className="hidden sm:inline-block px-4 md:px-5 py-2 rounded-lg font-semibold text-sm text-black transition-all duration-200 hover:shadow-[0_0_20px_rgba(0,230,118,0.4)]"
@@ -92,6 +101,16 @@ export function LandingNavbar() {
             >
               Solicitar Acceso
             </Link>
+            <a
+              href="https://ruana-4293f.web.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="px-4 py-2.5 rounded-lg font-semibold text-sm text-center border"
+              style={{ borderColor: 'rgba(0,230,118,0.45)', color: GREEN }}
+            >
+              Ya tengo código · Entrar a la app
+            </a>
           </nav>
         </div>
       )}
