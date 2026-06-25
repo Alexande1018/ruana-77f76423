@@ -269,6 +269,51 @@ export default function Landing() {
         </div>
       </section>
 
+      {/* ============== FUNDADOR BANNER ============== */}
+      <Section className="pt-2 pb-10 md:pt-4 md:pb-14">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <div
+            className="relative overflow-hidden rounded-2xl border p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-6"
+            style={{
+              borderColor: 'rgba(0,230,118,0.35)',
+              background:
+                'linear-gradient(135deg, rgba(0,230,118,0.08) 0%, rgba(13,17,23,0.6) 60%, rgba(13,17,23,0.6) 100%)',
+              boxShadow: '0 20px 60px -30px rgba(0,230,118,0.35)',
+            }}
+          >
+            <div
+              aria-hidden
+              className="absolute -top-16 -right-16 w-56 h-56 rounded-full blur-3xl"
+              style={{ backgroundColor: 'rgba(0,230,118,0.18)' }}
+            />
+            <div className="flex-1 relative">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-3"
+                style={{ backgroundColor: 'rgba(0,230,118,0.12)', color: GREEN, border: '1px solid rgba(0,230,118,0.35)' }}
+              >
+                <Star className="h-3.5 w-3.5" fill={GREEN} /> Acceso fase inaugural
+              </div>
+              <h3 className="text-xl md:text-2xl font-bold tracking-tight">
+                Con el código <span style={{ color: GREEN }}>FUNDADOR</span> entras a la fase inaugural de RUANA.
+              </h3>
+              <p className="mt-2 text-white/70 text-sm md:text-base leading-relaxed max-w-2xl">
+                Solo los primeros aliados están siendo admitidos en esta etapa. Haz clic en <span className="text-white font-medium">"Ya tengo un código"</span>, introdúcelo y accede a la app para completar tu registro como aliado fundador.
+              </p>
+            </div>
+            <div className="relative shrink-0">
+              <a
+                href="https://ruana-4293f.web.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-base text-black transition-all duration-200 hover:shadow-[0_0_24px_rgba(0,230,118,0.45)]"
+                style={{ backgroundColor: GREEN }}
+              >
+                Ya tengo un código <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </Section>
+
       {/* ============== 2. PROBLEMA ============== */}
       <Section className="py-20 md:py-24" id="problema">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
