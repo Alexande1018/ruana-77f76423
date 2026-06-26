@@ -23,6 +23,7 @@ import {
   Quote,
 } from 'lucide-react';
 import { LandingNavbar, LandingFooter, BG, BG_ALT, GREEN, GREEN_DARK } from '@/components/LandingChrome';
+import { RequestAccessButton } from '@/components/RequestAccessButton';
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
