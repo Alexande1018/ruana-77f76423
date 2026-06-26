@@ -94,14 +94,13 @@ export function LandingNavbar() {
                 {it.label}
               </a>
             ))}
-            <Link
-              to="/register"
-              onClick={() => setOpen(false)}
+            <RequestAccessButton
+              onBeforeOpen={() => setOpen(false)}
               className="mt-2 px-4 py-2.5 rounded-lg font-semibold text-sm text-black text-center"
               style={{ backgroundColor: GREEN }}
             >
               Solicitar Acceso
-            </Link>
+            </RequestAccessButton>
             <a
               href="https://ruana-4293f.web.app"
               target="_blank"
