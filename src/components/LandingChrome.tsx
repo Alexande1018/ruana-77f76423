@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Network, Menu, X } from 'lucide-react';
+import { RequestAccessButton } from '@/components/RequestAccessButton';
 
 export const BG = '#0D1117';
 export const BG_ALT = '#161B22';
@@ -68,13 +69,12 @@ export function LandingNavbar() {
           >
             Ya tengo código
           </a>
-          <Link
-            to="/register"
+          <RequestAccessButton
             className="hidden sm:inline-block px-4 md:px-5 py-2 rounded-lg font-semibold text-sm text-black transition-all duration-200 hover:shadow-[0_0_20px_rgba(0,230,118,0.4)]"
             style={{ backgroundColor: GREEN }}
           >
             Solicitar Acceso
-          </Link>
+          </RequestAccessButton>
           <button
             type="button"
             aria-label="Abrir menú"
@@ -93,14 +93,13 @@ export function LandingNavbar() {
                 {it.label}
               </a>
             ))}
-            <Link
-              to="/register"
-              onClick={() => setOpen(false)}
+            <RequestAccessButton
+              onBeforeOpen={() => setOpen(false)}
               className="mt-2 px-4 py-2.5 rounded-lg font-semibold text-sm text-black text-center"
               style={{ backgroundColor: GREEN }}
             >
               Solicitar Acceso
-            </Link>
+            </RequestAccessButton>
             <a
               href="https://ruana-4293f.web.app"
               target="_blank"
