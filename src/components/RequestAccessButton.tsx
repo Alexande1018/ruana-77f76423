@@ -2,7 +2,7 @@ import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { PartyPopper, X } from "lucide-react";
 import { INAUGURAL_PHASE_ACTIVE, FUNDADOR_APP_URL, FUNDADOR_CODE } from "@/lib/inauguralPhase";
-import { GREEN, GREEN_DARK, BG_ALT } from "@/components/LandingChrome";
+import { GREEN, GREEN_DARK, BG_ALT } from "@/lib/landingTheme";
 
 type Props = {
   children: React.ReactNode;
