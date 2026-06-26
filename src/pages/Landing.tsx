@@ -193,13 +193,12 @@ export default function Landing() {
               RUANA es una infraestructura de reputación para profesionales locales. Aliados verificados, recomendaciones con trazabilidad y oportunidades reales que circulan dentro de tu zona.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
-              <Link
-                to="/register"
+              <RequestAccessButton
                 className="px-6 py-3.5 rounded-lg font-semibold text-base text-black transition-all duration-200 hover:shadow-[0_0_24px_rgba(0,230,118,0.45)]"
                 style={{ backgroundColor: GREEN }}
               >
                 Solicitar acceso
-              </Link>
+              </RequestAccessButton>
               <a
                 href="https://ruana-4293f.web.app"
                 target="_blank"
