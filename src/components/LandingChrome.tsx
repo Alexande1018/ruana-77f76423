@@ -69,13 +69,12 @@ export function LandingNavbar() {
           >
             Ya tengo código
           </a>
-          <Link
-            to="/register"
+          <RequestAccessButton
             className="hidden sm:inline-block px-4 md:px-5 py-2 rounded-lg font-semibold text-sm text-black transition-all duration-200 hover:shadow-[0_0_20px_rgba(0,230,118,0.4)]"
             style={{ backgroundColor: GREEN }}
           >
             Solicitar Acceso
-          </Link>
+          </RequestAccessButton>
           <button
             type="button"
             aria-label="Abrir menú"
