@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Network, Menu, X } from 'lucide-react';
-import { INAUGURAL_PHASE_ACTIVE } from '@/lib/inauguralPhase';
 import { RequestAccessButton } from '@/components/RequestAccessButton';
 
 export const BG = '#0D1117';
