@@ -369,21 +369,21 @@ export default function Landing() {
             <div className="lg:col-span-6">
               <Eyebrow>Qué es RUANA</Eyebrow>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.08]">
-                Una red privada de aliados, organizada por código postal.
+                ¿Qué es RUANA?
               </h2>
               <p className="mt-6 text-white/75 text-base md:text-lg leading-relaxed">
-                RUANA — <em className="not-italic text-white">Red de Unión y Apoyo para Negocios entre Aliados</em> — no es una red social, ni un marketplace, ni un directorio. Es un sistema operativo de confianza profesional para comunidades locales.
+                <em className="not-italic text-white">Red de Unión y Apoyo para Negocios entre Aliados.</em> No es una red social. No es un marketplace. No es un directorio. Es un grupo de profesionales de tu zona que se pasan trabajo entre ellos porque saben que el otro lo hace bien.
               </p>
               <ul className="mt-7 space-y-3 text-white/80">
                 {[
-                  'Acceso evaluado: cada nuevo aliado se revisa antes de entrar.',
-                  'Recomendaciones reales entre aliados de la misma zona.',
-                  'Reputación medible que influye en tus oportunidades.',
-                  'Trazabilidad completa: cada interacción deja rastro.',
+                  { t: 'Acceso evaluado', d: 'No entra cualquiera.' },
+                  { t: 'Recomendaciones reales', d: 'Cada recomendación viene de alguien que ha trabajado contigo.' },
+                  { t: 'Reputación medible', d: 'Tu historial se ve. Tus resultados hablan por ti.' },
+                  { t: 'Trazabilidad total', d: 'Sabes quién te recomendó, qué se hizo y cómo quedó.' },
                 ].map((t) => (
-                  <li key={t} className="flex gap-3">
+                  <li key={t.t} className="flex gap-3">
                     <CheckCircle2 className="h-5 w-5 mt-0.5 shrink-0" style={{ color: GREEN }} />
-                    <span>{t}</span>
+                    <span><span className="text-white font-medium">{t.t}:</span> <span className="text-white/75">{t.d}</span></span>
                   </li>
                 ))}
               </ul>
