@@ -188,10 +188,10 @@ export default function Landing() {
               <Lock className="h-3 w-3" /> Red privada · Acceso evaluado
             </Eyebrow>
             <h1 className="font-bold leading-[1.03] tracking-tight text-[40px] md:text-[60px] lg:text-[68px]">
-              La red privada donde la <span style={{ color: GREEN }}>confianza profesional</span> se organiza por código postal.
+              Tu reputación local, <span style={{ color: GREEN }}>por fin organizada</span>.
             </h1>
             <p className="mt-6 text-lg md:text-xl text-white/75 max-w-2xl leading-relaxed">
-              RUANA es una infraestructura de reputación para profesionales locales. Aliados verificados, recomendaciones con trazabilidad y oportunidades reales que circulan dentro de tu zona.
+              RUANA es la red donde profesionales de tu zona se recomiendan entre ellos. Sin ruido, sin desconocidos, sin sorteos. Solo trabajo real entre gente que se conoce.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <RequestAccessButton
@@ -320,10 +320,10 @@ export default function Landing() {
           <div className="max-w-3xl">
             <Eyebrow>El problema</Eyebrow>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.1]">
-              Sin red local, todo profesional empieza en desventaja.
+              Sin red en tu zona, todo es más difícil.
             </h2>
             <p className="mt-5 text-white/70 text-base md:text-lg leading-relaxed">
-              Llegar a una ciudad nueva, lanzarse por cuenta propia o cambiar de sector significa lo mismo: empezar a competir contra personas que sí tienen contactos, sí tienen historial y sí tienen quién hable por ellas.
+              Conoces a alguien que busca lo que tú haces... pero no lo sabes.
             </p>
           </div>
 
@@ -331,19 +331,19 @@ export default function Landing() {
             {[
               {
                 t: 'Plataformas masivas',
-                d: 'Compites en listas infinitas contra desconocidos. Tu reputación local no cuenta. Ganas si pagas más visibilidad.',
+                d: 'Listas infinitas donde compites con todo el mundo, incluso con quien no sabes quién es.',
               },
               {
-                t: 'Grupos de WhatsApp',
-                d: 'Ruido, mensajes que se pierden, recomendaciones sin contexto y cero memoria. Mañana nadie recuerda quién recomendó qué.',
+                t: 'WhatsApp',
+                d: 'Grupos que se llenan de memes y recomendaciones que nadie recuerda.',
               },
               {
-                t: 'Redes sociales generalistas',
-                d: 'Aspiracionales, abiertas y algorítmicas. La gente que importa para tu trabajo está enterrada bajo contenido que no te genera negocio.',
+                t: 'Redes sociales',
+                d: 'Miles de seguidores que nunca te contratan.',
               },
               {
                 t: 'Suerte y boca a boca',
-                d: 'Dependes del azar. Cada oportunidad llega tarde o no llega. Empezar de cero puede tardar años.',
+                d: 'Confiar en que alguien te mencione... cuando se acuerde.',
               },
             ].map((b) => (
               <div
@@ -369,21 +369,21 @@ export default function Landing() {
             <div className="lg:col-span-6">
               <Eyebrow>Qué es RUANA</Eyebrow>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.08]">
-                Una red privada de aliados, organizada por código postal.
+                ¿Qué es RUANA?
               </h2>
               <p className="mt-6 text-white/75 text-base md:text-lg leading-relaxed">
-                RUANA — <em className="not-italic text-white">Red de Unión y Apoyo para Negocios entre Aliados</em> — no es una red social, ni un marketplace, ni un directorio. Es un sistema operativo de confianza profesional para comunidades locales.
+                <em className="not-italic text-white">Red de Unión y Apoyo para Negocios entre Aliados.</em> No es una red social. No es un marketplace. No es un directorio. Es un grupo de profesionales de tu zona que se pasan trabajo entre ellos porque saben que el otro lo hace bien.
               </p>
               <ul className="mt-7 space-y-3 text-white/80">
                 {[
-                  'Acceso evaluado: cada nuevo aliado se revisa antes de entrar.',
-                  'Recomendaciones reales entre aliados de la misma zona.',
-                  'Reputación medible que influye en tus oportunidades.',
-                  'Trazabilidad completa: cada interacción deja rastro.',
+                  { t: 'Acceso evaluado', d: 'No entra cualquiera.' },
+                  { t: 'Recomendaciones reales', d: 'Cada recomendación viene de alguien que ha trabajado contigo.' },
+                  { t: 'Reputación medible', d: 'Tu historial se ve. Tus resultados hablan por ti.' },
+                  { t: 'Trazabilidad total', d: 'Sabes quién te recomendó, qué se hizo y cómo quedó.' },
                 ].map((t) => (
-                  <li key={t} className="flex gap-3">
+                  <li key={t.t} className="flex gap-3">
                     <CheckCircle2 className="h-5 w-5 mt-0.5 shrink-0" style={{ color: GREEN }} />
-                    <span>{t}</span>
+                    <span><span className="text-white font-medium">{t.t}:</span> <span className="text-white/75">{t.d}</span></span>
                   </li>
                 ))}
               </ul>
@@ -444,15 +444,15 @@ export default function Landing() {
           <div className="max-w-3xl mb-14">
             <Eyebrow>Cómo funciona</Eyebrow>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.1]">
-              Cuatro pasos. Una posición real dentro de la red.
+              ¿Cómo funciona?
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-5">
             {[
-              { n: 1, t: 'Acceso evaluado', d: 'Entras por código de un aliado o por solicitud directa. Validamos perfil, oficio y zona.' },
-              { n: 2, t: 'Activación territorial', d: 'Recibes tu plaza en un código postal. Apareces en el directorio privado de tu zona.' },
-              { n: 3, t: 'Movimiento de la red', d: 'Otros aliados pueden recomendarte, derivarte encargos y conectarte con su propia red.' },
-              { n: 4, t: 'Reputación medible', d: 'Cada acción suma a tu Score. Tu reputación influye en tu visibilidad y en tus oportunidades.' },
+              { n: 1, t: 'Acceso evaluado', d: 'Revisamos tu perfil, tu oficio y tu zona.' },
+              { n: 2, t: 'Activación territorial', d: 'Te asignamos una plaza en tu código postal.' },
+              { n: 3, t: 'Movimiento de la red', d: 'Otros aliados te recomiendan y te derivan encargos.' },
+              { n: 4, t: 'Reputación medible', d: 'Cada trabajo bien hecho suma a tu Score y te da más visibilidad.' },
             ].map((s, i, arr) => (
               <div
                 key={s.n}
@@ -528,10 +528,10 @@ export default function Landing() {
             <div className="lg:col-span-6 order-1 lg:order-2">
               <Eyebrow>Código postal</Eyebrow>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.08]">
-                Tu red no es global. Es la calle donde trabajas.
+                La confianza es de barrio. Las oportunidades están cerca.
               </h2>
               <p className="mt-6 text-white/75 text-base md:text-lg leading-relaxed">
-                RUANA se organiza por códigos postales porque la confianza profesional es territorial. Los encargos, las recomendaciones y los aliados que de verdad mueven tu carrera están a kilómetros de ti, no en otro país.
+                RUANA se organiza por códigos postales porque la gente que de verdad te va a pasar trabajo está al lado tuyo, no al otro lado del mundo. Encargos cercanos, aliados que ya pisan tu calle, plazas limitadas para que la red no se sature.
               </p>
               <div className="mt-7 grid sm:grid-cols-2 gap-4">
                 {[
@@ -560,16 +560,16 @@ export default function Landing() {
           <div className="lg:col-span-6">
             <Eyebrow>Score RUANA</Eyebrow>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.08]">
-              Reputación medible. Consecuencias reales.
+              Tu puntuación decide tu visibilidad.
             </h2>
             <p className="mt-6 text-white/75 text-base md:text-lg leading-relaxed">
-              El Score RUANA no es gamificación. Es la memoria operativa de la red: registra cómo respondes, a quién recomiendas, qué trabajos cierras y cómo te valoran. Esa información determina tu visibilidad y tu acceso a oportunidades.
+              El Score RUANA es la memoria de la red. Va sumando con cada trabajo bien hecho, cada recomendación útil y cada cliente contento. Cuanto más alto, más arriba apareces y más oportunidades te llegan.
             </p>
             <div className="mt-8 space-y-3">
               {[
-                { t: 'Aparece primero', d: 'Mejor Score = mejor posición cuando alguien busca tu oficio en tu zona.' },
-                { t: 'Acceso preferente', d: 'Los aliados con historial sólido acceden antes a encargos relevantes y a ventajas de la red.' },
-                { t: 'Filtro contra ruido', d: 'Quien no aporta valor a la red pierde visibilidad. La calidad se protege sola.' },
+                { t: 'Apareces primero', d: 'Mejor Score, mejor posición cuando alguien busca tu oficio en tu zona.' },
+                { t: 'Acceso preferente', d: 'Los aliados con buen historial entran antes a los encargos buenos.' },
+                { t: 'Filtro contra el ruido', d: 'Quien no aporta, pierde visibilidad. La calidad se cuida sola.' },
               ].map((b) => (
                 <div
                   key={b.t}
@@ -641,10 +641,10 @@ export default function Landing() {
             <div className="max-w-3xl mb-14">
               <Eyebrow>Trazabilidad</Eyebrow>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.1]">
-                La confianza no se declara. Se demuestra con historial.
+                La confianza no se dice, se demuestra.
               </h2>
               <p className="mt-5 text-white/70 text-base md:text-lg leading-relaxed">
-                En RUANA cada interacción queda registrada con contexto: quién recomendó a quién, qué encargo se cerró, qué resultado dejó. La confianza deja de depender de opiniones sueltas y pasa a basarse en hechos verificables.
+                En RUANA sabemos quién, qué, cuándo y cómo quedó. Cada recomendación deja huella: quién te pasó al cliente, qué encargo se cerró y qué tal salió. Nada se pierde en un chat.
               </p>
             </div>
 
@@ -653,17 +653,17 @@ export default function Landing() {
                 {
                   icon: FileCheck2,
                   t: 'Registro de cada referido',
-                  d: 'Sabes quién te recomendó, a quién, cuándo y con qué resultado. Nada se pierde en un chat.',
+                  d: 'Sabes quién te recomendó, a quién, cuándo y con qué resultado.',
                 },
                 {
                   icon: Eye,
                   t: 'Historial visible',
-                  d: 'Tu actividad en la red es consultable por los aliados con los que cruzas oportunidades.',
+                  d: 'Tu actividad en la red la pueden ver los aliados con los que trabajas.',
                 },
                 {
                   icon: ShieldCheck,
                   t: 'Reputación con memoria',
-                  d: 'El comportamiento útil suma. El que rompe la confianza queda registrado y pierde acceso.',
+                  d: 'Lo que aportas suma. Quien rompe la confianza, queda registrado y pierde acceso.',
                 },
               ].map(({ icon: Icon, t, d }) => (
                 <div
@@ -692,18 +692,18 @@ export default function Landing() {
           <div className="max-w-3xl mb-14">
             <Eyebrow>Beneficios del aliado</Eyebrow>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.1]">
-              Lo que cambia cuando perteneces a una red.
+              Lo que ganas entrando.
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { t: 'Dejas de empezar solo', d: 'Entras a un entorno donde otros profesionales ya están dispuestos a hablar bien de ti cuando demuestras valor.' },
-              { t: 'Tu nombre circula', d: 'Apareces en recomendaciones de aliados a clientes reales, sin pelear por visibilidad en una lista infinita.' },
-              { t: 'Construyes reputación', d: 'Cada acción útil consolida tu Score. La red recuerda lo que haces bien.' },
-              { t: 'Oportunidades cercanas', d: 'Encargos en tu zona, derivados por personas que te conocen y responden por ti.' },
-              { t: 'Filtro contra el ruido', d: 'No entra cualquiera. Trabajas en un entorno donde la calidad media está cuidada.' },
-              { t: 'Sin cuotas fijas', d: 'No pagas por estar. RUANA aplica un Apoyo del 12 % solo sobre el encargo cerrado a través de la red.' },
+              { t: 'Que otros hablen bien de ti', d: 'Una red donde otros aliados te recomiendan a sus clientes.' },
+              { t: 'Recomendaciones directas', d: 'Llegan a clientes que ya confían en quien te recomienda.' },
+              { t: 'Reputación que se construye', d: 'Tu nombre crece con cada trabajo bien hecho, no con likes.' },
+              { t: 'Filtro contra el ruido', d: 'Solo profesionales serios. No entra cualquiera.' },
+              { t: 'Oportunidades cerca de ti', d: 'Encargos en tu zona, derivados por gente que te conoce.' },
+              { t: 'Sin cuotas fijas', d: 'Solo un 12 % sobre el encargo cerrado a través de la red.' },
             ].map((b) => (
               <div
                 key={b.t}
@@ -726,10 +726,13 @@ export default function Landing() {
             <div className="max-w-3xl mb-12">
               <Eyebrow>Comparativa</Eyebrow>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.1]">
-                Por qué RUANA es una categoría distinta.
+                RUANA no es otra red más.
               </h2>
               <p className="mt-5 text-white/70 text-base md:text-lg leading-relaxed">
-                No competimos con LinkedIn, marketplaces ni grupos de WhatsApp. Resolvemos algo que ellos nunca fueron diseñados para resolver: confianza profesional local, verificable y medible.
+                <span className="block"><span className="text-white font-medium">LinkedIn:</span> para buscar trabajo en una empresa. No para que te llamen a ti.</span>
+                <span className="block mt-2"><span className="text-white font-medium">Marketplaces:</span> pujas contra desconocidos por el precio más bajo.</span>
+                <span className="block mt-2"><span className="text-white font-medium">WhatsApp / BNI:</span> grupos sin filtro, sin memoria y sin control de calidad.</span>
+                <span className="block mt-2"><span className="text-white font-medium">RUANA:</span> acceso evaluado, organización por zona, reputación con historial y sin cuotas fijas.</span>
               </p>
             </div>
 
@@ -790,31 +793,31 @@ export default function Landing() {
           <div className="max-w-3xl mb-14">
             <Eyebrow>Casos de uso</Eyebrow>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.1]">
-              Escenarios reales dentro de la red.
+              Para quién es RUANA.
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-5">
             {[
               {
-                role: 'Recién llegado a la ciudad',
-                t: 'Empezar sin agenda, dejar de empezar solo.',
-                d: 'Un profesional que aterriza en Madrid sin contactos solicita acceso, activa su plaza en el 28012 y recibe sus primeros referidos de aliados de la zona en cuestión de semanas.',
+                role: 'Recién llegado',
+                t: 'Empiezas con aliados desde el día uno.',
+                d: 'Acabas de llegar a una ciudad y no conoces a nadie. Aquí entras a una red donde otros profesionales ya están dispuestos a recomendarte cuando demuestres lo que sabes hacer.',
               },
               {
                 role: 'Autónomo establecido',
-                t: 'Convertir tu reputación en flujo constante.',
-                d: 'Un electricista con años de oficio entra en RUANA, su Score crece con cada encargo cerrado y su nombre empieza a aparecer primero cuando otros aliados buscan electricista en su zona.',
+                t: 'Tu reputación trabaja por ti.',
+                d: 'Llevas años trabajando, pero el boca a boca es lento. Aquí cada trabajo bien hecho suma a tu Score y tu nombre empieza a circular sin que tengas que perseguirlo.',
               },
               {
-                role: 'Aliado que necesita un servicio',
-                t: 'Recurrir a la red antes que a Google.',
-                d: 'En lugar de pedir presupuestos a desconocidos, lanza la solicitud al grupo de su código postal y recibe en horas a un aliado avalado por su historial dentro de la red.',
+                role: 'Usuario buscando servicio',
+                t: 'Aliados con historial comprobado.',
+                d: '¿Cansado de buscar en Google y cruzar los dedos? Aquí accedes a profesionales de tu zona avalados por otros aliados que ya han trabajado con ellos.',
               },
               {
                 role: 'Profesional que crece',
-                t: 'Ganar peso en el territorio.',
-                d: 'Con Score alto, referidos activos y trabajos verificados, su perfil se consolida como referencia en su oficio dentro de varios códigos postales conectados.',
+                t: 'Tu reputación ya no se queda en un barrio.',
+                d: 'Con Score alto y referidos activos, tu perfil empieza a sonar en varios códigos postales conectados. Creces sin tener que gritar más fuerte.',
               },
             ].map((c) => (
               <div
@@ -850,10 +853,10 @@ export default function Landing() {
             <div className="lg:col-span-6">
               <Eyebrow>Acceso a la red</Eyebrow>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.08]">
-                No entra cualquiera. Por eso esto funciona.
+                ¿Cómo entro?
               </h2>
               <p className="mt-6 text-white/75 text-base md:text-lg leading-relaxed">
-                RUANA protege la calidad de la red filtrando cada entrada. Cada plaza se evalúa. Cada oficio tiene un cupo. Cada zona tiene un techo. Si la red abre, es porque hay sitio. Si no hay sitio, tu solicitud entra en lista de espera priorizada.
+                Evaluamos cada solicitud. Plazas limitadas por zona. Sin cuotas fijas. Si hay sitio en tu oficio y tu código postal, te activamos. Si no, entras en lista de espera priorizada.
               </p>
             </div>
 
@@ -864,10 +867,10 @@ export default function Landing() {
               >
                 <div className="space-y-5">
                   {[
-                    { t: 'Acceso por invitación o solicitud', d: 'Código de un aliado o solicitud directa evaluada.' },
-                    { t: 'Revisión humana', d: 'Verificamos perfil, oficio, zona y disponibilidad de plaza.' },
-                    { t: 'Plazas limitadas por zona', d: 'Una titularidad por oficio y código postal. Suplencias en cola.' },
-                    { t: 'Compromiso con la red', d: 'Los aliados que no participan o rompen la confianza pierden acceso.' },
+                    { t: 'Invitación o solicitud', d: 'Entras con código de un aliado o pides acceso directamente.' },
+                    { t: 'Revisión humana', d: 'Miramos tu perfil, oficio, zona y si hay plaza libre.' },
+                    { t: 'Plazas limitadas', d: 'Un titular por oficio y código postal. El resto, en suplencia.' },
+                    { t: 'Compromiso con la red', d: 'Quien no participa o rompe la confianza, pierde el sitio.' },
                   ].map((step, i) => (
                     <div key={step.t} className="flex gap-4">
                       <div
