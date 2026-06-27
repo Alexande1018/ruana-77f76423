@@ -726,10 +726,13 @@ export default function Landing() {
             <div className="max-w-3xl mb-12">
               <Eyebrow>Comparativa</Eyebrow>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.1]">
-                Por qué RUANA es una categoría distinta.
+                RUANA no es otra red más.
               </h2>
               <p className="mt-5 text-white/70 text-base md:text-lg leading-relaxed">
-                No competimos con LinkedIn, marketplaces ni grupos de WhatsApp. Resolvemos algo que ellos nunca fueron diseñados para resolver: confianza profesional local, verificable y medible.
+                <span className="block"><span className="text-white font-medium">LinkedIn:</span> para buscar trabajo en una empresa. No para que te llamen a ti.</span>
+                <span className="block mt-2"><span className="text-white font-medium">Marketplaces:</span> pujas contra desconocidos por el precio más bajo.</span>
+                <span className="block mt-2"><span className="text-white font-medium">WhatsApp / BNI:</span> grupos sin filtro, sin memoria y sin control de calidad.</span>
+                <span className="block mt-2"><span className="text-white font-medium">RUANA:</span> acceso evaluado, organización por zona, reputación con historial y sin cuotas fijas.</span>
               </p>
             </div>
 
