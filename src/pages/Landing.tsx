@@ -444,15 +444,15 @@ export default function Landing() {
           <div className="max-w-3xl mb-14">
             <Eyebrow>Cómo funciona</Eyebrow>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.1]">
-              Cuatro pasos. Una posición real dentro de la red.
+              ¿Cómo funciona?
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-5">
             {[
-              { n: 1, t: 'Acceso evaluado', d: 'Entras por código de un aliado o por solicitud directa. Validamos perfil, oficio y zona.' },
-              { n: 2, t: 'Activación territorial', d: 'Recibes tu plaza en un código postal. Apareces en el directorio privado de tu zona.' },
-              { n: 3, t: 'Movimiento de la red', d: 'Otros aliados pueden recomendarte, derivarte encargos y conectarte con su propia red.' },
-              { n: 4, t: 'Reputación medible', d: 'Cada acción suma a tu Score. Tu reputación influye en tu visibilidad y en tus oportunidades.' },
+              { n: 1, t: 'Acceso evaluado', d: 'Revisamos tu perfil, tu oficio y tu zona.' },
+              { n: 2, t: 'Activación territorial', d: 'Te asignamos una plaza en tu código postal.' },
+              { n: 3, t: 'Movimiento de la red', d: 'Otros aliados te recomiendan y te derivan encargos.' },
+              { n: 4, t: 'Reputación medible', d: 'Cada trabajo bien hecho suma a tu Score y te da más visibilidad.' },
             ].map((s, i, arr) => (
               <div
                 key={s.n}
