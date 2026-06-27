@@ -320,10 +320,10 @@ export default function Landing() {
           <div className="max-w-3xl">
             <Eyebrow>El problema</Eyebrow>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.1]">
-              Sin red local, todo profesional empieza en desventaja.
+              Sin red en tu zona, todo es más difícil.
             </h2>
             <p className="mt-5 text-white/70 text-base md:text-lg leading-relaxed">
-              Llegar a una ciudad nueva, lanzarse por cuenta propia o cambiar de sector significa lo mismo: empezar a competir contra personas que sí tienen contactos, sí tienen historial y sí tienen quién hable por ellas.
+              Conoces a alguien que busca lo que tú haces... pero no lo sabes.
             </p>
           </div>
 
@@ -331,19 +331,19 @@ export default function Landing() {
             {[
               {
                 t: 'Plataformas masivas',
-                d: 'Compites en listas infinitas contra desconocidos. Tu reputación local no cuenta. Ganas si pagas más visibilidad.',
+                d: 'Listas infinitas donde compites con todo el mundo, incluso con quien no sabes quién es.',
               },
               {
-                t: 'Grupos de WhatsApp',
-                d: 'Ruido, mensajes que se pierden, recomendaciones sin contexto y cero memoria. Mañana nadie recuerda quién recomendó qué.',
+                t: 'WhatsApp',
+                d: 'Grupos que se llenan de memes y recomendaciones que nadie recuerda.',
               },
               {
-                t: 'Redes sociales generalistas',
-                d: 'Aspiracionales, abiertas y algorítmicas. La gente que importa para tu trabajo está enterrada bajo contenido que no te genera negocio.',
+                t: 'Redes sociales',
+                d: 'Miles de seguidores que nunca te contratan.',
               },
               {
                 t: 'Suerte y boca a boca',
-                d: 'Dependes del azar. Cada oportunidad llega tarde o no llega. Empezar de cero puede tardar años.',
+                d: 'Confiar en que alguien te mencione... cuando se acuerde.',
               },
             ].map((b) => (
               <div
