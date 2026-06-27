@@ -560,16 +560,16 @@ export default function Landing() {
           <div className="lg:col-span-6">
             <Eyebrow>Score RUANA</Eyebrow>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.08]">
-              Reputación medible. Consecuencias reales.
+              Tu puntuación decide tu visibilidad.
             </h2>
             <p className="mt-6 text-white/75 text-base md:text-lg leading-relaxed">
-              El Score RUANA no es gamificación. Es la memoria operativa de la red: registra cómo respondes, a quién recomiendas, qué trabajos cierras y cómo te valoran. Esa información determina tu visibilidad y tu acceso a oportunidades.
+              El Score RUANA es la memoria de la red. Va sumando con cada trabajo bien hecho, cada recomendación útil y cada cliente contento. Cuanto más alto, más arriba apareces y más oportunidades te llegan.
             </p>
             <div className="mt-8 space-y-3">
               {[
-                { t: 'Aparece primero', d: 'Mejor Score = mejor posición cuando alguien busca tu oficio en tu zona.' },
-                { t: 'Acceso preferente', d: 'Los aliados con historial sólido acceden antes a encargos relevantes y a ventajas de la red.' },
-                { t: 'Filtro contra ruido', d: 'Quien no aporta valor a la red pierde visibilidad. La calidad se protege sola.' },
+                { t: 'Apareces primero', d: 'Mejor Score, mejor posición cuando alguien busca tu oficio en tu zona.' },
+                { t: 'Acceso preferente', d: 'Los aliados con buen historial entran antes a los encargos buenos.' },
+                { t: 'Filtro contra el ruido', d: 'Quien no aporta, pierde visibilidad. La calidad se cuida sola.' },
               ].map((b) => (
                 <div
                   key={b.t}
