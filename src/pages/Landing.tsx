@@ -853,10 +853,10 @@ export default function Landing() {
             <div className="lg:col-span-6">
               <Eyebrow>Acceso a la red</Eyebrow>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.08]">
-                No entra cualquiera. Por eso esto funciona.
+                ¿Cómo entro?
               </h2>
               <p className="mt-6 text-white/75 text-base md:text-lg leading-relaxed">
-                RUANA protege la calidad de la red filtrando cada entrada. Cada plaza se evalúa. Cada oficio tiene un cupo. Cada zona tiene un techo. Si la red abre, es porque hay sitio. Si no hay sitio, tu solicitud entra en lista de espera priorizada.
+                Evaluamos cada solicitud. Plazas limitadas por zona. Sin cuotas fijas. Si hay sitio en tu oficio y tu código postal, te activamos. Si no, entras en lista de espera priorizada.
               </p>
             </div>
 
@@ -867,10 +867,10 @@ export default function Landing() {
               >
                 <div className="space-y-5">
                   {[
-                    { t: 'Acceso por invitación o solicitud', d: 'Código de un aliado o solicitud directa evaluada.' },
-                    { t: 'Revisión humana', d: 'Verificamos perfil, oficio, zona y disponibilidad de plaza.' },
-                    { t: 'Plazas limitadas por zona', d: 'Una titularidad por oficio y código postal. Suplencias en cola.' },
-                    { t: 'Compromiso con la red', d: 'Los aliados que no participan o rompen la confianza pierden acceso.' },
+                    { t: 'Invitación o solicitud', d: 'Entras con código de un aliado o pides acceso directamente.' },
+                    { t: 'Revisión humana', d: 'Miramos tu perfil, oficio, zona y si hay plaza libre.' },
+                    { t: 'Plazas limitadas', d: 'Un titular por oficio y código postal. El resto, en suplencia.' },
+                    { t: 'Compromiso con la red', d: 'Quien no participa o rompe la confianza, pierde el sitio.' },
                   ].map((step, i) => (
                     <div key={step.t} className="flex gap-4">
                       <div
