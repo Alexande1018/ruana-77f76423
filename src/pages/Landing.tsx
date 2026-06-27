@@ -692,18 +692,18 @@ export default function Landing() {
           <div className="max-w-3xl mb-14">
             <Eyebrow>Beneficios del aliado</Eyebrow>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.1]">
-              Lo que cambia cuando perteneces a una red.
+              Lo que ganas entrando.
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { t: 'Dejas de empezar solo', d: 'Entras a un entorno donde otros profesionales ya están dispuestos a hablar bien de ti cuando demuestras valor.' },
-              { t: 'Tu nombre circula', d: 'Apareces en recomendaciones de aliados a clientes reales, sin pelear por visibilidad en una lista infinita.' },
-              { t: 'Construyes reputación', d: 'Cada acción útil consolida tu Score. La red recuerda lo que haces bien.' },
-              { t: 'Oportunidades cercanas', d: 'Encargos en tu zona, derivados por personas que te conocen y responden por ti.' },
-              { t: 'Filtro contra el ruido', d: 'No entra cualquiera. Trabajas en un entorno donde la calidad media está cuidada.' },
-              { t: 'Sin cuotas fijas', d: 'No pagas por estar. RUANA aplica un Apoyo del 12 % solo sobre el encargo cerrado a través de la red.' },
+              { t: 'Que otros hablen bien de ti', d: 'Una red donde otros aliados te recomiendan a sus clientes.' },
+              { t: 'Recomendaciones directas', d: 'Llegan a clientes que ya confían en quien te recomienda.' },
+              { t: 'Reputación que se construye', d: 'Tu nombre crece con cada trabajo bien hecho, no con likes.' },
+              { t: 'Filtro contra el ruido', d: 'Solo profesionales serios. No entra cualquiera.' },
+              { t: 'Oportunidades cerca de ti', d: 'Encargos en tu zona, derivados por gente que te conoce.' },
+              { t: 'Sin cuotas fijas', d: 'Solo un 12 % sobre el encargo cerrado a través de la red.' },
             ].map((b) => (
               <div
                 key={b.t}
