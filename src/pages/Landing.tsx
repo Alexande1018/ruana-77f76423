@@ -528,10 +528,10 @@ export default function Landing() {
             <div className="lg:col-span-6 order-1 lg:order-2">
               <Eyebrow>Código postal</Eyebrow>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.08]">
-                Tu red no es global. Es la calle donde trabajas.
+                La confianza es de barrio. Las oportunidades están cerca.
               </h2>
               <p className="mt-6 text-white/75 text-base md:text-lg leading-relaxed">
-                RUANA se organiza por códigos postales porque la confianza profesional es territorial. Los encargos, las recomendaciones y los aliados que de verdad mueven tu carrera están a kilómetros de ti, no en otro país.
+                RUANA se organiza por códigos postales porque la gente que de verdad te va a pasar trabajo está al lado tuyo, no al otro lado del mundo. Encargos cercanos, aliados que ya pisan tu calle, plazas limitadas para que la red no se sature.
               </p>
               <div className="mt-7 grid sm:grid-cols-2 gap-4">
                 {[
