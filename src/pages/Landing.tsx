@@ -793,31 +793,31 @@ export default function Landing() {
           <div className="max-w-3xl mb-14">
             <Eyebrow>Casos de uso</Eyebrow>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.1]">
-              Escenarios reales dentro de la red.
+              Para quién es RUANA.
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-5">
             {[
               {
-                role: 'Recién llegado a la ciudad',
-                t: 'Empezar sin agenda, dejar de empezar solo.',
-                d: 'Un profesional que aterriza en Madrid sin contactos solicita acceso, activa su plaza en el 28012 y recibe sus primeros referidos de aliados de la zona en cuestión de semanas.',
+                role: 'Recién llegado',
+                t: 'Empiezas con aliados desde el día uno.',
+                d: 'Acabas de llegar a una ciudad y no conoces a nadie. Aquí entras a una red donde otros profesionales ya están dispuestos a recomendarte cuando demuestres lo que sabes hacer.',
               },
               {
                 role: 'Autónomo establecido',
-                t: 'Convertir tu reputación en flujo constante.',
-                d: 'Un electricista con años de oficio entra en RUANA, su Score crece con cada encargo cerrado y su nombre empieza a aparecer primero cuando otros aliados buscan electricista en su zona.',
+                t: 'Tu reputación trabaja por ti.',
+                d: 'Llevas años trabajando, pero el boca a boca es lento. Aquí cada trabajo bien hecho suma a tu Score y tu nombre empieza a circular sin que tengas que perseguirlo.',
               },
               {
-                role: 'Aliado que necesita un servicio',
-                t: 'Recurrir a la red antes que a Google.',
-                d: 'En lugar de pedir presupuestos a desconocidos, lanza la solicitud al grupo de su código postal y recibe en horas a un aliado avalado por su historial dentro de la red.',
+                role: 'Usuario buscando servicio',
+                t: 'Aliados con historial comprobado.',
+                d: '¿Cansado de buscar en Google y cruzar los dedos? Aquí accedes a profesionales de tu zona avalados por otros aliados que ya han trabajado con ellos.',
               },
               {
                 role: 'Profesional que crece',
-                t: 'Ganar peso en el territorio.',
-                d: 'Con Score alto, referidos activos y trabajos verificados, su perfil se consolida como referencia en su oficio dentro de varios códigos postales conectados.',
+                t: 'Tu reputación ya no se queda en un barrio.',
+                d: 'Con Score alto y referidos activos, tu perfil empieza a sonar en varios códigos postales conectados. Creces sin tener que gritar más fuerte.',
               },
             ].map((c) => (
               <div
