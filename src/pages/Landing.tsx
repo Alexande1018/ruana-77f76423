@@ -641,10 +641,10 @@ export default function Landing() {
             <div className="max-w-3xl mb-14">
               <Eyebrow>Trazabilidad</Eyebrow>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.1]">
-                La confianza no se declara. Se demuestra con historial.
+                La confianza no se dice, se demuestra.
               </h2>
               <p className="mt-5 text-white/70 text-base md:text-lg leading-relaxed">
-                En RUANA cada interacción queda registrada con contexto: quién recomendó a quién, qué encargo se cerró, qué resultado dejó. La confianza deja de depender de opiniones sueltas y pasa a basarse en hechos verificables.
+                En RUANA sabemos quién, qué, cuándo y cómo quedó. Cada recomendación deja huella: quién te pasó al cliente, qué encargo se cerró y qué tal salió. Nada se pierde en un chat.
               </p>
             </div>
 
@@ -653,17 +653,17 @@ export default function Landing() {
                 {
                   icon: FileCheck2,
                   t: 'Registro de cada referido',
-                  d: 'Sabes quién te recomendó, a quién, cuándo y con qué resultado. Nada se pierde en un chat.',
+                  d: 'Sabes quién te recomendó, a quién, cuándo y con qué resultado.',
                 },
                 {
                   icon: Eye,
                   t: 'Historial visible',
-                  d: 'Tu actividad en la red es consultable por los aliados con los que cruzas oportunidades.',
+                  d: 'Tu actividad en la red la pueden ver los aliados con los que trabajas.',
                 },
                 {
                   icon: ShieldCheck,
                   t: 'Reputación con memoria',
-                  d: 'El comportamiento útil suma. El que rompe la confianza queda registrado y pierde acceso.',
+                  d: 'Lo que aportas suma. Quien rompe la confianza, queda registrado y pierde acceso.',
                 },
               ].map(({ icon: Icon, t, d }) => (
                 <div
