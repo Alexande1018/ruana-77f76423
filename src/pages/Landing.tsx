@@ -188,10 +188,10 @@ export default function Landing() {
               <Lock className="h-3 w-3" /> Red privada · Acceso evaluado
             </Eyebrow>
             <h1 className="font-bold leading-[1.03] tracking-tight text-[40px] md:text-[60px] lg:text-[68px]">
-              La red privada donde la <span style={{ color: GREEN }}>confianza profesional</span> se organiza por código postal.
+              Tu reputación local, <span style={{ color: GREEN }}>por fin organizada</span>.
             </h1>
             <p className="mt-6 text-lg md:text-xl text-white/75 max-w-2xl leading-relaxed">
-              RUANA es una infraestructura de reputación para profesionales locales. Aliados verificados, recomendaciones con trazabilidad y oportunidades reales que circulan dentro de tu zona.
+              RUANA es la red donde profesionales de tu zona se recomiendan entre ellos. Sin ruido, sin desconocidos, sin sorteos. Solo trabajo real entre gente que se conoce.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <RequestAccessButton
