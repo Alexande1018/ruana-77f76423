@@ -482,38 +482,9 @@ export default function Landing() {
         >
           <div className="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 order-2 lg:order-1">
-              <div
-                className="rounded-2xl border p-6 md:p-8 relative overflow-hidden"
-                style={{ backgroundColor: BG, borderColor: 'rgba(255,255,255,0.08)' }}
-              >
-                <div className="absolute inset-0 opacity-50">
-                  <HeroNetwork />
-                </div>
-                <div className="relative">
-                  <div className="grid grid-cols-3 gap-3">
-                    {['28001', '28004', '28012', '28015', '28020', '28045'].map((cp, i) => (
-                      <div
-                        key={cp}
-                        className="rounded-lg border px-3 py-4 text-center"
-                        style={{
-                          backgroundColor: i === 1 ? 'rgba(0,230,118,0.12)' : 'rgba(13,17,23,0.6)',
-                          borderColor: i === 1 ? 'rgba(0,230,118,0.4)' : 'rgba(255,255,255,0.08)',
-                        }}
-                      >
-                        <div
-                          className="text-base font-semibold"
-                          style={{ color: i === 1 ? GREEN : '#fff' }}
-                        >
-                          {cp}
-                        </div>
-                        <div className="text-[11px] text-white/55 mt-0.5">
-                          {[12, 18, 9, 14, 7, 11][i]} aliados
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              <DensityMap compact />
+            </div>
+
             </div>
 
             <div className="lg:col-span-6 order-1 lg:order-2">
