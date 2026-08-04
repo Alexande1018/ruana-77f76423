@@ -20,6 +20,10 @@ import {
   Minus,
   UserCheck,
   Quote,
+  Zap,
+  TrendingUp,
+  Users,
+  Target,
 } from 'lucide-react';
 import { LandingNavbar, LandingFooter, BG, BG_ALT, GREEN, GREEN_DARK } from '@/components/LandingChrome';
 import { RequestAccessButton } from '@/components/RequestAccessButton';
@@ -53,21 +57,6 @@ function Section({
   );
 }
 
-function Eyebrow({ children }: { children: React.ReactNode }) {
-  return (
-    <div
-      className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] md:text-xs font-medium uppercase tracking-[0.14em] mb-5 border"
-      style={{
-        borderColor: 'rgba(0,230,118,0.28)',
-        backgroundColor: 'rgba(0,230,118,0.06)',
-        color: GREEN,
-      }}
-    >
-      {children}
-    </div>
-  );
-}
-
 /* ---------- HERO visual: territorial network ---------- */
 function HeroNetwork() {
   const nodes = [
@@ -93,7 +82,6 @@ function HeroNetwork() {
         </radialGradient>
       </defs>
       <rect width="100" height="100" fill="url(#haze)" />
-      {/* faint postal grid */}
       {[20, 40, 60, 80].map((v) => (
         <g key={v}>
           <line x1={v} y1="0" x2={v} y2="100" stroke="white" strokeOpacity="0.04" strokeWidth="0.15" />
@@ -184,7 +172,6 @@ export default function Landing() {
             </h1>
           </motion.div>
 
-          {/* mapa de densidad, justo debajo del titular */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -255,7 +242,6 @@ export default function Landing() {
         </div>
       </section>
 
-
       {/* ============== FUNDADOR BANNER ============== */}
       <Section className="pt-2 pb-10 md:pt-4 md:pb-14">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
@@ -304,7 +290,35 @@ export default function Landing() {
       {/* ============== 2. PROBLEMA ============== */}
       <Section className="py-20 md:py-24" id="problema">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl mb-14">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.08]">
+              Sin red en tu zona, todo es más difícil.
+            </h2>
+            <p className="mt-6 text-white/75 text-base md:text-lg leading-relaxed">
+              Las plataformas masivas te dejan invisible. Los grupos de WhatsApp son ruido sin filtro. Y las ferias de contactos acaban en tarjetas que nadie llama. Si estás empezando o acabas de llegar a un barrio, no sabes a quién acudir ni quién te puede pasar trabajo de verdad.
+            </p>
+            <div className="mt-8 grid sm:grid-cols-2 gap-4">
+              {[
+                'Ofertas que nunca llegan',
+                'Clientes que no te conocen',
+                'Recomendaciones que se pierden en el chat',
+                'Competencia con desconocidos por precio',
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-3 text-white/70">
+                  <XCircle className="h-5 w-5 shrink-0 text-white/30" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* ============== 3. QUÉ ES RUANA ============== */}
+      <Section className="py-20 md:py-24" id="que-es">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-6">
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.08]">
                 ¿Qué es RUANA?
               </h2>
@@ -326,7 +340,6 @@ export default function Landing() {
               </ul>
             </div>
 
-            {/* diagram */}
             <div className="lg:col-span-6">
               <div
                 className="rounded-2xl border p-6 md:p-8"
@@ -379,6 +392,45 @@ export default function Landing() {
       <Section className="py-20 md:py-24" id="como-funciona">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="max-w-3xl mb-14">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.08]">
+              ¿Cómo funciona?
+            </h2>
+            <p className="mt-6 text-white/75 text-base md:text-lg leading-relaxed">
+              RUANA une oficio, zona y reputación. No hay algoritmos ocultos ni puertas giratorias. Cuatro pasos sencillos para empezar a recibir y dar trabajo de confianza.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { n: '01', t: 'Solicitas acceso', d: 'Pides entrar con tu oficio y código postal. Si hay plaza, pasas a revisión.' },
+              { n: '02', t: 'Activamos tu perfil', d: 'Revisamos tu perfil, zona y oficio. Si encajas, te activamos como Titular o Suplente.' },
+              { n: '03', t: 'La red se mueve', d: 'Los aliados empiezan a derivarte encargos. Tú también puedes recomendar a otros.' },
+              { n: '04', t: 'Tu nombre gana peso', d: 'Cada referido real, cada cierre y cada feedback sube tu Score RUANA.' },
+            ].map((step) => (
+              <div
+                key={step.n}
+                className="rounded-2xl p-6 border"
+                style={{ backgroundColor: BG, borderColor: 'rgba(255,255,255,0.08)' }}
+              >
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold mb-5"
+                  style={{ backgroundColor: 'rgba(0,230,118,0.12)', color: GREEN }}
+                >
+                  {step.n}
+                </div>
+                <h3 className="text-lg font-semibold mb-2">{step.t}</h3>
+                <p className="text-white/65 text-sm leading-relaxed">{step.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* ============== 5. CÓDIGO POSTAL ============== */}
+      <Section className="py-20 md:py-24" id="codigo-postal">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-6">
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.08]">
                 La confianza es de barrio. Las oportunidades están cerca.
               </h2>
@@ -402,6 +454,9 @@ export default function Landing() {
                 ))}
               </div>
             </div>
+            <div className="lg:col-span-6">
+              <DensityMap />
+            </div>
           </div>
         </div>
       </Section>
@@ -410,48 +465,115 @@ export default function Landing() {
       <Section className="py-20 md:py-24" id="score">
         <div className="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.1]">
-                La confianza no se dice, se demuestra.
-              </h2>
-              <p className="mt-5 text-white/70 text-base md:text-lg leading-relaxed">
-                En RUANA sabemos quién, qué, cuándo y cómo quedó. Cada recomendación deja huella: quién te pasó al cliente, qué encargo se cerró y qué tal salió. Nada se pierde en un chat.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-5">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.1]">
+              La confianza no se dice, se demuestra.
+            </h2>
+            <p className="mt-5 text-white/70 text-base md:text-lg leading-relaxed">
+              El Score RUANA es la memoria de la red. No suma likes ni conexiones. Suma recomendaciones concretas, encargos cerrados, devoluciones reales y participación constante. Es un número que los demás aliados pueden ver y que tú puedes mejorar con trabajo, no con palabras.
+            </p>
+            <div className="mt-8 grid sm:grid-cols-2 gap-4">
               {[
-                {
-                  icon: FileCheck2,
-                  t: 'Registro de cada referido',
-                  d: 'Sabes quién te recomendó, a quién, cuándo y con qué resultado.',
-                },
-                {
-                  icon: Eye,
-                  t: 'Historial visible',
-                  d: 'Tu actividad en la red la pueden ver los aliados con los que trabajas.',
-                },
-                {
-                  icon: ShieldCheck,
-                  t: 'Reputación con memoria',
-                  d: 'Lo que aportas suma. Quien rompe la confianza, queda registrado y pierde acceso.',
-                },
-              ].map(({ icon: Icon, t, d }) => (
-                <div
-                  key={t}
-                  className="rounded-2xl p-6 border"
-                  style={{ backgroundColor: BG, borderColor: 'rgba(255,255,255,0.08)' }}
-                >
-                  <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
-                    style={{ backgroundColor: 'rgba(0,230,118,0.12)' }}
-                  >
-                    <Icon className="h-5 w-5" style={{ color: GREEN }} />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2">{t}</h3>
-                  <p className="text-white/65 text-sm leading-relaxed">{d}</p>
+                { t: 'Recomendaciones que cierran', d: '+10 puntos' },
+                { t: 'Feedback positivo del cliente', d: '+5 puntos' },
+                { t: 'Participación semanal', d: '+2 puntos' },
+                { t: 'Incumplimiento o queja', d: '-15 puntos' },
+              ].map((item) => (
+                <div key={item.t} className="flex items-center justify-between rounded-lg border px-4 py-3"
+                  style={{ backgroundColor: BG, borderColor: 'rgba(255,255,255,0.08)' }}>
+                  <span className="text-white/80 text-sm">{item.t}</span>
+                  <span className="text-sm font-semibold" style={{ color: GREEN }}>{item.d}</span>
                 </div>
               ))}
             </div>
+          </div>
+
+          <div className="lg:col-span-6">
+            <div
+              className="rounded-2xl border p-6 md:p-8"
+              style={{ backgroundColor: BG, borderColor: 'rgba(255,255,255,0.08)' }}
+            >
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-2">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: 'rgba(0,230,118,0.12)' }}>
+                    <Activity className="h-5 w-5" style={{ color: GREEN }} />
+                  </div>
+                  <div>
+                    <div className="font-semibold">Score RUANA</div>
+                    <div className="text-xs text-white/50">Últimos 90 días</div>
+                  </div>
+                </div>
+                <div className="text-2xl font-bold" style={{ color: GREEN }}>847</div>
+              </div>
+              <div className="space-y-4">
+                {[
+                  { l: 'Encargos cerrados', v: 78 },
+                  { l: 'Recomendaciones hechas', v: 42 },
+                  { l: 'Feedback positivo', v: 94 },
+                ].map((bar) => (
+                  <div key={bar.l}>
+                    <div className="flex justify-between text-sm mb-1.5">
+                      <span className="text-white/70">{bar.l}</span>
+                      <span className="text-white font-medium">{bar.v}%</span>
+                    </div>
+                    <div className="h-2 rounded-full bg-white/10 overflow-hidden">
+                      <div
+                        className="h-full rounded-full"
+                        style={{ width: `${bar.v}%`, backgroundColor: GREEN }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* ============== 7. TRAZABILIDAD ============== */}
+      <Section className="py-20 md:py-24" id="trazabilidad">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <div className="max-w-3xl mb-14">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.1]">
+              Trazabilidad total. Nada se pierde en un chat.
+            </h2>
+            <p className="mt-5 text-white/70 text-base md:text-lg leading-relaxed">
+              En RUANA sabemos quién, qué, cuándo y cómo quedó. Cada recomendación deja huella: quién te pasó al cliente, qué encargo se cerró y qué tal salió.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              {
+                icon: FileCheck2,
+                t: 'Registro de cada referido',
+                d: 'Sabes quién te recomendó, a quién, cuándo y con qué resultado.',
+              },
+              {
+                icon: Eye,
+                t: 'Historial visible',
+                d: 'Tu actividad en la red la pueden ver los aliados con los que trabajas.',
+              },
+              {
+                icon: ShieldCheck,
+                t: 'Reputación con memoria',
+                d: 'Lo que aportas suma. Quien rompe la confianza, queda registrado y pierde acceso.',
+              },
+            ].map(({ icon: Icon, t, d }) => (
+              <div
+                key={t}
+                className="rounded-2xl p-6 border"
+                style={{ backgroundColor: BG, borderColor: 'rgba(255,255,255,0.08)' }}
+              >
+                <div
+                  className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
+                  style={{ backgroundColor: 'rgba(0,230,118,0.12)' }}
+                >
+                  <Icon className="h-5 w-5" style={{ color: GREEN }} />
+                </div>
+                <h3 className="text-lg font-semibold mb-2">{t}</h3>
+                <p className="text-white/65 text-sm leading-relaxed">{d}</p>
+              </div>
+            ))}
           </div>
         </div>
       </Section>
@@ -460,63 +582,111 @@ export default function Landing() {
       <Section className="py-20 md:py-24" id="beneficios">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="max-w-3xl mb-14">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.1]">
-                RUANA no es otra red más.
-              </h2>
-              <p className="mt-5 text-white/70 text-base md:text-lg leading-relaxed">
-                <span className="block"><span className="text-white font-medium">LinkedIn:</span> para buscar trabajo en una empresa. No para que te llamen a ti.</span>
-                <span className="block mt-2"><span className="text-white font-medium">Marketplaces:</span> pujas contra desconocidos por el precio más bajo.</span>
-                <span className="block mt-2"><span className="text-white font-medium">WhatsApp / BNI:</span> grupos sin filtro, sin memoria y sin control de calidad.</span>
-                <span className="block mt-2"><span className="text-white font-medium">RUANA:</span> acceso evaluado, organización por zona, reputación con historial y sin cuotas fijas.</span>
-              </p>
-            </div>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.1]">
+              ¿Qué ganas como aliado?
+            </h2>
+            <p className="mt-5 text-white/70 text-base md:text-lg leading-relaxed">
+              RUANA no es otra red más. Es una forma distinta de conseguir y dar trabajo, pensada para quienes trabajan con las manos, con la cabeza y con la palabra.
+            </p>
+          </div>
 
-            <div
-              className="rounded-2xl border overflow-hidden"
-              style={{ backgroundColor: BG, borderColor: 'rgba(255,255,255,0.08)' }}
-            >
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm md:text-base min-w-[720px]">
-                  <thead>
-                    <tr className="text-left text-white/55 text-xs uppercase tracking-[0.14em]">
-                      <th className="px-5 md:px-6 py-4 font-medium">Atributo</th>
-                      <th className="px-5 md:px-6 py-4 font-medium" style={{ color: GREEN }}>RUANA</th>
-                      <th className="px-5 md:px-6 py-4 font-medium">LinkedIn</th>
-                      <th className="px-5 md:px-6 py-4 font-medium">Marketplaces</th>
-                      <th className="px-5 md:px-6 py-4 font-medium">WhatsApp / BNI</th>
-                    </tr>
-                  </thead>
-                  <tbody className="text-white/80">
-                    {[
-                      ['Acceso evaluado', true, false, false, 'partial'],
-                      ['Organización por zona', true, false, 'partial', 'partial'],
-                      ['Reputación medible', true, 'partial', 'partial', false],
-                      ['Trazabilidad de recomendaciones', true, false, false, false],
-                      ['Sin cuotas fijas', true, 'partial', false, false],
-                      ['Foco en oportunidad real', true, false, 'partial', 'partial'],
-                    ].map((row, i) => (
-                      <tr
-                        key={i}
-                        className="border-t"
-                        style={{ borderColor: 'rgba(255,255,255,0.05)' }}
-                      >
-                        <td className="px-5 md:px-6 py-4 font-medium text-white">{row[0]}</td>
-                        {row.slice(1).map((v, j) => (
-                          <td key={j} className="px-5 md:px-6 py-4">
-                            {v === true ? (
-                              <CheckCircle2 className="h-5 w-5" style={{ color: GREEN }} />
-                            ) : v === 'partial' ? (
-                              <MinusCircle className="h-5 w-5 text-white/35" />
-                            ) : (
-                              <XCircle className="h-5 w-5 text-white/20" />
-                            )}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              {
+                icon: Zap,
+                t: 'Recibes recomendaciones reales',
+                d: 'Aliados de tu zona te pasan encargos que puedes atender. No leads fríos.',
+              },
+              {
+                icon: TrendingUp,
+                t: 'Tu nombre se construye con trabajo',
+                d: 'Cuanto más participas y más cierras, más visible eres dentro de tu zona.',
+              },
+              {
+                icon: Target,
+                t: 'Pagas solo cuando cobras',
+                d: 'Sin cuotas. Sin suscripciones. RUANA aplica un 12% solo sobre encargos cerrados por la red.',
+              },
+            ].map(({ icon: Icon, t, d }) => (
+              <div
+                key={t}
+                className="rounded-2xl p-6 border"
+                style={{ backgroundColor: BG, borderColor: 'rgba(255,255,255,0.08)' }}
+              >
+                <div
+                  className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
+                  style={{ backgroundColor: 'rgba(0,230,118,0.12)' }}
+                >
+                  <Icon className="h-5 w-5" style={{ color: GREEN }} />
+                </div>
+                <h3 className="text-lg font-semibold mb-2">{t}</h3>
+                <p className="text-white/65 text-sm leading-relaxed">{d}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* ============== 9. COMPARATIVA ============== */}
+      <Section className="py-20 md:py-24" id="comparativa">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <div className="max-w-3xl mb-14">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.08]">
+              RUANA no es otra red más.
+            </h2>
+            <p className="mt-5 text-white/70 text-base md:text-lg leading-relaxed">
+              <span className="block"><span className="text-white font-medium">LinkedIn:</span> para buscar trabajo en una empresa. No para que te llamen a ti.</span>
+              <span className="block mt-2"><span className="text-white font-medium">Marketplaces:</span> pujas contra desconocidos por el precio más bajo.</span>
+              <span className="block mt-2"><span className="text-white font-medium">WhatsApp / BNI:</span> grupos sin filtro, sin memoria y sin control de calidad.</span>
+              <span className="block mt-2"><span className="text-white font-medium">RUANA:</span> acceso evaluado, organización por zona, reputación con historial y sin cuotas fijas.</span>
+            </p>
+          </div>
+
+          <div
+            className="rounded-2xl border overflow-hidden"
+            style={{ backgroundColor: BG, borderColor: 'rgba(255,255,255,0.08)' }}
+          >
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm md:text-base min-w-[720px]">
+                <thead>
+                  <tr className="text-left text-white/55 text-xs uppercase tracking-[0.14em]">
+                    <th className="px-5 md:px-6 py-4 font-medium">Atributo</th>
+                    <th className="px-5 md:px-6 py-4 font-medium" style={{ color: GREEN }}>RUANA</th>
+                    <th className="px-5 md:px-6 py-4 font-medium">LinkedIn</th>
+                    <th className="px-5 md:px-6 py-4 font-medium">Marketplaces</th>
+                    <th className="px-5 md:px-6 py-4 font-medium">WhatsApp / BNI</th>
+                  </tr>
+                </thead>
+                <tbody className="text-white/80">
+                  {[
+                    ['Acceso evaluado', true, false, false, 'partial'],
+                    ['Organización por zona', true, false, 'partial', 'partial'],
+                    ['Reputación medible', true, 'partial', 'partial', false],
+                    ['Trazabilidad de recomendaciones', true, false, false, false],
+                    ['Sin cuotas fijas', true, 'partial', false, false],
+                    ['Foco en oportunidad real', true, false, 'partial', 'partial'],
+                  ].map((row, i) => (
+                    <tr
+                      key={i}
+                      className="border-t"
+                      style={{ borderColor: 'rgba(255,255,255,0.05)' }}
+                    >
+                      <td className="px-5 md:px-6 py-4 font-medium text-white">{row[0]}</td>
+                      {row.slice(1).map((v, j) => (
+                        <td key={j} className="px-5 md:px-6 py-4">
+                          {v === true ? (
+                            <CheckCircle2 className="h-5 w-5" style={{ color: GREEN }} />
+                          ) : v === 'partial' ? (
+                            <MinusCircle className="h-5 w-5 text-white/35" />
+                          ) : (
+                            <XCircle className="h-5 w-5 text-white/20" />
+                          )}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -526,14 +696,80 @@ export default function Landing() {
       <Section className="py-20 md:py-24" id="casos">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="max-w-3xl mb-14">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.08]">
+              Así empieza el cambio.
+            </h2>
+            <p className="mt-6 text-white/75 text-base md:text-lg leading-relaxed">
+              Tres situaciones comunes en las que RUANA cambia las reglas del juego.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              {
+                icon: UserCheck,
+                t: 'Llegas a una zona nueva',
+                d: 'No conoces a nadie. No tienes referidos. En RUANA, los aliados de tu código postal pueden empezar a pasarte trabajo real en cuanto te activan.',
+              },
+              {
+                icon: Users,
+                t: 'Eres autónomo establecido',
+                d: 'Ya tienes clientes, pero quieres más predictibilidad. La red te da un canal de encargos calificados sin depender de anuncios o puertas frías.',
+              },
+              {
+                icon: Quote,
+                t: 'Necesitas un profesional de confianza',
+                d: 'No quieres buscar en marketplaces. Quieres alguien que otro profesional ya ha probado. En RUANA lo encuentras por zona y oficio.',
+              },
+            ].map(({ icon: Icon, t, d }) => (
+              <div
+                key={t}
+                className="rounded-2xl p-6 border"
+                style={{ backgroundColor: BG, borderColor: 'rgba(255,255,255,0.08)' }}
+              >
+                <div
+                  className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
+                  style={{ backgroundColor: 'rgba(0,230,118,0.12)' }}
+                >
+                  <Icon className="h-5 w-5" style={{ color: GREEN }} />
+                </div>
+                <h3 className="text-lg font-semibold mb-2">{t}</h3>
+                <p className="text-white/65 text-sm leading-relaxed">{d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* ============== 11. ACCESO A LA RED ============== */}
+      <Section className="py-20 md:py-24" id="acceso">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-6">
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.08]">
                 ¿Cómo entro?
               </h2>
               <p className="mt-6 text-white/75 text-base md:text-lg leading-relaxed">
                 Evaluamos cada solicitud. Plazas limitadas por zona. Sin cuotas fijas. Si hay sitio en tu oficio y tu código postal, te activamos. Si no, entras en lista de espera priorizada.
               </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <RequestAccessButton
+                  className="px-6 py-3.5 rounded-lg font-semibold text-base text-black transition-all duration-200 hover:shadow-[0_0_24px_rgba(0,230,118,0.45)]"
+                  style={{ backgroundColor: GREEN }}
+                >
+                  Solicitar acceso
+                </RequestAccessButton>
+                <a
+                  href="https://ruana-4293f.web.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-3.5 rounded-lg font-semibold text-base border text-white hover:bg-white/[0.06] transition inline-flex items-center gap-2"
+                  style={{ borderColor: 'rgba(0,230,118,0.45)', color: GREEN }}
+                >
+                  Ya tengo un código <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
             </div>
-
             <div className="lg:col-span-6">
               <div
                 className="rounded-2xl border p-7 md:p-8"
@@ -583,3 +819,78 @@ export default function Landing() {
       <Section className="py-20 md:py-24" id="faq">
         <div className="max-w-4xl mx-auto px-5 md:px-8">
           <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.08]">
+              Preguntas frecuentes
+            </h2>
+            <p className="mt-4 text-white/60 text-base md:text-lg">
+              Lo que suele preguntarse quien considera unirse.
+            </p>
+          </div>
+          <div className="space-y-4">
+            <FAQItem
+              q="¿Quién puede entrar en RUANA?"
+              a="Profesionales autónomos y pequeños negocios que ofrecen un servicio concreto, que trabajan en una zona definida y que están dispuestos a recomendar y ser recomendados de forma responsable."
+            />
+            <FAQItem
+              q="¿Por qué hay plazas limitadas por oficio y zona?"
+              a="Para proteger la calidad y el valor de cada recomendación. Si hay cinco fontaneros en la misma zona, nadie recibe trabajo de la red. La exclusividad hace que cada plaza cuente."
+            />
+            <FAQItem
+              q="¿Qué pasa si mi zona ya tiene titular en mi oficio?"
+              a="Entras como Suplente. Si el titular no cumple el compromiso, pierde la plaza y tú puedes ascender. También puedes cubrir encargos de otras zonas si te lo permite tu zona de actuación."
+            />
+            <FAQItem
+              q="¿Cómo se calcula el Score RUANA?"
+              a="A partir de recomendaciones reales, encargos cerrados, feedback de clientes y participación semanal en la red. No compras puntuación. La ganas con comportamiento."
+            />
+            <FAQItem
+              q="¿Cuánto cuesta?"
+              a="No hay cuota de entrada ni mensualidad. RUANA aplica un 12% sobre el valor del encargo cuando cierras un trabajo a través de la red. Si no recibes, no pagas."
+            />
+          </div>
+        </div>
+      </Section>
+
+      {/* ============== 13. CTA FINAL ============== */}
+      <Section className="py-24 md:py-32 relative overflow-hidden">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              'radial-gradient(ellipse at 50% 0%, rgba(0,230,118,0.12), transparent 60%), radial-gradient(ellipse at 80% 100%, rgba(0,230,118,0.06), transparent 50%)',
+          }}
+        />
+        <div className="relative max-w-4xl mx-auto px-5 md:px-8 text-center">
+          <div className="h-40 md:h-52 mb-10">
+            <HeroNetwork />
+          </div>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08]">
+            Construye tu futuro profesional con quienes están al lado.
+          </h2>
+          <p className="mt-5 text-white/70 text-base md:text-lg max-w-2xl mx-auto">
+            Plazas limitadas por zona. Acceso evaluado. Sin cuotas fijas. Si crees que RUANA encaja con lo que haces, pide acceso o entra con tu código de aliado.
+          </p>
+          <div className="mt-9 flex flex-wrap justify-center gap-3">
+            <RequestAccessButton
+              className="px-7 py-3.5 rounded-lg font-semibold text-base text-black transition-all duration-200 hover:shadow-[0_0_24px_rgba(0,230,118,0.45)]"
+              style={{ backgroundColor: GREEN }}
+            >
+              Solicitar acceso
+            </RequestAccessButton>
+            <a
+              href="https://ruana-4293f.web.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-7 py-3.5 rounded-lg font-semibold text-base border text-white hover:bg-white/[0.06] transition inline-flex items-center gap-2"
+              style={{ borderColor: 'rgba(0,230,118,0.45)', color: GREEN }}
+            >
+              Ya tengo un código <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      </Section>
+
+      <LandingFooter />
+    </div>
+  );
+}
