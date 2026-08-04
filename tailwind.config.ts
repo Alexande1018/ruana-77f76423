@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['Space Grotesk', 'sans-serif'],
+        sans: ['"Public Sans"', 'system-ui', 'sans-serif'],
+        display: ['"Bricolage Grotesque"', '"Public Sans"', 'sans-serif'],
         sketch: ['"Patrick Hand"', '"Caveat"', 'cursive'],
       },
       colors: {
