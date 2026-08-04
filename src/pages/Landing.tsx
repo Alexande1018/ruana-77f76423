@@ -164,12 +164,12 @@ export default function Landing() {
   return (
     <div
       className="min-h-screen text-white"
-      style={{ backgroundColor: BG, fontFamily: 'Inter, system-ui, sans-serif' }}
+      style={{ backgroundColor: BG, fontFamily: '"Public Sans", system-ui, sans-serif' }}
     >
       <LandingNavbar />
 
       {/* ============== 1. HERO ============== */}
-      <section className="relative min-h-[92vh] flex items-center pt-28 pb-20 overflow-hidden">
+      <section className="relative flex items-center pt-28 pb-16 md:pb-20 overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -177,22 +177,46 @@ export default function Landing() {
               'radial-gradient(ellipse at 80% 20%, rgba(0,230,118,0.10), transparent 55%), radial-gradient(ellipse at 10% 90%, rgba(0,230,118,0.06), transparent 50%)',
           }}
         />
-        <div className="relative max-w-7xl mx-auto px-5 md:px-8 w-full grid lg:grid-cols-12 gap-10 items-center">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            className="lg:col-span-7"
-          >
+        <div className="relative max-w-7xl mx-auto px-5 md:px-8 w-full">
+          <motion.div initial="hidden" animate="visible" variants={fadeUp} className="max-w-4xl">
             <Eyebrow>
               <Lock className="h-3 w-3" /> Red privada · Acceso evaluado
             </Eyebrow>
-            <h1 className="font-bold leading-[1.03] tracking-tight text-[40px] md:text-[60px] lg:text-[68px]">
+            <h1 className="font-extrabold leading-[1.02] tracking-tight text-[40px] md:text-[62px] lg:text-[72px]">
               Tu reputación local, <span style={{ color: GREEN }}>por fin organizada</span>.
             </h1>
-            <p className="mt-6 text-lg md:text-xl text-white/75 max-w-2xl leading-relaxed">
-              RUANA es la red donde profesionales de tu zona se recomiendan entre ellos. Sin ruido, sin desconocidos, sin sorteos. Solo trabajo real entre gente que se conoce.
-            </p>
+          </motion.div>
+
+          {/* mapa de densidad, justo debajo del titular */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-8 md:mt-10 grid lg:grid-cols-12 gap-6 md:gap-8 items-center"
+          >
+            <div className="lg:col-span-7">
+              <DensityMap />
+            </div>
+            <div className="lg:col-span-5">
+              <p className="text-lg md:text-xl text-white/75 leading-relaxed">
+                RUANA es la red donde profesionales de tu zona se recomiendan entre ellos. Sin ruido, sin desconocidos, sin sorteos. Solo trabajo real entre gente que se conoce.
+              </p>
+              <div
+                className="mt-6 rounded-xl border p-4 flex items-center gap-3"
+                style={{ backgroundColor: 'rgba(13,17,23,0.6)', borderColor: 'rgba(0,230,118,0.25)' }}
+              >
+                <Star className="h-4 w-4 shrink-0" style={{ color: GREEN }} fill={GREEN} />
+                <div>
+                  <div className="text-sm font-semibold">Score RUANA · 842</div>
+                  <p className="text-xs text-white/60 leading-snug">
+                    3 referidos activos esta semana en tu zona (28004).
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div initial="hidden" animate="visible" variants={fadeUp}>
             <div className="mt-9 flex flex-wrap gap-3">
               <RequestAccessButton
                 className="px-6 py-3.5 rounded-lg font-semibold text-base text-black transition-all duration-200 hover:shadow-[0_0_24px_rgba(0,230,118,0.45)]"
@@ -231,43 +255,9 @@ export default function Landing() {
               </span>
             </div>
           </motion.div>
-
-          {/* visual right */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5 relative"
-          >
-            <div
-              className="relative rounded-2xl border overflow-hidden aspect-square"
-              style={{
-                backgroundColor: BG_ALT,
-                borderColor: 'rgba(255,255,255,0.08)',
-                boxShadow: '0 30px 80px -30px rgba(0,230,118,0.25)',
-              }}
-            >
-              <HeroNetwork />
-              {/* floating card */}
-              <div
-                className="absolute bottom-5 left-5 right-5 md:right-auto md:max-w-[260px] rounded-xl border p-4 backdrop-blur"
-                style={{
-                  backgroundColor: 'rgba(13,17,23,0.78)',
-                  borderColor: 'rgba(0,230,118,0.25)',
-                }}
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  <Star className="h-4 w-4" style={{ color: GREEN }} fill={GREEN} />
-                  <span className="text-sm font-semibold">Score RUANA · 842</span>
-                </div>
-                <p className="text-xs text-white/60 leading-snug">
-                  3 referidos activos esta semana en tu zona (28004).
-                </p>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
+
 
       {/* ============== FUNDADOR BANNER ============== */}
       <Section className="pt-2 pb-10 md:pt-4 md:pb-14">
