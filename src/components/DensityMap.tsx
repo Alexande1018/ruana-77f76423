@@ -43,7 +43,7 @@ export function DensityMap({ compact = false }: { compact?: boolean }) {
               key={c.cp}
               className="group relative rounded-[6px] aspect-[5/3] flex flex-col items-center justify-center overflow-hidden transition-transform duration-300 hover:scale-[1.04]"
               style={{
-                backgroundColor: `rgba(0,230,118,${0.06 + c.d * 0.42})`,
+                backgroundColor: `rgba(0,230,118,${0.05 + c.d * 0.62})`,
                 border: c.you
                   ? `1px solid ${GREEN}`
                   : `1px solid rgba(0,230,118,${0.08 + c.d * 0.25})`,
@@ -52,14 +52,14 @@ export function DensityMap({ compact = false }: { compact?: boolean }) {
             >
               <span
                 className="text-[10px] md:text-[11px] font-semibold tabular-nums"
-                style={{ color: c.d > 0.6 ? '#04140b' : 'rgba(255,255,255,0.82)' }}
+                style={{ color: c.d > 0.8 ? '#04140b' : 'rgba(255,255,255,0.92)' }}
               >
                 {c.cp}
               </span>
               {!compact && (
                 <span
                   className="text-[9px] md:text-[10px] tabular-nums"
-                  style={{ color: c.d > 0.6 ? 'rgba(4,20,11,0.7)' : 'rgba(255,255,255,0.45)' }}
+                  style={{ color: c.d > 0.8 ? 'rgba(4,20,11,0.75)' : 'rgba(255,255,255,0.55)' }}
                 >
                   {Math.round(4 + c.d * 22)} aliados
                 </span>
