@@ -10,11 +10,12 @@ const cardStyle = {
 export function PanelHeader({ label, right }: { label: string; right?: string }) {
   return (
     <div className="flex items-baseline justify-between gap-3 mb-5">
-      <p className="text-[11px] uppercase tracking-[0.18em] text-white/45">{label}</p>
-      {right && <p className="text-[11px] text-white/35 tabular-nums">{right}</p>}
+      <p className="text-[13px] font-medium text-white/60">{label}</p>
+      {right && <p className="text-[12px] text-white/35 tabular-nums">{right}</p>}
     </div>
   );
 }
+
 
 /** Cómo funciona una plaza: un titular, un suplente, el resto espera. */
 export function SeatPanel() {
