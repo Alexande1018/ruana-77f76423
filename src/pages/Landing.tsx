@@ -201,7 +201,7 @@ export default function Landing() {
       </Section>
 
       {/* ============ LA PLAZA ============ */}
-      <Section className="relative overflow-hidden py-20 md:py-28" style={undefined}>
+      <Section className="relative overflow-hidden py-20 md:py-28">
         <div className="absolute inset-0" style={{ backgroundColor: BG_ALT }} />
         <NodeField density={0.00012} opacity={0.5} intensity={0.8} />
         <div className="relative max-w-6xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
