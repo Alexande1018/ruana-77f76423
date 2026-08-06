@@ -248,19 +248,72 @@ export function AllyGrowth() {
   );
 }
 
-export function ChapterMark({ n, label }: { n: string; label: string }) {
+/** Red de aliados dibujada: nodos con nombre y oficio, unidos por encargos. */
+export function NetworkGraph({ className = '' }: { className?: string }) {
+  const nodes = [
+    { id: 'a', x: 18, y: 26, label: 'Marcos', trade: 'Electricidad', main: true },
+    { id: 'b', x: 50, y: 12, label: 'Lucía', trade: 'Reformas' },
+    { id: 'c', x: 82, y: 28, label: 'Diego', trade: 'Fontanería' },
+    { id: 'd', x: 30, y: 62, label: 'Ana', trade: 'Pintura' },
+    { id: 'e', x: 64, y: 72, label: 'Sara', trade: 'Carpintería' },
+    { id: 'f', x: 88, y: 58, label: 'Iván', trade: 'Climatización' },
+  ];
+  const edges: [string, string][] = [
+    ['a', 'b'], ['b', 'c'], ['a', 'd'], ['d', 'e'], ['e', 'c'], ['c', 'f'], ['b', 'e'], ['a', 'e'],
+  ];
+  const get = (id: string) => nodes.find((n) => n.id === id)!;
+
   return (
-    <div className="flex items-center gap-3 mb-5">
-      <span
-        className="font-mono text-[12px] tabular-nums"
-        style={{ color: GREEN }}
-      >
-        {n}
-      </span>
-      <span className="h-px w-8" style={{ backgroundColor: 'rgba(0,230,118,0.4)' }} />
-      <span className="text-[11px] uppercase tracking-[0.2em] text-white/45">{label}</span>
+    <div
+      className={`relative rounded-2xl border overflow-hidden ${className}`}
+      style={{ ...cardStyle, aspectRatio: '4 / 3' }}
+    >
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 h-full w-full">
+        {edges.map(([s, t], i) => {
+          const A = get(s);
+          const B = get(t);
+          return (
+            <g key={i}>
+              <line
+                x1={A.x} y1={A.y} x2={B.x} y2={B.y}
+                stroke={GREEN}
+                strokeOpacity={0.32}
+                strokeWidth={0.35}
+                vectorEffect="non-scaling-stroke"
+              />
+              <circle r="0.9" fill={GREEN}>
+                <animateMotion
+                  dur={`${3 + i * 0.6}s`}
+                  repeatCount="indefinite"
+                  path={`M${A.x},${A.y} L${B.x},${B.y}`}
+                />
+              </circle>
+            </g>
+          );
+        })}
+      </svg>
+      {nodes.map((n) => (
+        <div
+          key={n.id}
+          className="absolute -translate-x-1/2 -translate-y-1/2 flex items-center gap-2"
+          style={{ left: `${n.x}%`, top: `${n.y}%` }}
+        >
+          <span
+            className="h-2.5 w-2.5 rounded-full shrink-0"
+            style={{
+              backgroundColor: GREEN,
+              boxShadow: n.main ? `0 0 0 5px rgba(0,230,118,0.14)` : `0 0 0 3px rgba(0,230,118,0.08)`,
+            }}
+          />
+          <span className="hidden sm:block leading-tight">
+            <span className="block text-[12px] font-medium text-white/90">{n.label}</span>
+            <span className="block text-[10px] text-white/40">{n.trade}</span>
+          </span>
+        </div>
+      ))}
     </div>
   );
 }
 
 export { GREEN, BG, BG_ALT, ArrowRight, Star };
+
