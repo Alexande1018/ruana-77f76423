@@ -5,16 +5,17 @@ type Node = { x: number; y: number; vx: number; vy: number; r: number };
 
 /**
  * Fondo vivo de nodos conectados: la red RUANA respirando.
- * Densidad baja, movimiento lento, sin distraer de la lectura.
  */
 export function NodeField({
-  density = 0.00009,
+  density = 0.00016,
   className = '',
   opacity = 1,
+  intensity = 1,
 }: {
   density?: number;
   className?: string;
   opacity?: number;
+  intensity?: number;
 }) {
   const ref = useRef<HTMLCanvasElement | null>(null);
 
@@ -39,19 +40,19 @@ export function NodeField({
       canvas.width = w * dpr;
       canvas.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const count = Math.max(18, Math.min(70, Math.round(w * h * density)));
+      const count = Math.max(26, Math.min(110, Math.round(w * h * density)));
       nodes = Array.from({ length: count }, () => ({
         x: Math.random() * w,
         y: Math.random() * h,
-        vx: (Math.random() - 0.5) * 0.12,
-        vy: (Math.random() - 0.5) * 0.12,
-        r: Math.random() * 1.4 + 0.8,
+        vx: (Math.random() - 0.5) * 0.16,
+        vy: (Math.random() - 0.5) * 0.16,
+        r: Math.random() * 1.6 + 1,
       }));
     };
 
     const draw = () => {
       ctx.clearRect(0, 0, w, h);
-      const maxDist = Math.min(190, Math.max(120, w * 0.14));
+      const maxDist = Math.min(220, Math.max(140, w * 0.16));
 
       for (let i = 0; i < nodes.length; i++) {
         const a = nodes[i];
@@ -68,8 +69,8 @@ export function NodeField({
           const d = Math.hypot(dx, dy);
           if (d < maxDist) {
             const t = 1 - d / maxDist;
-            ctx.strokeStyle = `rgba(0,230,118,${0.16 * t * t})`;
-            ctx.lineWidth = 0.6;
+            ctx.strokeStyle = `rgba(0,230,118,${0.38 * t * t * intensity})`;
+            ctx.lineWidth = 0.9;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
@@ -77,14 +78,14 @@ export function NodeField({
           }
         }
         const pd = Math.hypot(a.x - pointer.x, a.y - pointer.y);
-        const near = pd < 150 ? 1 - pd / 150 : 0;
-        ctx.fillStyle = `rgba(0,230,118,${0.28 + near * 0.5})`;
+        const near = pd < 170 ? 1 - pd / 170 : 0;
+        ctx.fillStyle = `rgba(0,230,118,${(0.55 + near * 0.45) * intensity})`;
         ctx.beginPath();
-        ctx.arc(a.x, a.y, a.r + near * 1.2, 0, Math.PI * 2);
+        ctx.arc(a.x, a.y, a.r + near * 1.6, 0, Math.PI * 2);
         ctx.fill();
-        if (near > 0.4) {
-          ctx.strokeStyle = `rgba(0,230,118,${(near - 0.4) * 0.5})`;
-          ctx.lineWidth = 0.6;
+        if (near > 0.25) {
+          ctx.strokeStyle = `rgba(0,230,118,${(near - 0.25) * 0.8 * intensity})`;
+          ctx.lineWidth = 0.9;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(pointer.x, pointer.y);
@@ -117,7 +118,7 @@ export function NodeField({
       window.removeEventListener('pointermove', onPointer);
       window.removeEventListener('pointerleave', onLeave);
     };
-  }, [density]);
+  }, [density, intensity]);
 
   return (
     <canvas
