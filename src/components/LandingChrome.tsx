@@ -30,9 +30,10 @@ export function LandingNavbar() {
   const navItems = [
     { id: 'que-es', label: 'Qué es' },
     { id: 'como-funciona', label: 'Cómo funciona' },
-    { id: 'ventajas', label: 'Comparativa' },
+    { id: 'territorio', label: 'Zonas' },
     { id: 'faq', label: 'FAQ' },
   ];
+
 
   return (
     <header
