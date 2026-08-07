@@ -119,15 +119,17 @@ export default function Landing() {
           }}
         />
         <div className="relative max-w-4xl mx-auto px-5 md:px-8 text-center">
-          <h1 className="font-extrabold leading-[1.02] tracking-tight text-[44px] md:text-[68px] lg:text-[78px]">
-            Nadie levanta un oficio
+          <h1 className="font-extrabold leading-[1.05] tracking-tight text-[38px] md:text-[58px] lg:text-[66px]">
+            Trabajar bien abre puertas.
             <br />
-            <span style={{ color: GREEN }}>completamente solo.</span>
+            <span style={{ color: GREEN }}>Que otros hablen bien de ti las mantiene abiertas.</span>
           </h1>
           <p className="mt-8 text-lg md:text-xl text-white/70 leading-relaxed max-w-2xl mx-auto">
-            RUANA conecta a los profesionales de un mismo barrio para que se pasen trabajo entre
-            ellos. Una plaza por oficio y código postal. Se entra con código o solicitando acceso.
+            RUANA reúne a profesionales de una misma zona para colaborar, recomendarse trabajo y
+            ganarse una posición dentro de la red. El acceso es por invitación o solicitud, y cada
+            posición se mantiene con resultados.
           </p>
+
           <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
             <PrimaryCTA />
             <CodeLink />
