@@ -16,7 +16,7 @@ import {
   ScoreLedger,
   JobFlow,
   InvitePanel,
-  AllyGrowth,
+  ScoreLevers,
   NetworkGraph,
 } from '@/components/SystemVisuals';
 
@@ -271,7 +271,7 @@ export default function Landing() {
           </div>
 
           <div className="mt-20 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <AllyGrowth />
+            <ScoreLevers />
             <div>
               <h3 className="text-xl md:text-2xl font-bold tracking-tight">
                 Un aliado no entra hecho: se hace.
