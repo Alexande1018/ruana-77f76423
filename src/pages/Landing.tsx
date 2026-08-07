@@ -274,13 +274,14 @@ export default function Landing() {
             <ScoreLevers />
             <div>
               <h3 className="text-xl md:text-2xl font-bold tracking-tight">
-                Un aliado no entra hecho: se hace.
+                Cuanto mejor trabajas, más te llega.
               </h3>
               <p className="mt-4 text-white/65 leading-relaxed">
-                Casi nadie empieza siendo titular. Se entra en espera o de suplente, se responde
-                rápido, se cierran encargos y la plaza acaba llegando. Aquí la antigüedad no vale
-                nada; el historial, todo.
+                Cierra encargos, contesta rápido y recomienda bien: el Score sube. Y cuanto más
+                sube, mejor es lo que te toca —de esperar turno a ser el primero al que llaman en
+                tu oficio y tu código postal.
               </p>
+
             </div>
           </div>
         </div>
