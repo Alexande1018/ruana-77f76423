@@ -200,53 +200,77 @@ export function InvitePanel() {
   );
 }
 
-/** Evolución de un aliado en el tiempo. */
-export function AllyGrowth() {
-  const stages = [
-    { m: 'Mes 1', s: 'En espera', v: 18 },
-    { m: 'Mes 2', s: 'Suplente', v: 40 },
-    { m: 'Mes 4', s: 'Suplente activo', v: 66 },
-    { m: 'Mes 7', s: 'Titular de zona', v: 92 },
+/** Qué sube el Score y qué desbloquea al subir. */
+export function ScoreLevers() {
+  const levers = [
+    { t: 'Cierras más encargos', v: '+10 cada uno' },
+    { t: 'Contestas en menos de 2 h', v: '+3' },
+    { t: 'Recomiendas y sale bien', v: '+4' },
+    { t: 'El cliente confirma el trabajo', v: '+5' },
+    { t: 'Dejas un encargo sin respuesta', v: '−6', neg: true },
+  ];
+  const unlocks = [
+    { s: '0 – 300', u: 'Estás en espera: ves la red y recibes encargos sueltos.' },
+    { s: '300 – 600', u: 'Suplente: entras cuando el titular no puede.' },
+    { s: '600 – 800', u: 'Suplente activo: te llegan encargos directos de tu zona.' },
+    { s: '+800', u: 'Titular: primera opción del oficio en tu código postal.' },
   ];
   return (
     <div className={cardBase} style={cardStyle}>
       <div className="p-5 md:p-6">
-        <PanelHeader label="Cómo evoluciona un aliado" right="caso tipo" />
-        <div className="grid grid-cols-4 gap-2 items-end h-32 mb-3">
-          {stages.map((s, i) => (
-            <div key={s.m} className="flex flex-col justify-end h-full">
-              <div
-                className="rounded-t-md w-full transition-all"
-                style={{
-                  height: `${s.v}%`,
-                  background:
-                    i === stages.length - 1
-                      ? `linear-gradient(180deg, ${GREEN}, rgba(0,230,118,0.35))`
-                      : 'rgba(0,230,118,0.18)',
-                  border: '1px solid rgba(0,230,118,0.25)',
-                  borderBottom: 'none',
-                }}
-              />
-            </div>
-          ))}
-        </div>
-        <div className="grid grid-cols-4 gap-2">
-          {stages.map((s, i) => (
-            <div key={s.m}>
-              <div className="text-[11px] text-white/40">{s.m}</div>
-              <div
-                className="text-[11px] font-medium leading-tight"
-                style={{ color: i === stages.length - 1 ? GREEN : 'rgba(255,255,255,0.7)' }}
+        <PanelHeader label="Qué mueve tu Score" right="y qué desbloquea" />
+        <ul className="space-y-2">
+          {levers.map((l) => (
+            <li
+              key={l.t}
+              className="flex items-center gap-3 rounded-lg px-3 py-2.5 border"
+              style={{
+                backgroundColor: 'rgba(13,17,23,0.5)',
+                borderColor: 'rgba(255,255,255,0.06)',
+              }}
+            >
+              <span className="text-[13px] text-white/80 flex-1 min-w-0">{l.t}</span>
+              <span
+                className="text-[13px] font-semibold tabular-nums shrink-0"
+                style={{ color: l.neg ? 'rgba(255,255,255,0.45)' : GREEN }}
               >
-                {s.s}
-              </div>
-            </div>
+                {l.v}
+              </span>
+            </li>
           ))}
+        </ul>
+
+        <div className="mt-5 pt-5 border-t" style={{ borderColor: 'rgba(255,255,255,0.07)' }}>
+          <ol className="relative pl-5 space-y-4">
+            <span
+              aria-hidden
+              className="absolute left-[3px] top-1.5 bottom-1.5 w-px"
+              style={{ background: `linear-gradient(rgba(0,230,118,0.12), ${GREEN})` }}
+            />
+            {unlocks.map((u, i) => (
+              <li key={u.s} className="relative">
+                <span
+                  className="absolute -left-5 top-1.5 h-2 w-2 rounded-full"
+                  style={{
+                    backgroundColor: i === unlocks.length - 1 ? GREEN : 'rgba(0,230,118,0.3)',
+                  }}
+                />
+                <div
+                  className="text-[12px] font-semibold tabular-nums"
+                  style={{ color: i === unlocks.length - 1 ? GREEN : 'rgba(255,255,255,0.6)' }}
+                >
+                  {u.s}
+                </div>
+                <div className="text-[12px] text-white/55 leading-relaxed">{u.u}</div>
+              </li>
+            ))}
+          </ol>
         </div>
       </div>
     </div>
   );
 }
+
 
 /** Red de aliados dibujada: nodos con nombre y oficio, unidos por encargos. */
 export function NetworkGraph({ className = '' }: { className?: string }) {
