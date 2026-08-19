@@ -19,6 +19,8 @@ import {
   ScoreLevers,
   NetworkGraph,
 } from '@/components/SystemVisuals';
+import { TradeCategories } from '@/components/TradeCategories';
+import { AllyCards } from '@/components/AllyCards';
 
 const APP_URL = 'https://ruana-4293f.web.app';
 
@@ -199,6 +201,39 @@ export default function Landing() {
             </div>
           </div>
           <NetworkGraph />
+        </div>
+      </Section>
+
+      {/* ============ OFICIOS ============ */}
+      <Section className="pb-20 md:pb-28">
+        <div className="max-w-6xl mx-auto px-5 md:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-9">
+            <h2 className="text-2xl md:text-[34px] font-bold tracking-tight leading-[1.1] max-w-2xl">
+              Oficios que ya tienen plaza abierta en Madrid.
+            </h2>
+            <p className="text-white/50 text-sm md:text-base md:text-right md:max-w-xs">
+              Una plaza por oficio en cada código postal. Si el tuyo no está, dilo al solicitar
+              acceso.
+            </p>
+          </div>
+          <TradeCategories />
+        </div>
+      </Section>
+
+      {/* ============ ALIADOS Y RECOMENDACIONES ============ */}
+      <Section className="relative overflow-hidden py-20 md:py-28">
+        <div className="absolute inset-0" style={{ backgroundColor: BG_ALT }} />
+        <div className="relative max-w-6xl mx-auto px-5 md:px-8">
+          <h2 className="text-3xl md:text-[42px] font-bold tracking-tight leading-[1.06] max-w-3xl">
+            Aquí nadie se presenta solo: lo presenta otro aliado.
+          </h2>
+          <p className="mt-6 text-white/65 text-base md:text-lg leading-relaxed max-w-2xl">
+            Cada perfil de la red lleva detrás el nombre de quien responde por él, el trabajo que
+            hace y la zona donde lo hace. Así se ve un aliado por dentro.
+          </p>
+          <div className="mt-12">
+            <AllyCards />
+          </div>
         </div>
       </Section>
 
