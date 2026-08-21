@@ -1,38 +1,9 @@
-import { motion, type Variants } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { LandingNavbar, LandingFooter } from '@/components/LandingChrome';
 import { BG, BG_ALT, GREEN } from '@/lib/landingTheme';
 import { RequestAccessButton } from '@/components/RequestAccessButton';
 import { AppShot } from '@/components/AppShot';
 import { FUNDADOR_APP_URL, FUNDADOR_CODE, INAUGURAL_PHASE_ACTIVE } from '@/lib/inauguralPhase';
-
-const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 16 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } },
-};
-
-function Section({
-  children,
-  className = '',
-  id,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  id?: string;
-}) {
-  return (
-    <motion.section
-      id={id}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.16 }}
-      variants={fadeUp}
-      className={className}
-    >
-      {children}
-    </motion.section>
-  );
-}
 
 function PrimaryCTA({ children = 'Solicitar acceso' }: { children?: React.ReactNode }) {
   return (
@@ -65,7 +36,7 @@ export default function Landing() {
     <div className="min-h-screen text-white" style={{ backgroundColor: BG }}>
       <LandingNavbar />
 
-      <section className="relative overflow-hidden pt-32 md:pt-40 pb-16 md:pb-20">
+      <section className="relative overflow-hidden pt-28 md:pt-36 pb-16 md:pb-20">
         <div
           aria-hidden
           className="absolute inset-0 pointer-events-none"
@@ -75,70 +46,69 @@ export default function Landing() {
           }}
         />
         <div className="relative max-w-3xl mx-auto px-5 md:px-8 text-center">
-          <h1 className="font-extrabold leading-[1.08] tracking-tight text-[34px] md:text-[52px] lg:text-[58px]">
+          <h1 className="font-extrabold leading-[1.12] tracking-tight text-[32px] md:text-[48px] lg:text-[54px]">
             ¿Tienes un negocio u oficio y quieres tener más clientes de tu zona?
           </h1>
-          <p className="mt-7 text-lg md:text-xl text-white/72 leading-relaxed max-w-2xl mx-auto">
+          <p className="mt-6 text-lg md:text-xl text-white/72 leading-relaxed max-w-2xl mx-auto">
             En RUANA, otros profesionales pueden ayudarte a conseguirlos.
           </p>
 
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
+          <div className="mt-9 flex flex-wrap items-center justify-center gap-6">
             <PrimaryCTA />
             <CodeLink />
           </div>
           {INAUGURAL_PHASE_ACTIVE ? (
-            <p className="mt-6 text-sm text-white/42 leading-relaxed">
+            <p className="mt-5 text-sm text-white/42 leading-relaxed">
               Ahora puedes entrar con el código{' '}
-              <span className="font-mono tracking-[0.18em]" style={{ color: GREEN }}>
+              <span className="font-mono font-semibold tracking-wide" style={{ color: GREEN }}>
                 {FUNDADOR_CODE}
               </span>
               .
             </p>
           ) : (
-            <p className="mt-6 text-sm text-white/42">Para profesionales y pequeños negocios de la misma zona.</p>
+            <p className="mt-5 text-sm text-white/42">Para profesionales y pequeños negocios de la misma zona.</p>
           )}
         </div>
 
-        <div className="relative max-w-5xl mx-auto px-5 md:px-8 mt-14 md:mt-16">
+        <div className="relative max-w-5xl mx-auto px-5 md:px-8 mt-12 md:mt-14">
           <AppShot
             src="/landing/07-directorio-red.png"
             alt="Directorio de RUANA: un fontanero, un electricista y una pintora de la misma zona."
             caption="Profesionales de oficios distintos, de la misma zona. Así se ve la red."
-            priority
           />
         </div>
       </section>
 
-      <Section className="py-20 md:py-28" id="que-es">
+      <section className="py-20 md:py-28" id="que-es">
         <div className="max-w-2xl mx-auto px-5 md:px-8">
-          <p className="text-[17px] md:text-[19px] text-white/78 leading-[1.7]">
+          <p className="text-[17px] md:text-[19px] text-white/78 leading-[1.75]">
             Imagínate que eres fontanero y conoces a un electricista, un pintor y un fotógrafo de tu
             zona.
           </p>
-          <p className="mt-6 text-[17px] md:text-[19px] text-white/78 leading-[1.7]">
+          <p className="mt-6 text-[17px] md:text-[19px] text-white/78 leading-[1.75]">
             Cuando ellos necesiten a alguien de confianza para un trabajo, pueden contar contigo.
           </p>
-          <p className="mt-6 text-[17px] md:text-[19px] text-white/78 leading-[1.7]">
+          <p className="mt-6 text-[17px] md:text-[19px] text-white/78 leading-[1.75]">
             Y tú puedes hacer lo mismo con ellos.
           </p>
 
-          <h2 className="mt-14 text-2xl md:text-[34px] font-bold tracking-tight leading-[1.15]">
+          <h2 className="mt-14 text-2xl md:text-[34px] font-bold tracking-tight leading-[1.2]">
             Así funciona RUANA.
           </h2>
-          <p className="mt-5 text-[17px] md:text-[19px] text-white/70 leading-[1.7]">
+          <p className="mt-5 text-[17px] md:text-[19px] text-white/70 leading-[1.75]">
             Profesionales de distintos oficios que se conocen, se ayudan y se pasan oportunidades de
             trabajo.
           </p>
         </div>
-      </Section>
+      </section>
 
-      <Section className="py-20 md:py-28" id="diferencia">
+      <section className="py-8 md:py-12" id="diferencia">
         <div className="max-w-5xl mx-auto px-5 md:px-8">
           <div
             className="rounded-[28px] px-6 py-12 md:px-12 md:py-16"
             style={{ backgroundColor: BG_ALT }}
           >
-            <h2 className="text-2xl md:text-[32px] font-bold tracking-tight leading-[1.15] max-w-xl">
+            <h2 className="text-2xl md:text-[32px] font-bold tracking-tight leading-[1.2] max-w-xl">
               No es un grupo de WhatsApp. Tampoco un directorio.
             </h2>
             <div className="mt-12 grid md:grid-cols-3 gap-10 md:gap-12">
@@ -165,19 +135,19 @@ export default function Landing() {
             </div>
           </div>
         </div>
-      </Section>
+      </section>
 
-      <Section className="py-20 md:py-28" id="confianza">
+      <section className="py-20 md:py-28" id="confianza">
         <div className="max-w-5xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
-            <p className="text-[17px] md:text-[19px] text-white/78 leading-[1.7]">
+            <p className="text-[17px] md:text-[19px] text-white/78 leading-[1.75]">
               En tu zona no queremos juntar a cientos de profesionales haciendo lo mismo.
             </p>
-            <p className="mt-6 text-[17px] md:text-[19px] text-white/78 leading-[1.7]">
+            <p className="mt-6 text-[17px] md:text-[19px] text-white/78 leading-[1.75]">
               Queremos construir una red donde los profesionales puedan conocerse y confiar unos en
               otros.
             </p>
-            <p className="mt-12 text-3xl md:text-[42px] font-bold tracking-tight leading-[1.15]">
+            <p className="mt-12 text-3xl md:text-[42px] font-bold tracking-tight leading-[1.2]">
               Menos desconocidos.
               <br />
               <span style={{ color: GREEN }}>Más profesionales de confianza.</span>
@@ -189,11 +159,11 @@ export default function Landing() {
             caption="Oficio, zona y un nombre. Gente que trabaja, no una lista infinita."
           />
         </div>
-      </Section>
+      </section>
 
-      <Section className="py-20 md:py-24">
+      <section className="py-20 md:py-24">
         <div className="max-w-2xl mx-auto px-5 md:px-8">
-          <h2 className="text-3xl md:text-[40px] font-bold tracking-tight leading-[1.12]">
+          <h2 className="text-3xl md:text-[40px] font-bold tracking-tight leading-[1.15]">
             No pagas por estar aquí.
             <br />
             <span style={{ color: GREEN }}>RUANA gana cuando tú ganas.</span>
@@ -203,7 +173,7 @@ export default function Landing() {
             red, hay un apoyo del 12%. Si no hay trabajo, no hay cobro.
           </p>
         </div>
-      </Section>
+      </section>
 
       <section className="relative overflow-hidden py-24 md:py-32" style={{ backgroundColor: BG_ALT }}>
         <div
@@ -214,7 +184,7 @@ export default function Landing() {
           }}
         />
         <div className="relative max-w-2xl mx-auto px-5 md:px-8 text-center">
-          <h2 className="text-3xl md:text-[42px] font-bold tracking-tight leading-[1.12]">
+          <h2 className="text-3xl md:text-[42px] font-bold tracking-tight leading-[1.15]">
             Si tienes un oficio y quieres una red de tu zona, entra.
           </h2>
           <p className="mt-6 text-white/65 text-base md:text-lg leading-relaxed">

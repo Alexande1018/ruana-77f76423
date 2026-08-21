@@ -2,12 +2,11 @@ type Props = {
   src: string;
   alt: string;
   caption?: string;
-  priority?: boolean;
   className?: string;
 };
 
 /** Captura real de la app, como apoyo al mensaje. */
-export function AppShot({ src, alt, caption, priority = false, className = '' }: Props) {
+export function AppShot({ src, alt, caption, className = '' }: Props) {
   return (
     <figure className={className}>
       <div
@@ -21,9 +20,9 @@ export function AppShot({ src, alt, caption, priority = false, className = '' }:
           src={src}
           alt={alt}
           width={1440}
-          height={900}
+          height={780}
           className="block w-full h-auto"
-          loading={priority ? 'eager' : 'lazy'}
+          loading="eager"
           decoding="async"
         />
       </div>
