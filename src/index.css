@@ -209,3 +209,32 @@
     background-color: hsl(var(--paper));
   }
 }
+
+@keyframes landing-fundador-shimmer {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: translateX(-8%);
+  }
+  50% {
+    opacity: 0.55;
+    transform: translateX(8%);
+  }
+}
+
+.landing-fundador-shimmer {
+  background: linear-gradient(
+    105deg,
+    transparent 35%,
+    rgba(0, 230, 118, 0.12) 50%,
+    transparent 65%
+  );
+  animation: landing-fundador-shimmer 8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-fundador-shimmer {
+    animation: none;
+    opacity: 0.2;
+  }
+}

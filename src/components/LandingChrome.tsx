@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Network, Menu, X } from 'lucide-react';
 import { RequestAccessButton } from '@/components/RequestAccessButton';
+import { INAUGURAL_PHASE_ACTIVE } from '@/lib/inauguralPhase';
 import { BG, BG_ALT, GREEN, GREEN_DARK } from '@/lib/landingTheme';
 
 export { BG, BG_ALT, GREEN, GREEN_DARK };
@@ -27,7 +28,9 @@ export function LandingNavbar() {
 
   const navItems = [
     { id: 'como-funciona', label: 'Cómo funciona' },
+    { id: 'oportunidades', label: 'Oportunidades' },
     { id: 'diferencia', label: 'Por qué RUANA' },
+    ...(INAUGURAL_PHASE_ACTIVE ? [{ id: 'fundador', label: 'Código Fundador' }] : []),
     { id: 'entrar', label: 'Entrar' },
   ];
 
