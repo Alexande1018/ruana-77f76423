@@ -20,9 +20,9 @@ export function PanelHeader({ label, right }: { label: string; right?: string })
 /** Cómo funciona una plaza: un titular, un suplente, el resto espera. */
 export function SeatPanel() {
   const rows = [
-    { name: 'Electricidad · 28004', who: 'Marcos R.', state: 'Titular', score: 847 },
-    { name: 'Electricidad · 28004', who: 'Ana P.', state: 'Suplente', score: 612 },
-    { name: 'Electricidad · 28004', who: 'Tú', state: 'En espera', score: null },
+    { name: 'Electricidad · zona centro', who: 'Aliado 1', state: 'Titular', score: 847 },
+    { name: 'Electricidad · zona centro', who: 'Aliado 2', state: 'Suplente', score: 612 },
+    { name: 'Electricidad · zona centro', who: 'Tú', state: 'En espera', score: null },
   ];
   return (
     <div className={cardBase} style={cardStyle}>
@@ -80,9 +80,9 @@ export function SeatPanel() {
 /** Cómo funciona el Score: movimientos reales, no likes. */
 export function ScoreLedger() {
   const moves = [
-    { t: 'Encargo cerrado · reforma baño', v: '+10', who: 'referido por Marcos R.' },
+    { t: 'Encargo cerrado · reforma baño', v: '+10', who: 'referido por un aliado' },
     { t: 'Cliente confirma resultado', v: '+5', who: 'valoración 5/5' },
-    { t: 'Recomendación aceptada', v: '+4', who: 'a Lucía G. · 28012' },
+    { t: 'Recomendación aceptada', v: '+4', who: 'a otro aliado · zona sur' },
     { t: 'No respondes en 48 h', v: '-6', who: 'encargo devuelto a la red', neg: true },
   ];
   return (
@@ -129,10 +129,10 @@ export function ScoreLedger() {
 /** Cómo se mueve un encargo dentro de la red. */
 export function JobFlow() {
   const steps = [
-    { t: 'Un cliente pide un electricista', s: 'Zona 28004 · lunes 10:12' },
-    { t: 'Marcos no puede: lo pasa a la red', s: 'Queda registrado quién lo pasa' },
+    { t: 'Un cliente pide un electricista', s: 'Zona centro · lunes 10:12' },
+    { t: 'El titular no puede: lo pasa a la red', s: 'Queda registrado quién lo pasa' },
     { t: 'Te llega a ti, titular del oficio', s: 'Aceptas en 9 minutos' },
-    { t: 'Cierras el trabajo', s: 'Marcos suma. Tú sumas. El cliente vuelve.' },
+    { t: 'Cierras el trabajo', s: 'El aliado suma. Tú sumas. El cliente vuelve.' },
   ];
   return (
     <div className={cardBase} style={cardStyle}>

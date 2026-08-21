@@ -445,7 +445,7 @@ export default function Landing() {
               },
               {
                 q: '¿Con qué zonas estáis funcionando?',
-                a: 'Arrancamos por Madrid, barrio a barrio. Si tu código postal aún no está abierto, tu solicitud ayuda a decidir cuál abrimos después.',
+                a: 'Arrancamos zona a zona, barrio a barrio. Si tu código postal aún no está abierto, tu solicitud ayuda a decidir cuál abrimos después.',
               },
             ].map((f) => (
               <FAQItem key={f.q} {...f} />
