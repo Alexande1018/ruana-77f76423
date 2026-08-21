@@ -1,51 +1,37 @@
-import { useState } from 'react';
 import { motion, type Variants } from 'framer-motion';
-import {
-  ArrowRight,
-  CheckCircle2,
-  Plus,
-  Minus,
-} from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { LandingNavbar, LandingFooter } from '@/components/LandingChrome';
 import { BG, BG_ALT, GREEN } from '@/lib/landingTheme';
 import { RequestAccessButton } from '@/components/RequestAccessButton';
-import { DensityMap } from '@/components/DensityMap';
-import { NodeField } from '@/components/NodeField';
-import {
-  SeatPanel,
-  ScoreLedger,
-  JobFlow,
-  InvitePanel,
-  ScoreLevers,
-  NetworkGraph,
-} from '@/components/SystemVisuals';
-import { TradeCategories } from '@/components/TradeCategories';
-import { AllyCards } from '@/components/AllyCards';
+import { INAUGURAL_PHASE_ACTIVE, FUNDADOR_APP_URL, FUNDADOR_CODE } from '@/lib/inauguralPhase';
 
 const APP_URL = 'https://ruana-4293f.web.app';
 
 const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 22 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
+  hidden: { opacity: 0, y: 18 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } },
 };
 
 function Section({
   children,
   className = '',
   id,
+  alt = false,
 }: {
   children: React.ReactNode;
   className?: string;
   id?: string;
+  alt?: boolean;
 }) {
   return (
     <motion.section
       id={id}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.12 }}
+      viewport={{ once: true, amount: 0.15 }}
       variants={fadeUp}
       className={className}
+      style={alt ? { backgroundColor: BG_ALT } : undefined}
     >
       {children}
     </motion.section>
@@ -55,7 +41,7 @@ function Section({
 function PrimaryCTA({ children = 'Solicitar acceso' }: { children?: React.ReactNode }) {
   return (
     <RequestAccessButton
-      className="px-6 py-3.5 rounded-lg font-semibold text-base text-black transition-all duration-200 hover:shadow-[0_0_28px_rgba(0,230,118,0.45)] hover:-translate-y-[1px]"
+      className="px-6 py-3.5 rounded-lg font-semibold text-base text-black transition-all duration-200 hover:shadow-[0_0_28px_rgba(0,230,118,0.4)] hover:-translate-y-[1px]"
       style={{ backgroundColor: GREEN }}
     >
       {children}
@@ -78,28 +64,24 @@ function CodeLink({ label = 'Ya tengo un código' }: { label?: string }) {
   );
 }
 
-function FAQItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false);
+function AppScreenshot({
+  src,
+  alt,
+  className = '',
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+}) {
   return (
-    <div className="border-t" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
-      <button
-        onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-start justify-between gap-6 py-5 text-left group"
-      >
-        <span className="text-base md:text-lg font-semibold text-white/90 group-hover:text-white transition">
-          {q}
-        </span>
-        {open ? (
-          <Minus className="h-5 w-5 shrink-0 mt-1" style={{ color: GREEN }} />
-        ) : (
-          <Plus className="h-5 w-5 shrink-0 mt-1 text-white/40 group-hover:text-white/70 transition" />
-        )}
-      </button>
-      {open && (
-        <div className="pb-6 pr-10 text-white/65 text-sm md:text-base leading-relaxed max-w-3xl">
-          {a}
-        </div>
-      )}
+    <div
+      className={`overflow-hidden rounded-xl border shadow-2xl ${className}`}
+      style={{
+        borderColor: 'rgba(255,255,255,0.08)',
+        boxShadow: '0 24px 64px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.04)',
+      }}
+    >
+      <img src={src} alt={alt} className="w-full h-auto block" loading="lazy" />
     </div>
   );
 }
@@ -109,377 +91,209 @@ export default function Landing() {
     <div className="min-h-screen text-white" style={{ backgroundColor: BG }}>
       <LandingNavbar />
 
-      {/* ============ HERO: la red, viva y visible ============ */}
-      <section className="relative overflow-hidden pt-32 md:pt-44 pb-20 md:pb-28">
-        <NodeField density={0.00022} />
+      {/* 1. Hero */}
+      <section className="relative pt-28 md:pt-36 pb-16 md:pb-24">
         <div
           aria-hidden
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'radial-gradient(ellipse at 50% 0%, rgba(0,230,118,0.16), transparent 60%), radial-gradient(ellipse at 10% 100%, rgba(0,230,118,0.07), transparent 55%)',
+              'radial-gradient(ellipse at 70% 0%, rgba(0,230,118,0.08), transparent 55%)',
           }}
         />
-        <div className="relative max-w-4xl mx-auto px-5 md:px-8 text-center">
-          <h1 className="font-extrabold leading-[1.05] tracking-tight text-[38px] md:text-[58px] lg:text-[66px]">
-            ¿Tienes un negocio u oficio
-            <br />
-            y quieres tener más clientes
-            <br />
-            <span style={{ color: GREEN }}>de tu zona?</span>
-          </h1>
-          <p className="mt-8 text-lg md:text-xl text-white/70 leading-relaxed max-w-2xl mx-auto">
-            En RUANA, otros profesionales pueden ayudarte a conseguirlos.
-          </p>
-
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
-            <PrimaryCTA />
-            <CodeLink />
+        <div className="relative max-w-6xl mx-auto px-5 md:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="max-w-xl">
+              <h1 className="font-bold leading-[1.08] tracking-tight text-[34px] md:text-[48px] lg:text-[52px]">
+                ¿Tienes un negocio u oficio y quieres tener más clientes de tu zona?
+              </h1>
+              <p className="mt-6 text-lg md:text-xl text-white/75 leading-relaxed">
+                En RUANA, otros profesionales pueden ayudarte a conseguirlos.
+              </p>
+              <div className="mt-9 flex flex-wrap items-center gap-5">
+                <PrimaryCTA />
+                <CodeLink />
+              </div>
+            </div>
+            <AppScreenshot
+              src="/landing/01-dashboard-aliado.png"
+              alt="Acceso real a RUANA"
+              className="lg:max-w-sm lg:ml-auto opacity-95"
+            />
           </div>
-          <p className="mt-6 text-sm text-white/40">
-            Zona a zona. Las plazas por oficio son limitadas.
-          </p>
         </div>
       </section>
 
-      {/* ============ FUNDADOR ============ */}
-      <Section className="pb-20 md:pb-24">
-        <div className="max-w-6xl mx-auto px-5 md:px-8">
-          <div
-            className="relative overflow-hidden rounded-2xl border px-6 py-6 md:px-8 md:py-7 flex flex-col md:flex-row md:items-center gap-6"
-            style={{
-              borderColor: 'rgba(0,230,118,0.3)',
-              background:
-                'linear-gradient(120deg, rgba(0,230,118,0.10) 0%, rgba(13,17,23,0.7) 55%)',
-            }}
-          >
-            <div className="flex-1">
-              <h3 className="text-lg md:text-xl font-bold tracking-tight">
-                Estamos abriendo las primeras plazas con el código{' '}
-                <span className="font-mono tracking-[0.2em]" style={{ color: GREEN }}>
-                  FUNDADOR
-                </span>
-              </h3>
-              <p className="mt-2 text-white/60 text-sm leading-relaxed max-w-2xl">
-                Entra en la app, introduce el código y completa tu registro como aliado fundador
-                de tu zona.
-              </p>
-            </div>
-            <a
-              href={APP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-base text-black transition-all duration-200 hover:shadow-[0_0_24px_rgba(0,230,118,0.45)]"
-              style={{ backgroundColor: GREEN }}
+      {/* Banner fundador — solo fase inaugural */}
+      {INAUGURAL_PHASE_ACTIVE && (
+        <Section className="pb-16 md:pb-20">
+          <div className="max-w-6xl mx-auto px-5 md:px-8">
+            <div
+              className="rounded-xl border px-6 py-5 md:px-7 md:py-6 flex flex-col sm:flex-row sm:items-center gap-5"
+              style={{
+                borderColor: 'rgba(0,230,118,0.25)',
+                backgroundColor: 'rgba(0,230,118,0.06)',
+              }}
             >
-              Entrar con código <ArrowRight className="h-4 w-4" />
-            </a>
-          </div>
-        </div>
-      </Section>
-
-      {/* ============ ASÍ FUNCIONA ============ */}
-      <Section className="py-20 md:py-28" id="que-es">
-        <div className="max-w-6xl mx-auto px-5 md:px-8">
-          <h2 className="text-3xl md:text-[46px] font-bold tracking-tight leading-[1.05] max-w-3xl">
-            Un fontanero necesita un electricista.
-            <br />
-            Un electricista necesita un pintor.
-            <br />
-            <span style={{ color: GREEN }}>Y todos necesitan clientes.</span>
-          </h2>
-          <p className="mt-7 text-white/70 text-base md:text-lg leading-relaxed max-w-3xl">
-            Un fontanero necesita un electricista. Un electricista necesita un pintor. Un pintor
-            necesita un fotógrafo para su portfolio. Así funciona el boca a boca de siempre: cada
-            oficio conoce a alguien de otro oficio que le hace falta, tarde o temprano.
-          </p>
-          <p className="mt-4 text-white/70 text-base md:text-lg leading-relaxed max-w-3xl">
-            En RUANA, esos profesionales de tu zona pueden encontrarse, conocerse y ayudarse — y
-            cuando uno tiene un cliente que necesita otro oficio, se lo puede pasar directamente.
-          </p>
-          <p className="mt-4 text-white/50 text-base md:text-lg leading-relaxed max-w-3xl">
-            RUANA no es un directorio donde apareces entre cientos de desconocidos, ni un
-            marketplace abierto a cualquiera. Es una red de profesionales de tu zona que se conocen
-            entre ellos y se pasan trabajo.
-          </p>
-          <div className="mt-9 flex flex-wrap items-center gap-6">
-            <PrimaryCTA>Quiero mi plaza</PrimaryCTA>
-          </div>
-        </div>
-      </Section>
-
-      {/* ============ OFICIOS ============ */}
-      <Section className="pb-20 md:pb-28">
-        <div className="max-w-6xl mx-auto px-5 md:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-9">
-            <h2 className="text-2xl md:text-[34px] font-bold tracking-tight leading-[1.1] max-w-2xl">
-              Oficios con plaza abierta.
-            </h2>
-            <p className="text-white/50 text-sm md:text-base md:text-right md:max-w-xs">
-              Una plaza por oficio en cada código postal. Si el tuyo no está, dilo al solicitar
-              acceso.
-            </p>
-          </div>
-          <TradeCategories />
-        </div>
-      </Section>
-
-      {/* ============ ALIADOS Y RECOMENDACIONES ============ */}
-      <Section className="relative overflow-hidden py-20 md:py-28">
-        <div className="absolute inset-0" style={{ backgroundColor: BG_ALT }} />
-        <div className="relative max-w-6xl mx-auto px-5 md:px-8">
-          <h2 className="text-3xl md:text-[42px] font-bold tracking-tight leading-[1.06] max-w-3xl">
-            Así es como se pasa trabajo de verdad.
-          </h2>
-          <p className="mt-6 text-white/65 text-base md:text-lg leading-relaxed max-w-2xl">
-            No son citas de nadie. Son situaciones cotidianas: alguien tiene un cliente, le falta un
-            oficio de confianza, y se lo pasa a otro profesional de su zona.
-          </p>
-          <div className="mt-12">
-            <AllyCards />
-          </div>
-        </div>
-      </Section>
-
-      {/* ============ LA PLAZA ============ */}
-      <Section className="relative overflow-hidden py-20 md:py-28">
-        <div className="absolute inset-0" style={{ backgroundColor: BG_ALT }} />
-        <NodeField density={0.00012} opacity={0.5} intensity={0.8} />
-        <div className="relative max-w-6xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <SeatPanel />
-          <div className="lg:order-first">
-            <h2 className="text-3xl md:text-[42px] font-bold tracking-tight leading-[1.06]">
-              Un oficio. Un código postal. Una plaza.
-            </h2>
-            <p className="mt-6 text-white/70 text-base md:text-lg leading-relaxed">
-              En cada zona hay un titular por oficio y un suplente esperando. Nadie cruza la ciudad
-              para colgar una lámpara, así que compites por una plaza, no contra media España.
-            </p>
-            <ul className="mt-7 space-y-3">
-              {[
-                'Si el titular deja de responder, la plaza pasa al suplente.',
-                'Si tu zona está llena, entras en espera con prioridad.',
-                'Cuando entras, entras con los que ya trabajan en tu calle.',
-              ].map((t) => (
-                <li key={t} className="flex gap-3 text-white/70 text-[15px]">
-                  <CheckCircle2 className="h-5 w-5 mt-0.5 shrink-0" style={{ color: GREEN }} />
-                  {t}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </Section>
-
-      {/* ============ EL ENCARGO Y EL SCORE ============ */}
-      <Section className="py-20 md:py-28" id="como-funciona">
-        <div className="max-w-6xl mx-auto px-5 md:px-8">
-          <h2 className="text-3xl md:text-[46px] font-bold tracking-tight leading-[1.05] max-w-3xl">
-            Un encargo entra en la red y se puede seguir con el dedo.
-          </h2>
-
-          <div className="mt-14 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <JobFlow />
-            <div>
-              <h3 className="text-xl md:text-2xl font-bold tracking-tight">
-                Quien lo pasa también gana.
-              </h3>
-              <p className="mt-4 text-white/65 leading-relaxed">
-                Cuando un aliado no puede atender algo, lo suelta a la red. Queda escrito quién lo
-                pasó, quién lo cogió, cuándo y cómo acabó. Esa huella es la que hace que recomendar
-                te compense de verdad.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-20 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
-              <h3 className="text-xl md:text-2xl font-bold tracking-tight">
-                El Score es la memoria de la red.
-              </h3>
-              <p className="mt-4 text-white/65 leading-relaxed">
-                No cuenta seguidores ni likes. Cuenta trabajos cerrados, clientes contentos,
-                recomendaciones que salieron bien y lo que dejaste tirado. Sube con trabajo y baja
-                con silencio.
-              </p>
-              <p className="mt-4 text-white/50 text-sm leading-relaxed">
-                Tu score decide si eres titular de tu oficio en tu zona o si esperas turno.
-              </p>
-            </div>
-            <ScoreLedger />
-          </div>
-
-          <div className="mt-20 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <ScoreLevers />
-            <div>
-              <h3 className="text-xl md:text-2xl font-bold tracking-tight">
-                Cuanto mejor trabajas, más te llega.
-              </h3>
-              <p className="mt-4 text-white/65 leading-relaxed">
-                Cierra encargos, contesta rápido y recomienda bien: el Score sube. Y cuanto más
-                sube, mejor es lo que te toca —de esperar turno a ser el primero al que llaman en
-                tu oficio y tu código postal.
-              </p>
-
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      {/* ============ TERRITORIO ============ */}
-      <Section className="relative overflow-hidden py-20 md:py-28" id="territorio">
-        <div className="absolute inset-0" style={{ backgroundColor: BG_ALT }} />
-        <div className="relative max-w-6xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div>
-            <h2 className="text-3xl md:text-[42px] font-bold tracking-tight leading-[1.06]">
-              La confianza es de barrio, no de país.
-            </h2>
-            <p className="mt-6 text-white/70 text-base md:text-lg leading-relaxed">
-              Cada celda es un código postal y cuánta gente hay dentro. Abrimos zona por zona: si
-              la tuya aún no está encendida, tu solicitud ayuda a decidir cuál abrimos después.
-            </p>
-          </div>
-          <div>
-            <DensityMap />
-          </div>
-        </div>
-      </Section>
-
-      {/* ============ ENTRADA ============ */}
-      <Section className="py-20 md:py-28">
-        <div className="max-w-6xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <InvitePanel />
-          <div>
-            <h2 className="text-3xl md:text-[42px] font-bold tracking-tight leading-[1.06]">
-              Se entra porque alguien responde por ti.
-            </h2>
-            <p className="mt-6 text-white/70 text-base md:text-lg leading-relaxed">
-              Un aliado te pasa su código, o pides acceso y revisamos tu oficio, tu zona y si hay
-              plaza libre. Quien invita pone su nombre encima del tuyo: por eso nadie invita a la
-              ligera.
-            </p>
-            <div className="mt-9">
-              <PrimaryCTA />
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      {/* ============ MODELO ============ */}
-      <Section className="relative overflow-hidden py-20 md:py-28">
-        <div className="absolute inset-0" style={{ backgroundColor: BG_ALT }} />
-        <div className="relative max-w-4xl mx-auto px-5 md:px-8 text-center">
-          <h2 className="text-3xl md:text-[46px] font-bold tracking-tight leading-[1.05]">
-            Si no cobras, <span style={{ color: GREEN }}>no pagas nada.</span>
-          </h2>
-          <p className="mt-6 text-white/70 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-            RUANA solo gana cuando tú ganas: un 12% sobre el valor de los encargos que cierras
-            gracias a la red. Sin cuota mensual, sin permanencia, sin anuncios, sin pagar por
-            aparecer arriba.
-          </p>
-        </div>
-      </Section>
-
-      {/* ============ VOCES ============ */}
-      <Section className="py-20 md:py-28">
-        <div className="max-w-6xl mx-auto px-5 md:px-8">
-          <h2 className="text-3xl md:text-[42px] font-bold tracking-tight leading-[1.06] max-w-3xl">
-            Así suena la gente que entra.
-          </h2>
-          <div className="mt-12 grid md:grid-cols-3 gap-6">
-            {[
-              {
-                t: '“Llevo 15 años de electricista, pero aquí no me conocía nadie.”',
-                d: 'Entras por una plaza libre de tu zona y empiezas a recibir encargos de aliados que ya trabajan en tu calle.',
-              },
-              {
-                t: '“Trabajo bien, pero hay meses que no sé qué va a pasar.”',
-                d: 'La red te da encargos cualificados sin gastar en anuncios ni bajar precios para ganar el trabajo.',
-              },
-              {
-                t: '“No quiero buscar en internet y cruzar los dedos.”',
-                d: 'Pides el oficio en tu zona y te llega alguien que otro profesional ya ha probado y respalda.',
-              },
-            ].map((c, i) => (
-              <div
-                key={c.t}
-                className="rounded-2xl border p-6 md:p-7"
-                style={{
-                  borderColor: i === 1 ? 'rgba(0,230,118,0.28)' : 'rgba(255,255,255,0.08)',
-                  backgroundColor: i === 1 ? 'rgba(0,230,118,0.05)' : 'rgba(22,27,34,0.65)',
-                }}
-              >
-                <p className="text-white text-[17px] leading-snug font-medium">{c.t}</p>
-                <p className="mt-4 text-white/60 text-sm leading-relaxed">{c.d}</p>
+              <div className="flex-1">
+                <p className="text-base md:text-lg leading-relaxed">
+                  Ahora puedes entrar con el código{' '}
+                  <span className="font-mono font-semibold tracking-wider" style={{ color: GREEN }}>
+                    {FUNDADOR_CODE}
+                  </span>{' '}
+                  y registrarte como aliado fundador de tu zona.
+                </p>
               </div>
-            ))}
+              <a
+                href={FUNDADOR_APP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg font-semibold text-sm text-black transition-all duration-200 hover:shadow-[0_0_20px_rgba(0,230,118,0.4)]"
+                style={{ backgroundColor: GREEN }}
+              >
+                Entrar con código <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </Section>
+      )}
+
+      {/* 2. Explicación natural */}
+      <Section className="py-16 md:py-24" id="como-funciona">
+        <div className="max-w-3xl mx-auto px-5 md:px-8">
+          <div className="space-y-6 text-lg md:text-[21px] leading-[1.65] text-white/80">
+            <p>
+              Imagínate que eres fontanero y conoces a un electricista, un pintor y un fotógrafo de
+              tu zona.
+            </p>
+            <p>
+              Cuando ellos necesiten a alguien de confianza para un trabajo, pueden contar contigo.
+            </p>
+            <p>Y tú puedes hacer lo mismo con ellos.</p>
+          </div>
+
+          <div className="mt-14 pt-10 border-t" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
+            <p className="text-xl md:text-2xl font-semibold text-white leading-snug">
+              Así funciona RUANA.
+            </p>
+            <p className="mt-4 text-lg md:text-[21px] text-white/75 leading-relaxed">
+              Profesionales de distintos oficios que se conocen, se ayudan y se pasan oportunidades
+              de trabajo.
+            </p>
           </div>
         </div>
       </Section>
 
-      {/* ============ FAQ ============ */}
-      <Section className="py-20 md:py-28" id="faq">
-        <div className="max-w-6xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16">
-          <div className="lg:col-span-4">
-            <h2 className="text-3xl md:text-[40px] font-bold tracking-tight leading-[1.06]">
-              Lo que todo el mundo pregunta antes de entrar.
-            </h2>
-          </div>
-          <div className="lg:col-span-7 lg:col-start-6">
-            {[
-              {
-                q: '¿Cuánto cuesta estar en RUANA?',
-                a: 'Nada por estar. Un 12% sobre el valor de los encargos que cierras gracias a la red. Si no cobras, no pagas.',
-              },
-              {
-                q: '¿Y si mi oficio ya tiene titular en mi zona?',
-                a: 'Entras como suplente o en lista de espera con prioridad. Si el titular deja de responder o incumple, la plaza pasa al siguiente.',
-              },
-              {
-                q: '¿Qué pasa si alguien hace un mal trabajo?',
-                a: 'Queda registrado: baja su score, pierde visibilidad y, si se repite, pierde el acceso. Quien lo recomendó también lo nota.',
-              },
-              {
-                q: '¿Puedo entrar sin conocer a nadie?',
-                a: 'Sí. Puedes solicitar acceso directamente y revisamos tu oficio, tu zona y si hay plaza. La invitación acelera el proceso, no es obligatoria.',
-              },
-              {
-                q: '¿Con qué zonas estáis funcionando?',
-                a: 'Arrancamos zona a zona, barrio a barrio. Si tu código postal aún no está abierto, tu solicitud ayuda a decidir cuál abrimos después.',
-              },
-            ].map((f) => (
-              <FAQItem key={f.q} {...f} />
-            ))}
+      {/* 3. La red */}
+      <Section className="py-16 md:py-24" alt>
+        <div className="max-w-3xl mx-auto px-5 md:px-8">
+          <p className="text-lg md:text-[21px] text-white/75 leading-relaxed">
+            En tu zona hay profesionales de otros oficios que ya forman parte de la red. Cuando
+            surge un trabajo, se lo pasan a quien conocen y en quien confían.
+          </p>
+          <p className="mt-5 text-lg md:text-[21px] text-white/75 leading-relaxed">
+            No es un listado infinito. Es gente de tu calle, con la que puedes hablar y trabajar.
+          </p>
+        </div>
+      </Section>
+
+      {/* 4. Diferencia clara */}
+      <Section className="py-16 md:py-24" id="diferencia">
+        <div className="max-w-3xl mx-auto px-5 md:px-8">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-10">
+            ¿En qué se diferencia?
+          </h2>
+          <div className="space-y-8">
+            <div>
+              <p className="text-base font-medium text-white/50 mb-1">WhatsApp</p>
+              <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+                muchos contactos, poca estructura.
+              </p>
+            </div>
+            <div>
+              <p className="text-base font-medium text-white/50 mb-1">Directorios</p>
+              <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+                muchos profesionales, poca confianza.
+              </p>
+            </div>
+            <div
+              className="rounded-xl border px-6 py-5"
+              style={{
+                borderColor: 'rgba(0,230,118,0.28)',
+                backgroundColor: 'rgba(0,230,118,0.05)',
+              }}
+            >
+              <p className="text-base font-medium mb-1" style={{ color: GREEN }}>
+                RUANA
+              </p>
+              <p className="text-lg md:text-xl text-white leading-relaxed">
+                una red de profesionales de tu zona que pueden ayudarse entre ellos.
+              </p>
+            </div>
           </div>
         </div>
       </Section>
 
-      {/* ============ CTA FINAL ============ */}
-      <section className="relative overflow-hidden py-24 md:py-32" style={{ backgroundColor: BG_ALT }}>
-        <NodeField density={0.00018} />
+      {/* 5. Exclusividad / confianza */}
+      <Section className="py-16 md:py-28" alt id="confianza">
+        <div className="max-w-3xl mx-auto px-5 md:px-8">
+          <div className="space-y-5 text-lg md:text-[21px] text-white/75 leading-relaxed">
+            <p>
+              En tu zona no queremos juntar a cientos de profesionales haciendo lo mismo.
+            </p>
+            <p>
+              Queremos construir una red donde los profesionales puedan conocerse y confiar unos
+              en otros.
+            </p>
+          </div>
+          <p className="mt-12 text-2xl md:text-[32px] font-semibold leading-[1.2] tracking-tight">
+            Menos desconocidos.
+            <br />
+            <span style={{ color: GREEN }}>Más profesionales de confianza.</span>
+          </p>
+        </div>
+      </Section>
+
+      {/* 6. Modelo de cobro */}
+      <Section className="py-16 md:py-24" id="modelo">
+        <div className="max-w-2xl mx-auto px-5 md:px-8 text-center">
+          <p className="text-2xl md:text-[34px] font-semibold leading-snug tracking-tight">
+            No pagas por estar aquí.
+          </p>
+          <p className="mt-4 text-xl md:text-2xl leading-snug" style={{ color: GREEN }}>
+            RUANA gana cuando tú ganas.
+          </p>
+          <p className="mt-7 text-base md:text-lg text-white/65 leading-relaxed max-w-xl mx-auto">
+            Sin cuota mensual ni suscripción. Solo aplicas un apoyo del 12% cuando cierras un
+            encargo que te llegó por la red. Si no cobras, no pagas.
+          </p>
+        </div>
+      </Section>
+
+      {/* 7. CTA final */}
+      <section
+        id="entrar"
+        className="relative py-20 md:py-28"
+        style={{ backgroundColor: BG_ALT }}
+      >
         <div
           aria-hidden
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse at 50% 100%, rgba(0,230,118,0.16), transparent 60%)',
+            background: 'radial-gradient(ellipse at 50% 100%, rgba(0,230,118,0.1), transparent 60%)',
           }}
         />
-        <div className="relative max-w-3xl mx-auto px-5 md:px-8 text-center">
-          <h2 className="text-3xl md:text-[46px] font-bold tracking-tight leading-[1.06]">
-            Tu zona tiene una plaza para tu oficio.
-            <br />
-            <span style={{ color: GREEN }}>Alguien la va a ocupar.</span>
+        <div className="relative max-w-2xl mx-auto px-5 md:px-8 text-center">
+          <h2 className="text-2xl md:text-[38px] font-semibold leading-[1.15] tracking-tight">
+            Una red de profesionales de tu zona que puede ayudarte a conseguir trabajo.
           </h2>
-          <p className="mt-6 text-white/65 text-base md:text-lg leading-relaxed">
-            Solicita acceso y te decimos en pocos días si hay sitio en tu código postal.
+          <p className="mt-5 text-base md:text-lg text-white/60 leading-relaxed">
+            Entra, mira cómo funciona en tu zona y decide si te encaja.
           </p>
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-6">
-            <PrimaryCTA />
+          <div className="mt-9 flex flex-wrap items-center justify-center gap-5">
+            <PrimaryCTA>Entrar en RUANA</PrimaryCTA>
             <CodeLink />
           </div>
-          <p className="mt-6 text-sm text-white/40">
-            Sin cuotas. Sin permanencia. Solo pagas cuando la red te trae trabajo.
-          </p>
         </div>
       </section>
 
