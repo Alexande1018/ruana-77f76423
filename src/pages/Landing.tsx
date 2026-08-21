@@ -122,14 +122,14 @@ export default function Landing() {
         />
         <div className="relative max-w-4xl mx-auto px-5 md:px-8 text-center">
           <h1 className="font-extrabold leading-[1.05] tracking-tight text-[38px] md:text-[58px] lg:text-[66px]">
-            Trabajar bien abre puertas.
+            ¿Tienes un negocio u oficio
             <br />
-            <span style={{ color: GREEN }}>Que otros hablen bien de ti las mantiene abiertas.</span>
+            y quieres tener más clientes
+            <br />
+            <span style={{ color: GREEN }}>de tu zona?</span>
           </h1>
           <p className="mt-8 text-lg md:text-xl text-white/70 leading-relaxed max-w-2xl mx-auto">
-            RUANA reúne a profesionales de una misma zona para colaborar, recomendarse trabajo y
-            ganarse una posición dentro de la red. El acceso es por invitación o solicitud, y cada
-            posición se mantiene con resultados.
+            En RUANA, otros profesionales pueden ayudarte a conseguirlos.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
