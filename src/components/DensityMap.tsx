@@ -4,10 +4,10 @@ type Cell = { cp: string; d: number; you?: boolean };
 
 // density 0..1
 const CELLS: Cell[] = [
-  { cp: '28001', d: 0.45 }, { cp: '28002', d: 0.22 }, { cp: '28003', d: 0.68 }, { cp: '28004', d: 0.95, you: true },
-  { cp: '28005', d: 0.31 }, { cp: '28006', d: 0.57 }, { cp: '28010', d: 0.12 }, { cp: '28012', d: 0.74 },
-  { cp: '28014', d: 0.4 }, { cp: '28015', d: 0.86 }, { cp: '28018', d: 0.18 }, { cp: '28020', d: 0.52 },
-  { cp: '28025', d: 0.63 }, { cp: '28028', d: 0.28 }, { cp: '28035', d: 0.08 }, { cp: '28045', d: 0.71 },
+  { cp: '01001', d: 0.45 }, { cp: '01002', d: 0.22 }, { cp: '01003', d: 0.68 }, { cp: '01004', d: 0.95, you: true },
+  { cp: '01005', d: 0.31 }, { cp: '01006', d: 0.57 }, { cp: '01010', d: 0.12 }, { cp: '01012', d: 0.74 },
+  { cp: '01014', d: 0.4 }, { cp: '01015', d: 0.86 }, { cp: '01018', d: 0.18 }, { cp: '01020', d: 0.52 },
+  { cp: '01025', d: 0.63 }, { cp: '01028', d: 0.28 }, { cp: '01035', d: 0.08 }, { cp: '01045', d: 0.71 },
 ];
 
 export function DensityMap({ compact = false }: { compact?: boolean }) {
@@ -32,7 +32,7 @@ export function DensityMap({ compact = false }: { compact?: boolean }) {
       <div className="relative p-4 md:p-5">
         <div className="flex items-baseline justify-between gap-3 mb-3">
           <p className="text-[11px] uppercase tracking-[0.18em] text-white/45">
-            Densidad de aliados · Madrid centro
+            Densidad de aliados
           </p>
           <p className="text-[11px] text-white/40 tabular-nums">Actualizado hoy</p>
         </div>
@@ -89,7 +89,7 @@ export function DensityMap({ compact = false }: { compact?: boolean }) {
               className="inline-block h-2.5 w-2.5 rounded-[3px]"
               style={{ backgroundColor: GREEN, boxShadow: '0 0 0 3px rgba(0,230,118,0.18)' }}
             />
-            Tu zona: 28004 · plaza libre en tu oficio
+            Tu zona · plaza libre en tu oficio
           </div>
         </div>
       </div>
