@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Network, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { RequestAccessButton } from '@/components/RequestAccessButton';
+import { RuanaMark } from '@/components/RuanaMark';
+import { FUNDADOR_APP_URL } from '@/lib/inauguralPhase';
 
 export const BG = '#0D1117';
 export const BG_ALT = '#161B22';
@@ -29,11 +31,9 @@ export function LandingNavbar() {
 
   const navItems = [
     { id: 'que-es', label: 'Qué es' },
-    { id: 'como-funciona', label: 'Cómo funciona' },
-    { id: 'territorio', label: 'Zonas' },
-    { id: 'faq', label: 'FAQ' },
+    { id: 'diferencia', label: 'Por qué' },
+    { id: 'confianza', label: 'Confianza' },
   ];
-
 
   return (
     <header
@@ -48,7 +48,9 @@ export function LandingNavbar() {
     >
       <div className="max-w-7xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <Network className="h-6 w-6" style={{ color: GREEN }} strokeWidth={2.2} />
+          <span style={{ color: GREEN }} aria-hidden="true">
+            <RuanaMark size={26} />
+          </span>
           <span className="text-xl md:text-2xl font-bold tracking-tight" style={{ color: GREEN }}>
             RUANA
           </span>
@@ -62,7 +64,7 @@ export function LandingNavbar() {
         </nav>
         <div className="flex items-center gap-2 md:gap-3">
           <a
-            href="https://ruana-4293f.web.app"
+            href={FUNDADOR_APP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden sm:inline-block px-3 md:px-4 py-2 rounded-lg font-semibold text-sm border transition hover:bg-white/[0.06]"
@@ -71,7 +73,7 @@ export function LandingNavbar() {
             Ya tengo código
           </a>
           <RequestAccessButton
-            className="hidden sm:inline-block px-4 md:px-5 py-2 rounded-lg font-semibold text-sm text-black transition-all duration-200 hover:shadow-[0_0_20px_rgba(0,230,118,0.4)]"
+            className="hidden sm:inline-block px-4 md:px-5 py-2 rounded-lg font-semibold text-sm text-black transition-colors duration-200 hover:brightness-110"
             style={{ backgroundColor: GREEN }}
           >
             Solicitar Acceso
@@ -102,7 +104,7 @@ export function LandingNavbar() {
               Solicitar Acceso
             </RequestAccessButton>
             <a
-              href="https://ruana-4293f.web.app"
+              href={FUNDADOR_APP_URL}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
@@ -123,12 +125,14 @@ export function LandingFooter() {
     <footer style={{ backgroundColor: BG_ALT }} className="border-t border-white/5">
       <div className="max-w-7xl mx-auto px-5 md:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-2">
-          <Network className="h-5 w-5" style={{ color: GREEN }} />
+          <span style={{ color: GREEN }}>
+            <RuanaMark size={22} />
+          </span>
           <span className="text-lg font-bold" style={{ color: GREEN }}>RUANA</span>
         </div>
         <div className="text-center text-white/60 text-sm">
           <p>© 2026 RUANA · Red de Unión y Apoyo para Negocios entre Aliados</p>
-          <p className="mt-1 text-white/40">Acceso solo por invitación · Red cerrada de confianza y apoyo profesional entre aliados.</p>
+          <p className="mt-1 text-white/40">Una red de profesionales de la misma zona que se ayudan a conseguir trabajo.</p>
         </div>
         <div className="flex gap-5 text-sm text-white/50">
           <a href="#" className="hover:text-white transition">Privacidad</a>
