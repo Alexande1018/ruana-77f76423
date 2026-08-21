@@ -3,7 +3,7 @@ import { GREEN } from '@/lib/landingTheme';
 
 type Scenario = {
   trade: string;
-  zip: string;
+  zone: string;
   need: string;
   gets: string;
 };
@@ -11,19 +11,19 @@ type Scenario = {
 const SCENARIOS: Scenario[] = [
   {
     trade: 'Fontanero',
-    zip: '28045 · Delicias',
+    zone: 'Zona centro',
     need: 'Le llaman para una reforma de baño y necesita un electricista de la zona.',
     gets: 'Se lo pasa a un aliado de su zona y el cliente queda contento con los dos.',
   },
   {
     trade: 'Electricista',
-    zip: '28012 · Lavapiés',
+    zone: 'Zona sur',
     need: 'Acaba una instalación y el cliente le pregunta si conoce a un pintor.',
     gets: 'Tiene a un aliado de confianza a mano para pasarle el trabajo.',
   },
   {
     trade: 'Pintor',
-    zip: '28019 · Carabanchel',
+    zone: 'Zona oeste',
     need: 'Quiere mejorar su portfolio y busca un fotógrafo de producto.',
     gets: 'Encuentra a otro profesional de su zona con el que colaborar.',
   },
@@ -49,7 +49,7 @@ export function AllyCards() {
               <div className="min-w-0">
                 <h3 className="text-lg font-bold tracking-tight truncate">{s.trade}</h3>
                 <p className="mt-1 flex items-center gap-1.5 text-xs text-white/45">
-                  <MapPin className="h-3.5 w-3.5" /> {s.zip}
+                  <MapPin className="h-3.5 w-3.5" /> {s.zone}
                 </p>
               </div>
             </div>

@@ -137,7 +137,7 @@ export default function Landing() {
             <CodeLink />
           </div>
           <p className="mt-6 text-sm text-white/40">
-            Madrid, barrio a barrio. Las plazas por zona son limitadas.
+            Zona a zona. Las plazas por oficio son limitadas.
           </p>
         </div>
       </section>
@@ -213,7 +213,7 @@ export default function Landing() {
         <div className="max-w-6xl mx-auto px-5 md:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-9">
             <h2 className="text-2xl md:text-[34px] font-bold tracking-tight leading-[1.1] max-w-2xl">
-              Oficios que ya tienen plaza abierta en Madrid.
+              Oficios con plaza abierta.
             </h2>
             <p className="text-white/50 text-sm md:text-base md:text-right md:max-w-xs">
               Una plaza por oficio en cada código postal. Si el tuyo no está, dilo al solicitar
