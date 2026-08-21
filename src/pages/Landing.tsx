@@ -117,8 +117,8 @@ export default function Landing() {
             </div>
             <AppScreenshot
               src="/landing/01-dashboard-aliado.png"
-              alt="Acceso real a RUANA"
-              className="lg:max-w-sm lg:ml-auto opacity-95"
+              alt="Panel del aliado en RUANA"
+              className="lg:max-w-md lg:ml-auto opacity-95"
             />
           </div>
         </div>
@@ -186,14 +186,21 @@ export default function Landing() {
 
       {/* 3. La red */}
       <Section className="py-16 md:py-24" alt>
-        <div className="max-w-3xl mx-auto px-5 md:px-8">
-          <p className="text-lg md:text-[21px] text-white/75 leading-relaxed">
-            En tu zona hay profesionales de otros oficios que ya forman parte de la red. Cuando
-            surge un trabajo, se lo pasan a quien conocen y en quien confían.
-          </p>
-          <p className="mt-5 text-lg md:text-[21px] text-white/75 leading-relaxed">
-            No es un listado infinito. Es gente de tu calle, con la que puedes hablar y trabajar.
-          </p>
+        <div className="max-w-6xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="max-w-lg order-2 lg:order-1">
+            <p className="text-lg md:text-[21px] text-white/75 leading-relaxed">
+              En tu zona hay profesionales de otros oficios que ya forman parte de la red. Cuando
+              surge un trabajo, se lo pasan a quien conocen y en quien confían.
+            </p>
+            <p className="mt-5 text-lg md:text-[21px] text-white/75 leading-relaxed">
+              No es un listado infinito. Es gente de tu calle, con la que puedes hablar y trabajar.
+            </p>
+          </div>
+          <AppScreenshot
+            src="/landing/07-directorio-red.png"
+            alt="Directorio de profesionales de la red en RUANA"
+            className="order-1 lg:order-2 opacity-95"
+          />
         </div>
       </Section>
 
@@ -236,21 +243,28 @@ export default function Landing() {
 
       {/* 5. Exclusividad / confianza */}
       <Section className="py-16 md:py-28" alt id="confianza">
-        <div className="max-w-3xl mx-auto px-5 md:px-8">
-          <div className="space-y-5 text-lg md:text-[21px] text-white/75 leading-relaxed">
-            <p>
-              En tu zona no queremos juntar a cientos de profesionales haciendo lo mismo.
-            </p>
-            <p>
-              Queremos construir una red donde los profesionales puedan conocerse y confiar unos
-              en otros.
+        <div className="max-w-6xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="max-w-lg">
+            <div className="space-y-5 text-lg md:text-[21px] text-white/75 leading-relaxed">
+              <p>
+                En tu zona no queremos juntar a cientos de profesionales haciendo lo mismo.
+              </p>
+              <p>
+                Queremos construir una red donde los profesionales puedan conocerse y confiar unos
+                en otros.
+              </p>
+            </div>
+            <p className="mt-12 text-2xl md:text-[32px] font-semibold leading-[1.2] tracking-tight">
+              Menos desconocidos.
+              <br />
+              <span style={{ color: GREEN }}>Más profesionales de confianza.</span>
             </p>
           </div>
-          <p className="mt-12 text-2xl md:text-[32px] font-semibold leading-[1.2] tracking-tight">
-            Menos desconocidos.
-            <br />
-            <span style={{ color: GREEN }}>Más profesionales de confianza.</span>
-          </p>
+          <AppScreenshot
+            src="/landing/08-perfil-aliado.png"
+            alt="Perfil de un profesional en RUANA"
+            className="lg:max-w-md opacity-95"
+          />
         </div>
       </Section>
 
