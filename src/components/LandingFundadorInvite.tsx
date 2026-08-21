@@ -51,8 +51,11 @@ export function LandingFundadorInvite() {
                 Puede que tengas una de las primeras puertas de entrada a RUANA.
               </p>
               <p className="mt-3 text-base md:text-lg text-white/60 leading-relaxed max-w-xl">
-                Los primeros profesionales que entren ayudarán a construir la red de su zona desde
-                el principio.
+                El Código Fundador es solo para los primeros 100 aliados. Los que entren ahora
+                ayudarán a construir la red de su zona desde el principio.
+              </p>
+              <p className="mt-3 text-base md:text-lg text-white/50 leading-relaxed max-w-xl">
+                Después, solo entras si alguien de la red te invita.
               </p>
             </div>
 
