@@ -122,14 +122,14 @@ export default function Landing() {
         />
         <div className="relative max-w-4xl mx-auto px-5 md:px-8 text-center">
           <h1 className="font-extrabold leading-[1.05] tracking-tight text-[38px] md:text-[58px] lg:text-[66px]">
-            Trabajar bien abre puertas.
+            ¿Tienes un negocio u oficio
             <br />
-            <span style={{ color: GREEN }}>Que otros hablen bien de ti las mantiene abiertas.</span>
+            y quieres tener más clientes
+            <br />
+            <span style={{ color: GREEN }}>de tu zona?</span>
           </h1>
           <p className="mt-8 text-lg md:text-xl text-white/70 leading-relaxed max-w-2xl mx-auto">
-            RUANA reúne a profesionales de una misma zona para colaborar, recomendarse trabajo y
-            ganarse una posición dentro de la red. El acceso es por invitación o solicitud, y cada
-            posición se mantiene con resultados.
+            En RUANA, otros profesionales pueden ayudarte a conseguirlos.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
@@ -178,29 +178,33 @@ export default function Landing() {
         </div>
       </Section>
 
-      {/* ============ LA RED QUE YA EXISTE ============ */}
+      {/* ============ ASÍ FUNCIONA ============ */}
       <Section className="py-20 md:py-28" id="que-es">
-        <div className="max-w-6xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div>
-            <h2 className="text-3xl md:text-[46px] font-bold tracking-tight leading-[1.05]">
-              La red de tu barrio ya existe.
-              <br />
-              Solo que no la ves.
-            </h2>
-            <p className="mt-7 text-white/70 text-base md:text-lg leading-relaxed">
-              Un cliente pregunta por un fontanero. Alguien pasa un teléfono. El encargo se cierra
-              y nadie se entera. Así se reparte el trabajo local desde siempre: por confianza, de
-              boca en boca y sin ningún orden.
-            </p>
-            <p className="mt-4 text-white/70 text-base md:text-lg leading-relaxed">
-              RUANA es esa misma red, pero dibujada: sabes quién está, qué hace y quién responde
-              por él. Si acabas de llegar a una zona, dejas de empezar de cero.
-            </p>
-            <div className="mt-9 flex flex-wrap items-center gap-6">
-              <PrimaryCTA>Quiero mi plaza</PrimaryCTA>
-            </div>
+        <div className="max-w-6xl mx-auto px-5 md:px-8">
+          <h2 className="text-3xl md:text-[46px] font-bold tracking-tight leading-[1.05] max-w-3xl">
+            Un fontanero necesita un electricista.
+            <br />
+            Un electricista necesita un pintor.
+            <br />
+            <span style={{ color: GREEN }}>Y todos necesitan clientes.</span>
+          </h2>
+          <p className="mt-7 text-white/70 text-base md:text-lg leading-relaxed max-w-3xl">
+            Un fontanero necesita un electricista. Un electricista necesita un pintor. Un pintor
+            necesita un fotógrafo para su portfolio. Así funciona el boca a boca de siempre: cada
+            oficio conoce a alguien de otro oficio que le hace falta, tarde o temprano.
+          </p>
+          <p className="mt-4 text-white/70 text-base md:text-lg leading-relaxed max-w-3xl">
+            En RUANA, esos profesionales de tu zona pueden encontrarse, conocerse y ayudarse — y
+            cuando uno tiene un cliente que necesita otro oficio, se lo puede pasar directamente.
+          </p>
+          <p className="mt-4 text-white/50 text-base md:text-lg leading-relaxed max-w-3xl">
+            RUANA no es un directorio donde apareces entre cientos de desconocidos, ni un
+            marketplace abierto a cualquiera. Es una red de profesionales de tu zona que se conocen
+            entre ellos y se pasan trabajo.
+          </p>
+          <div className="mt-9 flex flex-wrap items-center gap-6">
+            <PrimaryCTA>Quiero mi plaza</PrimaryCTA>
           </div>
-          <NetworkGraph />
         </div>
       </Section>
 
@@ -225,11 +229,11 @@ export default function Landing() {
         <div className="absolute inset-0" style={{ backgroundColor: BG_ALT }} />
         <div className="relative max-w-6xl mx-auto px-5 md:px-8">
           <h2 className="text-3xl md:text-[42px] font-bold tracking-tight leading-[1.06] max-w-3xl">
-            Aquí nadie se presenta solo: lo presenta otro aliado.
+            Así es como se pasa trabajo de verdad.
           </h2>
           <p className="mt-6 text-white/65 text-base md:text-lg leading-relaxed max-w-2xl">
-            Cada perfil de la red lleva detrás el nombre de quien responde por él, el trabajo que
-            hace y la zona donde lo hace. Así se ve un aliado por dentro.
+            No son citas de nadie. Son situaciones cotidianas: alguien tiene un cliente, le falta un
+            oficio de confianza, y se lo pasa a otro profesional de su zona.
           </p>
           <div className="mt-12">
             <AllyCards />
