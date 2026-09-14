@@ -128,6 +128,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
   }
 
   * {
@@ -233,8 +234,21 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .landing-fundador-shimmer {
     animation: none;
     opacity: 0.2;
+  }
+
+  .landing-cta {
+    transition: none;
+  }
+
+  .landing-cta:hover,
+  .landing-cta:active {
+    transform: none;
   }
 }

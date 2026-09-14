@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { PartyPopper, X } from "lucide-react";
 import { INAUGURAL_PHASE_ACTIVE, FUNDADOR_APP_URL, FUNDADOR_CODE } from "@/lib/inauguralPhase";
@@ -26,7 +26,13 @@ export function RequestAccessButton({ children, className, style, onBeforeOpen }
 
   return (
     <>
-      <Link to="/register" className={className} style={style} onClick={handleClick}>
+      <Link
+        to="/register"
+        className={className}
+        style={style}
+        onClick={handleClick}
+        aria-haspopup={INAUGURAL_PHASE_ACTIVE ? "dialog" : undefined}
+      >
         {children}
       </Link>
       {open && <InauguralPhaseModal onClose={() => setOpen(false)} />}
@@ -39,6 +45,19 @@ function InauguralPhaseModal({ onClose }: { onClose: () => void }) {
     onClose();
     window.open(FUNDADOR_APP_URL, "_blank", "noopener,noreferrer");
   };
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [onClose]);
 
   return (
     <div

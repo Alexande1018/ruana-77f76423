@@ -91,7 +91,7 @@ export default function Register() {
                 <Lock className="h-3.5 w-3.5" /> Red privada · Solo por solicitud
               </div>
               <h1 className="text-[36px] font-bold leading-tight tracking-tight">
-                Solicita tu acceso a RUANA
+                Comprueba si tu oficio tiene plaza
               </h1>
               <p className="mt-4 text-base text-white/70 leading-relaxed">
                 Completa el formulario y el equipo de RUANA revisará tu solicitud. Si hay plaza disponible en tu zona y oficio, te contactaremos con tu código de acceso.
