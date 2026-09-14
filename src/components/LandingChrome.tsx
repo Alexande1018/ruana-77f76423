@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Network, Menu, X } from 'lucide-react';
-import { RequestAccessButton } from '@/components/RequestAccessButton';
 import { INAUGURAL_PHASE_ACTIVE } from '@/lib/inauguralPhase';
 import { BG, BG_ALT, GREEN, GREEN_DARK } from '@/lib/landingTheme';
+import { PrimaryCTA, CodeLink, PRIMARY_CTA_LABEL } from '@/components/LandingCTA';
 
 export { BG, BG_ALT, GREEN, GREEN_DARK };
 
@@ -28,9 +28,9 @@ export function LandingNavbar() {
 
   const navItems = [
     { id: 'como-funciona', label: 'Cómo funciona' },
-    { id: 'oportunidades', label: 'Oportunidades' },
+    { id: 'plazas', label: 'Plazas' },
     { id: 'diferencia', label: 'Por qué RUANA' },
-    ...(INAUGURAL_PHASE_ACTIVE ? [{ id: 'fundador', label: 'Código Fundador' }] : []),
+    ...(INAUGURAL_PHASE_ACTIVE ? [{ id: 'fundador', label: 'Aliado Fundador' }] : []),
     { id: 'entrar', label: 'Entrar' },
   ];
 
@@ -45,53 +45,43 @@ export function LandingNavbar() {
         borderBottom: scrolled || open ? '1px solid rgba(255,255,255,0.06)' : '1px solid transparent',
       }}
     >
-      <div className="max-w-6xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-5 md:px-8 h-16 flex items-center justify-between gap-3">
+        <Link to="/" className="flex items-center gap-2 shrink-0" onClick={() => setOpen(false)}>
           <Network className="h-6 w-6" style={{ color: GREEN }} strokeWidth={2.2} />
           <span className="text-xl font-bold tracking-tight" style={{ color: GREEN }}>
             RUANA
           </span>
         </Link>
-        <nav className="hidden md:flex items-center gap-8 text-sm text-white/70">
+        <nav className="hidden lg:flex items-center gap-7 text-sm text-white/70">
           {navItems.map((it) => (
             <a
               key={it.id}
               href={`/#${it.id}`}
               onClick={(e) => handleNav(e, it.id)}
-              className="hover:text-white transition"
+              className="hover:text-white transition focus-visible:outline-none focus-visible:text-white"
             >
               {it.label}
             </a>
           ))}
         </nav>
-        <div className="flex items-center gap-2 md:gap-3">
-          <a
-            href="https://ruana-4293f.web.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden sm:inline-block px-3 md:px-4 py-2 rounded-lg font-semibold text-sm border transition hover:bg-white/[0.06]"
-            style={{ borderColor: 'rgba(0,230,118,0.45)', color: GREEN }}
-          >
-            Ya tengo código
-          </a>
-          <RequestAccessButton
-            className="hidden sm:inline-block px-4 md:px-5 py-2 rounded-lg font-semibold text-sm text-black transition-all duration-200 hover:shadow-[0_0_20px_rgba(0,230,118,0.4)]"
-            style={{ backgroundColor: GREEN }}
-          >
-            Solicitar acceso
-          </RequestAccessButton>
+        <div className="flex items-center gap-2 md:gap-3 min-w-0">
+          <span className="hidden md:inline-flex">
+            <CodeLink className="text-sm min-h-10" />
+          </span>
+          <PrimaryCTA size="nav" className="inline-flex max-w-[158px] sm:max-w-[220px] md:max-w-none" />
           <button
             type="button"
-            aria-label="Abrir menú"
+            aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="md:hidden p-2 rounded-md text-white/80 hover:text-white hover:bg-white/10 transition"
+            className="lg:hidden p-2 rounded-md text-white/80 hover:text-white hover:bg-white/10 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00E676]"
           >
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
       {open && (
-        <div className="md:hidden border-t border-white/5">
+        <div className="lg:hidden border-t border-white/5">
           <nav className="px-5 py-4 flex flex-col gap-4 text-base text-white/85">
             {navItems.map((it) => (
               <a
@@ -103,23 +93,10 @@ export function LandingNavbar() {
                 {it.label}
               </a>
             ))}
-            <RequestAccessButton
-              onBeforeOpen={() => setOpen(false)}
-              className="mt-2 px-4 py-2.5 rounded-lg font-semibold text-sm text-black text-center"
-              style={{ backgroundColor: GREEN }}
-            >
-              Solicitar acceso
-            </RequestAccessButton>
-            <a
-              href="https://ruana-4293f.web.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setOpen(false)}
-              className="px-4 py-2.5 rounded-lg font-semibold text-sm text-center border"
-              style={{ borderColor: 'rgba(0,230,118,0.45)', color: GREEN }}
-            >
-              Ya tengo código · Entrar a la app
-            </a>
+            <PrimaryCTA size="default" className="mt-2 w-full" onBeforeOpen={() => setOpen(false)}>
+              {PRIMARY_CTA_LABEL}
+            </PrimaryCTA>
+            <CodeLink className="justify-center" />
           </nav>
         </div>
       )}
@@ -138,13 +115,23 @@ export function LandingFooter() {
           </span>
         </div>
         <div className="text-center text-white/55 text-sm leading-relaxed">
-          <p>© 2026 RUANA · Red de profesionales que se ayudan en su zona</p>
+          <p>© 2026 RUANA · Red local de profesionales que se recomiendan en su zona</p>
         </div>
         <div className="flex gap-5 text-sm text-white/45">
-          <a href="#" className="hover:text-white transition">
+          <a
+            href="https://ruana-4293f.web.app/politica-privacidad"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white transition"
+          >
             Privacidad
           </a>
-          <a href="#" className="hover:text-white transition">
+          <a
+            href="https://ruana-4293f.web.app/terminos"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white transition"
+          >
             Términos
           </a>
         </div>
