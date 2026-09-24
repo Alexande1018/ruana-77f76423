@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Network, Menu, X } from 'lucide-react';
 import { INAUGURAL_PHASE_ACTIVE } from '@/lib/inauguralPhase';
 import { BG, BG_ALT, GREEN, GREEN_DARK } from '@/lib/landingTheme';
-import { PrimaryCTA, CodeLink, PRIMARY_CTA_LABEL } from '@/components/LandingCTA';
+import { PrimaryCTA, CodeLink, HEADER_CTA_LABEL, PRIMARY_CTA_LABEL } from '@/components/LandingCTA';
 
 export { BG, BG_ALT, GREEN, GREEN_DARK };
 
@@ -68,7 +68,9 @@ export function LandingNavbar() {
           <span className="hidden md:inline-flex">
             <CodeLink className="text-sm min-h-10" />
           </span>
-          <PrimaryCTA size="nav" className="inline-flex max-w-[158px] sm:max-w-[220px] md:max-w-none" />
+          <PrimaryCTA size="nav" className="inline-flex shrink-0">
+            {HEADER_CTA_LABEL}
+          </PrimaryCTA>
           <button
             type="button"
             aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
@@ -117,7 +119,7 @@ export function LandingFooter() {
         <div className="text-center text-white/55 text-sm leading-relaxed">
           <p>© 2026 RUANA · Red local de profesionales que se recomiendan en su zona</p>
         </div>
-        <div className="flex gap-5 text-sm text-white/45">
+        <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm text-white/45">
           <a
             href="https://ruana-4293f.web.app/politica-privacidad"
             target="_blank"
@@ -133,6 +135,14 @@ export function LandingFooter() {
             className="hover:text-white transition"
           >
             Términos
+          </a>
+          <a
+            href="https://ruana-4293f.web.app/aviso-legal"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white transition"
+          >
+            Aviso legal
           </a>
         </div>
       </div>
