@@ -1,14 +1,15 @@
 import { ArrowRight } from 'lucide-react';
 import { RequestAccessButton } from '@/components/RequestAccessButton';
-import { FUNDADOR_APP_URL } from '@/lib/inauguralPhase';
+import { APP_LOGIN_URL } from '@/lib/registerUrl';
 import { GREEN } from '@/lib/landingTheme';
 import { cn } from '@/lib/utils';
 
-export const PRIMARY_CTA_LABEL = 'Ver si mi oficio tiene plaza';
-export const CODE_LINK_LABEL = 'Ya tengo un código';
+export const PRIMARY_CTA_LABEL = 'Apúntate con tu oficio';
+export const HEADER_CTA_LABEL = 'Apúntate';
+export const CODE_LINK_LABEL = 'Ya soy aliado · Entrar';
 
 const sizeClass = {
-  nav: 'min-h-10 px-3 py-2 text-[13px] sm:text-sm leading-tight',
+  nav: 'min-h-10 px-3.5 py-2 text-[13px] sm:text-sm leading-tight whitespace-nowrap',
   default: 'min-h-12 px-5 py-3.5 text-[15px] md:text-base',
   lg: 'min-h-14 px-7 py-4 text-base md:text-lg',
 } as const;
@@ -55,9 +56,7 @@ export function CodeLink({
 }) {
   return (
     <a
-      href={FUNDADOR_APP_URL}
-      target="_blank"
-      rel="noopener noreferrer"
+      href={APP_LOGIN_URL}
       className={cn(
         'group inline-flex items-center gap-2 min-h-11 text-[15px] md:text-base font-medium',
         'border-b pb-0.5 transition-colors duration-200',

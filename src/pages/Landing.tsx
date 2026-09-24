@@ -8,7 +8,6 @@ import { LandingScore } from '@/components/LandingScore';
 import { LandingProduct } from '@/components/LandingProduct';
 import { LandingCompare } from '@/components/LandingCompare';
 import { LandingSteps } from '@/components/LandingSteps';
-import { LandingScreenshot } from '@/components/LandingScreenshot';
 import { NodeField } from '@/components/NodeField';
 import { BG, BG_ALT, GREEN } from '@/lib/landingTheme';
 import { PrimaryCTA, CodeLink } from '@/components/LandingCTA';
@@ -65,46 +64,47 @@ export default function Landing() {
           <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-3xl">
             <motion.p
               variants={fadeUp}
-              className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] sm:text-xs font-medium uppercase tracking-[0.14em] text-white/55 mb-6"
+              className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] sm:text-xs font-medium tracking-[0.04em] text-white/55 mb-5"
             >
               <span
-                className="inline-block h-1.5 w-1.5 rounded-full"
+                className="inline-block h-1.5 w-1.5 rounded-full shrink-0"
                 style={{ backgroundColor: GREEN }}
               />
-              Buscamos Aliados Fundadores · Primeros grupos en formación
+              Oficios de Alicante · por código postal
             </motion.p>
             <motion.h1
               variants={fadeUp}
-              className="font-bold leading-[1.08] tracking-tight text-[30px] sm:text-[38px] md:text-[48px] lg:text-[52px]"
+              className="font-bold leading-[1.08] tracking-tight text-[32px] sm:text-[40px] md:text-[48px] lg:text-[52px]"
             >
-              Estamos formando la red de profesionales de tu zona.
+              Pasa el curro que no haces.
               <span className="block mt-2 md:mt-3" style={{ color: GREEN }}>
-                ¿Está libre la plaza de tu oficio?
+                Recibe el que sí.
               </span>
             </motion.h1>
             <motion.p
               variants={fadeUp}
-              className="mt-6 text-base md:text-xl text-white/72 leading-relaxed max-w-2xl"
+              className="mt-5 text-base md:text-xl text-white/72 leading-relaxed max-w-2xl"
             >
-              Fontaneros, electricistas, pintores, asesores, fotógrafos y otros profesionales que
-              se recomiendan oportunidades de trabajo entre ellos.
+              ¿Te piden algo que no haces? Pásaselo a un colega de tu zona. Y cuando a él le pidan lo
+              tuyo, te llama a ti.
             </motion.p>
-            <motion.div
-              variants={fadeUp}
-              className="mt-8 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-4 sm:gap-5"
-            >
-              <PrimaryCTA />
+            <motion.div variants={fadeUp} className="mt-7 flex flex-col items-stretch sm:items-start gap-3 max-w-xl">
+              <PrimaryCTA className="w-full sm:w-auto" />
+              <p className="text-[13px] text-white/60 leading-snug">
+                Sin cuota mensual. Solo un 12% si cierras un curro que te llegó por RUANA.
+              </p>
               <CodeLink />
             </motion.div>
           </motion.div>
 
-          <div className="mt-12 md:mt-16 max-w-4xl">
-            <LandingScreenshot
-              src="/landing/01-dashboard-aliado.png"
-              alt="Panel del aliado en RUANA, con el grupo, las solicitudes y el Score RUANA"
-              caption="Panel del aliado: el grupo, las solicitudes y el Score RUANA. No es un escaparate de anuncios."
-            />
-          </div>
+          <img
+            src="/landing/hero-fontanero-pintor.webp"
+            alt="Un fontanero y un pintor se pasan trabajo en los dos sentidos"
+            width={700}
+            height={202}
+            decoding="async"
+            className="mt-8 md:mt-10 block w-full max-w-[350px] h-auto"
+          />
         </div>
       </section>
 
@@ -180,11 +180,12 @@ export default function Landing() {
           <h2 className="text-[28px] sm:text-[34px] md:text-[42px] font-semibold leading-[1.12] tracking-tight">
             Puede haber cientos de profesionales de tu oficio en tu ciudad.
             <span className="block mt-3" style={{ color: GREEN }}>
-              En tu grupo RUANA, las plazas son limitadas.
+              En cada grupo RUANA hay una plaza por oficio.
             </span>
           </h2>
           <p className="mt-6 text-base md:text-lg text-white/60 leading-relaxed">
-            Comprueba si la tuya sigue disponible.
+            Es la regla del grupo: un oficio, una plaza. Cuando alguien necesita lo que tú haces, tiene
+            un colega de su zona a quien pasar el curro.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
             <PrimaryCTA size="lg" />

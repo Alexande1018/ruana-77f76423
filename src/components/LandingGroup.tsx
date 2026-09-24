@@ -79,7 +79,7 @@ export function LimitedSeatsIdea() {
             <p className="text-base md:text-lg font-semibold text-white">Una plaza de fontanero</p>
           </div>
           <span className="text-sm font-medium shrink-0" style={{ color: GREEN }}>
-            La tuya, si está libre
+            Una por oficio
           </span>
         </div>
       </motion.div>
@@ -112,7 +112,7 @@ export function GroupExample() {
         Así puede verse un grupo RUANA
       </h2>
       <p className="mt-3 text-base text-white/60 leading-relaxed">
-        Un grupo local. Distintos oficios. Plazas limitadas. Esta vista es un ejemplo para entender
+        Un grupo local. Distintos oficios. Una plaza por oficio. Esta vista es un ejemplo para entender
         el modelo, no un estado actual de Alicante ni de ninguna zona.
       </p>
 

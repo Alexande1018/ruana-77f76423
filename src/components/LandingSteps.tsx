@@ -11,7 +11,7 @@ const STEPS = [
   {
     n: '02',
     title: 'Ocupa tu plaza profesional',
-    text: 'Forma parte del grupo como profesional de tu oficio cuando exista disponibilidad.',
+    text: 'Forma parte del grupo como el profesional de tu oficio.',
   },
   {
     n: '03',

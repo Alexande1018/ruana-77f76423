@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { PartyPopper, X } from "lucide-react";
 import { INAUGURAL_PHASE_ACTIVE, FUNDADOR_APP_URL, FUNDADOR_CODE } from "@/lib/inauguralPhase";
+import { useRegisterUrl } from "@/lib/registerUrl";
 import { GREEN, GREEN_DARK, BG_ALT } from "@/lib/landingTheme";
 
 type Props = {
@@ -12,13 +12,14 @@ type Props = {
 };
 
 export function RequestAccessButton({ children, className, style, onBeforeOpen }: Props) {
+  const href = useRegisterUrl();
   const [open, setOpen] = useState(false);
 
   const handleClick = useCallback(
     (e: React.MouseEvent) => {
-      if (!INAUGURAL_PHASE_ACTIVE) return; // let Link navigate normally
-      e.preventDefault();
       onBeforeOpen?.();
+      if (!INAUGURAL_PHASE_ACTIVE) return;
+      e.preventDefault();
       setOpen(true);
     },
     [onBeforeOpen]
@@ -26,16 +27,16 @@ export function RequestAccessButton({ children, className, style, onBeforeOpen }
 
   return (
     <>
-      <Link
-        to="/register"
+      <a
+        href={href}
         className={className}
         style={style}
         onClick={handleClick}
         aria-haspopup={INAUGURAL_PHASE_ACTIVE ? "dialog" : undefined}
       >
         {children}
-      </Link>
-      {open && <InauguralPhaseModal onClose={() => setOpen(false)} />}
+      </a>
+      {INAUGURAL_PHASE_ACTIVE && open && <InauguralPhaseModal onClose={() => setOpen(false)} />}
     </>
   );
 }
