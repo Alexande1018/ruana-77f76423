@@ -1,8 +1,3 @@
-# Local env. Names live in .env.example; values stay out of git.
-.env
-.env.*
-!.env.example
-
 # Logs
 logs
 *.log
