@@ -97,14 +97,27 @@ export default function Landing() {
             </motion.div>
           </motion.div>
 
-          <img
-            src="/landing/hero-fontanero-pintor.webp"
-            alt="Un fontanero y un pintor se pasan trabajo en los dos sentidos"
-            width={700}
-            height={202}
-            decoding="async"
-            className="mt-8 md:mt-10 block w-full max-w-[350px] h-auto"
-          />
+          <figure
+            className="mt-8 md:mt-10 w-full max-w-[350px] rounded-[14px] border px-3.5 pt-4 pb-3"
+            style={{ backgroundColor: '#11161d', borderColor: 'rgba(255,255,255,0.08)' }}
+          >
+            <img
+              src="/landing/hero-fontanero-pintor.webp"
+              alt="Un fontanero y un pintor se pasan trabajo en los dos sentidos"
+              width={700}
+              height={195}
+              decoding="async"
+              className="block w-full h-auto"
+            />
+            <div
+              className="mt-1.5 grid text-[13px] font-semibold leading-none text-white/75"
+              style={{ gridTemplateColumns: '26% 48% 26%' }}
+            >
+              <span className="text-center">Fontanero</span>
+              <span aria-hidden="true" />
+              <span className="text-center">Pintor</span>
+            </div>
+          </figure>
         </div>
       </section>
 
