@@ -10,7 +10,7 @@ import { LandingCompare } from '@/components/LandingCompare';
 import { LandingSteps } from '@/components/LandingSteps';
 import { NodeField } from '@/components/NodeField';
 import { BG, BG_ALT, GREEN } from '@/lib/landingTheme';
-import { PrimaryCTA, CodeLink } from '@/components/LandingCTA';
+import { PrimaryCTA, CodeLink, HaveCodeLink } from '@/components/LandingCTA';
 import { INAUGURAL_PHASE_ACTIVE } from '@/lib/inauguralPhase';
 
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -93,7 +93,10 @@ export default function Landing() {
               <p className="text-[13px] text-white/60 leading-snug">
                 Sin cuota mensual. Solo un 12% si cierras un curro que te llegó por RUANA.
               </p>
-              <CodeLink />
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
+                <CodeLink />
+                <HaveCodeLink />
+              </div>
             </motion.div>
           </motion.div>
 

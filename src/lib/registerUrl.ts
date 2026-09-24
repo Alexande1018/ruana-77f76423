@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 export const APP_ORIGIN = "https://ruana-4293f.web.app";
 export const APP_LOGIN_URL = `${APP_ORIGIN}/`;
 export const REGISTER_PATH = "/register";
+/** Pantalla que pide el código y, si vale, sigue al registro. */
+export const INVITE_PATH = "/invite.html";
 
 export const UTM_KEYS = [
   "utm_source",
@@ -66,18 +68,30 @@ export function codigoForUtms(utms: UtmParams): string {
   return utms.utm_source?.toLowerCase() === "instagram" ? INSTAGRAM_CODE : DEFAULT_CODE;
 }
 
-export function buildRegisterUrl(search: string, storedJson: string | null): string {
-  const utms = resolveUtms(search, storedJson);
-  const params = new URLSearchParams();
-  params.set("codigo", codigoForUtms(utms));
+function appendUtms(params: URLSearchParams, utms: UtmParams): void {
   for (const key of UTM_KEYS) {
     const value = utms[key];
     if (value) params.set(key, value);
   }
+}
+
+export function buildRegisterUrl(search: string, storedJson: string | null): string {
+  const utms = resolveUtms(search, storedJson);
+  const params = new URLSearchParams();
+  params.set("codigo", codigoForUtms(utms));
+  appendUtms(params, utms);
   return `${APP_ORIGIN}${REGISTER_PATH}?${params.toString()}`;
 }
 
-export function useRegisterUrl(): string {
+/** Invite page. Forwards stored UTM params only; the person types their own code. */
+export function buildInviteUrl(search: string, storedJson: string | null): string {
+  const params = new URLSearchParams();
+  appendUtms(params, resolveUtms(search, storedJson));
+  const query = params.toString();
+  return query ? `${APP_ORIGIN}${INVITE_PATH}?${query}` : `${APP_ORIGIN}${INVITE_PATH}`;
+}
+
+function useResolvedUtms(): { search: string; stored: string | null } {
   const search = typeof window === "undefined" ? "" : window.location.search;
   const [stored, setStored] = useState<string | null>(() =>
     typeof window === "undefined" ? null : window.sessionStorage.getItem(LANDING_UTM_STORAGE_KEY),
@@ -88,5 +102,15 @@ export function useRegisterUrl(): string {
     setStored(window.sessionStorage.getItem(LANDING_UTM_STORAGE_KEY));
   }, []);
 
+  return { search, stored };
+}
+
+export function useRegisterUrl(): string {
+  const { search, stored } = useResolvedUtms();
   return buildRegisterUrl(search, stored);
+}
+
+export function useInviteUrl(): string {
+  const { search, stored } = useResolvedUtms();
+  return buildInviteUrl(search, stored);
 }

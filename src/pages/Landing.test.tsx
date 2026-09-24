@@ -53,8 +53,15 @@ describe("Landing", () => {
 
     const login = screen.getAllByRole("link", { name: "Ya soy aliado · Entrar" });
     expect(login.length).toBeGreaterThan(0);
-    expect(login[0]).toHaveAttribute("href", LOGIN_HREF);
-    expect(login[0]).not.toHaveAttribute("target");
+    for (const link of login) {
+      expect(link).toHaveAttribute("href", LOGIN_HREF);
+      expect(link).not.toHaveAttribute("target");
+    }
+
+    const haveCode = screen.getByRole("link", { name: "Tengo un código" });
+    expect(haveCode).toHaveAttribute("href", "https://ruana-4293f.web.app/invite.html");
+    expect(haveCode).not.toHaveAttribute("target");
+    expect(screen.queryByRole("link", { name: "Ya tengo un código" })).not.toBeInTheDocument();
 
     expect(screen.queryByText("Solicitar acceso")).not.toBeInTheDocument();
     expect(screen.queryByText(/tu calle/i)).not.toBeInTheDocument();
@@ -96,6 +103,10 @@ describe("Landing", () => {
     expect(screen.getAllByRole("link", { name: "Apúntate con tu oficio" })[0]).toHaveAttribute(
       "href",
       "https://ruana-4293f.web.app/register?codigo=ALC-IG&utm_source=instagram&utm_medium=paid&utm_campaign=alc_d1",
+    );
+    expect(screen.getByRole("link", { name: "Tengo un código" })).toHaveAttribute(
+      "href",
+      "https://ruana-4293f.web.app/invite.html?utm_source=instagram&utm_medium=paid&utm_campaign=alc_d1",
     );
   });
 });

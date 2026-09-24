@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  buildInviteUrl,
   buildRegisterUrl,
   LANDING_UTM_STORAGE_KEY,
   persistLandingUtms,
@@ -78,5 +79,31 @@ describe("buildRegisterUrl", () => {
     const storage = memoryStorage();
     persistLandingUtms("", storage);
     expect(storage.dump()).toBeNull();
+  });
+});
+
+describe("buildInviteUrl", () => {
+  it("abre invite.html y reenvía los UTM guardados, sin código", () => {
+    expect(
+      buildInviteUrl("?utm_source=instagram&utm_medium=paid&utm_campaign=alc_d1", null),
+    ).toBe(
+      "https://ruana-4293f.web.app/invite.html?utm_source=instagram&utm_medium=paid&utm_campaign=alc_d1",
+    );
+  });
+
+  it("en una visita sin UTM no añade query", () => {
+    expect(buildInviteUrl("", null)).toBe("https://ruana-4293f.web.app/invite.html");
+  });
+
+  it("recupera los UTM de la sesión cuando la URL ya no los lleva", () => {
+    const stored = JSON.stringify({
+      utm_source: "instagram",
+      utm_medium: "paid",
+      utm_campaign: "alc_d1",
+    });
+    expect(buildInviteUrl("", stored)).toBe(
+      "https://ruana-4293f.web.app/invite.html?utm_source=instagram&utm_medium=paid&utm_campaign=alc_d1",
+    );
+    expect(buildInviteUrl("", stored)).not.toContain("codigo=");
   });
 });

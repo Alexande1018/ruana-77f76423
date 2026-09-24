@@ -1,12 +1,13 @@
 import { ArrowRight } from 'lucide-react';
 import { RequestAccessButton } from '@/components/RequestAccessButton';
-import { APP_LOGIN_URL } from '@/lib/registerUrl';
+import { APP_LOGIN_URL, useInviteUrl } from '@/lib/registerUrl';
 import { GREEN } from '@/lib/landingTheme';
 import { cn } from '@/lib/utils';
 
 export const PRIMARY_CTA_LABEL = 'Apúntate con tu oficio';
 export const HEADER_CTA_LABEL = 'Apúntate';
 export const CODE_LINK_LABEL = 'Ya soy aliado · Entrar';
+export const HAVE_CODE_LABEL = 'Tengo un código';
 
 const sizeClass = {
   nav: 'min-h-10 px-3.5 py-2 text-[13px] sm:text-sm leading-tight whitespace-nowrap',
@@ -68,6 +69,26 @@ export function CodeLink({
     >
       {label}
       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 motion-reduce:transform-none" />
+    </a>
+  );
+}
+
+/** Quién ya trae un código: enlace pequeño, misma pestaña, a invite.html. */
+export function HaveCodeLink({ className }: { className?: string }) {
+  const href = useInviteUrl();
+
+  return (
+    <a
+      href={href}
+      className={cn(
+        'inline-flex items-center min-h-11 text-sm text-white/50',
+        'underline-offset-4 hover:text-white/80 hover:underline',
+        'focus-visible:outline-none focus-visible:ring-2',
+        'focus-visible:ring-[#00E676] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D1117] rounded-sm',
+        className,
+      )}
+    >
+      {HAVE_CODE_LABEL}
     </a>
   );
 }
