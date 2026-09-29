@@ -63,7 +63,7 @@ export default function Landing() {
             keeps the tradespeople visible without duplicating UI or text. */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 -z-20 bg-cover bg-[38%_center] sm:bg-center md:bg-[center_45%]"
+          className="absolute inset-0 -z-20 bg-contain bg-top bg-no-repeat sm:bg-cover sm:bg-center md:bg-[center_45%]"
           style={{ backgroundImage: 'url("/landing/file_00000000e4f88243b41b502ec6975bec.png")' }}
         />
         <div
