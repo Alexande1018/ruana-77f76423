@@ -1,4 +1,5 @@
 import { motion, type Variants, useReducedMotion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 import { LandingNavbar, LandingFooter } from '@/components/LandingChrome';
 import { LandingFundadorInvite } from '@/components/LandingFundadorInvite';
 import { LandingAllyExamples } from '@/components/LandingAllyExamples';
@@ -26,28 +27,55 @@ function Section({
   id?: string;
   alt?: boolean;
 }) {
+  const sectionRef = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  });
+  const sectionScale = useTransform(scrollYProgress, [0, 0.18, 0.78, 1], [0.97, 1, 1, 0.97]);
+  const sectionOpacity = useTransform(scrollYProgress, [0, 0.18, 0.78, 1], [0.92, 1, 1, 0.94]);
+  const sectionY = useTransform(scrollYProgress, [0, 0.18, 0.78, 1], [22, 0, 0, -10]);
+
   return (
     <motion.section
+      ref={sectionRef}
       id={id}
       className={`scroll-mt-20 relative overflow-hidden border-t border-white/[0.04] ${className}`}
       style={alt ? { backgroundColor: BG_ALT } : undefined}
-      initial={{ opacity: 0, y: 28, scale: 0.992 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true, amount: 0.12 }}
-      transition={{ duration: 0.7, ease }}
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent" />
-      {children}
+      <motion.div
+        style={{
+          opacity: reduce ? 1 : sectionOpacity,
+          scale: reduce ? 1 : sectionScale,
+          y: reduce ? 0 : sectionY,
+        }}
+      >
+        {children}
+      </motion.div>
     </motion.section>
   );
 }
 
 export default function Landing() {
   const reduce = useReducedMotion();
-  const { scrollYProgress } = useScroll();
-  const heroY = useTransform(scrollYProgress, [0, 0.18], ['0%', '7%']);
-  const heroScale = useTransform(scrollYProgress, [0, 0.16], [1, 0.975]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.18], [1, 0.72]);
+  const heroRef = useRef<HTMLElement>(null);
+  const finalCtaRef = useRef<HTMLElement>(null);
+  const { scrollYProgress: heroProgress } = useScroll({
+    target: heroRef,
+    offset: ['start start', 'end start'],
+  });
+  const heroY = useTransform(heroProgress, [0, 1], ['0%', '7%']);
+  const heroScale = useTransform(heroProgress, [0, 1], [1, 0.975]);
+  const heroOpacity = useTransform(heroProgress, [0, 1], [1, 0.72]);
+  const { scrollYProgress: finalCtaProgress } = useScroll({
+    target: finalCtaRef,
+    offset: ['start end', 'end start'],
+  });
+  const finalCtaScale = useTransform(finalCtaProgress, [0, 0.18, 0.78, 1], [0.97, 1, 1, 0.97]);
+  const finalCtaOpacity = useTransform(finalCtaProgress, [0, 0.18, 0.78, 1], [0.92, 1, 1, 0.94]);
+  const finalCtaY = useTransform(finalCtaProgress, [0, 0.18, 0.78, 1], [22, 0, 0, -10]);
 
   const fadeUp: Variants = {
     hidden: reduce ? { opacity: 0 } : { opacity: 0, y: 18 },
@@ -67,7 +95,7 @@ export default function Landing() {
     <div className="min-h-screen text-white" style={{ backgroundColor: BG }}>
       <LandingNavbar />
 
-      <section className="relative isolate overflow-hidden min-h-0 sm:min-h-[720px] md:min-h-[760px] pt-24 md:pt-32 pb-10 md:pb-20">
+      <section ref={heroRef} className="relative isolate overflow-hidden min-h-0 sm:min-h-[720px] md:min-h-[760px] pt-24 md:pt-32 pb-10 md:pb-20">
         {/* Clean photo-only artwork as a full-bleed background. Responsive positioning
             keeps the tradespeople visible without duplicating UI or text. */}
         <motion.div
@@ -119,7 +147,6 @@ export default function Landing() {
               </div>
             </motion.div>
           </motion.div>
-
         </div>
       </section>
 
@@ -186,13 +213,10 @@ export default function Landing() {
       </Section>
 
       <motion.section
+        ref={finalCtaRef}
         id="entrar"
-        initial={{ opacity: 0, y: 32 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.18 }}
-        transition={{ duration: 0.75, ease }}
         className="relative overflow-hidden py-24 md:py-36 scroll-mt-20 border-t border-emerald-400/10"
-        style={{ backgroundColor: BG }}
+        style={{ backgroundColor: BG, opacity: reduce ? 1 : finalCtaOpacity, scale: reduce ? 1 : finalCtaScale, y: reduce ? 0 : finalCtaY }}
       >
         <NodeField density={0.00008} opacity={0.45} intensity={0.55} />
         <div className="relative max-w-3xl mx-auto px-5 md:px-8">
