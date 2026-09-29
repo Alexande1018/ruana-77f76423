@@ -12,12 +12,12 @@ export function LandingFundadorInvite() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: reduce ? 0.2 : 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="scroll-mt-20 py-14 md:py-20"
+      className="scroll-mt-20 py-14 md:py-20 relative overflow-hidden border-y border-emerald-400/10 bg-gradient-to-br from-emerald-400/[0.07] via-transparent to-transparent"
     >
       <div className="max-w-6xl mx-auto px-5 md:px-8">
         <div
-          className="relative pl-5 md:pl-7"
-          style={{ borderLeft: `3px solid ${GREEN}` }}
+          className="relative p-6 md:p-9 rounded-[26px] border border-white/[0.08] bg-black/20 backdrop-blur-sm"
+          style={{ boxShadow: '0 28px 70px rgba(0,0,0,0.22)' }}
         >
           <p className="text-[11px] uppercase tracking-[0.18em] font-medium" style={{ color: GREEN }}>
             Aliado Fundador

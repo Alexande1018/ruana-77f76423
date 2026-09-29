@@ -45,8 +45,8 @@ export function LimitedSeatsIdea() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: reduce ? 0.2 : 0.55, ease }}
-        className="rounded-xl border overflow-hidden"
-        style={{ borderColor: 'rgba(255,255,255,0.08)', backgroundColor: 'rgba(13,17,23,0.55)' }}
+        className="rounded-[24px] border overflow-hidden backdrop-blur-xl"
+        style={{ borderColor: 'rgba(255,255,255,0.08)', background: 'linear-gradient(145deg, rgba(18,25,31,0.9), rgba(8,12,16,0.92))' }}
       >
         <div className="px-5 py-4 border-b" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
           <p className="text-[11px] uppercase tracking-[0.16em] text-white/40">Lo que saturaría la zona</p>
@@ -117,10 +117,10 @@ export function GroupExample() {
       </p>
 
       <div
-        className="mt-8 rounded-xl border overflow-hidden"
+        className="mt-8 rounded-[24px] border overflow-hidden backdrop-blur-xl"
         style={{
           borderColor: 'rgba(255,255,255,0.1)',
-          backgroundColor: '#12171e',
+          background: 'linear-gradient(145deg, #12171e, #0a0e12)',
           boxShadow: '0 20px 50px rgba(0,0,0,0.35)',
         }}
       >

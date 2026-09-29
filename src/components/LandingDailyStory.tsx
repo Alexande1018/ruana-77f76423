@@ -12,7 +12,7 @@ export function LandingDailyStory() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: reduce ? 0.2 : 0.6, ease }}
-      className="max-w-2xl"
+      className="max-w-4xl rounded-[28px] border border-white/[0.07] bg-white/[0.025] p-6 md:p-10 shadow-2xl"
     >
       <p className="text-sm font-medium tracking-wide text-white/45 mb-6">Un cliente te dice:</p>
 
