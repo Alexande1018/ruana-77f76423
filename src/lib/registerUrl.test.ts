@@ -35,10 +35,15 @@ describe("buildRegisterUrl", () => {
     expect(buildRegisterUrl("?utm_source=INSTAGRAM", null)).toContain("codigo=ALC-IG");
   });
 
-  it("usa FUNDADOR en una visita sin UTM", () => {
+  it("usa ALC-IG también cuando la visita no viene de Instagram", () => {
     expect(buildRegisterUrl("", null)).toBe(
-      "https://ruana-4293f.web.app/register?codigo=FUNDADOR",
+      "https://ruana-4293f.web.app/register?codigo=ALC-IG",
     );
+    expect(buildRegisterUrl("?utm_source=newsletter", null)).toBe(
+      "https://ruana-4293f.web.app/register?codigo=ALC-IG&utm_source=newsletter",
+    );
+    expect(buildRegisterUrl("?utm_medium=paid", null)).toContain("codigo=ALC-IG");
+    expect(buildRegisterUrl("", null)).not.toContain("FUNDADOR");
   });
 
   it("añade utm_content y utm_term solo si vienen en la URL", () => {

@@ -1,9 +1,10 @@
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
-import { GREEN } from '@/lib/landingTheme';
+import { GREEN, GREEN_DARK } from '@/lib/landingTheme';
 import { PrimaryCTA, CodeLink } from '@/components/LandingCTA';
+import { PUBLIC_ACCESS_CODE } from '@/lib/inauguralPhase';
 import { useRef } from 'react';
 
-export function LandingFundadorInvite() {
+export function LandingAccessInvite() {
   const reduce = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start end', 'end start'] });
@@ -14,7 +15,7 @@ export function LandingFundadorInvite() {
   return (
     <motion.section
       ref={sectionRef}
-      id="fundador"
+      id="acceso"
       style={{ opacity: reduce ? 1 : opacity, scale: reduce ? 1 : scale, y: reduce ? 0 : y }}
       className="scroll-mt-20 py-14 md:py-20 relative overflow-hidden border-y border-emerald-400/10 bg-gradient-to-br from-emerald-400/[0.07] via-transparent to-transparent"
     >
@@ -24,15 +25,25 @@ export function LandingFundadorInvite() {
           style={{ boxShadow: '0 28px 70px rgba(0,0,0,0.22)' }}
         >
           <p className="text-[11px] uppercase tracking-[0.18em] font-medium" style={{ color: GREEN }}>
-            Aliado Fundador
+            Por invitación
           </p>
           <h2 className="mt-3 text-2xl md:text-[32px] font-semibold leading-[1.15] tracking-tight max-w-2xl">
-            Estamos formando los primeros grupos RUANA.
+            Esta fase no está abierta a cualquiera.
           </h2>
           <p className="mt-4 text-base md:text-lg text-white/70 leading-relaxed max-w-xl">
-            Los profesionales que entren durante esta etapa ayudarán a construir la primera red de
-            su zona.
+            Las plazas van por invitación y son pocas. Si has llegado hasta aquí, puedes ocupar la de
+            tu oficio en tu zona con este código.
           </p>
+          <div
+            className="mt-6 inline-flex flex-col items-start rounded-xl px-5 py-4 border-2"
+            style={{ backgroundColor: GREEN_DARK, borderColor: GREEN }}
+          >
+            <span className="text-[11px] uppercase tracking-[0.18em] text-white/60">Código de acceso</span>
+            <span className="mt-1 text-3xl font-extrabold tracking-[0.22em]" style={{ color: GREEN }}>
+              {PUBLIC_ACCESS_CODE}
+            </span>
+          </div>
+          <p className="mt-4 text-sm text-white/60">Apuntarse no tiene cuota.</p>
           <div className="mt-7 flex flex-col sm:flex-row sm:items-center gap-4">
             <PrimaryCTA />
             <CodeLink />

@@ -64,7 +64,7 @@ export function LandingCompare() {
             oportunidades.
           </p>
           <p className="mt-4 text-sm text-white/55 leading-relaxed">
-            Sin cuota mensual. Un apoyo del 12% solo si cierras un encargo que te llegó por la red.
+            Apuntarse no tiene cuota.
           </p>
         </motion.div>
       </div>

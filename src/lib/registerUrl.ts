@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { PUBLIC_ACCESS_CODE } from "@/lib/inauguralPhase";
 
 /** App de aliados (Firebase). El login vive en la raíz; /login responde 404. */
 export const APP_ORIGIN = "https://ruana-4293f.web.app";
@@ -19,9 +20,6 @@ export type UtmKey = (typeof UTM_KEYS)[number];
 export type UtmParams = Partial<Record<UtmKey, string>>;
 
 export const LANDING_UTM_STORAGE_KEY = "ruana_landing_utms";
-
-const INSTAGRAM_CODE = "ALC-IG";
-const DEFAULT_CODE = "FUNDADOR";
 
 export function readUtmsFromSearch(search: string): UtmParams {
   const params = new URLSearchParams(search.startsWith("?") || search === "" ? search : `?${search}`);
@@ -64,10 +62,6 @@ export function persistLandingUtms(search: string, storage: UtmStorage): void {
   storage.setItem(LANDING_UTM_STORAGE_KEY, JSON.stringify(fromUrl));
 }
 
-export function codigoForUtms(utms: UtmParams): string {
-  return utms.utm_source?.toLowerCase() === "instagram" ? INSTAGRAM_CODE : DEFAULT_CODE;
-}
-
 function appendUtms(params: URLSearchParams, utms: UtmParams): void {
   for (const key of UTM_KEYS) {
     const value = utms[key];
@@ -78,7 +72,7 @@ function appendUtms(params: URLSearchParams, utms: UtmParams): void {
 export function buildRegisterUrl(search: string, storedJson: string | null): string {
   const utms = resolveUtms(search, storedJson);
   const params = new URLSearchParams();
-  params.set("codigo", codigoForUtms(utms));
+  params.set("codigo", PUBLIC_ACCESS_CODE);
   appendUtms(params, utms);
   return `${APP_ORIGIN}${REGISTER_PATH}?${params.toString()}`;
 }

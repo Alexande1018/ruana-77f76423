@@ -40,17 +40,10 @@ export function LandingSteps() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ delay: reduce ? 0 : i * 0.07, duration: 0.45 }}
-            className="relative pt-16 p-5 md:p-6 rounded-[22px] border border-white/[0.08] bg-white/[0.025] min-h-[210px]"
+            className="flex flex-col gap-4 p-5 md:p-6 rounded-[22px] border border-white/[0.08] bg-white/[0.025] min-h-[210px]"
           >
-            {i < STEPS.length - 1 && (
-              <span
-                aria-hidden
-                className="hidden"
-                style={{ backgroundColor: 'rgba(0,230,118,0.22)' }}
-              />
-            )}
             <span
-              className="absolute left-5 md:left-6 top-5 text-sm font-semibold tabular-nums w-10 h-10 md:w-11 md:h-11 grid place-items-center rounded-full border"
+              className="text-sm font-semibold tabular-nums w-10 h-10 md:w-11 md:h-11 grid place-items-center rounded-full border shrink-0"
               style={{
                 color: i === 2 ? '#04140b' : GREEN,
                 backgroundColor: i === 2 ? GREEN : 'transparent',
@@ -59,8 +52,10 @@ export function LandingSteps() {
             >
               {step.n}
             </span>
-            <h3 className="text-lg md:text-xl font-semibold text-white pt-1.5">{step.title}</h3>
-            <p className="mt-2 text-[15px] md:text-base text-white/65 leading-relaxed">{step.text}</p>
+            <div>
+              <h3 className="text-lg md:text-xl font-semibold text-white">{step.title}</h3>
+              <p className="mt-2 text-[15px] md:text-base text-white/65 leading-relaxed">{step.text}</p>
+            </div>
           </motion.li>
         ))}
       </ol>

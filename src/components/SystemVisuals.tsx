@@ -1,4 +1,5 @@
 import { GREEN, BG, BG_ALT } from '@/lib/landingTheme';
+import { PUBLIC_ACCESS_CODE } from '@/lib/inauguralPhase';
 import { ArrowRight, Check, Lock, Star } from 'lucide-react';
 
 const cardBase = 'relative rounded-2xl border overflow-hidden';
@@ -180,7 +181,7 @@ export function InvitePanel() {
             className="font-mono text-2xl md:text-3xl tracking-[0.28em] font-bold"
             style={{ color: GREEN }}
           >
-            FUNDADOR
+            {PUBLIC_ACCESS_CODE}
           </div>
         </div>
         <ul className="space-y-2.5">

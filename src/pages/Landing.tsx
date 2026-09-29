@@ -1,12 +1,11 @@
 import { motion, type Variants, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { LandingNavbar, LandingFooter } from '@/components/LandingChrome';
-import { LandingFundadorInvite } from '@/components/LandingFundadorInvite';
+import { LandingAccessInvite } from '@/components/LandingAccessInvite';
 import { LandingAllyExamples } from '@/components/LandingAllyExamples';
 import { LandingDailyStory } from '@/components/LandingDailyStory';
 import { LimitedSeatsIdea, GroupExample } from '@/components/LandingGroup';
 import { LandingScore } from '@/components/LandingScore';
-import { LandingProduct } from '@/components/LandingProduct';
 import { LandingCompare } from '@/components/LandingCompare';
 import { LandingSteps } from '@/components/LandingSteps';
 import { NodeField } from '@/components/NodeField';
@@ -124,7 +123,7 @@ export default function Landing() {
               variants={fadeUp}
               className="font-bold leading-[1.08] tracking-tight text-[32px] sm:text-[40px] md:text-[48px] lg:text-[52px]"
             >
-              Pasa el curro que no haces.
+              Pasa el encargo que no haces.
               <span className="block mt-2 md:mt-3" style={{ color: GREEN }}>
                 Recibe el que sí.
               </span>
@@ -139,7 +138,7 @@ export default function Landing() {
             <motion.div variants={fadeUp} className="mt-7 flex flex-col items-stretch sm:items-start gap-3 max-w-xl">
               <PrimaryCTA className="w-full sm:w-auto" />
               <p className="text-[13px] text-white/60 leading-snug">
-                Sin cuota mensual. Solo un 12% si cierras un curro que te llegó por RUANA.
+                Apuntarse no tiene cuota.
               </p>
               <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
                 <CodeLink />
@@ -150,7 +149,7 @@ export default function Landing() {
         </div>
       </section>
 
-      {INAUGURAL_PHASE_ACTIVE && <LandingFundadorInvite />}
+      {INAUGURAL_PHASE_ACTIVE && <LandingAccessInvite />}
 
       <Section className="py-16 md:py-24 bg-gradient-to-b from-[#0b1014] to-[#080b0f]" id="como-funciona">
         <div className="max-w-6xl mx-auto px-5 md:px-8">
@@ -188,13 +187,7 @@ export default function Landing() {
         </div>
       </Section>
 
-      <Section className="py-16 md:py-24" id="producto">
-        <div className="max-w-6xl mx-auto px-5 md:px-8">
-          <LandingProduct />
-        </div>
-      </Section>
-
-      <Section className="py-16 md:py-24" alt id="reputacion">
+      <Section className="py-16 md:py-24" id="reputacion">
         <div className="max-w-6xl mx-auto px-5 md:px-8">
           <LandingScore />
         </div>
@@ -228,7 +221,7 @@ export default function Landing() {
           </h2>
           <p className="mt-6 text-base md:text-lg text-white/60 leading-relaxed">
             Es la regla del grupo: un oficio, una plaza. Cuando alguien necesita lo que tú haces, tiene
-            un colega de su zona a quien pasar el curro.
+            un colega de su zona a quien pasar el encargo.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
             <PrimaryCTA size="lg" />
