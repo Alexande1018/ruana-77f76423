@@ -73,16 +73,6 @@ export default function Landing() {
         <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-t from-[#080b0f]/85 via-transparent to-[#080b0f]/30" />
         <div className="relative max-w-6xl mx-auto px-5 md:px-8">
           <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-3xl">
-            <motion.p
-              variants={fadeUp}
-              className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] sm:text-xs font-medium tracking-[0.04em] text-white/55 mb-5"
-            >
-              <span
-                className="inline-block h-1.5 w-1.5 rounded-full shrink-0"
-                style={{ backgroundColor: GREEN }}
-              />
-              Oficios de Alicante · por código postal
-            </motion.p>
             <motion.h1
               variants={fadeUp}
               className="font-bold leading-[1.08] tracking-tight text-[32px] sm:text-[40px] md:text-[48px] lg:text-[52px]"
