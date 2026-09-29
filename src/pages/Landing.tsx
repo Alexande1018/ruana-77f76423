@@ -58,7 +58,7 @@ export default function Landing() {
     <div className="min-h-screen text-white" style={{ backgroundColor: BG }}>
       <LandingNavbar />
 
-      <section className="relative isolate overflow-hidden min-h-[720px] md:min-h-[760px] pt-24 md:pt-32 pb-12 md:pb-20">
+      <section className="relative isolate overflow-hidden min-h-0 sm:min-h-[720px] md:min-h-[760px] pt-24 md:pt-32 pb-10 md:pb-20">
         {/* Clean photo-only artwork as a full-bleed background. Responsive positioning
             keeps the tradespeople visible without duplicating UI or text. */}
         <div
