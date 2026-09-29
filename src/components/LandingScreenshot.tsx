@@ -23,13 +23,13 @@ export function LandingScreenshot({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: reduce ? 0.2 : 0.7, ease }}
-        className="overflow-hidden rounded-xl border"
+        className="overflow-hidden rounded-[22px] border bg-[#0b1014] transition-transform duration-500 hover:-translate-y-1"
         style={{
           borderColor: 'rgba(255,255,255,0.08)',
           boxShadow: '0 24px 64px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.04)',
         }}
       >
-        <img src={src} alt={alt} className="w-full h-auto block" loading="lazy" />
+        <img src={src} alt={alt} className="w-full h-auto block transition-transform duration-700 hover:scale-[1.015]" loading="lazy" />
       </motion.div>
       {caption && (
         <figcaption className="mt-3 text-[13px] md:text-sm text-white/50 leading-relaxed">
