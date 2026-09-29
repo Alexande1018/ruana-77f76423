@@ -19,41 +19,6 @@ function Section({ children, className = '', id, alt = false }: { children: Reac
   return <section id={id} className={`scroll-mt-20 ${className}`} style={alt ? { backgroundColor: BG_ALT } : undefined}>{children}</section>;
 }
 
-function HeroReferralScene() {
-  const reduce = useReducedMotion();
-  return (
-    <motion.div
-      className="mt-8 md:mt-10 w-full max-w-[430px] rounded-[18px] border p-4 sm:p-5 overflow-hidden"
-      style={{ backgroundColor: '#11161d', borderColor: 'rgba(255,255,255,0.08)' }}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.65 }}
-    >
-      <div className="flex items-center justify-between text-sm font-semibold text-white/80">
-        <span>Fontanero</span><span>Pintor</span>
-      </div>
-      <div className="relative mt-4 h-[150px] rounded-xl border border-white/5 bg-white/[0.025] overflow-hidden">
-        <div className="absolute left-4 top-4 h-10 w-10 rounded-full border border-white/10 bg-white/5 grid place-items-center text-lg" aria-hidden="true">🔧</div>
-        <div className="absolute right-4 top-4 h-10 w-10 rounded-full border border-white/10 bg-white/5 grid place-items-center text-lg" aria-hidden="true">🖌️</div>
-        <motion.div
-          className="absolute top-[62px] left-3 max-w-[190px] rounded-xl border border-white/10 bg-[#181f27] px-3 py-2 text-[12px] sm:text-[13px] leading-snug text-white/85 shadow-lg"
-          variants={{ hidden: { x: 0, opacity: 0 }, show: { x: reduce ? 0 : 155, opacity: 1, transition: { delay: .2, duration: reduce ? .2 : 1.05, ease } } }}
-        >
-          ¿Conoces a un pintor?
-        </motion.div>
-        <motion.div
-          className="absolute bottom-3 right-3 rounded-lg px-2.5 py-1.5 text-[11px] font-medium"
-          style={{ color: GREEN, backgroundColor: 'rgba(34,197,94,0.08)' }}
-          variants={{ hidden: { opacity: 0, y: 5 }, show: { opacity: 1, y: 0, transition: { delay: reduce ? .25 : 1.25, duration: .3 } } }}
-        >
-          Te paso uno ✓
-        </motion.div>
-      </div>
-      <p className="mt-3 text-[12px] text-white/45">Un curro que no haces puede acabar en manos de alguien de tu grupo.</p>
-    </motion.div>
-  );
-}
-
 export default function Landing() {
   const reduce = useReducedMotion();
   const fadeUp: Variants = { hidden: reduce ? { opacity: 0 } : { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0, transition: { duration: reduce ? 0.2 : 0.55, ease } } };
@@ -82,7 +47,27 @@ export default function Landing() {
               <div className="flex flex-wrap items-center gap-x-5 gap-y-1"><CodeLink /><HaveCodeLink /></div>
             </motion.div>
           </motion.div>
-          <HeroReferralScene />
+          <figure
+            className="mt-8 md:mt-10 w-full max-w-[350px] rounded-[14px] border px-3.5 pt-4 pb-3"
+            style={{ backgroundColor: '#11161d', borderColor: 'rgba(255,255,255,0.08)' }}
+          >
+            <img
+              src="/landing/hero-fontanero-pintor.webp"
+              alt="Un fontanero y un pintor se pasan trabajo en los dos sentidos"
+              width={700}
+              height={195}
+              decoding="async"
+              className="block w-full h-auto"
+            />
+            <div
+              className="mt-1.5 grid text-[13px] font-semibold leading-none text-white/75"
+              style={{ gridTemplateColumns: '26% 48% 26%' }}
+            >
+              <span className="text-center">Fontanero</span>
+              <span aria-hidden="true" />
+              <span className="text-center">Pintor</span>
+            </div>
+          </figure>
         </div>
       </section>
 
