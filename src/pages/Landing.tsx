@@ -58,8 +58,19 @@ export default function Landing() {
     <div className="min-h-screen text-white" style={{ backgroundColor: BG }}>
       <LandingNavbar />
 
-      <section className="relative overflow-hidden pt-24 md:pt-32 pb-12 md:pb-20">
-        <NodeField density={0.00012} opacity={0.7} intensity={0.8} />
+      <section className="relative isolate overflow-hidden min-h-[720px] md:min-h-[760px] pt-24 md:pt-32 pb-12 md:pb-20">
+        {/* The artwork is a full-bleed background, not a screenshot/card. The negative
+            top offset crops the navigation baked into the source image. */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 -top-[12%] bottom-0 -z-20 bg-cover bg-center md:bg-[center_42%] scale-[1.03]"
+          style={{ backgroundImage: 'url("/landing/file_00000000dbc48210a94689717f8b3799.png")' }}
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 bg-gradient-to-r from-[#080b0f]/95 via-[#080b0f]/72 to-[#080b0f]/25"
+        />
+        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-t from-[#080b0f]/85 via-transparent to-[#080b0f]/30" />
         <div className="relative max-w-6xl mx-auto px-5 md:px-8">
           <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-3xl">
             <motion.p
@@ -100,17 +111,6 @@ export default function Landing() {
             </motion.div>
           </motion.div>
 
-          <figure className="mt-8 md:mt-10 w-full max-w-5xl overflow-hidden rounded-[18px] border border-white/10 bg-[#11161d] shadow-2xl">
-            <img
-              src="/landing/file_00000000dbc48210a94689717f8b3799.png"
-              alt="Profesionales de distintos oficios conectados por RUANA para pasarse encargos en su zona"
-              width={1536}
-              height={1024}
-              loading="eager"
-              decoding="async"
-              className="block w-full h-auto"
-            />
-          </figure>
         </div>
       </section>
 
