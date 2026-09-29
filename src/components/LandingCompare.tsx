@@ -20,7 +20,7 @@ export function LandingCompare() {
   const reduce = useReducedMotion();
 
   return (
-    <div className="max-w-3xl">
+    <div className="max-w-5xl">
       <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-3">
         No es otro sitio donde comprar clientes.
       </h2>
@@ -29,7 +29,7 @@ export function LandingCompare() {
         para que las recomendaciones dejen de perderse.
       </p>
 
-      <div className="space-y-3">
+      <div className="grid md:grid-cols-2 gap-3">
         {OTHERS.map((item, i) => (
           <motion.div
             key={item.label}
@@ -37,7 +37,7 @@ export function LandingCompare() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: reduce ? 0 : i * 0.06, duration: 0.4 }}
-            className="grid sm:grid-cols-[140px_1fr] gap-1 sm:gap-6 px-1 py-3 border-b"
+            className="rounded-2xl border p-5 bg-white/[0.025]"
             style={{ borderColor: 'rgba(255,255,255,0.07)' }}
           >
             <p className="text-sm font-medium text-white/40 pt-0.5">{item.label}</p>
@@ -50,7 +50,7 @@ export function LandingCompare() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: reduce ? 0 : 0.18, duration: 0.5 }}
-          className="mt-2 rounded-xl border px-5 py-5 sm:px-6 sm:py-6"
+          className="md:col-span-2 mt-2 rounded-[24px] border px-5 py-6 sm:px-7 sm:py-7"
           style={{
             borderColor: 'rgba(0,230,118,0.32)',
             backgroundColor: 'rgba(0,230,118,0.06)',
