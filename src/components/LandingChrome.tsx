@@ -38,9 +38,9 @@ export function LandingNavbar() {
     <header
       className="fixed top-0 inset-x-0 z-50 transition-all duration-300"
       style={{
-        backgroundColor: scrolled || open ? 'rgba(13,17,23,0.92)' : 'transparent',
-        backdropFilter: scrolled || open ? 'blur(12px)' : 'none',
-        WebkitBackdropFilter: scrolled || open ? 'blur(12px)' : 'none',
+        backgroundColor: scrolled || open ? 'rgba(8,12,16,0.82)' : 'transparent',
+        backdropFilter: scrolled || open ? 'blur(18px)' : 'none',
+        WebkitBackdropFilter: scrolled || open ? 'blur(18px)' : 'none',
         boxShadow: scrolled ? '0 4px 24px rgba(0,0,0,0.35)' : 'none',
         borderBottom: scrolled || open ? '1px solid rgba(255,255,255,0.06)' : '1px solid transparent',
       }}
@@ -108,7 +108,7 @@ export function LandingNavbar() {
 
 export function LandingFooter() {
   return (
-    <footer style={{ backgroundColor: BG_ALT }} className="border-t border-white/5">
+    <footer style={{ backgroundColor: BG_ALT }} className="border-t border-white/5 bg-gradient-to-b from-[#0b1014] to-[#07090c]">
       <div className="max-w-6xl mx-auto px-5 md:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-2">
           <Network className="h-5 w-5" style={{ color: GREEN }} />
