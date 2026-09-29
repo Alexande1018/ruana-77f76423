@@ -59,12 +59,12 @@ export default function Landing() {
       <LandingNavbar />
 
       <section className="relative isolate overflow-hidden min-h-[720px] md:min-h-[760px] pt-24 md:pt-32 pb-12 md:pb-20">
-        {/* The artwork is a full-bleed background, not a screenshot/card. The negative
-            top offset crops the navigation baked into the source image. */}
+        {/* Clean photo-only artwork as a full-bleed background. Responsive positioning
+            keeps the tradespeople visible without duplicating UI or text. */}
         <div
           aria-hidden="true"
-          className="absolute inset-x-0 -top-[12%] bottom-0 -z-20 bg-cover bg-center md:bg-[center_42%] scale-[1.03]"
-          style={{ backgroundImage: 'url("/landing/file_00000000dbc48210a94689717f8b3799.png")' }}
+          className="absolute inset-0 -z-20 bg-cover bg-[38%_center] sm:bg-center md:bg-[center_45%]"
+          style={{ backgroundImage: 'url("/landing/hero-fontanero-pintor.webp")' }}
         />
         <div
           aria-hidden="true"
