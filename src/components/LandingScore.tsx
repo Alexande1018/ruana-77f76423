@@ -16,10 +16,10 @@ export function LandingScore() {
       </div>
 
       <div
-        className="rounded-xl border overflow-hidden"
+        className="rounded-[24px] border overflow-hidden backdrop-blur-xl"
         style={{
           borderColor: 'rgba(255,255,255,0.1)',
-          backgroundColor: '#12171e',
+          background: 'linear-gradient(145deg, rgba(19,26,32,0.96), rgba(8,12,16,0.92))',
           boxShadow: '0 20px 50px rgba(0,0,0,0.35)',
         }}
       >
