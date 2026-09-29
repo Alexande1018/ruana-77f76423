@@ -1,4 +1,4 @@
-import { motion, type Variants, useReducedMotion } from 'framer-motion';
+import { motion, type Variants, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { LandingNavbar, LandingFooter } from '@/components/LandingChrome';
 import { LandingFundadorInvite } from '@/components/LandingFundadorInvite';
 import { LandingAllyExamples } from '@/components/LandingAllyExamples';
@@ -27,18 +27,27 @@ function Section({
   alt?: boolean;
 }) {
   return (
-    <section
+    <motion.section
       id={id}
-      className={`scroll-mt-20 ${className}`}
+      className={`scroll-mt-20 relative overflow-hidden border-t border-white/[0.04] ${className}`}
       style={alt ? { backgroundColor: BG_ALT } : undefined}
+      initial={{ opacity: 0, y: 28, scale: 0.992 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.12 }}
+      transition={{ duration: 0.7, ease }}
     >
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent" />
       {children}
-    </section>
+    </motion.section>
   );
 }
 
 export default function Landing() {
   const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll();
+  const heroY = useTransform(scrollYProgress, [0, 0.18], ['0%', '7%']);
+  const heroScale = useTransform(scrollYProgress, [0, 0.16], [1, 0.975]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.18], [1, 0.72]);
 
   const fadeUp: Variants = {
     hidden: reduce ? { opacity: 0 } : { opacity: 0, y: 18 },
@@ -61,10 +70,15 @@ export default function Landing() {
       <section className="relative isolate overflow-hidden min-h-0 sm:min-h-[720px] md:min-h-[760px] pt-24 md:pt-32 pb-10 md:pb-20">
         {/* Clean photo-only artwork as a full-bleed background. Responsive positioning
             keeps the tradespeople visible without duplicating UI or text. */}
-        <div
+        <motion.div
           aria-hidden="true"
-          className="absolute inset-0 -z-20 bg-contain bg-top bg-no-repeat sm:bg-cover sm:bg-center md:bg-[center_45%]"
-          style={{ backgroundImage: 'url("/landing/file_00000000e4f88243b41b502ec6975bec.png")' }}
+          className="absolute inset-0 -z-20 bg-contain bg-top bg-no-repeat sm:bg-cover sm:bg-center md:bg-[center_45%] will-change-transform"
+          style={{
+            backgroundImage: 'url("/landing/file_00000000e4f88243b41b502ec6975bec.png")',
+            y: reduce ? 0 : heroY,
+            scale: reduce ? 1 : heroScale,
+            opacity: reduce ? 1 : heroOpacity,
+          }}
         />
         <div
           aria-hidden="true"
@@ -72,7 +86,12 @@ export default function Landing() {
         />
         <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-t from-[#080b0f]/85 via-transparent to-[#080b0f]/30" />
         <div className="relative max-w-6xl mx-auto px-5 md:px-8">
-          <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-3xl">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={stagger}
+            className="max-w-3xl rounded-[28px] md:rounded-none md:bg-transparent bg-black/10 md:backdrop-blur-0 backdrop-blur-[1px]"
+          >
             <motion.h1
               variants={fadeUp}
               className="font-bold leading-[1.08] tracking-tight text-[32px] sm:text-[40px] md:text-[48px] lg:text-[52px]"
@@ -106,7 +125,7 @@ export default function Landing() {
 
       {INAUGURAL_PHASE_ACTIVE && <LandingFundadorInvite />}
 
-      <Section className="py-16 md:py-24" id="como-funciona">
+      <Section className="py-16 md:py-24 bg-gradient-to-b from-[#0b1014] to-[#080b0f]" id="como-funciona">
         <div className="max-w-6xl mx-auto px-5 md:px-8">
           <LandingDailyStory />
         </div>
@@ -166,9 +185,13 @@ export default function Landing() {
         </div>
       </Section>
 
-      <section
+      <motion.section
         id="entrar"
-        className="relative overflow-hidden py-24 md:py-36 scroll-mt-20"
+        initial={{ opacity: 0, y: 32 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.18 }}
+        transition={{ duration: 0.75, ease }}
+        className="relative overflow-hidden py-24 md:py-36 scroll-mt-20 border-t border-emerald-400/10"
         style={{ backgroundColor: BG }}
       >
         <NodeField density={0.00008} opacity={0.45} intensity={0.55} />
@@ -188,7 +211,7 @@ export default function Landing() {
             <CodeLink />
           </div>
         </div>
-      </section>
+      </motion.section>
 
       <LandingFooter />
     </div>
