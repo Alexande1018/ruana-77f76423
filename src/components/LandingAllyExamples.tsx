@@ -38,8 +38,8 @@ export function LandingAllyExamples() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ delay: reduce ? 0 : i * 0.08, duration: reduce ? 0.2 : 0.5 }}
-              className="relative sm:pl-12 py-5 md:py-6 border-t last:border-b"
-              style={{ borderColor: 'rgba(255,255,255,0.08)' }}
+              className="relative sm:pl-12 p-5 md:p-6 mb-3 rounded-2xl border bg-white/[0.025] backdrop-blur-sm transition-transform duration-300 hover:-translate-y-0.5"
+              style={{ borderColor: 'rgba(255,255,255,0.08)', boxShadow: '0 18px 45px rgba(0,0,0,0.14)' }}
             >
               <span
                 aria-hidden
