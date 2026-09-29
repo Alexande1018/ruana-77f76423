@@ -32,7 +32,7 @@ export function LandingSteps() {
         </p>
       </div>
 
-      <ol className="max-w-2xl">
+      <ol className="grid md:grid-cols-3 gap-4">
         {STEPS.map((step, i) => (
           <motion.li
             key={step.n}
@@ -40,17 +40,17 @@ export function LandingSteps() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ delay: reduce ? 0 : i * 0.07, duration: 0.45 }}
-            className="relative pl-16 md:pl-20 pb-10 last:pb-0"
+            className="relative pt-16 p-5 md:p-6 rounded-[22px] border border-white/[0.08] bg-white/[0.025] min-h-[210px]"
           >
             {i < STEPS.length - 1 && (
               <span
                 aria-hidden
-                className="absolute left-[18px] md:left-[22px] top-10 bottom-0 w-px"
+                className="hidden"
                 style={{ backgroundColor: 'rgba(0,230,118,0.22)' }}
               />
             )}
             <span
-              className="absolute left-0 top-0 text-sm font-semibold tabular-nums w-10 h-10 md:w-11 md:h-11 grid place-items-center rounded-full border"
+              className="absolute left-5 md:left-6 top-5 text-sm font-semibold tabular-nums w-10 h-10 md:w-11 md:h-11 grid place-items-center rounded-full border"
               style={{
                 color: i === 2 ? '#04140b' : GREEN,
                 backgroundColor: i === 2 ? GREEN : 'transparent',
