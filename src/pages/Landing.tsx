@@ -64,7 +64,7 @@ export default function Landing() {
         <div
           aria-hidden="true"
           className="absolute inset-0 -z-20 bg-cover bg-[38%_center] sm:bg-center md:bg-[center_45%]"
-          style={{ backgroundImage: 'url("/landing/hero-fontanero-pintor.webp")' }}
+          style={{ backgroundImage: 'url("/landing/file_00000000e4f88243b41b502ec6975bec.png")' }}
         />
         <div
           aria-hidden="true"
