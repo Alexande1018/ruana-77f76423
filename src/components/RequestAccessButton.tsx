@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from "react";
-import { PartyPopper, X } from "lucide-react";
-import { INAUGURAL_PHASE_ACTIVE, FUNDADOR_APP_URL, FUNDADOR_CODE } from "@/lib/inauguralPhase";
+import { X } from "lucide-react";
+import { INAUGURAL_PHASE_ACTIVE, PUBLIC_ACCESS_CODE } from "@/lib/inauguralPhase";
 import { useRegisterUrl } from "@/lib/registerUrl";
 import { GREEN, GREEN_DARK, BG_ALT } from "@/lib/landingTheme";
 
@@ -42,10 +42,7 @@ export function RequestAccessButton({ children, className, style, onBeforeOpen }
 }
 
 function InauguralPhaseModal({ onClose }: { onClose: () => void }) {
-  const goToApp = () => {
-    onClose();
-    window.open(FUNDADOR_APP_URL, "_blank", "noopener,noreferrer");
-  };
+  const href = useRegisterUrl();
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -89,29 +86,26 @@ function InauguralPhaseModal({ onClose }: { onClose: () => void }) {
         </button>
 
         <div className="p-7 md:p-9">
-          <div
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-5 border"
+          <p
+            className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold mb-5 border"
             style={{
               borderColor: "rgba(0,230,118,0.4)",
               backgroundColor: "rgba(0,230,118,0.08)",
               color: GREEN,
             }}
           >
-            <PartyPopper className="h-3.5 w-3.5" /> Fase Inaugural · Acceso exclusivo
-          </div>
+            Por invitación
+          </p>
 
           <h2 id="inaugural-title" className="text-2xl md:text-[28px] font-bold leading-tight tracking-tight">
-            Estás invitado a formar parte de los{" "}
-            <span style={{ color: GREEN }}>Aliados Fundadores</span> de RUANA
+            Esta fase no está abierta a cualquiera.
           </h2>
 
           <div className="mt-5 space-y-4 text-[15px] text-white/80 leading-relaxed">
             <p>
-              Durante la Fase Inaugural, no es necesario solicitar un código ni entrar en lista de espera.
+              Las plazas van por invitación y son pocas. Si has llegado hasta aquí, puedes ocupar la de tu oficio en tu zona.
             </p>
-            <p>
-              De forma exclusiva puedes registrarte como Aliado Fundador utilizando el código de acceso:
-            </p>
+            <p>Este es el código. Va en el registro.</p>
 
             <div
               className="rounded-xl px-5 py-4 text-center border-2"
@@ -124,17 +118,11 @@ function InauguralPhaseModal({ onClose }: { onClose: () => void }) {
                 className="text-3xl md:text-4xl font-extrabold tracking-[0.25em]"
                 style={{ color: GREEN }}
               >
-                {FUNDADOR_CODE}
+                {PUBLIC_ACCESS_CODE}
               </div>
             </div>
 
-            <p>
-              Haz clic en <span className="text-white font-semibold">"Ya tengo un código"</span>,
-              introduce el código <span className="font-semibold" style={{ color: GREEN }}>{FUNDADOR_CODE}</span> y completa tu registro directamente.
-            </p>
-            <p className="text-white/60 text-sm">
-              Aprovecha esta oportunidad antes de que finalice la Fase Inaugural.
-            </p>
+            <p className="text-white/60 text-sm">Apuntarse no tiene cuota.</p>
           </div>
 
           <div className="mt-7 flex flex-col-reverse sm:flex-row gap-3 sm:justify-end">
@@ -145,14 +133,13 @@ function InauguralPhaseModal({ onClose }: { onClose: () => void }) {
             >
               Cerrar
             </button>
-            <button
-              type="button"
-              onClick={goToApp}
-              className="px-5 py-3 rounded-lg font-semibold text-sm text-black transition-all duration-200 hover:shadow-[0_0_24px_rgba(0,230,118,0.45)]"
+            <a
+              href={href}
+              className="px-5 py-3 rounded-lg font-semibold text-sm text-black text-center transition-all duration-200 hover:shadow-[0_0_24px_rgba(0,230,118,0.45)]"
               style={{ backgroundColor: GREEN }}
             >
-              Ir a "Ya tengo un código"
-            </button>
+              Apuntarme con {PUBLIC_ACCESS_CODE}
+            </a>
           </div>
         </div>
       </div>

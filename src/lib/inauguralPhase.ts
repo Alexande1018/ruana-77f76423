@@ -1,5 +1,5 @@
-// Fase inaugural apagada: los CTA de alta van directos al registro, sin modal.
-export const INAUGURAL_PHASE_ACTIVE = false;
+/** Único código de captación pública. El alta, el bloque y el modal lo usan tal cual. */
+export const PUBLIC_ACCESS_CODE = "ALC-IG";
 
-export const FUNDADOR_APP_URL = "https://ruana-4293f.web.app";
-export const FUNDADOR_CODE = "FUNDADOR";
+/** Muestra el bloque y el modal de acceso por invitación. */
+export const INAUGURAL_PHASE_ACTIVE = true;

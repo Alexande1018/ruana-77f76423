@@ -30,7 +30,7 @@ export function LandingNavbar() {
     { id: 'como-funciona', label: 'Cómo funciona' },
     { id: 'plazas', label: 'Plazas' },
     { id: 'diferencia', label: 'Por qué RUANA' },
-    ...(INAUGURAL_PHASE_ACTIVE ? [{ id: 'fundador', label: 'Aliado Fundador' }] : []),
+    ...(INAUGURAL_PHASE_ACTIVE ? [{ id: 'acceso', label: 'Invitación' }] : []),
     { id: 'entrar', label: 'Entrar' },
   ];
 
