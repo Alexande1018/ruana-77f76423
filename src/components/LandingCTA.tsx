@@ -1,7 +1,4 @@
-import { ArrowRight } from 'lucide-react';
-import { RequestAccessButton } from '@/components/RequestAccessButton';
-import { APP_LOGIN_URL, useInviteUrl } from '@/lib/registerUrl';
-import { GREEN } from '@/lib/landingTheme';
+import { APP_LOGIN_URL, useInviteUrl, useRegisterUrl } from '@/lib/registerUrl';
 import { cn } from '@/lib/utils';
 
 export const PRIMARY_CTA_LABEL = 'Apúntate con tu oficio';
@@ -10,70 +7,61 @@ export const CODE_LINK_LABEL = 'Ya soy aliado · Entrar';
 export const HAVE_CODE_LABEL = 'Tengo un código';
 
 const sizeClass = {
-  nav: 'min-h-10 px-3.5 py-2 text-[13px] sm:text-sm leading-tight whitespace-nowrap',
-  default: 'min-h-12 px-5 py-3.5 text-[15px] md:text-base',
-  lg: 'min-h-14 px-7 py-4 text-base md:text-lg',
+  nav: 'min-h-10 px-4 py-2 text-[15px]',
+  default: 'min-h-12 px-[22px] py-3 text-[15px]',
+  lg: 'min-h-12 px-7 py-3.5 text-base',
 } as const;
 
 type CtaSize = keyof typeof sizeClass;
 
 export function PrimaryCTA({
-  children = PRIMARY_CTA_LABEL,
+  children,
   size = 'default',
   className,
-  onBeforeOpen,
 }: {
   children?: React.ReactNode;
   size?: CtaSize;
   className?: string;
-  onBeforeOpen?: () => void;
 }) {
+  const href = useRegisterUrl();
+
   return (
-    <RequestAccessButton
-      onBeforeOpen={onBeforeOpen}
+    <a
+      href={href}
       className={cn(
-        'landing-cta inline-flex items-center justify-center gap-2 rounded-lg font-semibold text-black text-center',
-        'transition-all duration-200',
-        'hover:shadow-[0_0_32px_rgba(0,230,118,0.45)] hover:-translate-y-0.5',
-        'active:translate-y-0 active:shadow-[0_0_16px_rgba(0,230,118,0.25)]',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
-        'focus-visible:ring-[#00E676] focus-visible:ring-offset-[#0D1117]',
+        'landing-cta inline-flex items-center justify-center rounded-full bg-[#6DC41F] text-center font-display font-extrabold text-[#0A0D12] no-underline whitespace-nowrap',
+        'transition hover:brightness-105',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8BD450] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0D12]',
         sizeClass[size],
         className,
       )}
-      style={{ backgroundColor: GREEN }}
     >
-      {children}
-    </RequestAccessButton>
-  );
-}
-
-export function CodeLink({
-  label = CODE_LINK_LABEL,
-  className,
-}: {
-  label?: string;
-  className?: string;
-}) {
-  return (
-    <a
-      href={APP_LOGIN_URL}
-      className={cn(
-        'group inline-flex items-center gap-2 min-h-11 text-[15px] md:text-base font-medium',
-        'border-b pb-0.5 transition-colors duration-200',
-        'hover:text-white focus-visible:outline-none focus-visible:ring-2',
-        'focus-visible:ring-[#00E676] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D1117] rounded-sm',
-        className,
+      {children ?? (
+        <>
+          {PRIMARY_CTA_LABEL}
+          <span aria-hidden="true"> →</span>
+        </>
       )}
-      style={{ color: GREEN, borderColor: 'rgba(0,230,118,0.35)' }}
-    >
-      {label}
-      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 motion-reduce:transform-none" />
     </a>
   );
 }
 
-/** Quién ya trae un código: enlace pequeño, misma pestaña, a invite.html. */
+export function CodeLink({ className }: { className?: string }) {
+  return (
+    <a
+      href={APP_LOGIN_URL}
+      className={cn(
+        'text-sm text-[#9AA3AD] hover:text-[#F5F7F2]',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8BD450] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0D12] rounded-sm',
+        className,
+      )}
+    >
+      Ya soy aliado · <span className="text-[#8BD450] underline underline-offset-[3px]">Entrar</span>
+    </a>
+  );
+}
+
+/** Quién ya trae un código: enlace a invite.html. No se muestra en la landing. */
 export function HaveCodeLink({ className }: { className?: string }) {
   const href = useInviteUrl();
 
@@ -84,7 +72,7 @@ export function HaveCodeLink({ className }: { className?: string }) {
         'inline-flex items-center min-h-11 text-sm text-white/50',
         'underline-offset-4 hover:text-white/80 hover:underline',
         'focus-visible:outline-none focus-visible:ring-2',
-        'focus-visible:ring-[#00E676] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D1117] rounded-sm',
+        'focus-visible:ring-[#8BD450] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0D12] rounded-sm',
         className,
       )}
     >

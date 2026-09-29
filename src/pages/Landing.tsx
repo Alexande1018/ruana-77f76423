@@ -1,234 +1,168 @@
-import { motion, type Variants, useReducedMotion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import type { ComponentType } from 'react';
 import { LandingNavbar, LandingFooter } from '@/components/LandingChrome';
-import { LandingAccessInvite } from '@/components/LandingAccessInvite';
-import { LandingAllyExamples } from '@/components/LandingAllyExamples';
-import { LandingDailyStory } from '@/components/LandingDailyStory';
-import { LimitedSeatsIdea, GroupExample } from '@/components/LandingGroup';
-import { LandingScore } from '@/components/LandingScore';
-import { LandingCompare } from '@/components/LandingCompare';
-import { LandingSteps } from '@/components/LandingSteps';
-import { NodeField } from '@/components/NodeField';
-import { BG, BG_ALT, GREEN } from '@/lib/landingTheme';
-import { PrimaryCTA, CodeLink, HaveCodeLink } from '@/components/LandingCTA';
-import { INAUGURAL_PHASE_ACTIVE } from '@/lib/inauguralPhase';
+import { PrimaryCTA, CodeLink } from '@/components/LandingCTA';
+import {
+  BoltGlyph,
+  BrickGlyph,
+  BroomGlyph,
+  MoreGlyph,
+  PaintbrushGlyph,
+  SnowflakeGlyph,
+  TreeGlyph,
+  WrenchGlyph,
+} from '@/components/LandingIcons';
 
-const ease = [0.16, 1, 0.3, 1] as const;
+const STEPS = [
+  {
+    title: 'Te llega un encargo que no haces',
+    body: 'Un cliente te pide algo fuera de tu oficio. En vez de decir que no y ya está, lo pasas.',
+  },
+  {
+    title: 'Se lo pasas a alguien de tu zona',
+    body: 'A un colega de tu código postal que sí lo hace. Gente de oficio, no un directorio frío.',
+  },
+  {
+    title: 'Cuando le pidan lo tuyo, te llama',
+    body: 'El favor vuelve. Eso es RUANA: oficios de Alicante pasándose encargos.',
+  },
+];
 
-function Section({
-  children,
-  className = '',
-  id,
-  alt = false,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  id?: string;
-  alt?: boolean;
-}) {
-  const sectionRef = useRef<HTMLElement>(null);
-  const reduce = useReducedMotion();
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start end', 'end start'],
-  });
-  const sectionScale = useTransform(scrollYProgress, [0, 0.18, 0.78, 1], [0.97, 1, 1, 0.97]);
-  const sectionOpacity = useTransform(scrollYProgress, [0, 0.18, 0.78, 1], [0.92, 1, 1, 0.94]);
-  const sectionY = useTransform(scrollYProgress, [0, 0.18, 0.78, 1], [22, 0, 0, -10]);
+const TRADES: { label: string; Icon: ComponentType<{ className?: string }> }[] = [
+  { label: 'Fontanería', Icon: WrenchGlyph },
+  { label: 'Electricidad', Icon: BoltGlyph },
+  { label: 'Pintura', Icon: PaintbrushGlyph },
+  { label: 'Reformas', Icon: BrickGlyph },
+  { label: 'Clima', Icon: SnowflakeGlyph },
+  { label: 'Jardinería', Icon: TreeGlyph },
+  { label: 'Limpieza', Icon: BroomGlyph },
+  { label: 'Más oficios', Icon: MoreGlyph },
+];
 
+function Wrap({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  return <div className={`mx-auto w-full max-w-[1080px] px-5 ${className}`}>{children}</div>;
+}
+
+function TradeTile({ children }: { children: React.ReactNode }) {
   return (
-    <motion.section
-      ref={sectionRef}
-      id={id}
-      className={`scroll-mt-20 relative overflow-hidden border-t border-white/[0.04] ${className}`}
-      style={alt ? { backgroundColor: BG_ALT } : undefined}
-    >
-      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent" />
-      <motion.div
-        style={{
-          opacity: reduce ? 1 : sectionOpacity,
-          scale: reduce ? 1 : sectionScale,
-          y: reduce ? 0 : sectionY,
-        }}
-      >
-        {children}
-      </motion.div>
-    </motion.section>
+    <div className="flex h-[104px] w-[104px] items-center justify-center rounded-[22px] border-[3px] border-[#6DC41F] bg-[#141820] sm:h-[120px] sm:w-[120px]">
+      {children}
+    </div>
   );
 }
 
 export default function Landing() {
-  const reduce = useReducedMotion();
-  const heroRef = useRef<HTMLElement>(null);
-  const finalCtaRef = useRef<HTMLElement>(null);
-  const { scrollYProgress: heroProgress } = useScroll({
-    target: heroRef,
-    offset: ['start start', 'end start'],
-  });
-  const heroY = useTransform(heroProgress, [0, 1], ['0%', '7%']);
-  const heroScale = useTransform(heroProgress, [0, 1], [1, 0.975]);
-  const heroOpacity = useTransform(heroProgress, [0, 1], [1, 0.72]);
-  const { scrollYProgress: finalCtaProgress } = useScroll({
-    target: finalCtaRef,
-    offset: ['start end', 'end start'],
-  });
-  const finalCtaScale = useTransform(finalCtaProgress, [0, 0.18, 0.78, 1], [0.97, 1, 1, 0.97]);
-  const finalCtaOpacity = useTransform(finalCtaProgress, [0, 0.18, 0.78, 1], [0.92, 1, 1, 0.94]);
-  const finalCtaY = useTransform(finalCtaProgress, [0, 0.18, 0.78, 1], [22, 0, 0, -10]);
-
-  const fadeUp: Variants = {
-    hidden: reduce ? { opacity: 0 } : { opacity: 0, y: 18 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: reduce ? 0.2 : 0.55, ease },
-    },
-  };
-
-  const stagger: Variants = {
-    hidden: {},
-    visible: { transition: { staggerChildren: reduce ? 0 : 0.1, delayChildren: reduce ? 0 : 0.04 } },
-  };
-
   return (
-    <div className="min-h-screen text-white" style={{ backgroundColor: BG }}>
+    <div className="min-h-screen bg-[#0A0D12] text-[#F5F7F2]">
       <LandingNavbar />
 
-      <section ref={heroRef} className="relative isolate overflow-hidden min-h-0 sm:min-h-[720px] md:min-h-[760px] pt-24 md:pt-32 pb-10 md:pb-20">
-        {/* Clean photo-only artwork as a full-bleed background. Responsive positioning
-            keeps the tradespeople visible without duplicating UI or text. */}
-        <motion.div
-          aria-hidden="true"
-          className="absolute inset-0 -z-20 bg-contain bg-top bg-no-repeat sm:bg-cover sm:bg-center md:bg-[center_45%] will-change-transform"
-          style={{
-            backgroundImage: 'url("/landing/file_00000000e4f88243b41b502ec6975bec.png")',
-            y: reduce ? 0 : heroY,
-            scale: reduce ? 1 : heroScale,
-            opacity: reduce ? 1 : heroOpacity,
-          }}
-        />
+      <section
+        className="relative overflow-hidden pt-10 md:pt-14"
+        style={{
+          background:
+            'radial-gradient(ellipse 80% 50% at 70% 18%, rgba(109,196,31,.22), transparent 60%), linear-gradient(180deg, #0A0D12 0%, #10151c 100%)',
+        }}
+      >
+        <Wrap>
+          <p className="mb-4 text-[13px] font-bold uppercase tracking-[0.08em] text-[#8BD450]">
+            Oficios de Alicante · por código postal
+          </p>
+          <h1 className="max-w-[18em] font-display text-[clamp(32px,7vw,56px)] font-extrabold leading-[1.05] tracking-tight">
+            Pasa el encargo que no haces.
+            <span className="mt-1 block text-[#8BD450]">Recibe el que sí.</span>
+          </h1>
+          <p className="mt-4 max-w-[34em] text-lg leading-relaxed text-[#d7dde3]">
+            ¿Eres fontanero y te piden pintar? Se lo pasas a un pintor de tu zona. Y cuando a él le pidan lo tuyo, te llama a ti.
+          </p>
+          <div className="mt-7 flex flex-col items-start">
+            <PrimaryCTA />
+            <p className="mt-2.5 text-sm text-[#9AA3AD]">Apuntarse no tiene cuota.</p>
+            <p className="mt-3.5">
+              <CodeLink />
+            </p>
+          </div>
+          <div className="mt-9 flex items-center justify-start gap-3 sm:gap-[18px] md:justify-center" aria-hidden="true">
+            <TradeTile>
+              <WrenchGlyph className="h-12 w-12 sm:h-14 sm:w-14" />
+            </TradeTile>
+            <span className="text-[28px] font-black text-[#8BD450]">→</span>
+            <TradeTile>
+              <PaintbrushGlyph className="h-12 w-12 sm:h-14 sm:w-14" />
+            </TradeTile>
+          </div>
+          <p className="mt-5 pb-8 text-sm text-[#9AA3AD] md:pb-10">
+            Estamos formando los primeros grupos en Alicante.
+          </p>
+        </Wrap>
         <div
           aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-gradient-to-r from-[#080b0f]/95 via-[#080b0f]/72 to-[#080b0f]/25"
+          className="h-16 bg-[#F5F7F2] md:h-24"
+          style={{ borderRadius: '50% 50% 0 0 / 100% 100% 0 0' }}
         />
-        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-t from-[#080b0f]/85 via-transparent to-[#080b0f]/30" />
-        <div className="relative max-w-6xl mx-auto px-5 md:px-8">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={stagger}
-            className="max-w-3xl rounded-[28px] md:rounded-none md:bg-transparent bg-black/10 md:backdrop-blur-0 backdrop-blur-[1px]"
-          >
-            <motion.h1
-              variants={fadeUp}
-              className="font-bold leading-[1.08] tracking-tight text-[32px] sm:text-[40px] md:text-[48px] lg:text-[52px]"
-            >
-              Pasa el encargo que no haces.
-              <span className="block mt-2 md:mt-3" style={{ color: GREEN }}>
-                Recibe el que sí.
-              </span>
-            </motion.h1>
-            <motion.p
-              variants={fadeUp}
-              className="mt-5 text-base md:text-xl text-white/72 leading-relaxed max-w-2xl"
-            >
-              ¿Te piden algo que no haces? Pásaselo a un colega de tu zona. Y cuando a él le pidan lo
-              tuyo, te llama a ti.
-            </motion.p>
-            <motion.div variants={fadeUp} className="mt-7 flex flex-col items-stretch sm:items-start gap-3 max-w-xl">
-              <PrimaryCTA className="w-full sm:w-auto" />
-              <p className="text-[13px] text-white/60 leading-snug">
-                Apuntarse no tiene cuota.
-              </p>
-              <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
-                <CodeLink />
-                <HaveCodeLink />
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
       </section>
 
-      {INAUGURAL_PHASE_ACTIVE && <LandingAccessInvite />}
-
-      <Section className="py-16 md:py-24 bg-gradient-to-b from-[#0b1014] to-[#080b0f]" id="como-funciona">
-        <div className="max-w-6xl mx-auto px-5 md:px-8">
-          <LandingDailyStory />
-        </div>
-      </Section>
-
-      <Section className="py-16 md:py-24" alt id="oportunidades">
-        <div className="max-w-6xl mx-auto px-5 md:px-8">
-          <div className="max-w-2xl mb-8 md:mb-10">
-            <h2 className="text-2xl md:text-[34px] font-semibold tracking-tight leading-[1.15]">
-              Aquí el trabajo no se compra. Se recomienda.
-            </h2>
-            <p className="mt-4 text-base md:text-lg text-white/65 leading-relaxed">
-              Cuando un profesional de tu grupo necesita a alguien de tu oficio, puede pasarte la
-              oportunidad directamente.
-            </p>
-            <p className="mt-3 text-base md:text-lg text-white/65 leading-relaxed">
-              No son anuncios ni una lista de leads vendidos a varios profesionales.
-            </p>
+      <section id="como" className="bg-[#F5F7F2] pb-14 pt-2 text-[#12161c] md:pb-20 md:pt-4">
+        <Wrap>
+          <h2 className="mb-7 font-display text-[clamp(26px,5vw,36px)] font-extrabold tracking-tight">Cómo funciona</h2>
+          <div className="grid gap-[18px] md:grid-cols-3">
+            {STEPS.map((step, index) => (
+              <article key={step.title} className="rounded-2xl border border-[#e3e8df] bg-[#f3f5f1] p-[22px]">
+                <div
+                  aria-hidden="true"
+                  className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-[#6DC41F] font-display text-sm font-extrabold text-[#0A0D12]"
+                >
+                  {index + 1}
+                </div>
+                <h3 className="mb-2 font-display text-lg font-extrabold leading-snug">{step.title}</h3>
+                <p className="text-[15px] leading-relaxed text-[#3a4450]">{step.body}</p>
+              </article>
+            ))}
           </div>
-          <LandingAllyExamples />
-        </div>
-      </Section>
+        </Wrap>
+      </section>
 
-      <Section className="py-16 md:py-24" id="plazas">
-        <div className="max-w-6xl mx-auto px-5 md:px-8">
-          <LimitedSeatsIdea />
-        </div>
-      </Section>
-
-      <Section className="py-16 md:py-24" alt id="grupo">
-        <div className="max-w-6xl mx-auto px-5 md:px-8">
-          <GroupExample />
-        </div>
-      </Section>
-
-      <Section className="py-16 md:py-24" id="reputacion">
-        <div className="max-w-6xl mx-auto px-5 md:px-8">
-          <LandingScore />
-        </div>
-      </Section>
-
-      <Section className="py-16 md:py-24" id="diferencia">
-        <div className="max-w-6xl mx-auto px-5 md:px-8">
-          <LandingCompare />
-        </div>
-      </Section>
-
-      <Section className="py-16 md:py-24" alt id="empezar">
-        <div className="max-w-6xl mx-auto px-5 md:px-8">
-          <LandingSteps />
-        </div>
-      </Section>
-
-      <motion.section
-        ref={finalCtaRef}
-        id="entrar"
-        className="relative overflow-hidden py-24 md:py-36 scroll-mt-20 border-t border-emerald-400/10"
-        style={{ backgroundColor: BG, opacity: reduce ? 1 : finalCtaOpacity, scale: reduce ? 1 : finalCtaScale, y: reduce ? 0 : finalCtaY }}
-      >
-        <NodeField density={0.00008} opacity={0.45} intensity={0.55} />
-        <div className="relative max-w-3xl mx-auto px-5 md:px-8">
-          <h2 className="text-[28px] sm:text-[34px] md:text-[42px] font-semibold leading-[1.12] tracking-tight">
-            Puede haber cientos de profesionales de tu oficio en tu ciudad.
-            <span className="block mt-3" style={{ color: GREEN }}>
-              En cada grupo RUANA hay una plaza por oficio.
-            </span>
+      <section id="oficios" className="bg-[#0A0D12] py-14 md:py-20">
+        <Wrap>
+          <h2 className="mb-7 font-display text-[clamp(26px,5vw,36px)] font-extrabold tracking-tight">
+            Oficios que encajan
           </h2>
-          <p className="mt-6 text-base md:text-lg text-white/60 leading-relaxed">
-            Es la regla del grupo: un oficio, una plaza. Cuando alguien necesita lo que tú haces, tiene
-            un colega de su zona a quien pasar el encargo.
-          </p>
-          <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
-            <PrimaryCTA size="lg" />
-            <CodeLink />
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+            {TRADES.map(({ label, Icon }) => (
+              <div
+                key={label}
+                className="rounded-[14px] border border-[#243040] bg-[#141820] px-3.5 py-[18px] text-center text-sm font-bold"
+              >
+                <Icon className="mx-auto mb-2 h-10 w-10" />
+                {label}
+              </div>
+            ))}
           </div>
+          <p className="mt-[18px] text-center text-sm text-[#9AA3AD]">
+            Estamos formando los primeros grupos. Si tu oficio no está en la lista, apúntate igual.
+          </p>
+        </Wrap>
+      </section>
+
+      <section
+        id="apuntate"
+        className="px-5 py-16 text-center md:py-20"
+        style={{
+          background:
+            'linear-gradient(180deg, rgba(10,13,18,.55), rgba(10,13,18,.85)), radial-gradient(ellipse at 50% 0%, rgba(109,196,31,.25), transparent 55%), #141820',
+        }}
+      >
+        <div className="mx-auto max-w-[1080px]">
+          <h2 className="font-display text-[clamp(28px,5vw,40px)] font-extrabold leading-tight tracking-tight">
+            Súmate a los primeros grupos de tu zona
+          </h2>
+          <p className="mx-auto mb-6 mt-3 max-w-[28em] text-[#c9d0d7]">
+            Oficios de Alicante, por código postal. Apuntarse no tiene cuota.
+          </p>
+          <PrimaryCTA />
+          <p className="mt-3.5">
+            <CodeLink />
+          </p>
         </div>
-      </motion.section>
+      </section>
 
       <LandingFooter />
     </div>

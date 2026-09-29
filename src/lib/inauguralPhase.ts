@@ -1,5 +1,5 @@
-/** Único código de captación pública. El alta, el bloque y el modal lo usan tal cual. */
+/** Único código público de alta. Los CTA de la landing lo llevan en la URL. */
 export const PUBLIC_ACCESS_CODE = "ALC-IG";
 
-/** Muestra el bloque y el modal de acceso por invitación. */
-export const INAUGURAL_PHASE_ACTIVE = true;
+/** La landing enlaza el registro directo, sin modal de invitación. */
+export const INAUGURAL_PHASE_ACTIVE = false;
