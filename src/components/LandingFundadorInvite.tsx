@@ -1,17 +1,21 @@
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { GREEN } from '@/lib/landingTheme';
 import { PrimaryCTA, CodeLink } from '@/components/LandingCTA';
+import { useRef } from 'react';
 
 export function LandingFundadorInvite() {
   const reduce = useReducedMotion();
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start end', 'end start'] });
+  const scale = useTransform(scrollYProgress, [0, 0.18, 0.78, 1], [0.97, 1, 1, 0.97]);
+  const opacity = useTransform(scrollYProgress, [0, 0.18, 0.78, 1], [0.92, 1, 1, 0.94]);
+  const y = useTransform(scrollYProgress, [0, 0.18, 0.78, 1], [22, 0, 0, -10]);
 
   return (
     <motion.section
+      ref={sectionRef}
       id="fundador"
-      initial={reduce ? { opacity: 0 } : { opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: reduce ? 0.2 : 0.6, ease: [0.16, 1, 0.3, 1] }}
+      style={{ opacity: reduce ? 1 : opacity, scale: reduce ? 1 : scale, y: reduce ? 0 : y }}
       className="scroll-mt-20 py-14 md:py-20 relative overflow-hidden border-y border-emerald-400/10 bg-gradient-to-br from-emerald-400/[0.07] via-transparent to-transparent"
     >
       <div className="max-w-6xl mx-auto px-5 md:px-8">
