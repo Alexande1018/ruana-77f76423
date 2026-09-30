@@ -31,7 +31,7 @@ export function LandingAccessInvite() {
           >
             Esta fase no está abierta a cualquiera.
           </h2>
-          <p className="mt-4 text-base md:text-lg leading-relaxed max-w-xl opacity-80 relative z-[1]}">
+          <p className="mt-4 text-base md:text-lg leading-relaxed max-w-xl opacity-80 relative z-[1]">
             Las plazas van por invitación y son pocas. Si has llegado hasta aquí, puedes ocupar la de
             tu oficio en tu zona con este código.
           </p>
@@ -41,8 +41,8 @@ export function LandingAccessInvite() {
               {PUBLIC_ACCESS_CODE}
             </span>
           </div>
-          <p className="mt-4 text-sm opacity-70 relative z-[1]}">Apuntarse no tiene cuota.</p>
-          <div className="mt-7 flex flex-col sm:flex-row sm:items-center gap-4 relative z-[1]}">
+          <p className="mt-4 text-sm opacity-70 relative z-[1]">Apuntarse no tiene cuota.</p>
+          <div className="mt-7 flex flex-col sm:flex-row sm:items-center gap-4 relative z-[1]">
             <PrimaryCTA className="rounded-full" />
             <CodeLink />
             <HaveCodeLink />
