@@ -1,97 +1,103 @@
 .lp-paper,
 .lp-ticket {
   position: relative;
-  isolation: isolate;
-  background-color: #f3ead8 !important;
-  background-image:
-    radial-gradient(ellipse at 16% 18%, rgba(255,255,255,.4), transparent 42%),
-    radial-gradient(ellipse at 86% 12%, rgba(150,110,60,.18), transparent 38%),
-    radial-gradient(ellipse at 20% 90%, rgba(110,75,40,.12), transparent 40%);
-  color: #1a1814 !important;
-  box-shadow:
-    0 1px 0 rgba(255,255,255,.45) inset,
-    0 16px 34px rgba(0,0,0,.32);
+  background: #f1e6cf !important;
+  color: #161410 !important;
+  padding-left: 1.15rem;
+  padding-right: 1.15rem;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+  filter: drop-shadow(0 1px 0 #f7f1e4);
 }
-.lp-paper > *,
-.lp-ticket > * {
-  position: relative;
-  z-index: 1;
+.lp-paper,
+.lp-paper *,
+.lp-ticket,
+.lp-ticket * {
+  color: #161410 !important;
+}
+.lp-paper .lp-mint,
+.lp-ticket .lp-mint,
+.lp-mint {
+  color: #1f7a4a !important;
 }
 .lp-torn {
   clip-path: polygon(
-    0% 8%, 4% 2%, 10% 7%, 16% 0%, 23% 6%, 30% 1%, 38% 7%, 46% 0%, 54% 6%, 62% 1%, 70% 7%, 78% 0%, 86% 6%, 93% 1%, 100% 6%,
-    98% 14%, 100% 22%, 96% 30%, 100% 38%, 97% 47%, 100% 56%, 95% 64%, 100% 73%, 97% 82%, 100% 90%, 96% 100%,
-    88% 95%, 80% 100%, 71% 95%, 62% 100%, 53% 95%, 44% 100%, 35% 95%, 26% 100%, 17% 95%, 8% 100%, 0% 95%,
-    3% 86%, 0% 76%, 4% 66%, 0% 56%, 3% 46%, 0% 36%, 4% 26%, 0% 16%
+    2% 4%, 6% 1.5%, 11% 3.8%, 16% 0.8%, 22% 3.2%, 28% 1%, 35% 3.6%, 42% 0.6%, 49% 3%, 56% 1.2%, 63% 3.4%, 70% 0.7%, 77% 3.1%, 84% 1%, 91% 3.5%, 97% 1.2%, 99% 5%,
+    97.5% 12%, 99.2% 21%, 97% 30%, 99.4% 40%, 97.2% 50%, 99% 60%, 97.4% 70%, 99.3% 80%, 97.6% 90%, 99% 97%,
+    93% 99%, 86% 97.2%, 79% 99.2%, 71% 97.4%, 63% 99%, 55% 97.1%, 47% 99.2%, 39% 97.3%, 31% 99%, 23% 97.2%, 15% 99.1%, 8% 97.4%, 2% 99%, 0.6% 93%,
+    2.4% 84%, 0.5% 75%, 2.6% 65%, 0.6% 55%, 2.3% 45%, 0.5% 35%, 2.5% 25%, 0.8% 15%
   );
 }
 .lp-tape {
   position: absolute;
-  width: 84px;
-  height: 26px;
+  width: 88px;
+  height: 28px;
   z-index: 4;
-  background: linear-gradient(180deg, rgba(255,230,170,.85), rgba(196,160,88,.7));
-  box-shadow: 0 1px 3px rgba(0,0,0,.22);
-  transform: rotate(-8deg);
+  background: linear-gradient(180deg, #e8d39a, #c4a056);
+  opacity: 0.82;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transform: rotate(-7deg);
 }
-.lp-tape-top { top: -11px; left: 32%; }
+.lp-tape-top {
+  top: -9px;
+  left: 36%;
+}
 .lp-clipboard {
-  background: #2c2d2a;
-  border: 12px solid #2c2d2a;
-  padding: 32px 12px 16px;
+  background: #2a2b28;
+  border: 14px solid #2a2b28;
+  padding: 28px 10px 14px;
   position: relative;
-  box-shadow: 0 22px 46px rgba(0,0,0,.45);
-  transform: rotate(0.8deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 .lp-clipboard::before {
   content: "";
   position: absolute;
   top: -18px;
   left: 50%;
-  width: 58px;
-  height: 32px;
+  width: 54px;
+  height: 30px;
   transform: translateX(-50%);
-  background: linear-gradient(#b0b4ae, #5c605a);
-  border-radius: 8px 8px 3px 3px;
+  background: linear-gradient(#8f938d, #4e524d);
+  border-radius: 6px 6px 2px 2px;
 }
 .lp-clipboard::after {
   content: "";
   position: absolute;
-  top: -6px;
+  top: -7px;
   left: 50%;
   width: 16px;
   height: 16px;
   transform: translateX(-50%);
-  border: 3px solid #d5d8d2;
+  border: 3px solid #c9ccc6;
   border-radius: 50%;
-  background: #2c2d2a;
+  background: #2a2b28;
 }
 .lp-cork {
-  position: relative;
-  background: #d2b57a !important;
-  color: #1a1814 !important;
-  border: 10px solid #8f6c38;
-  box-shadow: 0 16px 36px rgba(0,0,0,.32);
-  transform: rotate(-0.6deg);
+  background: #d5b98a !important;
+  color: #161410 !important;
+  border: 10px solid #8c6a38;
 }
-.lp-cork > * { position: relative; z-index: 1; }
+.lp-cork,
+.lp-cork * {
+  color: #161410 !important;
+}
 .lp-pin {
-  width: 13px;
-  height: 13px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   position: absolute;
   z-index: 2;
-  box-shadow: 0 2px 3px rgba(0,0,0,.4);
 }
 .lp-stamp {
   display: inline-block;
-  border: 3px solid #1d5c3a;
-  color: #1d5c3a !important;
-  letter-spacing: .16em;
+  border: 3px solid #1f7a4a;
+  color: #1f7a4a !important;
+  letter-spacing: 0.16em;
   font-weight: 800;
   padding: 5px 12px;
-  transform: rotate(-3deg);
 }
-.lp-ok { color: #1f7a45 !important; }
-.lp-no { color: #9a2f2f !important; }
-.lp-mint { color: #1d5c3a !important; }
+.lp-ok {
+  color: #1f7a4a !important;
+}
+.lp-no {
+  color: #9a2f2f !important;
+}
