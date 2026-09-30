@@ -1,7 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { LandingPaperNote } from '@/components/LandingPaperNote';
 
-const BANO = '/landing/grok_1790780438773.jpg';
+const BANO = '/landing/grok_1790779224413.jpg';
 
 export function LandingDailyStory() {
   const reduce = useReducedMotion();
@@ -15,7 +15,7 @@ export function LandingDailyStory() {
       className="relative"
     >
       <div className="relative">
-        <img src={BANO} alt="" className="block w-full h-[280px] sm:h-[360px] md:h-[420px] object-cover object-[30%_40%]" />
+        <img src={BANO} alt="Electricista trabajando en un cuadro eléctrico" className="block w-full h-[280px] sm:h-[360px] md:h-[420px] object-cover object-center" />
         <LandingPaperNote className="absolute -bottom-8 left-2 sm:left-auto sm:right-[-18px] w-[88%] sm:w-[310px] -rotate-2">
           <p className="text-[28px] sm:text-[32px] leading-[1.06]" style={{ fontFamily: 'Caveat, cursive' }}>
             «Oye, ¿conoces a un buen electricista?»

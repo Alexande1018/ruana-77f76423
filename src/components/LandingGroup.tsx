@@ -117,8 +117,8 @@ export function GroupExample() {
           </ul>
         </div>
         <img
-          src="/landing/grok_1790779246688.jpg"
-          alt=""
+          src="/landing/file_00000000e4f88243b41b502ec6975bec.png"
+          alt="Profesionales de distintos oficios conversando en Alicante"
           className="lp-photo w-full h-56 md:h-full object-cover hidden md:block"
         />
       </div>
