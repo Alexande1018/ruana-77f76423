@@ -17,7 +17,7 @@ const GROUP = '/landing/file_00000000e4f88243b41b502ec6975bec.png';
 const ELECTRIC = '/landing/grok_1790779224413.jpg';
 const PAINTER = '/landing/grok_1790780438773.jpg';
 /** Solo el cierre. No reutilizar en otras secciones. */
-const CLOSE = '/landing/cierre-exclusivo.jpg';
+const CLOSE = '/landing/grok_1790806707494.jpg';
 
 export default function Landing() {
   return (

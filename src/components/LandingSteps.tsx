@@ -6,19 +6,19 @@ const STEPS = [
     n: '01',
     title: 'Encuentra tu grupo',
     text: 'RUANA te ubica según tu zona y tu actividad profesional.',
-    img: '/landing/foto-paso-01.jpg',
+    img: '/landing/grok_1790806836928.jpg',
   },
   {
     n: '02',
     title: 'Ocupa tu plaza profesional',
     text: 'Forma parte del grupo como el profesional de tu oficio.',
-    img: '/landing/foto-paso-02.jpg',
+    img: '/landing/grok_1790806854482.jpg',
   },
   {
     n: '03',
     title: 'Entra en la rueda',
     text: 'Recomienda profesionales de confianza y recibe oportunidades cuando alguien necesite lo que tú haces.',
-    img: '/landing/foto-paso-03.jpg',
+    img: '/landing/grok_1790806865428.jpg',
   },
 ];
 

@@ -1,7 +1,7 @@
 import { PrimaryCTA, CodeLink } from '@/components/LandingCTA';
 
 /** Solo el hero. No reutilizar en otras secciones. */
-const HERO = '/landing/hero-exclusivo.jpg';
+const HERO = '/landing/grok_1790806698745.jpg';
 
 export function LandingHero() {
   return (

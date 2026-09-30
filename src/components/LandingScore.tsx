@@ -1,4 +1,4 @@
-const BRICK = '/landing/foto-reputacion.jpg';
+const BRICK = '/landing/grok_1790806831384.jpg';
 
 export function LandingScore() {
   return (
