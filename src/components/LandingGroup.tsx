@@ -66,14 +66,10 @@ export function LimitedSeatsIdea() {
         </div>
         <div className="mt-5 pt-4 border-t border-[#8d7750] flex items-center justify-between gap-4 relative z-[1]">
           <div>
-            <p className="text-[11px] uppercase tracking-[0.16em]" style={{ color: '#1f7a45' }}>
-              En un grupo RUANA
-            </p>
+            <p className="text-[11px] uppercase tracking-[0.16em] lp-ok">En un grupo RUANA</p>
             <p className="text-base md:text-lg font-semibold">Una plaza de fontanero</p>
           </div>
-          <span className="text-sm font-medium shrink-0" style={{ color: '#1f7a45' }}>
-            Una por oficio
-          </span>
+          <span className="text-sm font-medium shrink-0 lp-ok">Una por oficio</span>
         </div>
       </motion.div>
     </div>
@@ -122,7 +118,7 @@ export function GroupExample() {
                 <span className="text-[16px]" style={{ fontFamily: 'Caveat, cursive' }}>
                   {seat.trade}
                 </span>
-                <span className={`text-sm font-semibold ${seat.open ? 'text-[#1f7a45]' : 'text-[#9a2f2f]'}`}>
+                <span className={`text-sm font-semibold ${seat.open ? 'lp-ok' : 'lp-no'}`}>
                   {seat.open ? 'Plaza disponible' : 'Plaza ocupada'}
                 </span>
               </li>
