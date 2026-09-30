@@ -1,16 +1,17 @@
 import { PrimaryCTA, CodeLink } from '@/components/LandingCTA';
 import { GREEN, PAPER, TITLE_SHADOW } from '@/lib/landingTheme';
+import { ParallaxImage } from '@/components/LandingMotion';
 
-/** Solo el hero. No reutilizar en otras secciones. */
 const HERO = '/landing/grok_1790806698745.jpg';
 
 export function LandingHero() {
   return (
     <section className="relative isolate min-h-[88vh] overflow-hidden pt-20">
-      <img
+      <ParallaxImage
         src={HERO}
         alt="Dos profesionales de oficio pasándose un encargo en la calle"
-        className="absolute inset-0 h-full w-full object-cover object-[78%_center]"
+        position="78% center"
+        className="absolute inset-0 h-[108%] w-full object-cover -top-[4%]"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[#050705] via-[#050705]/92 via-45% to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#050705]/80 via-transparent to-[#050705]/35" />
