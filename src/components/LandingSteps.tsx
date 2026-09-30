@@ -37,7 +37,7 @@ export function LandingSteps() {
         </p>
       </div>
 
-      <ol className="flex flex-col md:block relative">
+      <ol className="lp-step-scatter relative">
         {STEPS.map((step, i) => (
           <motion.li
             key={step.n}
@@ -45,22 +45,15 @@ export function LandingSteps() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ delay: reduce ? 0 : i * 0.07, duration: 0.45 }}
-            className={`relative md:w-[31%] mb-6 md:mb-0 md:inline-block md:align-top ${
-              i === 1 ? 'md:mx-[3%] md:mt-10' : i === 2 ? 'md:mt-4' : ''
-            }`}
+            className="lp-step-piece"
           >
-            <div
-              className="lp-paper lp-torn overflow-hidden"
-              style={{ transform: i === 0 ? 'rotate(-2deg)' : i === 1 ? 'rotate(2.4deg)' : 'rotate(-1.1deg)' }}
-            >
-              <img src={step.img} alt="" className="w-full h-36 object-cover" />
-              <div className="p-4 flex gap-3 relative z-[1]">
-                <span className="text-sm font-semibold tabular-nums" style={{ color: GREEN }}>
-                  {step.n}
-                </span>
+            <img src={step.img} alt="" className="lp-step-photo" />
+            <div className={`lp-paper lp-torn lp-step-note lp-step-note-${i + 1}`}>
+              <div className="flex gap-3 relative z-[1]">
+                <span className="text-xl font-semibold tabular-nums" style={{ color: GREEN }}>{step.n}</span>
                 <div>
-                  <h3 className="text-lg md:text-xl font-semibold">{step.title}</h3>
-                  <p className="mt-2 text-[15px] leading-relaxed opacity-75">{step.text}</p>
+                  <h3 className="text-xl font-medium" style={{ fontFamily: 'Patrick Hand, cursive' }}>{step.title}</h3>
+                  <p className="mt-2 text-[15px] leading-relaxed opacity-80">{step.text}</p>
                 </div>
               </div>
             </div>

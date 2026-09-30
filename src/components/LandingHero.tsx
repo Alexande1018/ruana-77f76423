@@ -71,10 +71,10 @@ export function LandingHero() {
           <div className="lp-hero-right">
             <div className="lp-board">
               <Clip />
-              <ol className="lp-recs">
+              <div className="lp-sheet" style={{ backgroundImage: `url(${PAPER})` }}>
+                <ol className="lp-recs">
                 {RECOMMENDATIONS.map((item, i) => (
-                  <li className="lp-slip" key={item.title} style={{ backgroundImage: `url(${PAPER})` }}>
-                    <Tape className="lp-slip-tape" />
+                  <li className="lp-rec-row" key={item.title}>
                     <span className="lp-num">{i + 1}</span>
                     <div>
                       <p className="lp-rec-title">{item.title}</p>
@@ -82,7 +82,8 @@ export function LandingHero() {
                     </div>
                   </li>
                 ))}
-              </ol>
+                </ol>
+              </div>
             </div>
             <p className="lp-close">
               <span className="lp-close-strong">No es un anuncio.</span>

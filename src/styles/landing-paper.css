@@ -1,17 +1,41 @@
+.ruana-landing {
+  --ruana-ink: #e8e5de;
+  --ruana-muted: rgba(232, 229, 222, .72);
+  --ruana-green: #83bd96;
+  background-color: #111210 !important;
+  background-image:
+    linear-gradient(rgba(13, 14, 13, .88), rgba(13, 14, 13, .9)),
+    url('/landing/grok_1790780451529.jpg');
+  background-size: auto, 1100px auto;
+  background-position: center, center top;
+  background-repeat: repeat, repeat-y;
+  color: var(--ruana-ink);
+}
+.ruana-landing > section:not(.lp-hero) { background: transparent !important; }
+.ruana-landing footer { background: rgba(7, 9, 9, .52) !important; }
+.ruana-landing h2,
+.ruana-landing h3 { color: var(--ruana-ink); }
+.ruana-landing p.text-white\/60,
+.ruana-landing p.text-white\/65,
+.ruana-landing p.text-white\/70 { color: var(--ruana-muted); }
+.ruana-landing .landing-cta { border-radius: 2px !important; box-shadow: none !important; }
+.ruana-landing .landing-cta:hover { box-shadow: none !important; }
+
 .lp-paper,
 .lp-ticket {
   position: relative;
-  background: #efe6d4 !important;
+  background: #ddd9d1 !important;
   color: #1a1814 !important;
   padding-left: 1.15rem;
   padding-right: 1.15rem;
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
   background-image:
-    linear-gradient(rgba(246, 239, 222, .14), rgba(218, 202, 171, .12)),
+    linear-gradient(rgba(244, 242, 237, .08), rgba(173, 170, 163, .18)),
     url('/landing/grok_1790780443386.jpg') !important;
   background-size: cover !important;
   background-position: center !important;
-  border: 1px solid rgba(88, 70, 42, .3);
+  border: 0;
+  clip-path: polygon(2% 5%, 5% 2.6%, 10% 4%, 15% 1.2%, 21% 3.6%, 27% .8%, 33% 3.2%, 39% 1.7%, 46% 3.8%, 52% 1%, 58% 3.5%, 65% .7%, 71% 3%, 78% 1.8%, 84% 4%, 91% 1.4%, 97% 4.5%, 99% 10%, 97% 17%, 99.4% 24%, 96.8% 32%, 99% 40%, 97% 48%, 99.3% 55%, 96.6% 64%, 98.8% 72%, 96.7% 80%, 99% 89%, 96% 96%, 89% 98.5%, 82% 96%, 75% 99%, 67% 96.7%, 59% 99%, 51% 96.5%, 43% 99.2%, 35% 96.4%, 27% 99%, 19% 96.5%, 11% 99%, 4% 96%, 1.2% 90%, 3.4% 82%, 1% 74%, 3% 66%, .8% 58%, 3.2% 49%, .8% 40%, 3% 32%, 1% 24%, 3.5% 16%, 1% 9%);
 }
 .lp-paper,
 .lp-paper *,
@@ -25,11 +49,7 @@
   color: #1f7a4a !important;
 }
 .lp-torn {
-  clip-path: polygon(
-    1.8% 3.2%, 9% 1.4%, 16% 2.8%, 24% .9%, 32% 2.6%, 41% 1.1%, 49% 3%, 58% 1.2%, 67% 2.5%, 77% .9%, 86% 2.8%, 95% 1.8%, 99% 6%,
-    97.8% 20%, 99% 35%, 97.4% 51%, 99% 67%, 97.5% 83%, 98.6% 95%, 92% 98.4%, 82% 96.9%, 72% 99%, 61% 97.1%, 50% 99%, 39% 97%, 28% 99%, 17% 96.8%, 7% 98.6%, 1.2% 94%,
-    2.6% 79%, .8% 64%, 2.5% 48%, 1% 32%, 2.6% 17%, .8% 7.4%
-  );
+  clip-path: polygon(3% 4.5%, 8% 2%, 13% 4%, 19% 1%, 25% 3.4%, 31% .8%, 38% 4%, 44% 1.4%, 51% 3.2%, 58% .7%, 64% 3.7%, 71% 1.6%, 78% 4.4%, 84% 1.3%, 91% 3.1%, 97% 5%, 99% 12%, 96.8% 20%, 99% 29%, 97% 38%, 99% 46%, 96.5% 55%, 99% 64%, 97% 72%, 99% 81%, 96% 90%, 97% 96%, 90% 99%, 83% 96%, 76% 99.2%, 68% 96%, 60% 99%, 52% 96.7%, 44% 99%, 36% 96%, 29% 99%, 21% 96.3%, 14% 99%, 7% 96%, 2% 91%, 4% 83%, 1% 75%, 3% 66%, 1% 57%, 4% 48%, 1% 39%, 3% 30%, 1% 21%, 4% 13%);
   filter: drop-shadow(0 10px 9px rgba(0, 0, 0, .34));
 }
 .lp-tape {
@@ -110,7 +130,7 @@
 .lp-hero {
   background-color: #111214;
   background-image:
-    linear-gradient(180deg, rgba(10, 11, 12, 0.35), rgba(10, 11, 12, 0.2)),
+    linear-gradient(180deg, rgba(10, 11, 12, 0.25), rgba(10, 11, 12, 0.56)),
     url('/landing/grok_1790780451529.jpg');
   background-size: cover;
   background-position: center;
@@ -148,7 +168,7 @@
   color: #1c1914;
   padding: 42px 36px 34px;
   transform: rotate(-3.5deg);
-  filter: drop-shadow(6px 14px 16px rgba(0, 0, 0, 0.45));
+  filter: drop-shadow(3px 10px 12px rgba(0, 0, 0, 0.48));
   clip-path: polygon(
     2.6% 5.4%, 11% 2.2%, 20% 4.1%, 30% 1.6%, 40% 4.5%, 51% 1.8%, 62% 4.2%, 72% 1.5%, 83% 4.4%, 94% 2.2%, 99% 7%,
     97% 22%, 99% 40%, 97% 58%, 99% 77%, 96.5% 94%, 89% 98%, 77% 96.5%, 65% 99%, 52% 96.8%, 39% 99%, 26% 96.7%, 13% 99%, 3% 96%,
@@ -192,9 +212,7 @@
   padding: 68px 26px 28px;
   border: 15px solid #292a27;
   border-radius: 9px;
-  background-image:
-    linear-gradient(145deg, rgba(62, 62, 57, .38), rgba(14, 15, 14, .7)),
-    url('/landing/grok_1790780451529.jpg');
+  background-image: linear-gradient(145deg, rgba(62, 62, 57, .38), rgba(14, 15, 14, .7));
   background-size: cover;
   box-shadow: 0 24px 46px rgba(0, 0, 0, .52), inset 0 0 0 2px rgba(224, 219, 202, .14), inset 0 0 22px rgba(0,0,0,.45);
 }
@@ -209,14 +227,15 @@
   filter: drop-shadow(0 6px 6px rgba(0, 0, 0, 0.45));
 }
 .lp-sheet {
-  background-color: #efe6d4;
+  background-color: #d9d6ce;
+  background-blend-mode: multiply;
   background-size: cover;
   color: #1c1914;
   position: relative;
   z-index: 1;
-  padding: 36px 26px 25px;
-  transform: rotate(.45deg);
-  filter: drop-shadow(8px 18px 22px rgba(0, 0, 0, 0.5));
+  padding: 34px 30px 30px;
+  transform: rotate(.25deg);
+  filter: drop-shadow(5px 12px 14px rgba(0, 0, 0, 0.48));
   clip-path: polygon(
     2% 3%, 7% 1%, 14% 3.5%, 22% 0.8%, 32% 3%, 42% 1%, 54% 3.2%, 66% 0.6%, 78% 3%, 90% 1.2%, 98% 4%,
     99.2% 16%, 97% 30%, 99.4% 46%, 97.2% 62%, 99% 78%, 97% 92%, 90% 99%,
@@ -224,7 +243,10 @@
     3% 76%, 0.8% 58%, 3.2% 40%, 0.7% 24%, 2.6% 10%
   );
 }
-.lp-recs { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+.lp-recs { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0; }
+.lp-rec-row { display:grid; grid-template-columns:54px 1fr; gap:18px; align-items:start; position:relative; padding:20px 6px 22px; }
+.lp-rec-row + .lp-rec-row { border-top:1px solid rgba(32,29,23,.65); }
+.lp-rec-row:first-child { padding-top:12px; }
 .lp-slip {
   min-height: 174px;
   display: grid;
@@ -243,15 +265,37 @@
 .lp-slip:nth-child(2) { transform: rotate(.45deg); }
 .lp-slip:nth-child(3) { transform: rotate(-.35deg); }
 .lp-slip-tape { top: -4px; left: 42%; width: 96px; height: 27px; }
-.lp-num { color: #4e9f71; font-weight: 700; font-size: 2.5rem; line-height: 1; }
+.lp-num { display:grid; place-items:center; width:46px; height:46px; border:2px solid #4e9f71; border-radius:50%; color: #3c855b; font-family:"Patrick Hand", cursive; font-weight:500; font-size:2rem; line-height:1; }
 .lp-rec-title { font-size: 1.02rem; font-weight: 600; line-height: 1.3; color: #1a1814; }
 .lp-rec-sub { margin-top: 4px; color: #3a352c; font-size: 0.95rem; }
-.lp-recs { gap: 14px; }
-.lp-rec-title { font-family: "Courier New", Courier, monospace; font-size: clamp(1.05rem, 1.3vw, 1.3rem); font-weight: 500; line-height: 1.24; }
+.lp-rec-title { font-family: "Patrick Hand", "Courier New", monospace; font-size: clamp(1.2rem, 1.45vw, 1.48rem); font-weight: 500; line-height: 1.16; }
 .lp-rec-sub { font-family: "Public Sans", sans-serif; font-size: 1rem; line-height: 1.25; margin-top: 8px; }
 .lp-close { max-width: 32rem; line-height: 1.35; }
 .lp-close-strong { display: block; color: #6fbf86; font-weight: 700; font-size: 1.15rem; }
 .lp-close-rest { display: block; margin-top: 6px; color: rgba(255,255,255,0.82); font-size: 1rem; }
+.lp-example-sheet { padding:14px 18px 14px; }
+.lp-example-row { display:grid; grid-template-columns:36px 1fr; gap:13px; padding:14px 10px; align-items:start; }
+.lp-example-row + .lp-example-row { border-top:1px solid rgba(32,29,23,.52); }
+.lp-example-number { display:grid; place-items:center; border:1.5px solid #4e9f71; border-radius:50%; width:31px; height:31px; color:#3f8a5c; font:500 1.25rem/1 "Patrick Hand",cursive; }
+.lp-example-title { font:500 1.34rem/1.15 "Patrick Hand",cursive; }
+.lp-example-caption { margin-top:5px; color:#35322c; font-size:.92rem; }
+.lp-example-close { color:#d9e4db; }
+.lp-example-close .font-semibold { color:#83bd96 !important; }
+.lp-compare-list { max-width:52rem; }
+.lp-compare-row { display:grid; grid-template-columns:minmax(150px,.4fr) 1fr; gap:1rem; align-items:baseline; padding:1rem .25rem; border-bottom:1px solid rgba(232,229,222,.2); }
+.lp-compare-label { color:#83bd96; font:500 1.45rem/1.1 "Patrick Hand",cursive; }
+.lp-compare-ruana { margin-top:2.2rem; }
+.lp-step-scatter { display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); align-items:start; row-gap:0; }
+.lp-step-piece { position:relative; grid-column:span 5; margin-bottom:0; }
+.lp-step-piece:nth-child(1) { grid-column:1 / span 5; }
+.lp-step-piece:nth-child(2) { grid-column:8 / span 5; margin-top:5rem; }
+.lp-step-piece:nth-child(3) { grid-column:4 / span 5; margin-top:-1rem; }
+.lp-step-photo { display:block; width:100%; height:clamp(180px,22vw,300px); object-fit:cover; box-shadow:0 16px 32px rgba(0,0,0,.38); }
+.lp-step-note { position:relative; z-index:2; width:93%; margin:-2.5rem 0 0 auto; padding:1.35rem 1.6rem; }
+.lp-step-note-1 { transform:rotate(-1.7deg); }
+.lp-step-note-2 { transform:rotate(1.5deg); }
+.lp-step-note-3 { transform:rotate(-1deg); }
+.lp-step-piece:nth-child(2) .lp-step-note { margin-left:0; margin-right:auto; }
 .lp-hero-grid { display:grid; grid-template-columns:minmax(0, 1.42fr) minmax(484px, .88fr); gap:clamp(32px,3.8vw,58px); align-items:start; }
 .lp-hero-left { padding-top:42px; }
 .lp-hero-photo { margin-top:36px; margin-left:-40px; }
@@ -267,6 +311,10 @@
   .lp-num { font-size:2rem; }
   .lp-note { transform: rotate(-1.8deg); }
   .lp-photo-frame { height:420px; }
+  .lp-step-scatter { grid-template-columns:repeat(6,minmax(0,1fr)); row-gap:2.5rem; }
+  .lp-step-piece,.lp-step-piece:nth-child(1),.lp-step-piece:nth-child(2),.lp-step-piece:nth-child(3) { grid-column:span 4; margin-top:0; }
+  .lp-step-piece:nth-child(2) { grid-column:3 / span 4; }
+  .lp-step-piece:nth-child(3) { grid-column:2 / span 4; }
 }
 
 @media (max-width: 1249px) {
@@ -283,4 +331,14 @@
   .lp-hero-right { padding-top:14px; }
   .lp-hero-right .lp-close { text-align:left; margin-left:0; }
   .lp-slip { min-height:142px; padding:33px 20px 18px; }
+}
+
+@media (max-width: 639px) {
+  .lp-step-scatter { display:flex; flex-direction:column; gap:2.5rem; }
+  .lp-step-piece,.lp-step-piece:nth-child(1),.lp-step-piece:nth-child(2),.lp-step-piece:nth-child(3) { width:88%; align-self:flex-start; }
+  .lp-step-piece:nth-child(2) { align-self:flex-end; }
+  .lp-step-piece:nth-child(3) { align-self:center; }
+  .lp-step-photo { height:220px; }
+  .lp-step-note { width:94%; padding:1.1rem 1.25rem; }
+  .lp-compare-row { grid-template-columns:1fr; gap:.35rem; }
 }

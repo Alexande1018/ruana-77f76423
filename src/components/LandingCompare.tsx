@@ -22,7 +22,7 @@ export function LandingCompare() {
         para que las recomendaciones dejen de perderse.
       </p>
 
-      <div className="relative">
+      <div className="lp-compare-list">
         {OTHERS.map((item, i) => (
           <motion.div
             key={item.label}
@@ -30,12 +30,10 @@ export function LandingCompare() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: reduce ? 0 : i * 0.06, duration: 0.4 }}
-            className={`lp-paper lp-torn p-5 mb-4 max-w-md ${
-              i === 1 ? 'md:ml-24 -rotate-2' : i === 2 ? 'md:ml-10 rotate-2' : 'rotate-[-1.5deg]'
-            }`}
+            className={`lp-compare-row lp-compare-row-${i + 1}`}
           >
-            <p className="text-sm font-medium opacity-50 relative z-[1]">{item.label}</p>
-            <p className="text-base md:text-lg leading-relaxed relative z-[1]">{item.text}</p>
+            <p className="lp-compare-label">{item.label}</p>
+            <p className="text-base md:text-lg leading-relaxed">{item.text}</p>
           </motion.div>
         ))}
 
@@ -44,7 +42,7 @@ export function LandingCompare() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: reduce ? 0 : 0.18, duration: 0.5 }}
-          className="lp-paper lp-torn p-6 sm:p-7 md:ml-8 max-w-xl -rotate-1"
+          className="lp-paper lp-torn p-6 sm:p-7 md:ml-8 max-w-xl -rotate-1 lp-compare-ruana"
         >
           <span className="lp-tape lp-tape-top" />
           <p className="text-sm font-semibold mb-2 relative z-[1]" style={{ color: '#1d5c3a' }}>

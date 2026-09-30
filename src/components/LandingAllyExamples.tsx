@@ -1,5 +1,4 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { LandingPaperNote } from '@/components/LandingPaperNote';
 
 const MOMENTS = [
   { from: 'Fontanero', to: 'Electricista', short: 'reforma de baño', text: 'Le piden una reforma de baño. Necesita a alguien de confianza y se lo pasa a un aliado de su grupo.' },
@@ -12,31 +11,27 @@ export function LandingAllyExamples() {
 
   return (
     <div>
-      <div className="lp-clipboard">
-        <ol>
+      <div className="lp-paper lp-torn lp-example-sheet -rotate-1">
+        <ol className="lp-example-list relative z-[1]">
           {MOMENTS.map((m, i) => (
             <motion.li
               key={`${m.from}-${m.to}`}
               initial={reduce ? { opacity: 0 } : { opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-2"
+              className="lp-example-row"
             >
-              <LandingPaperNote tape className={i === 1 ? 'rotate-1' : '-rotate-1'}>
-                <p className="text-[15px] leading-snug">
-                  <span className="font-bold mr-1" style={{ color: '#1f7a4a' }}>
-                    {i + 1}
-                  </span>
-                  {m.from} pasa el trabajo a {m.to}
-                </p>
+              <span className="lp-example-number">{i + 1}</span>
+              <div>
+                <p className="lp-example-title">{m.from} → {m.to}</p>
                 <p className="sr-only">{m.text}</p>
-                <p className="mt-1 text-[14px]">— {m.short}</p>
-              </LandingPaperNote>
+                <p className="lp-example-caption">— {m.short}</p>
+              </div>
             </motion.li>
           ))}
         </ol>
       </div>
-      <p className="mt-4 text-[15px]">
+      <p className="mt-4 text-[15px] lp-example-close">
         <span className="font-semibold" style={{ color: '#22c55e' }}>
           No es un anuncio.
         </span>{' '}
