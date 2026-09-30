@@ -7,18 +7,28 @@ function Tape({ className = '' }: { className?: string }) {
 
 function Clip() {
   return (
-    <svg className="lp-metal-clip" viewBox="0 0 140 100" aria-hidden="true">
+    <svg className="lp-metal-clip" viewBox="0 0 280 150" aria-hidden="true">
       <defs>
-        <linearGradient id="clipMetal" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#d4d6d0" />
-          <stop offset="0.4" stopColor="#8a8d86" />
-          <stop offset="1" stopColor="#3f413d" />
+        <linearGradient id="clipMetal" x1="0" y1="0" x2="0.15" y2="1">
+          <stop offset="0" stopColor="#d6d7d2" />
+          <stop offset="0.2" stopColor="#858780" />
+          <stop offset="0.48" stopColor="#383a37" />
+          <stop offset="0.72" stopColor="#777a73" />
+          <stop offset="1" stopColor="#242522" />
+        </linearGradient>
+        <linearGradient id="clipHighlight" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#f0f1eb" stopOpacity=".95" />
+          <stop offset="1" stopColor="#73766f" stopOpacity=".2" />
         </linearGradient>
       </defs>
-      <path d="M40 38 C40 18 100 18 100 38 L108 38 C112 38 116 42 116 48 L116 70 C116 78 108 82 98 82 L42 82 C32 82 24 78 24 70 L24 48 C24 42 28 38 32 38 Z" fill="url(#clipMetal)" stroke="#1c1d1a" strokeWidth="2.2" />
-      <ellipse cx="70" cy="28" rx="13" ry="12" fill="#2b2c29" stroke="#cfd2cb" strokeWidth="3" />
-      <ellipse cx="70" cy="28" rx="5" ry="4.5" fill="#111211" />
-      <rect x="58" y="52" width="24" height="18" rx="3" fill="#6e716b" stroke="#222" strokeWidth="1.2" />
+      <path d="M51 62 C30 43 34 19 58 20 C73 21 83 39 98 53 M229 62 C250 43 246 19 222 20 C207 21 197 39 182 53" fill="none" stroke="#20211f" strokeWidth="10" strokeLinecap="round" />
+      <path d="M51 60 C34 42 38 23 58 24 C72 25 82 41 96 54 M229 60 C246 42 242 23 222 24 C208 25 198 41 184 54" fill="none" stroke="url(#clipHighlight)" strokeWidth="3" strokeLinecap="round" />
+      <path d="M39 57 Q43 47 59 47 L93 47 C105 20 120 10 140 10 C160 10 175 20 187 47 L221 47 Q237 47 241 58 L255 108 Q258 122 242 126 L38 126 Q22 122 25 108 Z" fill="url(#clipMetal)" stroke="#171815" strokeWidth="4" />
+      <path d="M44 61 Q47 55 60 55 L97 55 M183 55 L220 55 Q233 55 236 62" fill="none" stroke="url(#clipHighlight)" strokeWidth="3" opacity=".8" />
+      <path d="M64 102 L216 102 Q228 102 231 112 L233 120 L47 120 L49 112 Q52 102 64 102 Z" fill="#242522" stroke="#aeb0a8" strokeWidth="2" />
+      <ellipse cx="140" cy="27" rx="17" ry="16" fill="#2d2e2b" stroke="url(#clipHighlight)" strokeWidth="5" />
+      <ellipse cx="140" cy="27" rx="8" ry="8" fill="#111210" stroke="#555751" strokeWidth="2" />
+      <path d="M132 75 Q140 70 148 75 L151 88 L129 88 Z" fill="#666963" stroke="#242522" strokeWidth="2" />
     </svg>
   );
 }
