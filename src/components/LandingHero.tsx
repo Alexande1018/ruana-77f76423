@@ -1,3 +1,5 @@
+import { PrimaryCTA, CodeLink } from '@/components/LandingCTA';
+
 const HERO = '/landing/grok_1790780438773.jpg';
 
 export function LandingHero() {
@@ -30,6 +32,10 @@ export function LandingHero() {
         <p className="mt-2 max-w-sm text-white/60 text-[15px] leading-relaxed">
           Tú recomiendas. Mañana ese electricista piensa en ti. RUANA lo organiza.
         </p>
+        <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4">
+          <PrimaryCTA size="lg" />
+          <CodeLink />
+        </div>
       </div>
     </section>
   );
