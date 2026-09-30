@@ -25,14 +25,19 @@ export function LimitedSeatsIdea() {
   const reduce = useReducedMotion();
 
   return (
-    <div className="grid lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] gap-10 lg:gap-16 items-start">
+    <div className="grid lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] gap-10 lg:gap-14 items-start">
       <div className="max-w-xl">
         <h2
-          className="text-[26px] md:text-[34px] tracking-tight leading-[1.15]"
+          className="text-[28px] md:text-[40px] tracking-tight leading-[1.12]"
           style={{ fontFamily: 'Instrument Serif, Georgia, serif' }}
         >
-          No queremos 200 profesionales del mismo oficio compitiendo por el mismo cliente.
+          No queremos 200 del mismo oficio a por el{' '}
+          <em style={{ color: GREEN }}>mismo cliente</em>.
         </h2>
+        <p className="mt-4 text-base md:text-lg text-white/70">Una plaza por oficio en cada grupo.</p>
+        <p className="mt-1 text-base md:text-lg" style={{ color: GREEN }}>
+          Por código postal.
+        </p>
         <p className="mt-5 text-base md:text-lg text-white/70 leading-relaxed">
           RUANA organiza profesionales en grupos locales por código postal y limita las plazas por
           oficio principal dentro de cada grupo.
@@ -41,6 +46,7 @@ export function LimitedSeatsIdea() {
           Si ocupas la plaza de tu oficio, queremos que cuando alguien del grupo necesite lo que tú
           haces piense en ti.
         </p>
+        <p className="sr-only">No queremos 200 profesionales del mismo oficio compitiendo por el mismo cliente.</p>
       </div>
 
       <motion.div
@@ -48,17 +54,17 @@ export function LimitedSeatsIdea() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: reduce ? 0.2 : 0.55, ease }}
-        className="bg-[#d8c7a4] text-[#1a1814] p-6 shadow-2xl"
+        className="lp-paper p-5 -rotate-1"
       >
-        <p className="text-[11px] uppercase tracking-[0.16em] opacity-70">Lo que saturaría la zona</p>
-        <div className="mt-3 flex flex-wrap gap-2" aria-hidden>
+        <p className="text-[11px] uppercase tracking-[0.16em] opacity-70 relative z-[1]">Lo que saturaría la zona</p>
+        <div className="mt-3 flex flex-wrap gap-2 relative z-[1]" aria-hidden>
           {CROWD.map((label, i) => (
             <span key={`${label}-${i}`} className="text-sm px-2 py-1 bg-black/10">
               {label}
             </span>
           ))}
         </div>
-        <div className="mt-5 pt-4 border-t border-[#8d7750] flex items-center justify-between gap-4">
+        <div className="mt-5 pt-4 border-t border-[#8d7750] flex items-center justify-between gap-4 relative z-[1]">
           <div>
             <p className="text-[11px] uppercase tracking-[0.16em]" style={{ color: '#1f7a45' }}>
               En un grupo RUANA
@@ -83,9 +89,8 @@ export function GroupExample() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.25 }}
       transition={{ duration: reduce ? 0.2 : 0.6, ease }}
-      className="max-w-lg"
     >
-      <p className="inline-flex items-center gap-2 text-xs font-medium px-2.5 py-1 mb-5 bg-[#efe6d4] text-[#1a1814]">
+      <p className="inline-flex items-center text-xs font-medium px-2.5 py-1 mb-5 lp-paper">
         Ejemplo ilustrativo · no es disponibilidad real
       </p>
       <h2
@@ -94,29 +99,41 @@ export function GroupExample() {
       >
         Así puede verse un grupo RUANA
       </h2>
-      <p className="mt-3 text-base text-white/60 leading-relaxed">
+      <p className="mt-3 text-base text-white/60 leading-relaxed max-w-xl">
         Un grupo local. Distintos oficios. Una plaza por oficio. Esta vista es un ejemplo para entender
         el modelo, no un estado actual de Alicante ni de ninguna zona.
       </p>
 
-      <div className="mt-8 bg-[#efe6d4] text-[#1a1814] p-5 shadow-xl rotate-[-0.6deg]">
-        <div className="flex items-center justify-between gap-3 pb-3 border-b border-[#c3ad80]">
-          <div>
-            <p className="text-[11px] uppercase tracking-[0.14em] opacity-60">Grupo RUANA</p>
-            <p className="text-sm font-semibold mt-0.5">Alicante</p>
-          </div>
-          <span className="text-[11px] opacity-60">Por oficio y código postal</span>
+      <div className="mt-8 grid md:grid-cols-[1.1fr_.9fr] gap-6 items-start">
+        <div className="lp-cork p-6">
+          <span className="lp-pin" style={{ background: '#c0392b', top: 10, left: 14 }} />
+          <span className="lp-pin" style={{ background: '#2980b9', top: 10, right: 16 }} />
+          <span className="lp-pin" style={{ background: '#27ae60', bottom: 12, left: 16 }} />
+          <span className="lp-pin" style={{ background: '#bdc3c7', bottom: 14, right: 18 }} />
+          <p className="text-xl mb-3 relative z-[1]" style={{ fontFamily: 'Caveat, cursive' }}>
+            Grupo 03001 · Alicante Centro
+          </p>
+          <ul className="relative z-[1]">
+            {EXAMPLE_SEATS.map((seat) => (
+              <li
+                key={seat.trade}
+                className="flex items-center justify-between gap-4 py-2.5 border-b border-dashed border-[#8d7750]"
+              >
+                <span className="text-[16px]" style={{ fontFamily: 'Caveat, cursive' }}>
+                  {seat.trade}
+                </span>
+                <span className={`text-sm font-semibold ${seat.open ? 'text-[#1f7a45]' : 'text-[#9a2f2f]'}`}>
+                  {seat.open ? 'Plaza disponible' : 'Plaza ocupada'}
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
-        <ul>
-          {EXAMPLE_SEATS.map((seat) => (
-            <li key={seat.trade} className="flex items-center justify-between gap-4 py-3 border-t border-dashed border-[#c3ad80]">
-              <span className="text-[15px] font-medium">{seat.trade}</span>
-              <span className={`text-xs font-bold ${seat.open ? 'text-[#1f7a45]' : 'text-[#9a2f2f]'}`}>
-                {seat.open ? 'Plaza disponible' : 'Plaza ocupada'}
-              </span>
-            </li>
-          ))}
-        </ul>
+        <img
+          src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=900&q=80"
+          alt=""
+          className="lp-photo w-full h-56 md:h-full object-cover hidden md:block"
+        />
       </div>
     </motion.div>
   );

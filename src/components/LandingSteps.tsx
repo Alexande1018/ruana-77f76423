@@ -37,7 +37,7 @@ export function LandingSteps() {
         </p>
       </div>
 
-      <ol className="grid md:grid-cols-3 gap-4">
+      <ol className="grid md:grid-cols-3 gap-5">
         {STEPS.map((step, i) => (
           <motion.li
             key={step.n}
@@ -45,16 +45,18 @@ export function LandingSteps() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ delay: reduce ? 0 : i * 0.07, duration: 0.45 }}
-            className="flex flex-col bg-[#161716] border border-white/10 overflow-hidden"
+            className="relative"
           >
-            <img src={step.img} alt="" className="w-full h-36 object-cover" />
-            <div className="p-5 flex gap-3">
-              <span className="text-sm font-semibold tabular-nums" style={{ color: GREEN }}>
-                {step.n}
-              </span>
-              <div>
-                <h3 className="text-lg md:text-xl font-semibold text-white">{step.title}</h3>
-                <p className="mt-2 text-[15px] md:text-base text-white/65 leading-relaxed">{step.text}</p>
+            <div className="lp-paper overflow-hidden" style={{ transform: i === 1 ? 'rotate(0.8deg)' : 'rotate(-0.6deg)' }}>
+              <img src={step.img} alt="" className="w-full h-36 object-cover" />
+              <div className="p-4 flex gap-3 relative z-[1]">
+                <span className="text-sm font-semibold tabular-nums" style={{ color: GREEN }}>
+                  {step.n}
+                </span>
+                <div>
+                  <h3 className="text-lg md:text-xl font-semibold">{step.title}</h3>
+                  <p className="mt-2 text-[15px] leading-relaxed opacity-75">{step.text}</p>
+                </div>
               </div>
             </div>
           </motion.li>
