@@ -15,8 +15,8 @@ import { INAUGURAL_PHASE_ACTIVE } from '@/lib/inauguralPhase';
 
 const GROUP = '/landing/file_00000000e4f88243b41b502ec6975bec.png';
 const ELECTRIC = '/landing/grok_1790779224413.jpg';
-const PAINTER = '/landing/grok_1790779232217.jpg';
-const CLOSE = '/landing/grok_1790779216851.jpg';
+const PAINTER = '/landing/grok_1790780438773.jpg';
+const CLOSE = '/landing/grok_1790779232217.jpg';
 
 export default function Landing() {
   return (
@@ -166,8 +166,8 @@ export default function Landing() {
       </section>
 
       <section id="entrar" className="relative overflow-hidden min-h-[80vh] scroll-mt-20">
-        <img src={CLOSE} alt="" className="absolute inset-0 w-full h-full object-cover object-[70%_center]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#090c0a] via-[#090c0a]/88 to-[#090c0a]/25" />
+        <img src={CLOSE} alt="Cepillo de carpintero sobre el banco de un taller" className="absolute inset-0 w-full h-full object-cover object-[60%_center]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#090c0a] via-[#090c0a]/88 to-[#090c0a]/30" />
         <NodeField density={0.00008} opacity={0.18} intensity={0.3} />
         <div className="relative max-w-3xl mx-auto px-5 md:px-8 py-24 md:py-32">
           <h2

@@ -1,16 +1,16 @@
 import { PrimaryCTA, CodeLink } from '@/components/LandingCTA';
 
-const HERO = '/landing/grok_1790780438773.jpg';
+const HERO = '/landing/grok_1790779246688.jpg';
 
 export function LandingHero() {
   return (
     <section className="relative isolate min-h-[88vh] overflow-hidden pt-20">
       <img
         src={HERO}
-        alt="Fontanero trabajando en un baño en reforma"
-        className="absolute inset-0 h-full w-full object-cover object-[68%_center]"
+        alt="Profesional junto a su furgoneta en una calle del barrio"
+        className="absolute inset-0 h-full w-full object-cover object-[72%_center]"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#090c0a] via-[#090c0a]/92 to-[#090c0a]/20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#090c0a] via-[#090c0a]/90 to-[#090c0a]/25" />
 
       <div className="relative max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24">
         <p className="text-2xl md:text-3xl font-semibold tracking-tight" style={{ color: '#A2FF00' }}>
