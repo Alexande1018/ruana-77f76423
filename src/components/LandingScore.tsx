@@ -1,4 +1,4 @@
-const BRICK = '/landing/grok_1790779246688.jpg';
+const BRICK = '/landing/foto-reputacion.jpg';
 
 export function LandingScore() {
   return (
@@ -20,7 +20,7 @@ export function LandingScore() {
       </div>
 
       <div className="relative overflow-hidden min-h-[280px]">
-        <img src={BRICK} alt="" className="absolute inset-0 w-full h-full object-cover opacity-40" />
+        <img src={BRICK} alt="Albañil colocando ladrillo" className="absolute inset-0 w-full h-full object-cover opacity-40" />
         <div className="relative p-6 md:p-8 border border-white/10 bg-[#0D1117]/80">
           <p className="text-[56px] md:text-[72px] leading-none font-semibold" style={{ color: '#00E676' }}>
             75
