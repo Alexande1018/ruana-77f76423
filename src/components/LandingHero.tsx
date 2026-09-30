@@ -23,15 +23,19 @@ export function LandingHero() {
         >
           Aquí el trabajo no se compra. Se recomienda.
         </h1>
-        <p className="mt-6 max-w-md text-base md:text-lg text-white/75 leading-relaxed">
-          RUANA es una red de aliados. Autónomos y negocios de oficio de la misma zona. Os agrupáis
-          por código postal, os veis en el directorio del grupo y os pasáis el trabajo con nombre.
+        <p className="mt-8 max-w-md text-xl md:text-2xl text-white leading-snug" style={{ fontFamily: 'Instrument Serif, Georgia, serif' }}>
+          Ese trabajo no lo haces tú.
+          <span className="block mt-1">Pero conoces a alguien que sí.</span>
+        </p>
+        <p className="mt-5 max-w-md text-base md:text-lg text-white/75 leading-relaxed">
+          RUANA organiza eso que los profesionales llevan haciendo toda la vida: pasarse trabajo entre
+          gente de confianza de la zona.
         </p>
         <p className="mt-8 max-w-sm text-white/80">
           «Oye, ¿conoces a un buen electricista?»
         </p>
         <p className="mt-2 max-w-sm text-white/60 text-[15px] leading-relaxed">
-          Tú recomiendas. Mañana ese electricista piensa en ti. RUANA lo organiza.
+          Tú recomiendas. Mañana ese electricista piensa en ti.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4">
           <PrimaryCTA size="lg" />
