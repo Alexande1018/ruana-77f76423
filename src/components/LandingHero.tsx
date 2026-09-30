@@ -1,4 +1,5 @@
 import { PrimaryCTA, CodeLink } from '@/components/LandingCTA';
+import { GREEN, PAPER, TITLE_SHADOW } from '@/lib/landingTheme';
 
 /** Solo el hero. No reutilizar en otras secciones. */
 const HERO = '/landing/grok_1790806698745.jpg';
@@ -11,27 +12,28 @@ export function LandingHero() {
         alt="Dos profesionales de oficio pasándose un encargo en la calle"
         className="absolute inset-0 h-full w-full object-cover object-[78%_center]"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#090c0a] via-[#090c0a]/90 to-[#090c0a]/20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#050705] via-[#050705]/92 via-45% to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#050705]/80 via-transparent to-[#050705]/35" />
 
       <div className="relative max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24">
-        <p className="text-2xl md:text-3xl font-semibold tracking-tight" style={{ color: '#A2FF00' }}>
+        <p className="text-2xl md:text-3xl font-semibold tracking-tight drop-shadow-sm" style={{ color: GREEN }}>
           RUANA
         </p>
         <h1
-          className="mt-6 text-white font-normal tracking-tight leading-[1.08] max-w-[18ch] text-[34px] sm:text-[48px] md:text-[62px]"
-          style={{ fontFamily: 'Instrument Serif, Georgia, serif' }}
+          className="mt-6 font-normal tracking-tight leading-[1.08] max-w-[18ch] text-[36px] sm:text-[50px] md:text-[64px]"
+          style={{ fontFamily: 'Instrument Serif, Georgia, serif', color: PAPER, textShadow: TITLE_SHADOW }}
         >
           Ese trabajo no lo haces tú.
           <span className="block">Pero conoces a alguien que sí.</span>
         </h1>
-        <p className="mt-6 max-w-md text-base md:text-lg text-white/75 leading-relaxed">
+        <p className="mt-6 max-w-md text-base md:text-lg leading-relaxed text-white/90" style={{ textShadow: '0 1px 12px rgba(0,0,0,.55)' }}>
           RUANA organiza eso que los profesionales llevan haciendo toda la vida: pasarse trabajo entre
           gente de confianza de la zona.
         </p>
-        <p className="mt-8 max-w-sm text-white/80">
+        <p className="mt-8 max-w-sm text-lg text-white" style={{ textShadow: '0 1px 12px rgba(0,0,0,.55)' }}>
           «Oye, ¿conoces a un buen electricista?»
         </p>
-        <p className="mt-2 max-w-sm text-white/60 text-[15px] leading-relaxed">
+        <p className="mt-2 max-w-sm text-[15px] leading-relaxed text-white/80" style={{ textShadow: '0 1px 12px rgba(0,0,0,.55)' }}>
           Tú recomiendas. Mañana ese electricista piensa en ti.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4">
