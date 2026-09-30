@@ -1,24 +1,23 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { GREEN } from '@/lib/landingTheme';
 
 const MOMENTS = [
   {
     from: 'Fontanero',
     to: 'Electricista',
-    text: 'Le piden una reforma de baño. Necesita a alguien de confianza y se lo pasa a un aliado de su grupo.',
     short: 'reforma de baño',
+    text: 'Le piden una reforma de baño. Necesita a alguien de confianza y se lo pasa a un aliado de su grupo.',
   },
   {
     from: 'Electricista',
     to: 'Pintor',
-    text: 'Termina una instalación. El cliente pregunta por un pintor. Tiene a alguien de la red a mano.',
     short: 'el cliente pregunta',
+    text: 'Termina una instalación. El cliente pregunta por un pintor. Tiene a alguien de la red a mano.',
   },
   {
     from: 'Pintor',
     to: 'Carpintero',
-    text: 'Un encargo pide mobiliario a medida. Conoce a un carpintero de su zona y cierran el trabajo entre los dos.',
     short: 'mobiliario a medida',
+    text: 'Un encargo pide mobiliario a medida. Conoce a un carpintero de su zona y cierran el trabajo entre los dos.',
   },
 ];
 
@@ -32,34 +31,33 @@ export function LandingAllyExamples() {
           {MOMENTS.map((m, i) => (
             <motion.li
               key={`${m.from}-${m.to}`}
-              initial={reduce ? { opacity: 0 } : { opacity: 0, y: 12 }}
+              initial={reduce ? { opacity: 0 } : { opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
-              transition={{ delay: reduce ? 0 : i * 0.08, duration: reduce ? 0.2 : 0.5 }}
+              transition={{ delay: reduce ? 0 : i * 0.08, duration: reduce ? 0.2 : 0.45 }}
               className="lp-ticket lp-paper lp-torn"
               style={{
-                transform: i === 0 ? 'rotate(-1.8deg)' : i === 1 ? 'rotate(2.1deg) translateX(8px)' : 'rotate(-1.2deg) translateX(-6px)',
-                marginLeft: i === 1 ? 10 : i === 2 ? 4 : 0,
+                transform: i === 1 ? 'rotate(1.4deg)' : i === 2 ? 'rotate(-1.1deg)' : 'rotate(-0.8deg)',
               }}
             >
-              <span className="lp-tape" style={{ top: -7, left: i === 1 ? 40 : 14, width: 52 }} />
-              <p className="text-sm font-medium mb-1 relative z-[1]">
-                <span className="tabular-nums mr-2 font-bold" style={{ color: GREEN }}>
-                  {i + 1}
-                </span>
-                <span>{m.from}</span>
-                <span className="mx-2 opacity-50">pasa el trabajo a</span>
-                <span>{m.to}</span>
+              <span className="lp-tape" style={{ top: -8, left: 22, width: 56 }} />
+              <p className="relative z-[1]" style={{ color: '#1a1814' }}>
+                <span className="font-bold mr-2 lp-mint">{i + 1}</span>
+                <span className="font-semibold">{m.from}</span>
+                <span className="opacity-60"> pasa el trabajo a </span>
+                <span className="font-semibold">{m.to}</span>
               </p>
-              <p className="text-[15px] leading-relaxed relative z-[1]">{m.text}</p>
-              <p className="mt-1 text-sm opacity-60 relative z-[1]">— {m.short}</p>
+              <p className="sr-only">{m.text}</p>
+              <p className="mt-1 relative z-[1]" style={{ color: '#3b3328' }}>
+                — {m.short}
+              </p>
             </motion.li>
           ))}
         </ol>
       </div>
-      <p className="mt-5 text-sm md:text-base" style={{ color: GREEN }}>
-        No es un anuncio.
-        <span className="text-white/55"> Es un profesional de tu grupo que te nombra.</span>
+      <p className="mt-5 text-sm md:text-base lp-mint">
+        No es un anuncio.{' '}
+        <span className="text-white/60">Es un profesional de tu grupo que te nombra.</span>
       </p>
     </div>
   );
