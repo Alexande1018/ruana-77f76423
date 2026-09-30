@@ -37,7 +37,7 @@ export function LandingSteps() {
         </p>
       </div>
 
-      <ol className="grid md:grid-cols-3 gap-5">
+      <ol className="flex flex-col md:block relative">
         {STEPS.map((step, i) => (
           <motion.li
             key={step.n}
@@ -45,9 +45,14 @@ export function LandingSteps() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ delay: reduce ? 0 : i * 0.07, duration: 0.45 }}
-            className="relative"
+            className={`relative md:w-[31%] mb-6 md:mb-0 md:inline-block md:align-top ${
+              i === 1 ? 'md:mx-[3%] md:mt-10' : i === 2 ? 'md:mt-4' : ''
+            }`}
           >
-            <div className="lp-paper overflow-hidden" style={{ transform: i === 1 ? 'rotate(0.8deg)' : 'rotate(-0.6deg)' }}>
+            <div
+              className="lp-paper lp-torn overflow-hidden"
+              style={{ transform: i === 0 ? 'rotate(-2deg)' : i === 1 ? 'rotate(2.4deg)' : 'rotate(-1.1deg)' }}
+            >
               <img src={step.img} alt="" className="w-full h-36 object-cover" />
               <div className="p-4 flex gap-3 relative z-[1]">
                 <span className="text-sm font-semibold tabular-nums" style={{ color: GREEN }}>

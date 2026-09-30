@@ -14,7 +14,6 @@ import { PrimaryCTA, CodeLink, HaveCodeLink } from '@/components/LandingCTA';
 import { INAUGURAL_PHASE_ACTIVE, PUBLIC_ACCESS_CODE } from '@/lib/inauguralPhase';
 
 const ease = [0.16, 1, 0.3, 1] as const;
-
 const HERO =
   'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1800&q=80';
 
@@ -29,13 +28,8 @@ export default function Landing() {
 
   const fadeUp: Variants = {
     hidden: reduce ? { opacity: 0 } : { opacity: 0, y: 18 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: reduce ? 0.2 : 0.55, ease },
-    },
+    visible: { opacity: 1, y: 0, transition: { duration: reduce ? 0.2 : 0.55, ease } },
   };
-
   const stagger: Variants = {
     hidden: {},
     visible: { transition: { staggerChildren: reduce ? 0 : 0.1 } },
@@ -45,7 +39,7 @@ export default function Landing() {
     <div className="min-h-screen text-white" style={{ backgroundColor: BG }}>
       <LandingNavbar />
 
-      <section ref={heroRef} className="relative isolate overflow-hidden min-h-[640px] md:min-h-[760px] pt-24 md:pt-28 pb-10">
+      <section ref={heroRef} className="relative isolate overflow-hidden min-h-[640px] md:min-h-[760px] pt-24 md:pt-28 pb-16">
         <motion.div
           aria-hidden="true"
           className="absolute inset-0 -z-20 bg-cover bg-[center_40%]"
@@ -54,8 +48,8 @@ export default function Landing() {
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#080b0f]/94 via-[#080b0f]/78 to-[#080b0f]/45" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#080b0f] via-transparent to-[#080b0f]/40" />
 
-        <div className="relative max-w-6xl mx-auto px-5 md:px-8 grid md:grid-cols-[1.2fr_.8fr] gap-8 items-end">
-          <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-3xl">
+        <div className="relative max-w-6xl mx-auto px-5 md:px-8">
+          <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-2xl">
             <motion.h1
               variants={fadeUp}
               className="leading-[1.05] tracking-tight text-[34px] sm:text-[42px] md:text-[56px]"
@@ -83,8 +77,8 @@ export default function Landing() {
             </motion.div>
           </motion.div>
 
-          <motion.div variants={fadeUp} initial="hidden" animate="visible" className="relative pb-4">
-            <div className="lp-paper p-5 -rotate-1 max-w-sm ml-auto">
+          <motion.div variants={fadeUp} initial="hidden" animate="visible" className="relative mt-10 md:mt-0 md:absolute md:right-8 md:bottom-8 w-full md:w-[340px]">
+            <div className="lp-paper lp-torn p-5 -rotate-3">
               <span className="lp-tape lp-tape-top" />
               <p className="text-[11px] tracking-[0.16em] relative z-[1]">POR INVITACIÓN</p>
               <p className="text-3xl font-bold tracking-wide mt-1 relative z-[1]">{PUBLIC_ACCESS_CODE}</p>
@@ -92,7 +86,7 @@ export default function Landing() {
                 Esta fase no está abierta a cualquiera. Las plazas van por oficio y código postal.
               </p>
             </div>
-            <div className="lp-paper p-4 rotate-1 max-w-sm ml-auto mt-3 text-sm">
+            <div className="lp-paper lp-torn p-4 rotate-3 md:ml-10 -mt-3 text-sm max-w-[300px]">
               <p className="font-semibold relative z-[1]">03001 Alicante Centro</p>
               <p className="mt-2 relative z-[1]">Fontanero — plaza disponible</p>
               <p className="relative z-[1]">Electricista — plaza ocupada</p>
@@ -114,9 +108,11 @@ export default function Landing() {
           >
             Aquí el trabajo no se compra. Se recomienda.
           </h2>
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <LandingDailyStory />
-            <div>
+          <div className="flex flex-col lg:flex-row lg:items-start gap-14">
+            <div className="lg:w-[54%]">
+              <LandingDailyStory />
+            </div>
+            <div className="lg:w-[42%] lg:mt-16">
               <p className="mb-5 text-base md:text-lg text-white/65 leading-relaxed">
                 Cuando un profesional de tu grupo necesita a alguien de tu oficio, puede pasarte la
                 oportunidad directamente. No son anuncios ni una lista de leads vendidos a varios

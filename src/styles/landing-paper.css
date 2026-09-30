@@ -5,15 +5,15 @@
   isolation: isolate;
   background-color: var(--lp) !important;
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='p' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.035' numOctaves='4' seed='2' result='n'/%3E%3CfeDiffuseLighting in='n' lighting-color='%23efe6d4' surfaceScale='3.2'%3E%3CfeDistantLight azimuth='38' elevation='46'/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E"),
-    radial-gradient(ellipse at 14% 16%, rgba(255,255,255,.32), transparent 44%),
-    radial-gradient(ellipse at 86% 10%, rgba(140,100,55,.16), transparent 40%),
-    radial-gradient(ellipse at 78% 88%, rgba(90,60,30,.12), transparent 48%);
-  background-size: 240px 240px, auto, auto, auto;
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.035' numOctaves='4' seed='2' result='n'/%3E%3CfeDiffuseLighting in='n' lighting-color='%23efe6d4' surfaceScale='3.2'%3E%3CfeDistantLight azimuth='38' elevation='46'/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 12% 14%, rgba(255,255,255,.34), transparent 42%),
+    radial-gradient(ellipse at 88% 8%, rgba(120,80,40,.22), transparent 36%),
+    radial-gradient(ellipse at 18% 92%, rgba(90,55,25,.16), transparent 40%),
+    radial-gradient(ellipse at 76% 86%, rgba(70,45,20,.12), transparent 38%);
+  background-size: 240px 240px, auto, auto, auto, auto;
   color: #1c1915 !important;
   box-shadow:
-    0 1px 0 rgba(255,255,255,.42) inset,
-    0 2px 0 rgba(90,70,40,.08) inset,
+    0 1px 0 rgba(255,255,255,.35) inset,
     0 18px 38px rgba(0,0,0,.34);
 }
 .lp-paper > *,
@@ -32,12 +32,13 @@
 .lp-ticket span {
   color: #1c1915 !important;
 }
+/* Mordiscos visibles en el borde */
 .lp-torn {
   clip-path: polygon(
-    1.1% 2.5%, 8.5% 0.4%, 18% 2%, 30% 0.25%, 43% 2.1%, 56% 0.45%, 69% 1.85%, 81% 0.35%, 92% 2.15%, 99% 0.7%,
-    100% 13%, 98.2% 27%, 100% 42%, 97.7% 57%, 100% 71%, 98.4% 85%, 99.3% 100%,
-    87% 97.5%, 73% 100%, 59% 97.2%, 45% 100%, 31% 97.4%, 17% 100%, 5% 97.6%, 0 98.7%,
-    1.7% 83%, 0 67%, 2% 52%, 0 36%, 1.8% 20%, 0 8%
+    0% 7%, 3% 2%, 8% 6%, 13% 0%, 19% 5%, 24% 1%, 31% 6%, 37% 0%, 44% 5%, 51% 1%, 58% 6%, 64% 0%, 71% 5%, 78% 1%, 85% 6%, 91% 0%, 97% 5%, 100% 2%,
+    98% 11%, 100% 18%, 96% 24%, 100% 31%, 97% 38%, 100% 46%, 95% 53%, 100% 61%, 97% 69%, 100% 77%, 96% 84%, 100% 91%, 97% 100%,
+    90% 96%, 83% 100%, 76% 95%, 68% 100%, 60% 96%, 52% 100%, 44% 95%, 36% 100%, 28% 96%, 20% 100%, 12% 95%, 5% 100%, 0% 96%,
+    3% 88%, 0% 80%, 4% 72%, 0% 64%, 3% 56%, 0% 48%, 4% 39%, 0% 31%, 3% 23%, 0% 15%
   );
 }
 .lp-tape {
@@ -46,34 +47,25 @@
   height: 24px;
   z-index: 4;
   background:
-    repeating-linear-gradient(
-      -22deg,
-      rgba(255, 255, 255, 0.14) 0 5px,
-      rgba(170, 130, 60, 0.08) 5px 10px
-    ),
-    linear-gradient(180deg, rgba(255, 232, 175, 0.8), rgba(196, 160, 88, 0.62));
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
+    repeating-linear-gradient(-22deg, rgba(255,255,255,.14) 0 5px, rgba(170,130,60,.08) 5px 10px),
+    linear-gradient(180deg, rgba(255,232,175,.8), rgba(196,160,88,.62));
+  box-shadow: 0 1px 3px rgba(0,0,0,.22);
   transform: rotate(-9deg);
 }
-.lp-tape-top {
-  top: -10px;
-  left: 34%;
-}
+.lp-tape-top { top: -10px; left: 34%; }
 .lp-clipboard {
   background: linear-gradient(#3c3d3a, #242522);
   border: 11px solid #2b2c29;
-  border-radius: 5px;
   padding: 30px 11px 14px;
   position: relative;
-  box-shadow: 0 22px 46px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 22px 46px rgba(0,0,0,.45);
+  transform: rotate(1.2deg);
 }
 .lp-clipboard::before {
   content: "";
   position: absolute;
-  top: -17px;
-  left: 50%;
-  width: 56px;
-  height: 30px;
+  top: -17px; left: 50%;
+  width: 56px; height: 30px;
   transform: translateX(-50%);
   background: linear-gradient(#a3a8a2, #5e625c);
   border-radius: 7px 7px 3px 3px;
@@ -82,10 +74,8 @@
 .lp-clipboard::after {
   content: "";
   position: absolute;
-  top: -6px;
-  left: 50%;
-  width: 15px;
-  height: 15px;
+  top: -6px; left: 50%;
+  width: 15px; height: 15px;
   transform: translateX(-50%);
   border: 3px solid #d0d3cd;
   border-radius: 50%;
@@ -100,44 +90,30 @@
     linear-gradient(135deg, #e1c48c, #c49a5c);
   color: #1c1915 !important;
   border: 10px solid #8f6c38;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.32), inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+  box-shadow: 0 16px 36px rgba(0,0,0,.32);
+  transform: rotate(-0.8deg);
 }
-.lp-cork > * {
-  position: relative;
-  z-index: 1;
-}
-.lp-cork p,
-.lp-cork span,
-.lp-cork li {
-  color: #1c1915 !important;
-}
+.lp-cork > * { position: relative; z-index: 1; }
+.lp-cork p, .lp-cork span, .lp-cork li { color: #1c1915 !important; }
 .lp-pin {
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  position: absolute;
-  z-index: 2;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  width: 13px; height: 13px; border-radius: 50%;
+  position: absolute; z-index: 2;
+  box-shadow: 0 2px 3px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.4);
 }
 .lp-stamp {
   display: inline-block;
   border: 3px solid #1d5c3a;
   color: #1d5c3a !important;
-  letter-spacing: 0.16em;
+  letter-spacing: .16em;
   font-weight: 800;
   padding: 5px 12px;
-  transform: rotate(-2deg);
+  transform: rotate(-3deg);
 }
 .lp-photo {
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.42);
+  box-shadow: 0 18px 40px rgba(0,0,0,.42);
   border: 7px solid #efe6d4;
+  transform: rotate(-1.4deg);
 }
-.lp-ok {
-  color: #1f7a45 !important;
-}
-.lp-no {
-  color: #9a2f2f !important;
-}
-.lp-mint {
-  color: #1d5c3a !important;
-}
+.lp-ok { color: #1f7a45 !important; }
+.lp-no { color: #9a2f2f !important; }
+.lp-mint { color: #1d5c3a !important; }

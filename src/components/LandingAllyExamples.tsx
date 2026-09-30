@@ -36,10 +36,13 @@ export function LandingAllyExamples() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ delay: reduce ? 0 : i * 0.08, duration: reduce ? 0.2 : 0.5 }}
-              className="lp-ticket lp-paper"
-              style={{ transform: i === 1 ? 'rotate(0.7deg)' : i === 2 ? 'rotate(-0.5deg)' : 'rotate(-0.8deg)' }}
+              className="lp-ticket lp-paper lp-torn"
+              style={{
+                transform: i === 0 ? 'rotate(-1.8deg)' : i === 1 ? 'rotate(2.1deg) translateX(8px)' : 'rotate(-1.2deg) translateX(-6px)',
+                marginLeft: i === 1 ? 10 : i === 2 ? 4 : 0,
+              }}
             >
-              <span className="lp-tape" style={{ top: -7, left: 18, width: 48 }} />
+              <span className="lp-tape" style={{ top: -7, left: i === 1 ? 40 : 14, width: 52 }} />
               <p className="text-sm font-medium mb-1 relative z-[1]">
                 <span className="tabular-nums mr-2 font-bold" style={{ color: GREEN }}>
                   {i + 1}
