@@ -31,6 +31,7 @@ export function LandingNavbar() {
     { id: 'plazas', label: 'Plazas' },
     { id: 'diferencia', label: 'Por qué RUANA' },
     ...(INAUGURAL_PHASE_ACTIVE ? [{ id: 'acceso', label: 'Invitación' }] : []),
+    { id: 'preguntas', label: 'Preguntas' },
     { id: 'entrar', label: 'Entrar' },
   ];
 
@@ -108,7 +109,7 @@ export function LandingNavbar() {
 
 export function LandingFooter() {
   return (
-    <footer style={{ backgroundColor: BG_ALT }} className="border-t border-white/5 bg-gradient-to-b from-[#0b1014] to-[#07090c]">
+    <footer style={{ backgroundColor: BG_ALT }} className="border-t border-white/5 bg-gradient-to-b from-[#0b1014] to-[#07090c">
       <div className="max-w-6xl mx-auto px-5 md:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-2">
           <Network className="h-5 w-5" style={{ color: GREEN }} />

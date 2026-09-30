@@ -32,8 +32,9 @@ export function LandingAccessInvite() {
             Esta fase no está abierta a cualquiera.
           </h2>
           <p className="mt-4 text-base md:text-lg leading-relaxed max-w-xl opacity-80 relative z-[1]">
-            Las plazas van por invitación y son pocas. Si has llegado hasta aquí, puedes ocupar la de
-            tu oficio en tu zona con este código.
+            Las plazas van por invitación y son pocas. Los primeros de cada zona entran con una
+            invitación de arranque. Si has llegado hasta aquí, puedes ocupar la de tu oficio con este
+            código.
           </p>
           <div className="mt-6 inline-flex flex-col items-start border-2 px-5 py-4 relative z-[1]" style={{ borderColor: GREEN }}>
             <span className="text-[11px] uppercase tracking-[0.18em] opacity-60">Código de acceso</span>
