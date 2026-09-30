@@ -20,9 +20,6 @@ export function LimitedSeatsIdea() {
           El grupo es de tu código postal.
         </h2>
         <p className="mt-4 text-base md:text-lg text-white/70">Una plaza por oficio en cada grupo.</p>
-        <p className="mt-1 text-base md:text-lg" style={{ color: GREEN }}>
-          Por código postal.
-        </p>
         <p className="mt-5 text-base md:text-lg text-white/70 leading-relaxed">
           No queremos 200 del mismo oficio a por el{' '}
           <em style={{ color: GREEN }}>mismo cliente</em>.
