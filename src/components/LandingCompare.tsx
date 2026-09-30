@@ -1,61 +1,40 @@
-import { motion, useReducedMotion } from 'framer-motion';
-
-const OTHERS = [
-  { label: 'WhatsApp', text: 'Muchos contactos. Poca estructura.' },
-  { label: 'Directorios', text: 'Muchos profesionales. Poca relación entre ellos.' },
-  { label: 'Plataformas de leads', text: 'Varios profesionales pagando por competir por el mismo cliente.' },
-];
-
 export function LandingCompare() {
-  const reduce = useReducedMotion();
-
   return (
     <div className="max-w-5xl">
       <h2
-        className="text-2xl md:text-3xl tracking-tight mb-3"
+        className="text-2xl md:text-[36px] tracking-tight mb-3"
         style={{ fontFamily: 'Instrument Serif, Georgia, serif' }}
       >
         No es otro sitio donde comprar clientes.
       </h2>
-      <p className="text-base md:text-lg text-white/60 leading-relaxed mb-10 max-w-xl">
+      <p className="text-base md:text-lg text-white/60 leading-relaxed mb-12 max-w-xl">
         RUANA no sustituye tu WhatsApp ni te vende una lista. Organiza a profesionales de una zona
         para que las recomendaciones dejen de perderse.
       </p>
 
-      <div className="relative">
-        {OTHERS.map((item, i) => (
-          <motion.div
-            key={item.label}
-            initial={reduce ? { opacity: 0 } : { opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: reduce ? 0 : i * 0.06, duration: 0.4 }}
-            className={`lp-paper lp-torn p-5 mb-4 max-w-md ${
-              i === 1 ? 'md:ml-24 -rotate-2' : i === 2 ? 'md:ml-10 rotate-2' : 'rotate-[-1.5deg]'
-            }`}
-          >
-            <p className="text-sm font-medium opacity-50 relative z-[1]">{item.label}</p>
-            <p className="text-base md:text-lg leading-relaxed relative z-[1]">{item.text}</p>
-          </motion.div>
-        ))}
-
-        <motion.div
-          initial={reduce ? { opacity: 0 } : { opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: reduce ? 0 : 0.18, duration: 0.5 }}
-          className="lp-paper lp-torn p-6 sm:p-7 md:ml-8 max-w-xl -rotate-1"
-        >
-          <span className="lp-tape lp-tape-top" />
-          <p className="text-sm font-semibold mb-2 relative z-[1]" style={{ color: '#1d5c3a' }}>
+      <div className="grid md:grid-cols-2 gap-10 md:gap-16">
+        <div>
+          <p className="text-sm text-white/40 mb-3">Fuera.</p>
+          <p className="text-lg md:text-xl leading-relaxed text-white/75">
+            WhatsApp: muchos contactos. Poca estructura.
+          </p>
+          <p className="mt-3 text-lg md:text-xl leading-relaxed text-white/75">
+            Directorios: muchos profesionales. Poca relación entre ellos.
+          </p>
+          <p className="mt-3 text-lg md:text-xl leading-relaxed text-white/75">
+            Plataformas de leads: varios profesionales pagando por competir por el mismo cliente.
+          </p>
+        </div>
+        <div className="md:border-l md:pl-12" style={{ borderColor: '#A2FF00' }}>
+          <p className="text-sm font-semibold mb-3" style={{ color: '#A2FF00' }}>
             RUANA
           </p>
-          <p className="text-lg md:text-xl leading-snug relative z-[1]">
+          <p className="text-lg md:text-xl leading-snug">
             Profesionales locales que se conocen, construyen reputación y se recomiendan
             oportunidades.
           </p>
-          <p className="mt-4 text-sm opacity-70 relative z-[1]">Apuntarse no tiene cuota.</p>
-        </motion.div>
+          <p className="mt-4 text-sm text-white/60">Apuntarse no tiene cuota.</p>
+        </div>
       </div>
     </div>
   );

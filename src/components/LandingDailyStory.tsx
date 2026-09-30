@@ -1,33 +1,27 @@
-import { motion, useReducedMotion } from 'framer-motion';
-import { LandingPaperNote } from '@/components/LandingPaperNote';
-
-const BANO =
-  'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=80';
+const ELECTRIC = '/landing/grok_1790779224413.jpg';
 
 export function LandingDailyStory() {
-  const reduce = useReducedMotion();
-
   return (
-    <motion.div
-      initial={reduce ? { opacity: 0 } : { opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: reduce ? 0.2 : 0.55 }}
-      className="relative"
-    >
-      <div className="relative">
-        <img src={BANO} alt="" className="block w-full h-[280px] sm:h-[360px] md:h-[420px] object-cover object-[30%_40%]" />
-        <LandingPaperNote className="absolute -bottom-8 left-2 sm:left-auto sm:right-[-18px] w-[88%] sm:w-[310px] -rotate-2">
-          <p className="text-[28px] sm:text-[32px] leading-[1.06]" style={{ fontFamily: 'Caveat, cursive' }}>
-            «Oye, ¿conoces a un buen electricista?»
-          </p>
-          <p className="mt-3 text-[16px] leading-snug">Tú recomiendas.</p>
-          <p className="text-[16px] leading-snug">Mañana ese electricista piensa en ti.</p>
-          <p className="mt-3 text-[16px] font-semibold" style={{ color: '#1f7a4a' }}>
-            RUANA lo organiza.
-          </p>
-        </LandingPaperNote>
+    <div className="relative overflow-hidden">
+      <img
+        src={ELECTRIC}
+        alt=""
+        className="block w-full h-[280px] sm:h-[360px] md:h-[420px] object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#090c0a] via-transparent to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7">
+        <p
+          className="text-[26px] sm:text-[32px] leading-[1.08] text-white"
+          style={{ fontFamily: 'Instrument Serif, Georgia, serif' }}
+        >
+          «Oye, ¿conoces a un buen electricista?»
+        </p>
+        <p className="mt-3 text-[16px] text-white/75 leading-snug">Tú recomiendas.</p>
+        <p className="text-[16px] text-white/75 leading-snug">Mañana ese electricista piensa en ti.</p>
+        <p className="mt-3 text-[16px] font-semibold" style={{ color: '#A2FF00' }}>
+          RUANA lo organiza.
+        </p>
       </div>
-    </motion.div>
+    </div>
   );
 }

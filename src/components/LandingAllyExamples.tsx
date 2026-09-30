@@ -1,6 +1,3 @@
-import { motion, useReducedMotion } from 'framer-motion';
-import { LandingPaperNote } from '@/components/LandingPaperNote';
-
 const MOMENTS = [
   { from: 'Fontanero', to: 'Electricista', short: 'reforma de baño', text: 'Le piden una reforma de baño. Necesita a alguien de confianza y se lo pasa a un aliado de su grupo.' },
   { from: 'Electricista', to: 'Pintor', short: 'el cliente pregunta', text: 'Termina una instalación. El cliente pregunta por un pintor. Tiene a alguien de la red a mano.' },
@@ -8,36 +5,24 @@ const MOMENTS = [
 ];
 
 export function LandingAllyExamples() {
-  const reduce = useReducedMotion();
-
   return (
     <div>
-      <div className="lp-clipboard">
-        <ol>
-          {MOMENTS.map((m, i) => (
-            <motion.li
-              key={`${m.from}-${m.to}`}
-              initial={reduce ? { opacity: 0 } : { opacity: 0, y: 8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-2"
-            >
-              <LandingPaperNote tape className={i === 1 ? 'rotate-1' : '-rotate-1'}>
-                <p className="text-[15px] leading-snug">
-                  <span className="font-bold mr-1" style={{ color: '#1f7a4a' }}>
-                    {i + 1}
-                  </span>
-                  {m.from} pasa el trabajo a {m.to}
-                </p>
-                <p className="sr-only">{m.text}</p>
-                <p className="mt-1 text-[14px]">— {m.short}</p>
-              </LandingPaperNote>
-            </motion.li>
-          ))}
-        </ol>
-      </div>
-      <p className="mt-4 text-[15px]">
-        <span className="font-semibold" style={{ color: '#22c55e' }}>
+      <ol className="space-y-4">
+        {MOMENTS.map((m, i) => (
+          <li key={`${m.from}-${m.to}`} className="border-b border-white/10 pb-4">
+            <p className="text-[15px] leading-snug text-white/90">
+              <span className="font-bold mr-2" style={{ color: '#A2FF00' }}>
+                {i + 1}
+              </span>
+              {m.from} pasa el trabajo a {m.to}
+            </p>
+            <p className="sr-only">{m.text}</p>
+            <p className="mt-1 text-[14px] text-white/50">— {m.short}</p>
+          </li>
+        ))}
+      </ol>
+      <p className="mt-5 text-[15px]">
+        <span className="font-semibold" style={{ color: '#A2FF00' }}>
           No es un anuncio.
         </span>{' '}
         <span className="text-white/70">Es un profesional de tu grupo que te nombra.</span>
