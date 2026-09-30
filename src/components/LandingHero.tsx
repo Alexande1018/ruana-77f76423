@@ -55,7 +55,6 @@ export function LandingHero() {
                 <p className="lp-note-brand">RUANA lo organiza.</p>
               </aside>
             </div>
-            <p className="lp-hero-caption">Un cliente te dice. Tú recomiendas.<br />Mañana piensa en ti.</p>
           </div>
 
           <div className="lp-hero-right">
