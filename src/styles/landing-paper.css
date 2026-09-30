@@ -2,12 +2,41 @@
 .lp-ticket {
   position: relative;
   isolation: isolate;
+  overflow: hidden;
   background-color: #efe6d4 !important;
   color: #1c1915 !important;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.35) inset,
-    0 14px 28px rgba(0, 0, 0, 0.28);
+    0 1px 0 rgba(255, 255, 255, 0.4) inset,
+    0 16px 32px rgba(0, 0, 0, 0.3);
 }
+
+/* Textura solo de fondo. No toca el texto. */
+.lp-paper::before,
+.lp-ticket::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='4' seed='3' result='n'/%3E%3CfeDiffuseLighting in='n' lighting-color='%23efe6d4' surfaceScale='2.8'%3E%3CfeDistantLight azimuth='40' elevation='48'/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+  mix-blend-mode: multiply;
+  opacity: 0.85;
+}
+
+.lp-paper::after,
+.lp-ticket::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 12% 18%, rgba(255,255,255,.28), transparent 42%),
+    radial-gradient(ellipse at 88% 12%, rgba(130,95,50,.14), transparent 38%),
+    radial-gradient(ellipse at 80% 88%, rgba(90,60,30,.1), transparent 46%);
+}
+
 .lp-paper > *,
 .lp-ticket > * {
   position: relative;
@@ -24,22 +53,30 @@
 .lp-ticket span {
   color: #1c1915 !important;
 }
+
 .lp-torn {
-  border-radius: 2px;
+  clip-path: polygon(
+    1% 2.4%, 8% 0.5%, 18% 2%, 30% 0.3%, 42% 2.1%, 55% 0.4%, 68% 1.8%, 80% 0.5%, 91% 2%, 99% 0.7%,
+    100% 14%, 98.2% 28%, 100% 44%, 97.6% 58%, 100% 72%, 98.4% 86%, 99.2% 100%,
+    88% 97.5%, 74% 100%, 60% 97.4%, 46% 100%, 32% 97.6%, 18% 100%, 6% 97.8%, 0 99%,
+    2% 84%, 0 70%, 2.2% 54%, 0 38%, 2% 22%, 0 10%
+  );
 }
+
 .lp-tape {
   position: absolute;
-  width: 72px;
-  height: 20px;
+  width: 76px;
+  height: 22px;
   z-index: 3;
-  background: linear-gradient(180deg, rgba(255, 236, 190, 0.7), rgba(196, 166, 98, 0.55));
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+  background: linear-gradient(180deg, rgba(255, 236, 190, 0.72), rgba(196, 166, 98, 0.58));
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   transform: rotate(-8deg);
 }
 .lp-tape-top {
   top: -8px;
   left: 38%;
 }
+
 .lp-clipboard {
   background: #2f302d;
   border: 9px solid #2f302d;
@@ -59,12 +96,24 @@
   background: linear-gradient(#8a8d87, #555851);
   border-radius: 5px 5px 3px 3px;
 }
+
 .lp-cork {
   position: relative;
+  isolation: isolate;
+  overflow: hidden;
   background-color: #d7bc86 !important;
   color: #1c1915 !important;
   border: 8px solid #9a7540;
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+}
+.lp-cork::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.08' numOctaves='3' seed='8'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)' opacity='0.25'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
 }
 .lp-cork > * {
   position: relative;
@@ -75,6 +124,7 @@
 .lp-cork li {
   color: #1c1915 !important;
 }
+
 .lp-pin {
   width: 11px;
   height: 11px;
