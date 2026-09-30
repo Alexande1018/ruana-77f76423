@@ -1,3 +1,4 @@
+import { useId } from 'react';
 import type { CSSProperties, ReactNode } from 'react';
 
 const PATH =
@@ -14,6 +15,8 @@ export function LandingPaperNote({
   style?: CSSProperties;
   tape?: boolean;
 }) {
+  const textureId = `lp-paper-${useId().replace(/:/g, '')}`;
+
   return (
     <div className={`relative ${className}`} style={style}>
       <svg
@@ -22,8 +25,20 @@ export function LandingPaperNote({
         preserveAspectRatio="none"
         aria-hidden="true"
       >
-        <path d={PATH} fill="#efe6d4" />
-        <path d={PATH} fill="none" stroke="#d7c7a8" strokeWidth="2" />
+        <defs>
+          <pattern id={textureId} patternUnits="userSpaceOnUse" width="320" height="280">
+            <image
+              href="/landing/grok_1790780443386.jpg"
+              x="0"
+              y="0"
+              width="320"
+              height="280"
+              preserveAspectRatio="xMidYMid slice"
+            />
+          </pattern>
+        </defs>
+        <path d={PATH} fill={`url(#${textureId})`} />
+        <path d={PATH} fill="none" stroke="rgba(112, 91, 57, .4)" strokeWidth="1.5" />
       </svg>
       {tape ? (
         <span

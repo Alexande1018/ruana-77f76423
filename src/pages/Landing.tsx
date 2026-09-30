@@ -14,7 +14,7 @@ import { INAUGURAL_PHASE_ACTIVE } from '@/lib/inauguralPhase';
 
 export default function Landing() {
   return (
-    <div className="min-h-screen text-white" style={{ backgroundColor: BG }}>
+    <div className="ruana-landing min-h-screen text-white" style={{ backgroundColor: BG }}>
       <LandingNavbar />
       <LandingHero />
 
