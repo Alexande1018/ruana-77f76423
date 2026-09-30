@@ -1,10 +1,10 @@
 .ruana-landing {
-  --ruana-ink: #e8e5de;
-  --ruana-muted: rgba(232, 229, 222, .72);
-  --ruana-green: #83bd96;
+  --ruana-ink: #e9e4da;
+  --ruana-muted: rgba(233, 228, 218, .76);
+  --ruana-green: #83b993;
   background-color: #111210 !important;
   background-image:
-    linear-gradient(rgba(13, 14, 13, .88), rgba(13, 14, 13, .9)),
+    linear-gradient(rgba(13, 14, 13, .78), rgba(13, 14, 13, .82)),
     url('/landing/grok_1790780451529.jpg');
   background-size: auto, 1100px auto;
   background-position: center, center top;
@@ -136,13 +136,13 @@
   background-position: center;
 }
 .lp-hero-title {
-  font-family: Arial, "Public Sans", sans-serif;
-  font-weight: 700;
-  letter-spacing: -.045em;
-  font-size: clamp(2.55rem, 4.1vw, 4.3rem);
-  line-height: .99;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -.025em;
+  font-size: clamp(3rem, 4.4vw, 4.5rem);
+  line-height: .91;
   text-wrap: pretty;
-  color: #e8e5de;
+  color: #e9e4da;
 }
 .lp-hero-title span { white-space: nowrap; }
 .ruana-landing header a:not(.landing-cta) { color: rgba(239, 233, 220, .72) !important; }
@@ -212,7 +212,7 @@
   padding: 68px 26px 28px;
   border: 15px solid #292a27;
   border-radius: 9px;
-  background-image: linear-gradient(145deg, rgba(62, 62, 57, .38), rgba(14, 15, 14, .7));
+  background-image: linear-gradient(145deg, rgba(62, 62, 57, .48), rgba(14, 15, 14, .66)), url('/landing/grok_1790780451529.jpg');
   background-size: cover;
   box-shadow: 0 24px 46px rgba(0, 0, 0, .52), inset 0 0 0 2px rgba(224, 219, 202, .14), inset 0 0 22px rgba(0,0,0,.45);
 }
@@ -304,6 +304,27 @@
 .lp-hero-right { padding-top:32px; }
 .lp-hero-right .lp-close { margin:30px auto 0; text-align:center; }
 .lp-slip-tape { z-index:2; }
+
+/* Keep the handmade paper language, with fine, uneven tears instead of saw-cut zigzags. */
+.lp-paper,
+.lp-ticket,
+.lp-torn,
+.lp-note,
+.lp-sheet {
+  clip-path: polygon(
+    1.1% 5.2%, 3.3% 3.1%, 5.7% 4.4%, 8.1% 2.3%, 10.5% 4.1%, 13.2% 2.6%, 15.6% 4.4%, 18.1% 2%, 20.8% 3.8%, 23.4% 2.5%, 26% 4.3%, 28.4% 2.1%, 31.2% 3.9%, 34% 2%, 36.7% 4.2%, 39.2% 2.3%, 42% 4.1%, 44.6% 2%, 47.3% 3.8%, 50% 2.1%, 52.8% 4.4%, 55.4% 2.2%, 58.1% 3.9%, 60.9% 2.1%, 63.5% 4.3%, 66.1% 2%, 68.8% 3.7%, 71.5% 2.3%, 74.2% 4.4%, 76.7% 2.1%, 79.4% 3.8%, 82.1% 2%, 84.8% 4.2%, 87.4% 2.4%, 90.1% 4.1%, 92.8% 2.2%, 95.2% 4.4%, 98.7% 5.2%,
+    97.6% 9%, 99% 13%, 97.7% 17%, 99.1% 21%, 97.4% 25%, 99% 29%, 97.5% 33%, 99.2% 37%, 97.4% 41%, 99.1% 45%, 97.6% 49%, 99% 53%, 97.3% 57%, 99.2% 61%, 97.4% 65%, 99% 69%, 97.5% 73%, 99.1% 77%, 97.3% 81%, 99% 85%, 97.4% 89%, 98.8% 93%, 96.3% 97%,
+    93.5% 95.8%, 90.7% 98.2%, 88% 96.1%, 85.3% 98.3%, 82.5% 96%, 79.8% 98.1%, 77% 96.3%, 74.3% 98.4%, 71.5% 96.1%, 68.8% 98.2%, 66% 96%, 63.3% 98.4%, 60.5% 96.1%, 57.8% 98.3%, 55% 96%, 52.3% 98.4%, 49.5% 96.2%, 46.8% 98.3%, 44% 96%, 41.3% 98.4%, 38.5% 96.2%, 35.8% 98.3%, 33% 96%, 30.3% 98.4%, 27.5% 96.1%, 24.8% 98.3%, 22% 96%, 19.3% 98.4%, 16.5% 96.2%, 13.8% 98.3%, 11% 96%, 8.3% 98.4%, 5.5% 96.1%, 2.5% 97.3%, 1.1% 93%,
+    2.5% 89%, 1% 85%, 2.6% 81%, .9% 77%, 2.6% 73%, 1% 69%, 2.7% 65%, .8% 61%, 2.6% 57%, 1% 53%, 2.7% 49%, .9% 45%, 2.6% 41%, 1% 37%, 2.8% 33%, .9% 29%, 2.6% 25%, 1% 21%, 2.7% 17%, .9% 13%, 2.6% 9%
+  );
+}
+.lp-hero-title span { white-space: normal; }
+.lp-sheet { transform: rotate(-.45deg); }
+.lp-rec-row:nth-child(1) { transform: rotate(-.35deg); }
+.lp-rec-row:nth-child(2) { transform: rotate(.45deg); }
+.lp-rec-row:nth-child(3) { transform: rotate(-.25deg); }
+.lp-note { transform: rotate(-2.1deg); }
+.lp-board { border-radius: 12px; }
 @media (max-width: 1023px) {
   .lp-hero-grid { grid-template-columns:minmax(0, 1.25fr) minmax(345px, .9fr); gap:24px; }
   .lp-board { padding: 58px 15px 17px; border-width: 7px; }
