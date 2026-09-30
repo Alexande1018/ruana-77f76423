@@ -9,6 +9,7 @@ import { LandingPay } from '@/components/LandingPay';
 import { LandingFaq } from '@/components/LandingFaq';
 import { LandingSteps } from '@/components/LandingSteps';
 import { NodeField } from '@/components/NodeField';
+import { Reveal, ParallaxImage } from '@/components/LandingMotion';
 import { BG, GREEN, PAPER, TITLE_SHADOW } from '@/lib/landingTheme';
 import { PrimaryCTA, CodeLink } from '@/components/LandingCTA';
 import { INAUGURAL_PHASE_ACTIVE } from '@/lib/inauguralPhase';
@@ -30,12 +31,16 @@ export default function Landing() {
       <LandingNavbar />
 
       <LandingHero />
-      {INAUGURAL_PHASE_ACTIVE && <LandingAccessInvite />}
+      {INAUGURAL_PHASE_ACTIVE && (
+        <Reveal>
+          <LandingAccessInvite />
+        </Reveal>
+      )}
 
       <section className="scroll-mt-20 relative overflow-hidden" id="para-quien">
-        <img src={GROUP} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <ParallaxImage src={GROUP} alt="" className="absolute inset-0 h-[108%] w-full object-cover -top-[4%]" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#050705] via-[#050705]/90 via-50% to-[#050705]/25" />
-        <div className="relative max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
+        <Reveal className="relative max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
           <h2 className="text-[32px] md:text-[48px] leading-[1.08] max-w-xl" style={photoTitle}>
             Es para quien vive del oficio.
           </h2>
@@ -49,11 +54,11 @@ export default function Landing() {
           <p className="mt-4 max-w-md text-base md:text-lg text-white/90 leading-relaxed">
             No es una red para el cliente final.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       <section className="scroll-mt-20 py-16 md:py-24" id="como-funciona">
-        <div className="max-w-6xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <Reveal className="max-w-6xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div>
             <h2
               className="text-[32px] md:text-[48px] leading-[1.08] mb-8"
@@ -77,24 +82,24 @@ export default function Landing() {
             alt="Manos trabajando en un cuadro eléctrico"
             className="w-full aspect-[4/3] object-cover"
           />
-        </div>
+        </Reveal>
       </section>
 
       <section className="scroll-mt-20 relative overflow-hidden min-h-[70vh]" id="encargo">
-        <img src={PAINTER} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <ParallaxImage src={PAINTER} alt="" className="absolute inset-0 h-[108%] w-full object-cover -top-[4%]" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#050705] via-[#050705]/88 to-transparent" />
-        <div className="relative max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
+        <Reveal className="relative max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
           <h2 className="text-[32px] md:text-[48px] leading-[1.08] max-w-md" style={photoTitle}>
             Te nombran. Acordáis. Cerráis un importe.
           </h2>
           <p className="mt-6 max-w-md text-base md:text-lg text-white/90 leading-relaxed">
             El encargo va de un aliado a otro. La negociación es guiada. No se queda en un chat suelto.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       <section className="scroll-mt-20 py-16 md:py-24" id="directorio">
-        <div className="max-w-6xl mx-auto px-5 md:px-8">
+        <Reveal className="max-w-6xl mx-auto px-5 md:px-8">
           <h2
             className="text-[32px] md:text-[44px] leading-[1.08] max-w-xl"
             style={{ fontFamily: 'Instrument Serif, Georgia, serif', color: PAPER }}
@@ -105,11 +110,11 @@ export default function Landing() {
             Ves a los aliados de tu código postal y contactas desde el panel. No es un listado de la
             ciudad. Es la gente de tu grupo.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       <section className="scroll-mt-20 py-16 md:py-24" id="perfil">
-        <div className="max-w-6xl mx-auto px-5 md:px-8">
+        <Reveal className="max-w-6xl mx-auto px-5 md:px-8">
           <h2
             className="text-[32px] md:text-[44px] leading-[1.08] max-w-xl"
             style={{ fontFamily: 'Instrument Serif, Georgia, serif', color: PAPER }}
@@ -120,56 +125,61 @@ export default function Landing() {
             Oficio, zona, código de aliado y estado. El score se convierte en un estado: aquí se ve
             Estable.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       <section className="scroll-mt-20 py-16 md:py-24" id="plazas">
-        <div className="max-w-6xl mx-auto px-5 md:px-8">
+        <Reveal className="max-w-6xl mx-auto px-5 md:px-8">
           <LimitedSeatsIdea />
-        </div>
+        </Reveal>
       </section>
 
       <section className="scroll-mt-20 py-16 md:py-24" id="grupo">
-        <div className="max-w-6xl mx-auto px-5 md:px-8">
+        <Reveal className="max-w-6xl mx-auto px-5 md:px-8">
           <GroupExample />
-        </div>
+        </Reveal>
       </section>
 
       <section className="scroll-mt-20 py-16 md:py-24" id="reputacion">
-        <div className="max-w-6xl mx-auto px-5 md:px-8">
+        <Reveal className="max-w-6xl mx-auto px-5 md:px-8">
           <LandingScore />
-        </div>
+        </Reveal>
       </section>
 
       <section className="scroll-mt-20 py-16 md:py-24" id="diferencia">
-        <div className="max-w-6xl mx-auto px-5 md:px-8">
+        <Reveal className="max-w-6xl mx-auto px-5 md:px-8">
           <LandingCompare />
-        </div>
+        </Reveal>
       </section>
 
       <section className="scroll-mt-20 py-16 md:py-24" id="apoyo">
-        <div className="max-w-6xl mx-auto px-5 md:px-8">
+        <Reveal className="max-w-6xl mx-auto px-5 md:px-8">
           <LandingPay />
-        </div>
+        </Reveal>
       </section>
 
       <section className="scroll-mt-20 py-16 md:py-24" id="empezar">
-        <div className="max-w-6xl mx-auto px-5 md:px-8">
+        <Reveal className="max-w-6xl mx-auto px-5 md:px-8">
           <LandingSteps />
-        </div>
+        </Reveal>
       </section>
 
       <section className="scroll-mt-20 py-16 md:py-24" id="preguntas">
-        <div className="max-w-6xl mx-auto px-5 md:px-8">
+        <Reveal className="max-w-6xl mx-auto px-5 md:px-8">
           <LandingFaq />
-        </div>
+        </Reveal>
       </section>
 
       <section id="entrar" className="relative overflow-hidden min-h-[80vh] scroll-mt-20">
-        <img src={CLOSE} alt="Manos de un profesional cerrando la caja de herramientas al final del día" className="absolute inset-0 w-full h-full object-cover object-[70%_center]" />
+        <ParallaxImage
+          src={CLOSE}
+          alt="Manos de un profesional cerrando la caja de herramientas al final del día"
+          position="70% center"
+          className="absolute inset-0 h-[108%] w-full object-cover -top-[4%]"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-[#050705] via-[#050705]/92 to-[#050705]/25" />
         <NodeField density={0.00008} opacity={0.18} intensity={0.3} />
-        <div className="relative max-w-3xl mx-auto px-5 md:px-8 py-24 md:py-32">
+        <Reveal className="relative max-w-3xl mx-auto px-5 md:px-8 py-24 md:py-32">
           <h2 className="text-[28px] sm:text-[34px] md:text-[42px] leading-[1.12]" style={photoTitle}>
             Si tienes invitación, entra con tu oficio.
           </h2>
@@ -188,7 +198,7 @@ export default function Landing() {
             <PrimaryCTA size="lg" />
             <CodeLink />
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <LandingFooter />
