@@ -119,7 +119,7 @@
   font-family: Arial, "Public Sans", sans-serif;
   font-weight: 700;
   letter-spacing: -.045em;
-  font-size: clamp(2.55rem, 4vw, 4.3rem);
+  font-size: clamp(2.55rem, 4.25vw, 4.3rem);
   line-height: .99;
   text-wrap: pretty;
 }
@@ -251,10 +251,10 @@
 .lp-close-rest { display: block; margin-top: 6px; color: rgba(255,255,255,0.82); font-size: 1rem; }
 .lp-hero-grid { display:grid; grid-template-columns:minmax(0, 1.42fr) minmax(484px, .88fr); gap:clamp(32px,3.8vw,58px); align-items:start; }
 .lp-hero-left { padding-top:42px; }
-.lp-hero-photo { margin-top:24px; margin-left:-40px; }
+.lp-hero-photo { margin-top:36px; margin-left:-40px; }
 .lp-note { position:absolute; right:-20px; bottom:-22px; width:min(64%,470px); }
 .lp-hero-caption { margin-top:42px; color:#a9d5b3; font-size:1.2rem; line-height:1.45; }
-.lp-hero-right { padding-top:20px; }
+.lp-hero-right { padding-top:32px; }
 .lp-hero-right .lp-close { margin:30px auto 0; text-align:center; }
 .lp-slip-tape { z-index:2; }
 @media (max-width: 1023px) {
