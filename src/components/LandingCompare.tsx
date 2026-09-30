@@ -21,7 +21,10 @@ export function LandingCompare() {
 
   return (
     <div className="max-w-5xl">
-      <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-3">
+      <h2
+        className="text-2xl md:text-3xl tracking-tight mb-3"
+        style={{ fontFamily: 'Instrument Serif, Georgia, serif' }}
+      >
         No es otro sitio donde comprar clientes.
       </h2>
       <p className="text-base md:text-lg text-white/60 leading-relaxed mb-10 max-w-xl">
@@ -37,10 +40,9 @@ export function LandingCompare() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: reduce ? 0 : i * 0.06, duration: 0.4 }}
-            className="rounded-2xl border p-5 bg-white/[0.025]"
-            style={{ borderColor: 'rgba(255,255,255,0.07)' }}
+            className="p-5 bg-white/[0.03] border-l-2 border-white/15"
           >
-            <p className="text-sm font-medium text-white/40 pt-0.5">{item.label}</p>
+            <p className="text-sm font-medium text-white/40">{item.label}</p>
             <p className="text-base md:text-lg text-white/70 leading-relaxed">{item.text}</p>
           </motion.div>
         ))}
@@ -50,22 +52,16 @@ export function LandingCompare() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: reduce ? 0 : 0.18, duration: 0.5 }}
-          className="md:col-span-2 mt-2 rounded-[24px] border px-5 py-6 sm:px-7 sm:py-7"
-          style={{
-            borderColor: 'rgba(0,230,118,0.32)',
-            backgroundColor: 'rgba(0,230,118,0.06)',
-          }}
+          className="md:col-span-2 mt-2 bg-[#efe6d4] text-[#1a1814] px-5 py-6 sm:px-7 sm:py-7"
         >
-          <p className="text-sm font-semibold mb-2" style={{ color: GREEN }}>
+          <p className="text-sm font-semibold mb-2" style={{ color: '#1d5c3a' }}>
             RUANA
           </p>
-          <p className="text-lg md:text-xl text-white leading-snug">
+          <p className="text-lg md:text-xl leading-snug">
             Profesionales locales que se conocen, construyen reputación y se recomiendan
             oportunidades.
           </p>
-          <p className="mt-4 text-sm text-white/55 leading-relaxed">
-            Apuntarse no tiene cuota.
-          </p>
+          <p className="mt-4 text-sm opacity-70">Apuntarse no tiene cuota.</p>
         </motion.div>
       </div>
     </div>

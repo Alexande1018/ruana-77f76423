@@ -4,7 +4,10 @@ export function LandingScore() {
   return (
     <div className="grid lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.85fr)] gap-10 lg:gap-16 items-center">
       <div className="max-w-lg">
-        <h2 className="text-2xl md:text-[34px] font-semibold tracking-tight leading-[1.15]">
+        <h2
+          className="text-2xl md:text-[34px] tracking-tight leading-[1.15]"
+          style={{ fontFamily: 'Instrument Serif, Georgia, serif' }}
+        >
           Tu reputación se gana.
         </h2>
         <p className="mt-5 text-base md:text-lg text-white/70 leading-relaxed">
@@ -15,54 +18,22 @@ export function LandingScore() {
         </p>
       </div>
 
-      <div
-        className="rounded-[24px] border overflow-hidden backdrop-blur-xl"
-        style={{
-          borderColor: 'rgba(255,255,255,0.1)',
-          background: 'linear-gradient(145deg, rgba(19,26,32,0.96), rgba(8,12,16,0.92))',
-          boxShadow: '0 20px 50px rgba(0,0,0,0.35)',
-        }}
-      >
-        <div
-          className="px-4 py-3 border-b flex items-center justify-between gap-3"
-          style={{ borderColor: 'rgba(255,255,255,0.07)' }}
+      <div className="bg-[#efe6d4] text-[#1a1814] p-6 shadow-xl rotate-[1.4deg]">
+        <p className="text-[11px] uppercase tracking-[0.14em] opacity-60">Panel del aliado</p>
+        <p className="text-xs opacity-50 mt-1">Representación conceptual</p>
+        <p className="mt-4 text-sm font-semibold">Tu oficio en el grupo</p>
+        <p className="text-xs opacity-60">Zona · código postal</p>
+        <p className="mt-4 text-[10px] uppercase tracking-[0.16em] opacity-60">Score RUANA</p>
+        <p
+          className="mt-2 inline-block border-[3px] px-3 py-1 text-sm font-bold tracking-[0.14em]"
+          style={{ borderColor: GREEN, color: '#1d5c3a' }}
         >
-          <p className="text-[11px] uppercase tracking-[0.14em] text-white/40">Panel del aliado</p>
-          <p className="text-[11px] text-white/35">Representación conceptual</p>
-        </div>
-        <div className="p-5">
-          <div className="flex items-start justify-between gap-4">
-            <div className="flex items-center gap-3 min-w-0">
-              <span
-                className="h-11 w-11 rounded-full grid place-items-center text-sm font-bold shrink-0"
-                style={{ backgroundColor: 'rgba(0,230,118,0.16)', color: GREEN }}
-              >
-                Tu
-              </span>
-              <div className="min-w-0">
-                <p className="text-sm font-semibold text-white">Tu oficio en el grupo</p>
-                <p className="text-xs text-white/45 mt-0.5">Zona · código postal</p>
-              </div>
-            </div>
-            <div className="text-right shrink-0">
-              <p className="text-[10px] uppercase tracking-[0.16em] text-white/40">Score RUANA</p>
-              <p
-                className="mt-1 inline-flex text-[11px] font-semibold px-2 py-0.5 rounded-full"
-                style={{
-                  color: GREEN,
-                  backgroundColor: 'rgba(0,230,118,0.12)',
-                  border: '1px solid rgba(0,230,118,0.28)',
-                }}
-              >
-                Estable
-              </p>
-            </div>
-          </div>
-          <p className="mt-5 text-[13px] text-white/50 leading-relaxed">
-            En la aplicación, el Score RUANA aparece en tu panel y se traduce en un estado operativo.
-            No mostramos una puntuación de ejemplo: la tuya se construye cuando entras.
-          </p>
-        </div>
+          Estable
+        </p>
+        <p className="mt-4 text-[13px] leading-relaxed opacity-75">
+          En la aplicación, el Score RUANA aparece en tu panel y se traduce en un estado operativo.
+          No mostramos una puntuación de ejemplo: la tuya se construye cuando entras.
+        </p>
       </div>
     </div>
   );

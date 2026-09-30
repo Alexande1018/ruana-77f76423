@@ -23,14 +23,9 @@ export function LandingAllyExamples() {
   const reduce = useReducedMotion();
 
   return (
-    <div>
-      <div className="relative">
-        <span
-          aria-hidden
-          className="absolute left-[11px] md:left-[15px] top-3 bottom-3 w-px hidden sm:block"
-          style={{ background: `linear-gradient(${GREEN}, rgba(0,230,118,0.08))` }}
-        />
-        <ol className="space-y-0">
+    <div className="max-w-xl ml-auto">
+      <div className="bg-[#1a1b19] border border-white/10 p-4 md:p-5">
+        <ol>
           {MOMENTS.map((m, i) => (
             <motion.li
               key={`${m.from}-${m.to}`}
@@ -38,31 +33,21 @@ export function LandingAllyExamples() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ delay: reduce ? 0 : i * 0.08, duration: reduce ? 0.2 : 0.5 }}
-              className="relative sm:pl-12 p-5 md:p-6 mb-3 rounded-2xl border bg-white/[0.025] backdrop-blur-sm transition-transform duration-300 hover:-translate-y-0.5"
-              style={{ borderColor: 'rgba(255,255,255,0.08)', boxShadow: '0 18px 45px rgba(0,0,0,0.14)' }}
+              className="bg-[#efe6d4] text-[#1a1814] p-4 mb-3 last:mb-0"
+              style={{ transform: i === 1 ? 'rotate(0.6deg)' : 'rotate(-0.4deg)' }}
             >
-              <span
-                aria-hidden
-                className="hidden sm:grid absolute left-0 top-7 h-8 w-8 place-items-center rounded-full text-[11px] font-semibold"
-                style={{
-                  backgroundColor: 'rgba(0,230,118,0.12)',
-                  color: GREEN,
-                  border: '1px solid rgba(0,230,118,0.28)',
-                }}
-              >
-                {i + 1}
-              </span>
-              <p className="text-sm font-medium mb-2">
-                <span className="text-white/90">{m.from}</span>
-                <span className="mx-2 text-white/30">pasa el trabajo a</span>
-                <span style={{ color: GREEN }}>{m.to}</span>
+              <p className="text-sm font-medium mb-1">
+                <span className="tabular-nums mr-2" style={{ color: GREEN }}>{i + 1}</span>
+                <span>{m.from}</span>
+                <span className="mx-2 opacity-50">pasa el trabajo a</span>
+                <span>{m.to}</span>
               </p>
-              <p className="text-[15px] md:text-base text-white/65 leading-relaxed max-w-xl">{m.text}</p>
+              <p className="text-[15px] leading-relaxed">{m.text}</p>
             </motion.li>
           ))}
         </ol>
       </div>
-      <p className="mt-6 text-sm text-white/45">
+      <p className="mt-6 text-sm text-white/55">
         No es un anuncio. Es un profesional de tu grupo que te nombra.
       </p>
     </div>
