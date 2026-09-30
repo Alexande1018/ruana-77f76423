@@ -47,7 +47,7 @@ export function LandingNavbar() {
     >
       <div className="w-full px-6 md:px-10 h-16 flex items-center justify-between gap-3">
         <Link to="/" className="flex items-center gap-2 shrink-0" onClick={() => setOpen(false)}>
-          <span className="text-xl font-semibold tracking-[0.16em]" style={{ color: GREEN }}>
+          <span className="text-xl font-semibold tracking-[0.16em]" style={{ color: '#f1eee7' }}>
             RUANA
           </span>
         </Link>
