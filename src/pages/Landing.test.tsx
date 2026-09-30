@@ -30,8 +30,9 @@ describe("Landing", () => {
     renderLanding();
 
     expect(
-      screen.getByRole("heading", { level: 1, name: /Aquí el trabajo no se compra/i }),
+      screen.getByRole("heading", { level: 1, name: /Ese trabajo no lo haces tú/i }),
     ).toBeInTheDocument();
+    expect(screen.getByText(/Pero conoces a alguien que sí/i)).toBeInTheDocument();
     expect(screen.getAllByText(/Oye, ¿conoces a un buen electricista/i).length).toBeGreaterThan(0);
     expect(
       screen.getByText(

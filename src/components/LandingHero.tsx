@@ -18,16 +18,13 @@ export function LandingHero() {
           RUANA
         </p>
         <h1
-          className="mt-6 text-white font-normal tracking-tight leading-[1.05] max-w-[16ch] text-[34px] sm:text-[48px] md:text-[62px]"
+          className="mt-6 text-white font-normal tracking-tight leading-[1.08] max-w-[18ch] text-[34px] sm:text-[48px] md:text-[62px]"
           style={{ fontFamily: 'Instrument Serif, Georgia, serif' }}
         >
-          Aquí el trabajo no se compra. Se recomienda.
-        </h1>
-        <p className="mt-8 max-w-md text-xl md:text-2xl text-white leading-snug" style={{ fontFamily: 'Instrument Serif, Georgia, serif' }}>
           Ese trabajo no lo haces tú.
-          <span className="block mt-1">Pero conoces a alguien que sí.</span>
-        </p>
-        <p className="mt-5 max-w-md text-base md:text-lg text-white/75 leading-relaxed">
+          <span className="block">Pero conoces a alguien que sí.</span>
+        </h1>
+        <p className="mt-6 max-w-md text-base md:text-lg text-white/75 leading-relaxed">
           RUANA organiza eso que los profesionales llevan haciendo toda la vida: pasarse trabajo entre
           gente de confianza de la zona.
         </p>
