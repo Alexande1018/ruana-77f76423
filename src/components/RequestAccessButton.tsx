@@ -98,12 +98,12 @@ function InauguralPhaseModal({ onClose }: { onClose: () => void }) {
           </p>
 
           <h2 id="inaugural-title" className="text-2xl md:text-[28px] font-bold leading-tight tracking-tight">
-            Esta fase no está abierta a cualquiera.
+            Los que abren el grupo entran con este código.
           </h2>
 
           <div className="mt-5 space-y-4 text-[15px] text-white/80 leading-relaxed">
             <p>
-              Las plazas van por invitación y son pocas. Si has llegado hasta aquí, puedes ocupar la de tu oficio en tu zona.
+              Sirve para esta primera tanda. Después ya no se entra así: te tiene que invitar un aliado.
             </p>
             <p>Este es el código. Va en el registro.</p>
 
@@ -112,7 +112,7 @@ function InauguralPhaseModal({ onClose }: { onClose: () => void }) {
               style={{ backgroundColor: GREEN_DARK, borderColor: GREEN }}
             >
               <div className="text-[11px] uppercase tracking-[0.18em] text-white/60 mb-1">
-                Código de acceso
+                Código de arranque
               </div>
               <div
                 className="text-3xl md:text-4xl font-extrabold tracking-[0.25em]"

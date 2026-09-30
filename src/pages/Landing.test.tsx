@@ -73,7 +73,9 @@ describe("Landing", () => {
     expect(haveCode).toHaveAttribute("href", "https://ruana-4293f.web.app/invite.html");
 
     expect(screen.getAllByText(PUBLIC_ACCESS_CODE).length).toBeGreaterThan(0);
-    expect(screen.getByRole("heading", { name: "Esta fase no está abierta a cualquiera." })).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: "Los que abren el grupo entran con este código." }),
+    ).toBeInTheDocument();
   });
 
   it("separa el número del título en cómo entrar", () => {

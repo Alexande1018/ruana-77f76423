@@ -21,7 +21,7 @@ const QUESTIONS = [
   },
   {
     q: '¿Cómo se entra?',
-    a: `Con una invitación. En esta fase el código de arranque es ${PUBLIC_ACCESS_CODE}. Si ya eres aliado, entras con tu código de ingreso.`,
+    a: `Ahora, quien abre el grupo entra con el código de arranque ${PUBLIC_ACCESS_CODE}. Después solo entra quien invita un aliado.`,
   },
   {
     q: '¿Qué es una plaza?',

@@ -11,15 +11,14 @@ export function LandingAccessInvite() {
             className="text-2xl md:text-[32px] leading-[1.15] tracking-tight"
             style={{ fontFamily: 'Instrument Serif, Georgia, serif' }}
           >
-            Esta fase no está abierta a cualquiera.
+            Los que abren el grupo entran con este código.
           </h2>
           <p className="mt-4 text-base md:text-lg leading-relaxed text-white/70">
-            Las plazas van por invitación y son pocas. Los primeros de cada zona entran con una
-            invitación de arranque. Si has llegado hasta aquí, puedes ocupar la de tu oficio con este
-            código.
+            Es para quien arranca la zona. Luego la puerta cambia: solo entra quien invita un aliado
+            que ya está dentro.
           </p>
           <div className="mt-6 inline-flex flex-col items-start border px-5 py-4" style={{ borderColor: GREEN }}>
-            <span className="text-[11px] uppercase tracking-[0.18em] text-white/50">Código de acceso</span>
+            <span className="text-[11px] uppercase tracking-[0.18em] text-white/50">Código de arranque</span>
             <span className="mt-1 text-3xl font-extrabold tracking-[0.22em]" style={{ color: GREEN }}>
               {PUBLIC_ACCESS_CODE}
             </span>
