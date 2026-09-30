@@ -2,7 +2,7 @@ import { useState, useCallback, useEffect } from "react";
 import { X } from "lucide-react";
 import { INAUGURAL_PHASE_ACTIVE, PUBLIC_ACCESS_CODE } from "@/lib/inauguralPhase";
 import { useRegisterUrl } from "@/lib/registerUrl";
-import { GREEN, GREEN_DARK, BG_ALT } from "@/lib/landingTheme";
+import { GREEN, GREEN_DARK } from "@/lib/landingTheme";
 
 type Props = {
   children: React.ReactNode;
@@ -62,18 +62,18 @@ function InauguralPhaseModal({ onClose }: { onClose: () => void }) {
       role="dialog"
       aria-modal="true"
       aria-labelledby="inaugural-title"
-      className="fixed inset-0 z-[100] flex items-center justify-center px-4 py-6 animate-in fade-in duration-200"
+      className="fixed inset-0 z-[100] flex items-center justify-center px-4 py-6 animate-in fade-in duration-200 rl-modal-overlay"
       style={{ backgroundColor: "rgba(0,0,0,0.72)", backdropFilter: "blur(6px)" }}
       onClick={onClose}
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-lg rounded-2xl border shadow-2xl text-white animate-in zoom-in-95 duration-200"
+        className="relative w-full max-w-lg border shadow-2xl text-white animate-in zoom-in-95 duration-200 rl-modal"
         style={{
-          backgroundColor: BG_ALT,
-          borderColor: "rgba(0,230,118,0.35)",
-          boxShadow: "0 24px 80px rgba(0,230,118,0.18), 0 0 0 1px rgba(0,230,118,0.15)",
-          fontFamily: "Inter, system-ui, sans-serif",
+          backgroundColor: "#eee8dc",
+          borderColor: "rgba(61,77,57,0.24)",
+          boxShadow: "0 24px 80px rgba(0,0,0,0.38)",
+          fontFamily: "Public Sans, system-ui, sans-serif",
         }}
       >
         <button
@@ -87,25 +87,24 @@ function InauguralPhaseModal({ onClose }: { onClose: () => void }) {
 
         <div className="p-7 md:p-9">
           <p
-            className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold mb-5 border"
+            className="inline-flex items-center px-3 py-1.5 text-xs font-semibold mb-5 border rl-modal-label"
             style={{
               borderColor: "rgba(0,230,118,0.4)",
               backgroundColor: "rgba(0,230,118,0.08)",
               color: GREEN,
             }}
           >
-            Por invitación
+            Acceso por código
           </p>
 
           <h2 id="inaugural-title" className="text-2xl md:text-[28px] font-bold leading-tight tracking-tight">
-            Esta fase no está abierta a cualquiera.
+            Empieza por tu zona.
           </h2>
 
           <div className="mt-5 space-y-4 text-[15px] text-white/80 leading-relaxed">
             <p>
-              Las plazas van por invitación y son pocas. Si has llegado hasta aquí, puedes ocupar la de tu oficio en tu zona.
+              RUANA organiza grupos por oficio y código postal. El código se añadirá al registro para que puedas solicitar acceso.
             </p>
-            <p>Este es el código. Va en el registro.</p>
 
             <div
               className="rounded-xl px-5 py-4 text-center border-2"
@@ -122,7 +121,9 @@ function InauguralPhaseModal({ onClose }: { onClose: () => void }) {
               </div>
             </div>
 
-            <p className="text-white/60 text-sm">Apuntarse no tiene cuota.</p>
+            <p className="text-sm rl-modal-fee">
+              El alta no tiene cuota. En encargos realizados y confirmados por las partes se aplica el apoyo RUANA del 12% sobre el importe acordado.
+            </p>
           </div>
 
           <div className="mt-7 flex flex-col-reverse sm:flex-row gap-3 sm:justify-end">
@@ -138,7 +139,7 @@ function InauguralPhaseModal({ onClose }: { onClose: () => void }) {
               className="px-5 py-3 rounded-lg font-semibold text-sm text-black text-center transition-all duration-200 hover:shadow-[0_0_24px_rgba(0,230,118,0.45)]"
               style={{ backgroundColor: GREEN }}
             >
-              Apuntarme con {PUBLIC_ACCESS_CODE}
+              Continuar al registro
             </a>
           </div>
         </div>
