@@ -6,6 +6,8 @@ import { LandingDailyStory } from '@/components/LandingDailyStory';
 import { LimitedSeatsIdea, GroupExample } from '@/components/LandingGroup';
 import { LandingScore } from '@/components/LandingScore';
 import { LandingCompare } from '@/components/LandingCompare';
+import { LandingPay } from '@/components/LandingPay';
+import { LandingFaq } from '@/components/LandingFaq';
 import { LandingSteps } from '@/components/LandingSteps';
 import { NodeField } from '@/components/NodeField';
 import { BG, GREEN } from '@/lib/landingTheme';
@@ -72,9 +74,21 @@ export default function Landing() {
         </div>
       </section>
 
+      <section className="scroll-mt-20 py-16 md:py-24" id="apoyo">
+        <div className="max-w-6xl mx-auto px-5 md:px-8">
+          <LandingPay />
+        </div>
+      </section>
+
       <section className="scroll-mt-20 py-16 md:py-24" id="empezar">
         <div className="max-w-6xl mx-auto px-5 md:px-8">
           <LandingSteps />
+        </div>
+      </section>
+
+      <section className="scroll-mt-20 py-16 md:py-24" id="preguntas">
+        <div className="max-w-6xl mx-auto px-5 md:px-8">
+          <LandingFaq />
         </div>
       </section>
 

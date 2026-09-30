@@ -1,35 +1,36 @@
+const BRICK = '/landing/grok_1790779246688.jpg';
+
 export function LandingScore() {
   return (
-    <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,.85fr)] gap-8 items-center">
+    <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,.95fr)] gap-8 lg:gap-12 items-center">
       <div className="max-w-lg">
         <h2
           className="text-2xl md:text-[34px] tracking-tight leading-[1.15]"
           style={{ fontFamily: 'Instrument Serif, Georgia, serif' }}
         >
-          Tu reputación se gana.
+          Tu sitio en el grupo se gana.
         </h2>
         <p className="mt-5 text-base md:text-lg text-white/70 leading-relaxed">
-          RUANA recuerda cómo participas, cómo respondes y los trabajos que completas.
+          El score va de 0 a 500 y se convierte en un estado en tu panel. Empiezas en 50.
         </p>
         <p className="mt-4 text-base md:text-lg text-white/70 leading-relaxed">
-          Tu actividad construye tu reputación dentro de la red.
+          RUANA recuerda cómo participas, cómo respondes y los trabajos que completas. Tu actividad
+          construye tu reputación dentro de la red.
         </p>
       </div>
 
-      <div className="lp-paper lp-torn p-6 rotate-1">
-        <span className="lp-tape lp-tape-top" />
-        <p className="text-[11px] uppercase tracking-[0.14em] opacity-60 relative z-[1]">Puntuación RUANA</p>
-        <p className="mt-2 text-lg relative z-[1]" style={{ fontFamily: 'Caveat, cursive' }}>
-          Tu oficio en el grupo
-        </p>
-        <p className="text-xs opacity-60 relative z-[1]">Zona · código postal</p>
-        <p className="lp-stamp mt-4 relative z-[1]">ESTABLE</p>
-        <p className="sr-only">Estable</p>
-        <p className="mt-4 text-[13px] leading-relaxed opacity-80 relative z-[1]">
-          En la aplicación, el Score RUANA aparece en tu panel y se traduce en un estado operativo.
-          No mostramos una puntuación de ejemplo: la tuya se construye cuando entras. Panel del aliado.
-          Representación conceptual.
-        </p>
+      <div className="relative overflow-hidden min-h-[280px]">
+        <img src={BRICK} alt="" className="absolute inset-0 w-full h-full object-cover opacity-40" />
+        <div className="relative p-6 md:p-8 border border-white/10 bg-[#0D1117]/80">
+          <p className="text-[56px] md:text-[72px] leading-none font-semibold" style={{ color: '#00E676' }}>
+            75
+          </p>
+          <p className="mt-1 text-lg tracking-[0.18em]" style={{ color: '#5ecf9a' }}>
+            ESTABLE
+          </p>
+          <p className="sr-only">Estable</p>
+          <p className="mt-4 text-sm text-white/55">Ejemplo de panel. 75 es Estable.</p>
+        </div>
       </div>
     </div>
   );
