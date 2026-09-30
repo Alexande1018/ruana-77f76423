@@ -1,5 +1,5 @@
-const HERO = '/landing/ruana-hero-bano.jpg';
-const PAPER = '/landing/papel-crema.jpg';
+const HERO = '/landing/grok_1790780438773.jpg';
+const PAPER = '/landing/grok_1790780443386.jpg';
 
 function Tape({ className = '' }: { className?: string }) {
   return <span aria-hidden="true" className={`lp-masking-tape ${className}`} />;
