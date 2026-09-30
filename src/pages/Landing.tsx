@@ -14,8 +14,7 @@ import { PrimaryCTA, CodeLink, HaveCodeLink } from '@/components/LandingCTA';
 import { INAUGURAL_PHASE_ACTIVE, PUBLIC_ACCESS_CODE } from '@/lib/inauguralPhase';
 
 const ease = [0.16, 1, 0.3, 1] as const;
-const HERO =
-  'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1800&q=80';
+const HERO = '/landing/file_00000000e4f88243b41b502ec6975bec.png';
 
 export default function Landing() {
   const reduce = useReducedMotion();
@@ -42,11 +41,11 @@ export default function Landing() {
       <section ref={heroRef} className="relative isolate overflow-hidden min-h-[640px] md:min-h-[760px] pt-24 md:pt-28 pb-16">
         <motion.div
           aria-hidden="true"
-          className="absolute inset-0 -z-20 bg-cover bg-[center_40%]"
+          className="absolute inset-0 -z-20 bg-cover bg-[center_30%]"
           style={{ backgroundImage: `url("${HERO}")`, y: reduce ? 0 : heroY }}
         />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#080b0f]/94 via-[#080b0f]/78 to-[#080b0f]/45" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#080b0f] via-transparent to-[#080b0f]/40" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#080b0f]/92 via-[#080b0f]/72 to-[#080b0f]/35" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#080b0f] via-transparent to-[#080b0f]/35" />
 
         <div className="relative max-w-6xl mx-auto px-5 md:px-8">
           <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-2xl">
@@ -77,7 +76,12 @@ export default function Landing() {
             </motion.div>
           </motion.div>
 
-          <motion.div variants={fadeUp} initial="hidden" animate="visible" className="relative mt-10 md:mt-0 md:absolute md:right-8 md:bottom-8 w-full md:w-[340px]">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            className="relative mt-10 md:mt-0 md:absolute md:right-8 md:bottom-8 w-full md:w-[340px]"
+          >
             <div className="lp-paper lp-torn p-5 -rotate-3">
               <span className="lp-tape lp-tape-top" />
               <p className="text-[11px] tracking-[0.16em] relative z-[1]">POR INVITACIÓN</p>

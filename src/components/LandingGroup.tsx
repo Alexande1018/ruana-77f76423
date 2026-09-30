@@ -3,16 +3,7 @@ import { GREEN } from '@/lib/landingTheme';
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
-const CROWD = [
-  'Fontanero',
-  'Fontanero',
-  'Fontanero',
-  'Fontanero',
-  'Fontanero',
-  'Fontanero',
-  'Fontanero',
-  'Fontanero',
-];
+const CROWD = ['Fontanero', 'Fontanero', 'Fontanero', 'Fontanero', 'Fontanero', 'Fontanero', 'Fontanero', 'Fontanero'];
 
 const EXAMPLE_SEATS = [
   { trade: 'Electricista', open: true },
@@ -126,9 +117,9 @@ export function GroupExample() {
           </ul>
         </div>
         <img
-          src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=900&q=80"
+          src="/landing/file_00000000e4f88243b41b502ec6975bec.png"
           alt=""
-          className="lp-photo w-full h-56 md:h-full object-cover hidden md:block"
+          className="w-full h-56 md:h-full object-cover object-center hidden md:block"
         />
       </div>
     </motion.div>
