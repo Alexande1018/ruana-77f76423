@@ -1,18 +1,17 @@
 .lp-paper,
 .lp-ticket {
   position: relative;
-  background: #f1e6cf !important;
-  color: #161410 !important;
+  background: #efe6d4 !important;
+  color: #1a1814 !important;
   padding-left: 1.15rem;
   padding-right: 1.15rem;
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
-  filter: drop-shadow(0 1px 0 #f7f1e4);
 }
 .lp-paper,
 .lp-paper *,
 .lp-ticket,
 .lp-ticket * {
-  color: #161410 !important;
+  color: #1a1814 !important;
 }
 .lp-paper .lp-mint,
 .lp-ticket .lp-mint,
@@ -73,12 +72,12 @@
 }
 .lp-cork {
   background: #d5b98a !important;
-  color: #161410 !important;
+  color: #1a1814 !important;
   border: 10px solid #8c6a38;
 }
 .lp-cork,
 .lp-cork * {
-  color: #161410 !important;
+  color: #1a1814 !important;
 }
 .lp-pin {
   width: 12px;
