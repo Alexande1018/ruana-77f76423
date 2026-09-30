@@ -32,8 +32,9 @@ export function LandingHero() {
   return (
     <section className="lp-hero relative isolate overflow-x-hidden pt-20 pb-10 md:pt-24 md:pb-14">
       <div className="lp-hero-inner max-w-[1536px] mx-auto px-5 md:px-10">
-        <h1 className="lp-hero-title text-white font-semibold tracking-tight leading-[1.05] max-w-[16ch] md:max-w-[18ch] text-[34px] sm:text-[44px] md:text-[56px] lg:text-[62px]">
-          Aquí el trabajo no se compra. Se recomienda.
+        <h1 className="lp-hero-title text-white tracking-tight leading-[1.02] max-w-none text-[clamp(2.5rem,5.4vw,5rem)]">
+          <span className="block">Aquí el trabajo</span>
+          <span className="block">no se compra. Se recomienda.</span>
         </h1>
 
         <div className="mt-7 md:mt-10 grid grid-cols-1 lg:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.85fr)] gap-8 lg:gap-10 items-start">

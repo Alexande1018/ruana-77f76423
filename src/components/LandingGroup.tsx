@@ -117,7 +117,7 @@ export function GroupExample() {
           </ul>
         </div>
         <img
-          src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=900&q=80"
+          src="/landing/grok_1790779246688.jpg"
           alt=""
           className="lp-photo w-full h-56 md:h-full object-cover hidden md:block"
         />

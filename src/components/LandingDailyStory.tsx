@@ -1,8 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { LandingPaperNote } from '@/components/LandingPaperNote';
 
-const BANO =
-  'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=80';
+const BANO = '/landing/grok_1790780438773.jpg';
 
 export function LandingDailyStory() {
   const reduce = useReducedMotion();
