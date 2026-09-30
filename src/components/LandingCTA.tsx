@@ -1,7 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import { RequestAccessButton } from '@/components/RequestAccessButton';
 import { APP_LOGIN_URL, useInviteUrl } from '@/lib/registerUrl';
-import { GREEN } from '@/lib/landingTheme';
+import { GREEN, GREEN_BTN } from '@/lib/landingTheme';
 import { cn } from '@/lib/utils';
 
 export const PRIMARY_CTA_LABEL = 'Apúntate con tu oficio';
@@ -34,14 +34,14 @@ export function PrimaryCTA({
       className={cn(
         'landing-cta inline-flex items-center justify-center gap-2 rounded-lg font-semibold text-black text-center',
         'transition-all duration-200',
-        'hover:shadow-[0_0_32px_rgba(0,230,118,0.45)] hover:-translate-y-0.5',
-        'active:translate-y-0 active:shadow-[0_0_16px_rgba(0,230,118,0.25)]',
+        'hover:brightness-110 hover:-translate-y-0.5',
+        'active:translate-y-0 active:brightness-100',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
-        'focus-visible:ring-[#00E676] focus-visible:ring-offset-[#0D1117]',
+        'focus-visible:ring-[#8ED400] focus-visible:ring-offset-[#0D1117]',
         sizeClass[size],
         className,
       )}
-      style={{ backgroundColor: GREEN }}
+      style={{ backgroundColor: GREEN_BTN }}
     >
       {children}
     </RequestAccessButton>
@@ -62,10 +62,10 @@ export function CodeLink({
         'group inline-flex items-center gap-2 min-h-11 text-[15px] md:text-base font-medium',
         'border-b pb-0.5 transition-colors duration-200',
         'hover:text-white focus-visible:outline-none focus-visible:ring-2',
-        'focus-visible:ring-[#00E676] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D1117] rounded-sm',
+        'focus-visible:ring-[#8ED400] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D1117] rounded-sm',
         className,
       )}
-      style={{ color: GREEN, borderColor: 'rgba(0,230,118,0.35)' }}
+      style={{ color: GREEN, borderColor: 'rgba(142,212,0,0.4)' }}
     >
       {label}
       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 motion-reduce:transform-none" />
@@ -73,7 +73,6 @@ export function CodeLink({
   );
 }
 
-/** Quién ya trae un código: enlace pequeño, misma pestaña, a invite.html. */
 export function HaveCodeLink({ className }: { className?: string }) {
   const href = useInviteUrl();
 
@@ -84,7 +83,7 @@ export function HaveCodeLink({ className }: { className?: string }) {
         'inline-flex items-center min-h-11 text-sm text-white/50',
         'underline-offset-4 hover:text-white/80 hover:underline',
         'focus-visible:outline-none focus-visible:ring-2',
-        'focus-visible:ring-[#00E676] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D1117] rounded-sm',
+        'focus-visible:ring-[#8ED400] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D1117] rounded-sm',
         className,
       )}
     >
