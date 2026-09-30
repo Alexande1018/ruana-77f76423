@@ -21,14 +21,15 @@ function Clip() {
           <stop offset="1" stopColor="#73766f" stopOpacity=".2" />
         </linearGradient>
       </defs>
-      <path d="M51 62 C30 43 34 19 58 20 C73 21 83 39 98 53 M229 62 C250 43 246 19 222 20 C207 21 197 39 182 53" fill="none" stroke="#20211f" strokeWidth="10" strokeLinecap="round" />
-      <path d="M51 60 C34 42 38 23 58 24 C72 25 82 41 96 54 M229 60 C246 42 242 23 222 24 C208 25 198 41 184 54" fill="none" stroke="url(#clipHighlight)" strokeWidth="3" strokeLinecap="round" />
-      <path d="M39 57 Q43 47 59 47 L93 47 C105 20 120 10 140 10 C160 10 175 20 187 47 L221 47 Q237 47 241 58 L255 108 Q258 122 242 126 L38 126 Q22 122 25 108 Z" fill="url(#clipMetal)" stroke="#171815" strokeWidth="4" />
-      <path d="M44 61 Q47 55 60 55 L97 55 M183 55 L220 55 Q233 55 236 62" fill="none" stroke="url(#clipHighlight)" strokeWidth="3" opacity=".8" />
-      <path d="M64 102 L216 102 Q228 102 231 112 L233 120 L47 120 L49 112 Q52 102 64 102 Z" fill="#242522" stroke="#aeb0a8" strokeWidth="2" />
-      <ellipse cx="140" cy="27" rx="17" ry="16" fill="#2d2e2b" stroke="url(#clipHighlight)" strokeWidth="5" />
-      <ellipse cx="140" cy="27" rx="8" ry="8" fill="#111210" stroke="#555751" strokeWidth="2" />
-      <path d="M132 75 Q140 70 148 75 L151 88 L129 88 Z" fill="#666963" stroke="#242522" strokeWidth="2" />
+      <path d="M48 73 L48 61 Q48 54 57 54 L101 54 M179 54 L223 54 Q232 54 232 61 L232 73" fill="none" stroke="#161715" strokeWidth="13" strokeLinecap="round" />
+      <path d="M48 68 L48 59 Q48 55 57 55 L101 55 M179 55 L223 55 Q232 55 232 59 L232 68" fill="none" stroke="url(#clipHighlight)" strokeWidth="3" strokeLinecap="round" />
+      <path d="M54 63 L226 63 Q238 63 240 75 L250 112 Q253 123 239 126 L41 126 Q27 123 30 112 L40 75 Q42 63 54 63Z" fill="url(#clipMetal)" stroke="#171815" strokeWidth="4" />
+      <path d="M48 71 Q51 68 59 68 L221 68 Q229 68 232 71" fill="none" stroke="url(#clipHighlight)" strokeWidth="3" opacity=".85" />
+      <path d="M62 99 L218 99 Q229 99 232 110 L234 119 L46 119 L48 110 Q51 99 62 99Z" fill="#292a27" stroke="#b8bbb3" strokeWidth="2" />
+      <path d="M112 63 C112 44 117 17 140 12 C163 17 168 44 168 63" fill="none" stroke="#242522" strokeWidth="13" />
+      <path d="M112 62 C112 43 119 19 140 14 C161 19 168 43 168 62" fill="none" stroke="url(#clipHighlight)" strokeWidth="5" />
+      <ellipse cx="140" cy="31" rx="13" ry="14" fill="#252623" stroke="#c6c8c1" strokeWidth="4" />
+      <ellipse cx="140" cy="31" rx="6" ry="7" fill="#10110f" stroke="#62645e" strokeWidth="2" />
     </svg>
   );
 }

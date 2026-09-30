@@ -48,10 +48,10 @@
 }
 .lp-clipboard {
   background: #2a2b28;
-  border: 14px solid #2a2b28;
+  border: 16px solid #292a27;
   padding: 28px 10px 14px;
   position: relative;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 24px 44px rgba(0, 0, 0, 0.5), inset 0 0 0 2px rgba(205, 199, 179, .13), inset 0 0 24px rgba(0, 0, 0, .35);
 }
 .lp-clipboard::before {
   content: "";
@@ -187,21 +187,21 @@
 }
 .lp-board {
   position: relative;
-  padding: 58px 24px 24px;
-  border: 12px solid #292a27;
-  border-radius: 8px;
+  padding: 68px 26px 28px;
+  border: 15px solid #292a27;
+  border-radius: 9px;
   background-image:
-    linear-gradient(145deg, rgba(59, 60, 55, .48), rgba(19, 20, 19, .72)),
+    linear-gradient(145deg, rgba(62, 62, 57, .38), rgba(14, 15, 14, .7)),
     url('/landing/grok_1790780451529.jpg');
   background-size: cover;
-  box-shadow: 0 22px 42px rgba(0, 0, 0, .48), inset 0 0 0 1px rgba(255,255,255,.13);
+  box-shadow: 0 24px 46px rgba(0, 0, 0, .52), inset 0 0 0 2px rgba(224, 219, 202, .14), inset 0 0 22px rgba(0,0,0,.45);
 }
 .lp-metal-clip {
   position: absolute;
   top: -34px;
   left: 50%;
-  width: 260px;
-  height: 139px;
+  width: 292px;
+  height: 156px;
   transform: translateX(-50%);
   z-index: 4;
   filter: drop-shadow(0 6px 6px rgba(0, 0, 0, 0.45));
@@ -224,7 +224,7 @@
 }
 .lp-recs { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
 .lp-slip {
-  min-height: 158px;
+  min-height: 174px;
   display: grid;
   grid-template-columns: 42px 1fr;
   gap: 12px;
@@ -243,7 +243,7 @@
 .lp-num { color: #3f8a5c; font-weight: 700; font-size: 2.5rem; line-height: 1; }
 .lp-rec-title { font-size: 1.02rem; font-weight: 600; line-height: 1.3; color: #1a1814; }
 .lp-rec-sub { margin-top: 4px; color: #3a352c; font-size: 0.95rem; }
-.lp-recs { gap: 20px; }
+.lp-recs { gap: 14px; }
 .lp-rec-title { font-family: "Courier New", Courier, monospace; font-size: clamp(1.05rem, 1.3vw, 1.3rem); font-weight: 500; line-height: 1.24; }
 .lp-rec-sub { font-family: "Public Sans", sans-serif; font-size: 1rem; line-height: 1.25; margin-top: 8px; }
 .lp-close { max-width: 32rem; line-height: 1.35; }
@@ -259,8 +259,8 @@
 .lp-slip-tape { z-index:2; }
 @media (max-width: 1023px) {
   .lp-hero-grid { grid-template-columns:minmax(0, 1.25fr) minmax(345px, .9fr); gap:24px; }
-  .lp-board { padding: 50px 15px 17px; border-width: 7px; }
-  .lp-slip { padding:34px 17px 20px; grid-template-columns:32px 1fr; min-height:146px; }
+  .lp-board { padding: 58px 15px 17px; border-width: 7px; }
+  .lp-slip { padding:34px 17px 20px; grid-template-columns:32px 1fr; min-height:154px; }
   .lp-num { font-size:2rem; }
   .lp-note { transform: rotate(-1.8deg); }
   .lp-photo-frame { height:420px; }
@@ -279,5 +279,5 @@
   .lp-note-brand { font-size:1rem; margin-top:10px; }
   .lp-hero-right { padding-top:14px; }
   .lp-hero-right .lp-close { text-align:left; margin-left:0; }
-  .lp-slip { min-height:128px; padding:33px 20px 18px; }
+  .lp-slip { min-height:142px; padding:33px 20px 18px; }
 }
