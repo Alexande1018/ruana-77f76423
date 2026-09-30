@@ -8,7 +8,6 @@ import { LimitedSeatsIdea, GroupExample } from '@/components/LandingGroup';
 import { LandingScore } from '@/components/LandingScore';
 import { LandingCompare } from '@/components/LandingCompare';
 import { LandingSteps } from '@/components/LandingSteps';
-import { LandingPaperDefs } from '@/components/LandingPaperDefs';
 import { NodeField } from '@/components/NodeField';
 import { BG, GREEN } from '@/lib/landingTheme';
 import { PrimaryCTA, CodeLink, HaveCodeLink } from '@/components/LandingCTA';
@@ -44,7 +43,6 @@ export default function Landing() {
 
   return (
     <div className="min-h-screen text-white" style={{ backgroundColor: BG }}>
-      <LandingPaperDefs />
       <LandingNavbar />
 
       <section ref={heroRef} className="relative isolate overflow-hidden min-h-[640px] md:min-h-[760px] pt-24 md:pt-28 pb-10">
@@ -86,7 +84,7 @@ export default function Landing() {
           </motion.div>
 
           <motion.div variants={fadeUp} initial="hidden" animate="visible" className="relative pb-4">
-            <div className="lp-paper lp-torn p-5 -rotate-1 max-w-sm ml-auto">
+            <div className="lp-paper p-5 -rotate-1 max-w-sm ml-auto">
               <span className="lp-tape lp-tape-top" />
               <p className="text-[11px] tracking-[0.16em] relative z-[1]">POR INVITACIÓN</p>
               <p className="text-3xl font-bold tracking-wide mt-1 relative z-[1]">{PUBLIC_ACCESS_CODE}</p>
