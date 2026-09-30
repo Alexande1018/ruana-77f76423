@@ -45,28 +45,13 @@ export function LandingNavbar() {
         borderBottom: scrolled || open ? '1px solid rgba(255,255,255,0.06)' : '1px solid transparent',
       }}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-5 md:px-8 h-16 flex items-center justify-between gap-3">
+      <div className="w-full px-6 md:px-10 h-16 flex items-center justify-between gap-3">
         <Link to="/" className="flex items-center gap-2 shrink-0" onClick={() => setOpen(false)}>
           <span className="text-xl font-semibold tracking-[0.16em]" style={{ color: GREEN }}>
             RUANA
           </span>
         </Link>
-        <nav className="hidden lg:flex items-center gap-7 text-sm text-white/70">
-          {navItems.map((it) => (
-            <a
-              key={it.id}
-              href={`/#${it.id}`}
-              onClick={(e) => handleNav(e, it.id)}
-              className="hover:text-white transition focus-visible:outline-none focus-visible:text-white"
-            >
-              {it.label}
-            </a>
-          ))}
-        </nav>
         <div className="flex items-center gap-2 md:gap-3 min-w-0">
-          <span className="hidden md:inline-flex">
-            <CodeLink className="text-sm min-h-10" />
-          </span>
           <PrimaryCTA size="nav" className="inline-flex shrink-0">
             {HEADER_CTA_LABEL}
           </PrimaryCTA>
