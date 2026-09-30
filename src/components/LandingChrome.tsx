@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Network, Menu, X } from 'lucide-react';
+import { Menu, Network, X } from 'lucide-react';
 import { INAUGURAL_PHASE_ACTIVE } from '@/lib/inauguralPhase';
 import { BG, BG_ALT, GREEN, GREEN_DARK } from '@/lib/landingTheme';
 import { PrimaryCTA, CodeLink, HEADER_CTA_LABEL, PRIMARY_CTA_LABEL } from '@/components/LandingCTA';
@@ -47,8 +47,7 @@ export function LandingNavbar() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-5 md:px-8 h-16 flex items-center justify-between gap-3">
         <Link to="/" className="flex items-center gap-2 shrink-0" onClick={() => setOpen(false)}>
-          <Network className="h-6 w-6" style={{ color: GREEN }} strokeWidth={2.2} />
-          <span className="text-xl font-bold tracking-tight" style={{ color: GREEN }}>
+          <span className="text-xl font-semibold tracking-[0.16em]" style={{ color: GREEN }}>
             RUANA
           </span>
         </Link>
@@ -76,7 +75,7 @@ export function LandingNavbar() {
             aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="lg:hidden p-2 rounded-md text-white/80 hover:text-white hover:bg-white/10 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00E676]"
+            className="lg:hidden p-2 rounded-md text-white/80 hover:text-white hover:bg-white/10 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#91B99A]"
           >
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>

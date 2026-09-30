@@ -34,10 +34,10 @@ export function PrimaryCTA({
       className={cn(
         'landing-cta inline-flex items-center justify-center gap-2 rounded-lg font-semibold text-black text-center',
         'transition-all duration-200',
-        'hover:shadow-[0_0_32px_rgba(0,230,118,0.45)] hover:-translate-y-0.5',
-        'active:translate-y-0 active:shadow-[0_0_16px_rgba(0,230,118,0.25)]',
+        'hover:brightness-105',
+        'active:brightness-95',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
-        'focus-visible:ring-[#00E676] focus-visible:ring-offset-[#0D1117]',
+        'focus-visible:ring-[#91B99A] focus-visible:ring-offset-[#0D1117]',
         sizeClass[size],
         className,
       )}
@@ -62,10 +62,10 @@ export function CodeLink({
         'group inline-flex items-center gap-2 min-h-11 text-[15px] md:text-base font-medium',
         'border-b pb-0.5 transition-colors duration-200',
         'hover:text-white focus-visible:outline-none focus-visible:ring-2',
-        'focus-visible:ring-[#00E676] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D1117] rounded-sm',
+        'focus-visible:ring-[#91B99A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D1117] rounded-sm',
         className,
       )}
-      style={{ color: GREEN, borderColor: 'rgba(0,230,118,0.35)' }}
+      style={{ color: GREEN, borderColor: 'rgba(145,185,154,0.4)' }}
     >
       {label}
       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 motion-reduce:transform-none" />
