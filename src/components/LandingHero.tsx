@@ -32,6 +32,12 @@ const RECOMMENDATIONS = [
 export function LandingHero() {
   return (
     <section className="lp-hero relative isolate overflow-x-hidden pt-20 pb-12 md:pt-24 md:pb-16">
+      <svg className="absolute h-0 w-0" aria-hidden="true" focusable="false">
+        <filter id="ruana-rough-paper" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="17" result="grain" />
+          <feDisplacementMap in="SourceGraphic" in2="grain" scale="4" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </svg>
       <div className="lp-hero-inner max-w-[1536px] mx-auto px-5 md:px-10">
         <div className="lp-hero-grid">
           <div className="lp-hero-left">

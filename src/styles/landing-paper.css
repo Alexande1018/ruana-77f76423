@@ -144,7 +144,7 @@
   color: #1c1914;
   padding: 28px 26px 24px;
   transform: rotate(-3.5deg);
-  filter: drop-shadow(6px 14px 16px rgba(0, 0, 0, 0.45));
+  filter: url(#ruana-rough-paper) drop-shadow(6px 14px 16px rgba(0, 0, 0, 0.45));
   clip-path: polygon(
     2.6% 5.4%, 11% 2.2%, 20% 4.1%, 30% 1.6%, 40% 4.5%, 51% 1.8%, 62% 4.2%, 72% 1.5%, 83% 4.4%, 94% 2.2%, 99% 7%,
     97% 22%, 99% 40%, 97% 58%, 99% 77%, 96.5% 94%, 89% 98%, 77% 96.5%, 65% 99%, 52% 96.8%, 39% 99%, 26% 96.7%, 13% 99%, 3% 96%,
@@ -231,7 +231,7 @@
   background-color: #e9dfcf;
   background-size: cover;
   color: #171612;
-  filter: drop-shadow(0 7px 5px rgba(0,0,0,.38));
+  filter: url(#ruana-rough-paper) drop-shadow(0 7px 5px rgba(0,0,0,.38));
   clip-path: polygon(1.5% 4%, 9% 2%, 19% 4%, 29% 1.5%, 42% 3.5%, 56% 1.5%, 69% 3.4%, 82% 1.7%, 96% 4%, 99% 9%, 97% 25%, 99% 43%, 97% 61%, 99% 79%, 96% 96%, 83% 98%, 69% 96%, 56% 99%, 42% 96.5%, 28% 99%, 14% 96.5%, 3% 98%, 1% 88%, 3% 69%, 1% 50%, 3% 31%, .8% 13%);
 }
 .lp-slip:nth-child(2) { transform: rotate(.45deg); }
