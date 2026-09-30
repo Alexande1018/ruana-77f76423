@@ -11,9 +11,18 @@ import { LandingSteps } from '@/components/LandingSteps';
 import { NodeField } from '@/components/NodeField';
 import { BG, BG_ALT, GREEN } from '@/lib/landingTheme';
 import { PrimaryCTA, CodeLink, HaveCodeLink } from '@/components/LandingCTA';
-import { INAUGURAL_PHASE_ACTIVE } from '@/lib/inauguralPhase';
+import { INAUGURAL_PHASE_ACTIVE, PUBLIC_ACCESS_CODE } from '@/lib/inauguralPhase';
 
 const ease = [0.16, 1, 0.3, 1] as const;
+
+const HERO =
+  'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1800&q=80';
+const SHOT_BANO =
+  'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=900&q=80';
+const SHOT_CUADRO =
+  'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=900&q=80';
+const SHOT_MADERA =
+  'https://images.unsplash.com/photo-1504148455728-c1f2856e03fa?auto=format&fit=crop&w=900&q=80';
 
 function Section({
   children,
@@ -43,7 +52,6 @@ function Section({
       className={`scroll-mt-20 relative overflow-hidden border-t border-white/[0.04] ${className}`}
       style={alt ? { backgroundColor: BG_ALT } : undefined}
     >
-      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent" />
       <motion.div
         style={{
           opacity: reduce ? 1 : sectionOpacity,
@@ -94,14 +102,12 @@ export default function Landing() {
     <div className="min-h-screen text-white" style={{ backgroundColor: BG }}>
       <LandingNavbar />
 
-      <section ref={heroRef} className="relative isolate overflow-hidden min-h-0 sm:min-h-[720px] md:min-h-[760px] pt-24 md:pt-32 pb-10 md:pb-20">
-        {/* Clean photo-only artwork as a full-bleed background. Responsive positioning
-            keeps the tradespeople visible without duplicating UI or text. */}
+      <section ref={heroRef} className="relative isolate overflow-hidden min-h-0 sm:min-h-[720px] md:min-h-[780px] pt-24 md:pt-28 pb-8">
         <motion.div
           aria-hidden="true"
-          className="absolute inset-0 -z-20 bg-contain bg-top bg-no-repeat sm:bg-cover sm:bg-center md:bg-[center_45%] will-change-transform"
+          className="absolute inset-0 -z-20 bg-cover bg-center will-change-transform"
           style={{
-            backgroundImage: 'url("/landing/file_00000000e4f88243b41b502ec6975bec.png")',
+            backgroundImage: `url("${HERO}")`,
             y: reduce ? 0 : heroY,
             scale: reduce ? 1 : heroScale,
             opacity: reduce ? 1 : heroOpacity,
@@ -109,45 +115,71 @@ export default function Landing() {
         />
         <div
           aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-gradient-to-r from-[#080b0f]/95 via-[#080b0f]/72 to-[#080b0f]/25"
+          className="absolute inset-0 -z-10 bg-gradient-to-r from-[#080b0f]/92 via-[#080b0f]/70 to-[#080b0f]/30"
         />
-        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-t from-[#080b0f]/85 via-transparent to-[#080b0f]/30" />
-        <div className="relative max-w-6xl mx-auto px-5 md:px-8">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={stagger}
-            className="max-w-3xl rounded-[28px] md:rounded-none md:bg-transparent bg-black/10 md:backdrop-blur-0 backdrop-blur-[1px]"
-          >
+        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-t from-[#080b0f] via-transparent to-[#080b0f]/25" />
+
+        <div className="relative max-w-6xl mx-auto px-5 md:px-8 grid md:grid-cols-[1.15fr_.85fr] gap-8 items-end">
+          <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-3xl">
             <motion.h1
               variants={fadeUp}
-              className="font-bold leading-[1.08] tracking-tight text-[32px] sm:text-[40px] md:text-[48px] lg:text-[52px]"
+              className="font-bold leading-[1.05] tracking-tight text-[34px] sm:text-[42px] md:text-[52px]"
+              style={{ fontFamily: '"Instrument Serif", Georgia, serif', fontWeight: 400 }}
             >
               Pasa el encargo que no haces.
-              <span className="block mt-2 md:mt-3" style={{ color: GREEN }}>
+              <span className="block mt-2 italic" style={{ color: GREEN }}>
                 Recibe el que sí.
               </span>
             </motion.h1>
-            <motion.p
-              variants={fadeUp}
-              className="mt-5 text-base md:text-xl text-white/72 leading-relaxed max-w-2xl"
-            >
+            <motion.p variants={fadeUp} className="mt-5 text-base md:text-xl text-white/75 leading-relaxed max-w-2xl">
               ¿Te piden algo que no haces? Pásaselo a un colega de tu zona. Y cuando a él le pidan lo
               tuyo, te llama a ti.
             </motion.p>
+            <motion.p variants={fadeUp} className="mt-3 text-sm text-white/55">
+              Alicante · por invitación · sin cuota
+            </motion.p>
             <motion.div variants={fadeUp} className="mt-7 flex flex-col items-stretch sm:items-start gap-3 max-w-xl">
-              <PrimaryCTA className="w-full sm:w-auto" />
-              <p className="text-[13px] text-white/60 leading-snug">
-                Apuntarse no tiene cuota.
-              </p>
+              <PrimaryCTA className="w-full sm:w-auto rounded-full" />
+              <p className="text-[13px] text-white/60 leading-snug">Apuntarse no tiene cuota.</p>
               <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
                 <CodeLink />
                 <HaveCodeLink />
               </div>
             </motion.div>
           </motion.div>
+
+          <motion.div variants={fadeUp} initial="hidden" animate="visible" className="relative pb-4">
+            <div className="bg-[#efe6d4] text-[#1a1814] p-5 shadow-2xl -rotate-2 max-w-sm ml-auto">
+              <p className="text-[11px] tracking-[0.16em]">POR INVITACIÓN</p>
+              <p className="text-3xl font-bold tracking-wide mt-1">{PUBLIC_ACCESS_CODE}</p>
+              <p className="mt-2 text-sm leading-snug">
+                Esta fase no está abierta a cualquiera. Las plazas van por oficio y código postal.
+              </p>
+            </div>
+            <div className="bg-[#efe6d4] text-[#1a1814] p-4 shadow-xl rotate-1 max-w-sm ml-auto mt-3 text-sm">
+              <p className="font-semibold">03001 Alicante Centro</p>
+              <p className="mt-2">Fontanero — plaza disponible</p>
+              <p>Electricista — plaza ocupada</p>
+              <p>Pintor — plaza disponible</p>
+              <p>Carpintero — plaza ocupada</p>
+              <p className="mt-2 text-xs">Una plaza por oficio en cada grupo.</p>
+            </div>
+          </motion.div>
         </div>
       </section>
+
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-1">
+        {[
+          { src: SHOT_BANO, cap: 'Fontanero → Electricista' },
+          { src: SHOT_CUADRO, cap: 'Electricista → Pintor' },
+          { src: SHOT_MADERA, cap: 'Pintor → Carpintero' },
+        ].map((s) => (
+          <figure key={s.cap} className="relative m-0">
+            <img src={s.src} alt="" className="w-full h-40 md:h-52 object-cover" />
+            <figcaption className="absolute left-2 bottom-2 text-xs bg-black/70 px-2 py-1">{s.cap}</figcaption>
+          </figure>
+        ))}
+      </div>
 
       {INAUGURAL_PHASE_ACTIVE && <LandingAccessInvite />}
 
@@ -160,7 +192,10 @@ export default function Landing() {
       <Section className="py-16 md:py-24" alt id="oportunidades">
         <div className="max-w-6xl mx-auto px-5 md:px-8">
           <div className="max-w-2xl mb-8 md:mb-10">
-            <h2 className="text-2xl md:text-[34px] font-semibold tracking-tight leading-[1.15]">
+            <h2
+              className="text-2xl md:text-[34px] tracking-tight leading-[1.15]"
+              style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}
+            >
               Aquí el trabajo no se compra. Se recomienda.
             </h2>
             <p className="mt-4 text-base md:text-lg text-white/65 leading-relaxed">
@@ -213,7 +248,7 @@ export default function Landing() {
       >
         <NodeField density={0.00008} opacity={0.45} intensity={0.55} />
         <div className="relative max-w-3xl mx-auto px-5 md:px-8">
-          <h2 className="text-[28px] sm:text-[34px] md:text-[42px] font-semibold leading-[1.12] tracking-tight">
+          <h2 className="text-[28px] sm:text-[34px] md:text-[42px] leading-[1.12] tracking-tight" style={{ fontFamily: '"Instrument Serif", Georgia, serif' }}>
             Puede haber cientos de profesionales de tu oficio en tu ciudad.
             <span className="block mt-3" style={{ color: GREEN }}>
               En cada grupo RUANA hay una plaza por oficio.
@@ -224,7 +259,7 @@ export default function Landing() {
             un colega de su zona a quien pasar el encargo.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
-            <PrimaryCTA size="lg" />
+            <PrimaryCTA size="lg" className="rounded-full" />
             <CodeLink />
           </div>
         </div>
