@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
+import { LandingPaperNote } from '@/components/LandingPaperNote';
 
 const MOMENTS = [
   { from: 'Fontanero', to: 'Electricista', short: 'reforma de baño', text: 'Le piden una reforma de baño. Necesita a alguien de confianza y se lo pasa a un aliado de su grupo.' },
@@ -19,25 +20,26 @@ export function LandingAllyExamples() {
               initial={reduce ? { opacity: 0 } : { opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: reduce ? 0 : i * 0.06 }}
-              className="lp-ticket lp-paper lp-torn mb-2 px-4 py-3"
-              style={{ transform: i === 1 ? 'rotate(0.8deg)' : 'rotate(-0.6deg)' }}
+              className="mb-2"
             >
-              <span className="lp-tape" style={{ top: -7, left: 28, width: 58 }} />
-              <p className="relative z-[1] text-[15px]" style={{ color: '#161410' }}>
-                <span className="lp-mint font-bold mr-1">{i + 1}</span>
-                {m.from} pasa el trabajo a {m.to}
-              </p>
-              <p className="sr-only">{m.text}</p>
-              <p className="relative z-[1] text-[14px] mt-1" style={{ color: '#161410' }}>
-                — {m.short}
-              </p>
+              <LandingPaperNote tape className={i === 1 ? 'rotate-1' : '-rotate-1'}>
+                <p className="text-[15px] leading-snug">
+                  <span className="font-bold mr-1" style={{ color: '#1f7a4a' }}>
+                    {i + 1}
+                  </span>
+                  {m.from} pasa el trabajo a {m.to}
+                </p>
+                <p className="sr-only">{m.text}</p>
+                <p className="mt-1 text-[14px]">— {m.short}</p>
+              </LandingPaperNote>
             </motion.li>
           ))}
         </ol>
       </div>
       <p className="mt-4 text-[15px]">
-        <span className="lp-mint font-semibold">No es un anuncio.</span>{' '}
+        <span className="font-semibold" style={{ color: '#22c55e' }}>
+          No es un anuncio.
+        </span>{' '}
         <span className="text-white/70">Es un profesional de tu grupo que te nombra.</span>
       </p>
     </div>
