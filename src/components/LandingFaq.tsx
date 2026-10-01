@@ -4,32 +4,28 @@ import { GREEN } from '@/lib/landingTheme';
 
 const QUESTIONS = [
   {
-    q: '¿Hay que pagar para apuntarse?',
+    q: '¿Me cobráis por apuntarme?',
     a: 'No. Apuntarse no tiene cuota. Si no trabajas, no pagas nada.',
   },
   {
-    q: '¿Y el Apoyo?',
-    a: 'Solo aparece cuando un encargo se cierra con un importe. Es un porcentaje sobre ese importe, para sostener la red. Si no hay trabajo cerrado, no hay Apoyo.',
+    q: '¿Y si ya hay alguien de mi oficio?',
+    a: 'Quedas de suplente. Si se libera la plaza o se abre otro grupo en esa zona, te avisan.',
   },
   {
-    q: '¿Esto es para clientes?',
-    a: 'No. RUANA es entre profesionales de oficio de la misma zona. Autónomos y negocios pequeños que se pasan el trabajo con nombre.',
+    q: '¿Cómo se entra ahora?',
+    a: `Con el código de arranque ${PUBLIC_ACCESS_CODE}. Es para quien abre el grupo. Después solo entra quien invita un aliado.`,
   },
   {
-    q: '¿Sirve si no soy fontanero ni electricista?',
-    a: 'Sí. También entra quien limpia casas, cuida mascotas, atiende a mayores, hace de manitas o da clases de inglés. El grupo es por zona y por oficio, no solo por reforma.',
+    q: '¿Sirve si no soy fontanero?',
+    a: 'Sí. También quien limpia casas, cuida mascotas, atiende a mayores, hace de manitas o da clases de inglés. El grupo es por zona y por oficio.',
   },
   {
-    q: '¿Si no hay plaza de mi oficio?',
-    a: 'Puedes quedar en espera como suplente. Si se libera la plaza o se abre otro grupo en esa zona, te avisan.',
+    q: '¿Por qué iba a pasarle un trabajo a alguien que no conozco?',
+    a: 'Porque aquí cuenta cómo trabajas. Responder, cumplir y aportar al grupo construye tu reputación. No es soltar un número a ciegas.',
   },
   {
-    q: '¿Cómo se entra?',
-    a: `Ahora, quien abre el grupo entra con el código de arranque ${PUBLIC_ACCESS_CODE}. Después solo entra quien invita un aliado.`,
-  },
-  {
-    q: '¿Qué es una plaza?',
-    a: 'En cada grupo, por código postal, hay una plaza por oficio principal. Las especialidades no ocupan plaza. Puede haber muchos de tu oficio en la ciudad; en un grupo RUANA solo cabe uno de cada oficio.',
+    q: '¿Qué es el Apoyo?',
+    a: 'Solo aparece cuando un encargo se cierra con un importe. Si no hay trabajo cerrado, no hay Apoyo.',
   },
 ];
 
@@ -42,10 +38,10 @@ export function LandingFaq() {
         className="text-[28px] md:text-[40px] tracking-tight leading-[1.12]"
         style={{ fontFamily: 'Instrument Serif, Georgia, serif' }}
       >
-        Preguntas que salen siempre
+        Lo que suele preguntar la gente
       </h2>
       <p className="mt-4 text-base md:text-lg text-white/60 leading-relaxed max-w-xl">
-        Lo justo para decidir si te interesa. El resto se ve cuando entras.
+        Si después de esto todavía te encaja, entra y mira si hay plaza.
       </p>
 
       <ul className="mt-10 divide-y divide-white/10 border-t border-white/10">
