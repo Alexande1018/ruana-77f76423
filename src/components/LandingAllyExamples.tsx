@@ -1,7 +1,7 @@
 const MOMENTS = [
-  { from: 'Fontanero', to: 'Electricista', short: 'reforma de baño', text: 'Le piden una reforma de baño. Necesita a alguien de confianza y se lo pasa a un aliado de su grupo.' },
-  { from: 'Electricista', to: 'Pintor', short: 'el cliente pregunta', text: 'Termina una instalación. El cliente pregunta por un pintor. Tiene a alguien de la red a mano.' },
-  { from: 'Pintor', to: 'Carpintero', short: 'mobiliario a medida', text: 'Un encargo pide mobiliario a medida. Conoce a un carpintero de su zona y cierran el trabajo entre los dos.' },
+  { from: 'Fontanero', to: 'Electricista', short: 'reforma de baño' },
+  { from: 'Limpieza', to: 'Manitas', short: 'un grifo que gotea' },
+  { from: 'Cuidado de mayores', to: 'Clases de inglés', short: 'la familia pregunta' },
 ];
 
 export function LandingAllyExamples() {
@@ -16,7 +16,6 @@ export function LandingAllyExamples() {
               </span>
               {m.from} pasa el trabajo a {m.to}
             </p>
-            <p className="sr-only">{m.text}</p>
             <p className="mt-1 text-[14px] text-white/50">— {m.short}</p>
           </li>
         ))}

@@ -6,7 +6,9 @@ const EXAMPLE_SEATS = [
   { trade: 'Electricista', open: true },
   { trade: 'Fontanero', open: true },
   { trade: 'Pintor', open: false },
-  { trade: 'Asesor', open: true },
+  { trade: 'Limpieza', open: true },
+  { trade: 'Cuidado de mascotas', open: true },
+  { trade: 'Clases de inglés', open: true },
 ];
 
 export function LimitedSeatsIdea() {

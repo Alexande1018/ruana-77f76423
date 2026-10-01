@@ -44,9 +44,9 @@ export default function Landing() {
           <h2 className="text-[32px] md:text-[48px] leading-[1.08] max-w-xl" style={photoTitle}>
             Es para quien vive del oficio.
           </h2>
-          <p className="mt-6 max-w-md text-base md:text-lg text-white/90 leading-relaxed">
-            Fontaneros, electricistas, pintores, albañiles, carpinteros y el resto de oficios del
-            catálogo.
+          <p className="mt-6 max-w-lg text-base md:text-lg text-white/90 leading-relaxed">
+            Fontaneros, electricistas, pintores, manitas. También quien cuida mascotas, atiende a
+            adultos mayores, limpia casas o da clases de inglés. Y el resto de oficios del catálogo.
           </p>
           <p className="mt-4 max-w-md text-base md:text-lg text-white/90 leading-relaxed">
             Autónomos y negocios pequeños de la misma zona.

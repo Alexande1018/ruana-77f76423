@@ -16,6 +16,10 @@ const QUESTIONS = [
     a: 'No. RUANA es entre profesionales de oficio de la misma zona. Autónomos y negocios pequeños que se pasan el trabajo con nombre.',
   },
   {
+    q: '¿Sirve si no soy fontanero ni electricista?',
+    a: 'Sí. También entra quien limpia casas, cuida mascotas, atiende a mayores, hace de manitas o da clases de inglés. El grupo es por zona y por oficio, no solo por reforma.',
+  },
+  {
     q: '¿Si no hay plaza de mi oficio?',
     a: 'Puedes quedar en espera como suplente. Si se libera la plaza o se abre otro grupo en esa zona, te avisan.',
   },
