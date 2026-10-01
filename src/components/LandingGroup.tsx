@@ -46,8 +46,7 @@ export function GroupExample() {
         Así puede verse un grupo RUANA
       </h2>
       <p className="mt-3 text-base text-white/60 leading-relaxed max-w-xl">
-        Un grupo local. Distintos oficios. Una plaza por oficio. Esta vista es un ejemplo para entender
-        el modelo, no un estado actual de Alicante ni de ninguna zona.
+        Un grupo local. Distintos oficios. Una plaza por oficio.
       </p>
 
       <ul className="mt-10 max-w-xl space-y-3">
