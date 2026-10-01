@@ -11,11 +11,11 @@ export function LandingPay() {
           Si no trabajas, no pagas nada.
         </h2>
         <p className="mt-5 text-base md:text-lg text-white/70 leading-relaxed">
-          Apuntarse no tiene cuota. El Apoyo RUANA solo aparece cuando un encargo se cierra con un
-          importe. Es un porcentaje sobre ese importe, para sostener la red.
+          Apuntarse no tiene cuota. Puedes entrar a ver si hay plaza sin comprometerte.
         </p>
         <p className="mt-4 text-base md:text-lg text-white/70 leading-relaxed">
-          Si no hay trabajo cerrado, no hay cobro.
+          El Apoyo solo aparece cuando un encargo se cierra con un importe. Si no hay trabajo cerrado,
+          no hay cobro.
         </p>
       </div>
       <div className="overflow-hidden">

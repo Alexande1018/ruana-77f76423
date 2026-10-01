@@ -23,12 +23,11 @@ export function LimitedSeatsIdea() {
         </h2>
         <p className="mt-4 text-base md:text-lg text-white/70">Una plaza por oficio en cada grupo.</p>
         <p className="mt-5 text-base md:text-lg text-white/70 leading-relaxed">
-          No queremos 200 del mismo oficio a por el{' '}
-          <em style={{ color: GREEN }}>mismo cliente</em>.
+          Si está libre, puedes ocuparla ahora. Si no, quedas de suplente y te avisan.
         </p>
         <p className="mt-4 text-base md:text-lg text-white/70 leading-relaxed">
-          RUANA organiza profesionales en grupos locales por código postal y limita las plazas por
-          oficio principal dentro de cada grupo.
+          No queremos 200 del mismo oficio a por el{' '}
+          <em style={{ color: GREEN }}>mismo cliente</em>.
         </p>
         <p className="sr-only">No queremos 200 profesionales del mismo oficio compitiendo por el mismo cliente.</p>
       </div>

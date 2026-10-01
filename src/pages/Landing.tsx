@@ -49,7 +49,8 @@ export default function Landing() {
             adultos mayores, limpia casas o da clases de inglés.
           </p>
           <p className="mt-4 max-w-md text-base md:text-lg text-white/90 leading-relaxed">
-            Autónomos y negocios pequeños de la misma zona.
+            Autónomos y negocios pequeños de la misma zona. Si te llega ese mensaje, esta escena es
+            tuya.
           </p>
         </Reveal>
       </section>
@@ -68,9 +69,8 @@ export default function Landing() {
               tuyo, te llama a ti.
             </p>
             <p className="mb-5 text-base md:text-lg text-white/80 leading-relaxed">
-              Cuando un profesional de tu grupo necesita a alguien de tu oficio, puede pasarte la
-              oportunidad directamente. No son anuncios ni una lista de leads vendidos a varios
-              profesionales.
+              Te preguntan. Lo pasas. Otro profesional recibe la oportunidad. La próxima vez puede ser
+              de tu oficio.
             </p>
             <LandingAllyExamples />
           </div>
@@ -86,11 +86,15 @@ export default function Landing() {
         <ParallaxImage src={PAINTER} alt="" className="absolute inset-0 h-[108%] w-full object-cover -top-[4%]" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#050705] via-[#050705]/88 to-transparent" />
         <Reveal className="relative max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
-          <h2 className="text-[32px] md:text-[48px] leading-[1.08] max-w-md" style={photoTitle}>
-            Te nombran. Acordáis. Cerráis un importe.
+          <p className="text-sm tracking-[0.2em] text-white/60">11:43</p>
+          <h2 className="mt-3 text-[32px] md:text-[48px] leading-[1.08] max-w-md" style={photoTitle}>
+            «Oye, ¿tú conoces algún electricista por aquí?»
           </h2>
           <p className="mt-6 max-w-md text-base md:text-lg text-white/90 leading-relaxed">
-            El encargo va de un aliado a otro. La negociación es guiada. No se queda en un chat suelto.
+            Hasta ahora, ese mensaje terminaba en tu WhatsApp.
+          </p>
+          <p className="mt-3 max-w-md text-base md:text-lg text-white/90 leading-relaxed">
+            En RUANA puede empezar un encargo.
           </p>
         </Reveal>
       </section>
@@ -101,11 +105,11 @@ export default function Landing() {
             className="text-[32px] md:text-[44px] leading-[1.08] max-w-xl"
             style={{ fontFamily: 'Instrument Serif, Georgia, serif', color: PAPER }}
           >
-            El directorio de tu grupo
+            Qué cambia si entras
           </h2>
           <p className="mt-5 max-w-xl text-base md:text-lg text-white/80 leading-relaxed">
-            Ves a los aliados de tu código postal y contactas desde el panel. No es un listado de la
-            ciudad. Es la gente de tu grupo.
+            Tienes a quién pasarle lo que no haces. Y cuando aparezca algo de lo tuyo, hay alguien de
+            tu zona que sabe a quién pasárselo.
           </p>
         </Reveal>
       </section>
@@ -116,11 +120,11 @@ export default function Landing() {
             className="text-[32px] md:text-[44px] leading-[1.08] max-w-xl"
             style={{ fontFamily: 'Instrument Serif, Georgia, serif', color: PAPER }}
           >
-            Tu perfil en el panel
+            Aquí cuenta cómo trabajas.
           </h2>
           <p className="mt-5 max-w-xl text-base md:text-lg text-white/80 leading-relaxed">
-            Oficio, zona, código de aliado y estado. El score se convierte en un estado: aquí se ve
-            Estable.
+            Responder, cumplir y aportar al grupo construye tu reputación. Por eso recomendar no es
+            soltar un número a ciegas.
           </p>
         </Reveal>
       </section>
@@ -178,17 +182,16 @@ export default function Landing() {
         <NodeField density={0.00008} opacity={0.18} intensity={0.3} />
         <Reveal className="relative max-w-3xl mx-auto px-5 md:px-8 py-24 md:py-32">
           <h2 className="text-[28px] sm:text-[34px] md:text-[42px] leading-[1.12]" style={photoTitle}>
-            Si tienes invitación, entra con tu oficio.
+            La próxima vez puede ser de tu oficio.
           </h2>
           <p className="mt-6 text-base md:text-lg text-white/90 leading-relaxed">
-            Puede haber cientos de profesionales de tu oficio en tu ciudad.
+            Si tienes invitación, mira si hay plaza de lo tuyo.
             <span className="block mt-3 font-medium" style={{ color: GREEN }}>
               En cada grupo RUANA hay una plaza por oficio.
             </span>
           </p>
           <p className="mt-4 text-base md:text-lg text-white/80 leading-relaxed">
-            Es la regla del grupo: un oficio, una plaza. Cuando alguien necesita lo que tú haces, tiene
-            un colega de su zona a quien pasar el encargo.
+            Cuando alguien necesita lo que tú haces, tiene un colega de su zona a quien pasar el encargo.
           </p>
           <p className="mt-4 text-white/80">Apuntarse no tiene cuota.</p>
           <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">

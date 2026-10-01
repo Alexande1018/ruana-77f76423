@@ -28,14 +28,14 @@ export function LandingHero() {
           <span className="block">Pero conoces a alguien que sí.</span>
         </h1>
         <p className="mt-6 max-w-md text-base md:text-lg leading-relaxed text-white/90" style={{ textShadow: '0 1px 12px rgba(0,0,0,.55)' }}>
-          RUANA organiza eso que los profesionales llevan haciendo toda la vida: pasarse trabajo entre
-          gente de confianza de la zona.
+          Si entras, tienes a quién pasarle lo que no haces. Y cuando aparezca algo de lo tuyo, hay
+          alguien que sabe a quién pasárselo.
         </p>
         <p className="mt-8 max-w-sm text-lg text-white" style={{ textShadow: '0 1px 12px rgba(0,0,0,.55)' }}>
           «Oye, ¿conoces a un buen electricista?»
         </p>
         <p className="mt-2 max-w-sm text-[15px] leading-relaxed text-white/80" style={{ textShadow: '0 1px 12px rgba(0,0,0,.55)' }}>
-          Tú recomiendas. Mañana ese electricista piensa en ti.
+          Tú lo pasas. Cuando toque lo tuyo, ya saben a quién llamar.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4">
           <PrimaryCTA size="lg" />

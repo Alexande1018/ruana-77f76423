@@ -8,14 +8,13 @@ export function LandingScore() {
           className="text-2xl md:text-[34px] tracking-tight leading-[1.15]"
           style={{ fontFamily: 'Instrument Serif, Georgia, serif' }}
         >
-          Tu sitio en el grupo se gana.
+          Aquí cuenta cómo trabajas.
         </h2>
         <p className="mt-5 text-base md:text-lg text-white/70 leading-relaxed">
-          El score va de 0 a 500 y se convierte en un estado en tu panel. Empiezas en 50.
+          Responder, cumplir y aportar al grupo construye tu reputación.
         </p>
         <p className="mt-4 text-base md:text-lg text-white/70 leading-relaxed">
-          RUANA recuerda cómo participas, cómo respondes y los trabajos que completas. Tu actividad
-          construye tu reputación dentro de la red.
+          No es otro grupo de WhatsApp. Quien recomienda, recomienda a alguien que se juega el sitio.
         </p>
       </div>
 
@@ -29,7 +28,7 @@ export function LandingScore() {
             ESTABLE
           </p>
           <p className="sr-only">Estable</p>
-          <p className="mt-4 text-sm text-white/55">Ejemplo de panel. 75 es Estable.</p>
+          <p className="mt-4 text-sm text-white/55">Así se ve en el panel. El número se entiende dentro.</p>
         </div>
       </div>
     </div>
