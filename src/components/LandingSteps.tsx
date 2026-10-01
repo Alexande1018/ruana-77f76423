@@ -17,7 +17,7 @@ const STEPS = [
   {
     n: '03',
     title: 'Entra en la rueda',
-    text: 'Pasa lo que no haces. Cuando toque lo tuyo, ya saben a quién pasárselo.',
+    text: 'Empiezas a pasar recados a gente de tu grupo.',
     img: '/landing/grok_1790806865428.jpg',
   },
 ];
@@ -30,7 +30,7 @@ export function LandingSteps() {
           Cómo entrar
         </h2>
         <p className="mt-3 text-base md:text-lg text-white/60 leading-relaxed">
-          No te apuntas a un listado. Pides ocupar la plaza de tu oficio en el grupo de tu zona.
+          Pides ocupar la plaza de tu oficio en el grupo de tu zona.
         </p>
       </div>
 

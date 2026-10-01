@@ -49,8 +49,7 @@ export default function Landing() {
             adultos mayores, limpia casas o da clases de inglés.
           </p>
           <p className="mt-4 max-w-md text-base md:text-lg text-white/90 leading-relaxed">
-            Autónomos y negocios pequeños de la misma zona. Si te llega ese mensaje, esta escena es
-            tuya.
+            Autónomos y negocios pequeños de la misma zona.
           </p>
         </Reveal>
       </section>
@@ -67,10 +66,6 @@ export default function Landing() {
             <p className="mb-5 text-base md:text-lg text-white/80 leading-relaxed">
               ¿Te piden algo que no haces? Pásaselo a un colega de tu zona. Y cuando a él le pidan lo
               tuyo, te llama a ti.
-            </p>
-            <p className="mb-5 text-base md:text-lg text-white/80 leading-relaxed">
-              Te preguntan. Lo pasas. Otro profesional recibe la oportunidad. La próxima vez puede ser
-              de tu oficio.
             </p>
             <LandingAllyExamples />
           </div>
@@ -105,26 +100,10 @@ export default function Landing() {
             className="text-[32px] md:text-[44px] leading-[1.08] max-w-xl"
             style={{ fontFamily: 'Instrument Serif, Georgia, serif', color: PAPER }}
           >
-            Qué cambia si entras
+            La próxima vez puede ser de tu oficio.
           </h2>
           <p className="mt-5 max-w-xl text-base md:text-lg text-white/80 leading-relaxed">
-            Tienes a quién pasarle lo que no haces. Y cuando aparezca algo de lo tuyo, hay alguien de
-            tu zona que sabe a quién pasárselo.
-          </p>
-        </Reveal>
-      </section>
-
-      <section className="scroll-mt-20 py-16 md:py-24" id="perfil">
-        <Reveal className="max-w-6xl mx-auto px-5 md:px-8">
-          <h2
-            className="text-[32px] md:text-[44px] leading-[1.08] max-w-xl"
-            style={{ fontFamily: 'Instrument Serif, Georgia, serif', color: PAPER }}
-          >
-            Aquí cuenta cómo trabajas.
-          </h2>
-          <p className="mt-5 max-w-xl text-base md:text-lg text-white/80 leading-relaxed">
-            Responder, cumplir y aportar al grupo construye tu reputación. Por eso recomendar no es
-            soltar un número a ciegas.
+            Te preguntan. Lo pasas. Otro recibe la oportunidad.
           </p>
         </Reveal>
       </section>
@@ -182,11 +161,10 @@ export default function Landing() {
         <NodeField density={0.00008} opacity={0.18} intensity={0.3} />
         <Reveal className="relative max-w-3xl mx-auto px-5 md:px-8 py-24 md:py-32">
           <h2 className="text-[28px] sm:text-[34px] md:text-[42px] leading-[1.12]" style={photoTitle}>
-            La próxima vez puede ser de tu oficio.
+            Si tienes invitación, mira si hay plaza de lo tuyo.
           </h2>
           <p className="mt-6 text-base md:text-lg text-white/90 leading-relaxed">
-            Si tienes invitación, mira si hay plaza de lo tuyo.
-            <span className="block mt-3 font-medium" style={{ color: GREEN }}>
+            <span className="font-medium" style={{ color: GREEN }}>
               En cada grupo RUANA hay una plaza por oficio.
             </span>
           </p>

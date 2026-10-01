@@ -30,7 +30,7 @@ export function LandingCompare() {
             RUANA
           </p>
           <p className="text-lg md:text-xl leading-snug">
-            Lo pasas a un colega de tu zona. Cuando toque lo tuyo, ya saben a quién pasárselo.
+            Un grupo de tu zona. Una plaza por oficio. El recado va con nombre.
           </p>
           <p className="mt-4 text-sm text-white/60">Apuntarse no tiene cuota.</p>
         </div>

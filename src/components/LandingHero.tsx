@@ -34,9 +34,6 @@ export function LandingHero() {
         <p className="mt-8 max-w-sm text-lg text-white" style={{ textShadow: '0 1px 12px rgba(0,0,0,.55)' }}>
           «Oye, ¿conoces a un buen electricista?»
         </p>
-        <p className="mt-2 max-w-sm text-[15px] leading-relaxed text-white/80" style={{ textShadow: '0 1px 12px rgba(0,0,0,.55)' }}>
-          Tú lo pasas. Cuando toque lo tuyo, ya saben a quién llamar.
-        </p>
         <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4">
           <PrimaryCTA size="lg" />
           <CodeLink />
