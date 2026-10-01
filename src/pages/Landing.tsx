@@ -61,9 +61,9 @@ export default function Landing() {
               className="text-[32px] md:text-[48px] leading-[1.08] mb-8"
               style={{ fontFamily: 'Instrument Serif, Georgia, serif', color: PAPER }}
             >
-              Si te piden algo que no haces, se lo pasas a un aliado de tu zona.
+              El recado deja de quedarse en tu chat.
             </h2>
-            <p className="mb-5 text-base md:text-lg text-white/80 leading-relaxed">
+            <p className="mb-5 text-base md:text-lg text-white/85 leading-relaxed">
               ¿Te piden algo que no haces? Pásaselo a un colega de tu zona. Y cuando a él le pidan lo
               tuyo, te llama a ti.
             </p>
@@ -81,7 +81,7 @@ export default function Landing() {
         <ParallaxImage src={PAINTER} alt="" className="absolute inset-0 h-[108%] w-full object-cover -top-[4%]" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#050705] via-[#050705]/88 to-transparent" />
         <Reveal className="relative max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
-          <p className="text-sm tracking-[0.2em] text-white/60">11:43</p>
+          <p className="text-sm tracking-[0.2em] text-white/70">11:43</p>
           <h2 className="mt-3 text-[32px] md:text-[48px] leading-[1.08] max-w-md" style={photoTitle}>
             «Oye, ¿tú conoces algún electricista por aquí?»
           </h2>
@@ -102,7 +102,7 @@ export default function Landing() {
           >
             La próxima vez puede ser de tu oficio.
           </h2>
-          <p className="mt-5 max-w-xl text-base md:text-lg text-white/80 leading-relaxed">
+          <p className="mt-5 max-w-xl text-base md:text-lg text-white/85 leading-relaxed">
             Te preguntan. Lo pasas. Otro recibe la oportunidad.
           </p>
         </Reveal>
@@ -168,10 +168,10 @@ export default function Landing() {
               En cada grupo RUANA hay una plaza por oficio.
             </span>
           </p>
-          <p className="mt-4 text-base md:text-lg text-white/80 leading-relaxed">
+          <p className="mt-4 text-base md:text-lg text-white/85 leading-relaxed">
             Cuando alguien necesita lo que tú haces, tiene un colega de su zona a quien pasar el encargo.
           </p>
-          <p className="mt-4 text-white/80">Apuntarse no tiene cuota.</p>
+          <p className="mt-4 text-white/85">Apuntarse no tiene cuota.</p>
           <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
             <PrimaryCTA size="lg" />
             <CodeLink />

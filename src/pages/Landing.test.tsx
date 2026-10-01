@@ -74,7 +74,7 @@ describe("Landing", () => {
 
     expect(screen.getAllByText(PUBLIC_ACCESS_CODE).length).toBeGreaterThan(0);
     expect(
-      screen.getByRole("heading", { name: "Los que abren el grupo entran con este código." }),
+      screen.getByRole("heading", { name: "Los que abren el grupo entran con un código." }),
     ).toBeInTheDocument();
   });
 

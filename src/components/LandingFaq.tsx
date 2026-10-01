@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { PUBLIC_ACCESS_CODE } from '@/lib/inauguralPhase';
 import { GREEN } from '@/lib/landingTheme';
 
 const QUESTIONS = [
@@ -13,7 +12,7 @@ const QUESTIONS = [
   },
   {
     q: '¿Cómo se entra ahora?',
-    a: `Con el código de arranque ${PUBLIC_ACCESS_CODE}. Es para quien abre el grupo. Después solo entra quien invita un aliado.`,
+    a: 'Con un código de arranque. Si te lo han pasado, pulsa Tengo un código. Después solo entra quien invita un aliado.',
   },
   {
     q: '¿Sirve si no soy fontanero?',
@@ -40,7 +39,7 @@ export function LandingFaq() {
       >
         Lo que suele preguntar la gente
       </h2>
-      <p className="mt-4 text-base md:text-lg text-white/60 leading-relaxed max-w-xl">
+      <p className="mt-4 text-base md:text-lg text-white/80 leading-relaxed max-w-xl">
         Si después de esto todavía te encaja, entra y mira si hay plaza.
       </p>
 
@@ -55,13 +54,13 @@ export function LandingFaq() {
                 aria-expanded={isOpen}
                 onClick={() => setOpen(isOpen ? null : i)}
               >
-                <span className="text-base md:text-lg text-white/90 leading-snug">{item.q}</span>
+                <span className="text-base md:text-lg text-white leading-snug">{item.q}</span>
                 <span className="mt-1 text-sm shrink-0" style={{ color: GREEN }}>
                   {isOpen ? '—' : '+'}
                 </span>
               </button>
               {isOpen && (
-                <p className="pb-6 -mt-1 text-base text-white/60 leading-relaxed max-w-xl">{item.a}</p>
+                <p className="pb-6 -mt-1 text-base text-white/80 leading-relaxed max-w-xl">{item.a}</p>
               )}
             </li>
           );
