@@ -39,9 +39,6 @@ export function LimitedSeatsIdea() {
 export function GroupExample() {
   return (
     <div>
-      <p className="text-xs font-medium text-white/45 mb-5">
-        Ejemplo ilustrativo · no es disponibilidad real
-      </p>
       <h2
         className="text-2xl md:text-[36px] tracking-tight leading-snug"
         style={{ fontFamily: 'Instrument Serif, Georgia, serif' }}

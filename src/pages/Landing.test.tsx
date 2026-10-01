@@ -87,11 +87,10 @@ describe("Landing", () => {
     expect(screen.getByText("01")).toBeInTheDocument();
   });
 
-  it("marca el grupo de plazas como ejemplo ilustrativo", () => {
+  it("muestra un grupo de plazas de ejemplo", () => {
     renderLanding();
 
     expect(screen.getByText(/Así puede verse un grupo RUANA/i)).toBeInTheDocument();
-    expect(screen.getByText(/Ejemplo ilustrativo · no es disponibilidad real/i)).toBeInTheDocument();
     expect(screen.getByText("Plaza ocupada")).toBeInTheDocument();
   });
 
