@@ -29,10 +29,9 @@ describe("Landing", () => {
   it("abre con el encargo, el código ALC-IG y el login de aliados", () => {
     renderLanding();
 
-    expect(
-      screen.getByRole("heading", { level: 1, name: /Ese trabajo no lo haces tú/i }),
-    ).toBeInTheDocument();
-    expect(screen.getByText(/Pero conoces a alguien que sí/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(
+      "¿Estás sin trabajo, pero sabes hacer un oficio? En RUANA otros profesionales de tu zona te recomiendan para los trabajos que ellos no pueden hacer.",
+    );
     expect(screen.getAllByText(/Oye, ¿conoces a un buen electricista/i).length).toBeGreaterThan(0);
     expect(
       screen.getByText(

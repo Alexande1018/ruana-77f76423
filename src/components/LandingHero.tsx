@@ -21,11 +21,15 @@ export function LandingHero() {
           RUANA
         </p>
         <h1
-          className="mt-6 font-normal tracking-tight leading-[1.08] max-w-[18ch] text-[36px] sm:text-[50px] md:text-[64px]"
+          className="mt-6 max-w-xl font-normal tracking-tight"
           style={{ fontFamily: 'Instrument Serif, Georgia, serif', color: PAPER, textShadow: TITLE_SHADOW }}
         >
-          Ese trabajo no lo haces tú.
-          <span className="block">Pero conoces a alguien que sí.</span>
+          <span className="block max-w-[14em] text-[28px] leading-[1.14] sm:text-[36px] md:text-[44px] lg:text-[48px] text-balance">
+            ¿Estás sin trabajo, pero sabes hacer un oficio?
+          </span>{' '}
+          <span className="mt-4 block max-w-[36rem] text-[18px] font-normal leading-snug sm:text-[20px] md:text-[22px] lg:text-[24px] text-balance">
+            En RUANA otros profesionales de tu zona te recomiendan para los trabajos que ellos no pueden hacer.
+          </span>
         </h1>
         <p className="mt-6 max-w-md text-base md:text-lg leading-relaxed text-white/90" style={{ textShadow: '0 1px 12px rgba(0,0,0,.55)' }}>
           Si entras, tienes a quién pasarle lo que no haces. Y cuando aparezca algo de lo tuyo, hay
