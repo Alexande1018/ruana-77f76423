@@ -1,4 +1,5 @@
 import { PrimaryCTA, CodeLink } from '@/components/LandingCTA';
+import { WorksiteNote } from '@/components/WorksiteNote';
 import { GREEN, PAPER, TITLE_SHADOW } from '@/lib/landingTheme';
 import { ParallaxImage } from '@/components/LandingMotion';
 
@@ -31,16 +32,23 @@ export function LandingHero() {
             En RUANA otros profesionales de tu zona te recomiendan para los trabajos que ellos no pueden hacer.
           </span>
         </h1>
-        <p className="mt-6 max-w-md text-base md:text-lg leading-relaxed text-white/90" style={{ textShadow: '0 1px 12px rgba(0,0,0,.55)' }}>
+        <WorksiteNote lines={['Hoy recomiendas tú,', 'mañana te recomiendan a ti.']} />
+        <p className="mt-7 max-w-md text-base md:text-lg leading-relaxed text-white/90" style={{ textShadow: '0 1px 12px rgba(0,0,0,.55)' }}>
           Si entras, tienes a quién pasarle lo que no haces. Y cuando aparezca algo de lo tuyo, hay
           alguien que sabe a quién pasárselo.
         </p>
         <p className="mt-8 max-w-sm text-lg text-white" style={{ textShadow: '0 1px 12px rgba(0,0,0,.55)' }}>
           «Oye, ¿conoces a un buen electricista?»
         </p>
-        <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4">
-          <PrimaryCTA size="lg" />
-          <CodeLink />
+        <div className="mt-10 flex flex-col items-start sm:flex-row sm:items-start sm:gap-5">
+          <div className="flex flex-col items-start">
+            <PrimaryCTA size="lg" />
+            <WorksiteNote
+              variant="aside"
+              lines={['Apúntate gratis.', 'Si no te sale trabajo, no pagas nada.']}
+            />
+          </div>
+          <CodeLink className="mt-8 sm:mt-1.5" />
         </div>
       </div>
     </section>
