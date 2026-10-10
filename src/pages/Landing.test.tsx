@@ -71,6 +71,11 @@ describe("Landing", () => {
     const haveCode = screen.getByRole("link", { name: "Tengo un código" });
     expect(haveCode).toHaveAttribute("href", "https://ruana-4293f.web.app/invite.html");
 
+    expect(screen.getByText('Hoy recomiendas tú,')).toBeInTheDocument();
+    expect(screen.getByText('mañana te recomiendan a ti.')).toBeInTheDocument();
+    expect(screen.getByText('Apúntate gratis.')).toBeInTheDocument();
+    expect(screen.getByText('Si no te sale trabajo, no pagas nada.')).toBeInTheDocument();
+
     expect(screen.getAllByText(PUBLIC_ACCESS_CODE).length).toBeGreaterThan(0);
     expect(
       screen.getByRole("heading", { name: "Los que abren el grupo entran con un código." }),
