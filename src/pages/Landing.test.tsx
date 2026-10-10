@@ -77,6 +77,28 @@ describe("Landing", () => {
     ).toBeInTheDocument();
   });
 
+  it("coloca la frase pintada y la pegatina gratis junto al alta", () => {
+    renderLanding();
+
+    const heading = screen.getByRole("heading", { level: 1 });
+    const line = screen.getByText("Hoy recomiendas tú, mañana te recomiendan a ti.");
+    const follow = screen.getByText(/Si entras, tienes a quién pasarle/i);
+    expect(heading).not.toHaveTextContent("Hoy recomiendas");
+    expect(heading.compareDocumentPosition(line) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(line.compareDocumentPosition(follow) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+
+    expect(screen.getByText("Apúntate gratis.")).toBeInTheDocument();
+    expect(screen.getByText("Si no te sale trabajo, no pagas nada.")).toBeInTheDocument();
+
+    const cta = screen.getAllByRole("link", { name: "Apúntate con tu oficio" })[0];
+    const badge = screen.getByText("Apúntate gratis.");
+    expect(cta.compareDocumentPosition(badge) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    const heroLogin = screen
+      .getAllByRole("link", { name: "Ya soy aliado · Entrar" })
+      .find((link) => badge.compareDocumentPosition(link) & Node.DOCUMENT_POSITION_FOLLOWING);
+    expect(heroLogin).toBeTruthy();
+  });
+
   it("separa el número del título en cómo entrar", () => {
     renderLanding();
 
