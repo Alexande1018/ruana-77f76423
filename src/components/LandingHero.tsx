@@ -29,7 +29,7 @@ export function LandingHero() {
             ¿Estás sin trabajo, pero sabes hacer un oficio?
           </span>{' '}
           <span className="mt-4 block max-w-[36rem] text-[18px] font-normal leading-snug sm:text-[20px] md:text-[22px] lg:text-[24px] text-balance">
-            En RUANA otros profesionales de tu zona te recomiendan para los trabajos que ellos no pueden hacer.
+            En RUANA otros profesionales de tu zona te recomiendan para los encargos que ellos no pueden hacer.
           </span>
         </h1>
         <WorksiteNote lines={['Hoy recomiendas tú,', 'mañana te recomiendan a ti.']} />

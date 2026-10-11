@@ -30,7 +30,7 @@ describe("Landing", () => {
     renderLanding();
 
     expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(
-      "¿Estás sin trabajo, pero sabes hacer un oficio? En RUANA otros profesionales de tu zona te recomiendan para los trabajos que ellos no pueden hacer.",
+      "¿Estás sin trabajo, pero sabes hacer un oficio? En RUANA otros profesionales de tu zona te recomiendan para los encargos que ellos no pueden hacer.",
     );
     expect(screen.getAllByText(/Oye, ¿conoces a un buen electricista/i).length).toBeGreaterThan(0);
     expect(
