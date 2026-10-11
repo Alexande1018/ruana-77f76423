@@ -1,40 +1,72 @@
 .worksite-note {
-  --tilt: -2.4deg;
-  --tape-tilt: -5.5deg;
-  --note-size: clamp(1.375rem, 0.25rem + 5.1vw, 2.45rem);
+  --tilt: -2deg;
+  --tape-tilt: -6deg;
+  --note-size: clamp(1.375rem, 1rem + 1.35vw, 2.25rem);
   position: relative;
   width: max-content;
-  max-width: 100%;
-  margin: 1.7rem 0 0.35rem;
-  padding-top: 16px;
-  filter: drop-shadow(0 1px 0.6px rgba(0, 0, 0, 0.38)) drop-shadow(0 8px 10px rgba(0, 0, 0, 0.24));
+  max-width: min(32rem, 100%);
+  margin: 1.65rem 0 0.25rem;
+  padding-top: 14px;
 }
 
 .worksite-note--aside {
-  --tilt: 2deg;
-  --tape-tilt: 6.5deg;
-  --note-size: clamp(1.125rem, 0.4rem + 3.4vw, 1.5rem);
-  margin: 1rem 0 0.15rem;
-  padding-top: 14px;
+  --tilt: 1.8deg;
+  --tape-tilt: 6deg;
+  --note-size: clamp(1.125rem, 0.95rem + 0.45vw, 1.45rem);
+  max-width: min(24rem, 100%);
+  margin: 0.85rem 0 0.1rem;
+  padding-top: 12px;
 }
 
 .worksite-note__sheet {
   position: relative;
-  isolation: isolate;
   width: max-content;
   max-width: 100%;
-  box-sizing: border-box;
+  transform: rotate(var(--tilt));
+  transform-origin: 16% 0;
+  filter:
+    drop-shadow(0.4px 1px 0.45px rgba(0, 0, 0, 0.55))
+    drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.28))
+    drop-shadow(5px 12px 14px rgba(0, 0, 0, 0.16));
+}
+
+.worksite-note__face {
+  position: absolute;
+  inset: 0;
+  isolation: isolate;
   background-color: #f3ead3;
   background-image:
-    radial-gradient(125% 90% at 18% 0%, rgba(255, 252, 246, 0.7), transparent 52%),
-    linear-gradient(165deg, rgba(255, 255, 255, 0.22), rgba(120, 92, 52, 0.05) 72%);
-  border-radius: 1px;
+    repeating-linear-gradient(
+      96deg,
+      transparent 0 3px,
+      rgba(120, 92, 54, 0.045) 3px 4px
+    ),
+    radial-gradient(ellipse 78% 68% at 46% 42%, rgba(255, 252, 246, 0.92), rgba(243, 234, 211, 0) 64%),
+    radial-gradient(ellipse 120% 90% at 100% 100%, rgba(176, 142, 92, 0.2), transparent 58%),
+    radial-gradient(ellipse 80% 70% at 0% 0%, rgba(196, 164, 112, 0.14), transparent 52%);
   box-shadow:
-    inset 0 1px 0 rgba(255, 252, 246, 0.8),
-    inset 0 -1px 0 rgba(110, 84, 48, 0.14),
-    0 0 0 1px rgba(98, 76, 44, 0.1);
-  transform: rotate(var(--tilt));
-  transform-origin: left center;
+    inset 0 0 22px rgba(150, 116, 68, 0.13),
+    inset 0 1px 0 rgba(255, 252, 246, 0.7);
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 14%,
+    99.15% 31%,
+    100% 48%,
+    99% 66%,
+    100% 83%,
+    99.2% 100%,
+    84% 98.6%,
+    67% 100%,
+    51% 98.8%,
+    34% 100%,
+    18% 98.7%,
+    6% 100%,
+    0% 97%,
+    0.35% 72%,
+    0% 40%
+  );
+  pointer-events: none;
 }
 
 .worksite-note__grain {
@@ -42,10 +74,26 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.2;
+  opacity: 0.34;
   mix-blend-mode: multiply;
   pointer-events: none;
-  z-index: 1;
+}
+
+.worksite-note__crease {
+  position: absolute;
+  left: 7%;
+  right: 14%;
+  top: 61%;
+  height: 7px;
+  background: linear-gradient(
+    180deg,
+    rgba(92, 70, 40, 0.07),
+    rgba(255, 252, 246, 0.28) 46%,
+    rgba(92, 70, 40, 0.05)
+  );
+  transform: rotate(-0.5deg);
+  pointer-events: none;
+  mix-blend-mode: multiply;
 }
 
 .worksite-note__text {
@@ -53,24 +101,37 @@
   z-index: 2;
   margin: 0;
   max-width: 100%;
-  padding: 1.45rem 1.2rem 1.05rem;
-  color: #3d3d3d;
+  padding: 1.35rem 1.15rem 1rem;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
   font-family: 'Covered By Your Grace', cursive;
   font-size: var(--note-size);
   font-weight: 400;
   font-synthesis: none;
-  line-height: 1.08;
-  letter-spacing: 0.004em;
+  line-height: 1.12;
+  letter-spacing: 0.005em;
+  background-color: #2f2f2f;
+  background-image:
+    linear-gradient(172deg, rgba(0, 0, 0, 0.16) 0%, rgba(47, 47, 47, 0) 38%, rgba(255, 255, 255, 0.12) 50%, rgba(47, 47, 47, 0) 64%, rgba(0, 0, 0, 0.12) 100%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='matrix' values='0 0 0 0 0.18 0 0 0 0 0.18 0 0 0 0 0.18 0 0 0 0.28 0'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>");
+  background-size: 100% 100%, 64px 64px;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .worksite-note--aside .worksite-note__text {
-  padding: 1.3rem 1rem 0.95rem;
-  line-height: 1.12;
+  padding: 1.2rem 1rem 0.9rem;
+  line-height: 1.14;
 }
 
 .worksite-note__line {
   display: block;
-  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+  .worksite-note__br {
+    display: none;
+  }
 }
 
 .worksite-note__tape {
@@ -78,38 +139,76 @@
   z-index: 3;
   left: 22%;
   top: -12px;
-  width: 112px;
-  height: 30px;
+  width: 84px;
+  height: 24px;
   transform: rotate(var(--tape-tilt));
   pointer-events: none;
-  filter: drop-shadow(0 1px 0.5px rgba(0, 0, 0, 0.18));
 }
 
-.worksite-note--aside .worksite-note__tape {
-  left: 30%;
-  top: -10px;
-  width: 86px;
-  height: 23px;
-}
-
-@media (min-width: 768px) {
+@media (max-width: 639px) {
   .worksite-note {
-    margin-top: 1.9rem;
-    padding-top: 18px;
+    max-width: min(100%, calc(100vw - 48px));
   }
 
-  .worksite-note__text {
-    padding: 1.55rem 1.65rem 1.15rem;
-  }
-
-  .worksite-note--aside .worksite-note__text {
-    padding: 1.35rem 1.15rem 1rem;
+  .worksite-note--aside {
+    max-width: min(100%, calc(100vw - 52px));
   }
 
   .worksite-note__tape {
-    left: 26%;
-    width: 124px;
-    height: 32px;
-    top: -13px;
+    width: 70px;
+    height: 20px;
+    top: -10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .worksite-note__text {
+    padding: 1.45rem 1.45rem 1.1rem;
+  }
+
+  .worksite-note--aside .worksite-note__text {
+    padding: 1.25rem 1.15rem 0.95rem;
+  }
+}
+
+.hero-cta {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-cta__link {
+  margin-top: 1.15rem;
+}
+
+@media (min-width: 1024px) {
+  .hero-cta {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas:
+      "button note"
+      "link note";
+    column-gap: 1.85rem;
+    row-gap: 0.75rem;
+    align-items: center;
+    justify-content: start;
+  }
+
+  .hero-cta__button {
+    grid-area: button;
+    justify-self: start;
+  }
+
+  .hero-cta__note.worksite-note {
+    grid-area: note;
+    margin: 0;
+    align-self: center;
+  }
+
+  .hero-cta__link {
+    grid-area: link;
+    margin-top: 0;
+    justify-self: start;
   }
 }

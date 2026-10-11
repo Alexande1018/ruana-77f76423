@@ -40,15 +40,14 @@ export function LandingHero() {
         <p className="mt-8 max-w-sm text-lg text-white" style={{ textShadow: '0 1px 12px rgba(0,0,0,.55)' }}>
           «Oye, ¿conoces a un buen electricista?»
         </p>
-        <div className="mt-10 flex flex-col items-start sm:flex-row sm:items-start sm:gap-5">
-          <div className="flex flex-col items-start">
-            <PrimaryCTA size="lg" />
-            <WorksiteNote
-              variant="aside"
-              lines={['Apúntate gratis.', 'Si no te sale trabajo, no pagas nada.']}
-            />
-          </div>
-          <CodeLink className="mt-8 sm:mt-1.5" />
+        <div className="hero-cta">
+          <PrimaryCTA size="lg" className="hero-cta__button" />
+          <WorksiteNote
+            className="hero-cta__note"
+            variant="aside"
+            lines={['Apúntate gratis.', 'Si no te sale trabajo, no pagas nada.']}
+          />
+          <CodeLink className="hero-cta__link" />
         </div>
       </div>
     </section>
