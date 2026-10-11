@@ -71,6 +71,20 @@ describe("Landing", () => {
     const haveCode = screen.getByRole("link", { name: "Tengo un código" });
     expect(haveCode).toHaveAttribute("href", "https://ruana-4293f.web.app/invite.html");
 
+    for (const line of [
+      "Hoy recomiendas tú,",
+      "mañana te recomiendan a ti.",
+      "Apúntate gratis.",
+      "Si no te sale trabajo, no pagas nada.",
+    ]) {
+      expect(
+        screen.getByText((_, element) => {
+          if (!element?.classList.contains("worksite-note__line")) return false;
+          return (element.textContent ?? "").replace(/\s+/g, " ").trim() === line;
+        }),
+      ).toBeInTheDocument();
+    }
+
     expect(screen.getAllByText(PUBLIC_ACCESS_CODE).length).toBeGreaterThan(0);
     expect(
       screen.getByRole("heading", { name: "Los que abren el grupo entran con un código." }),

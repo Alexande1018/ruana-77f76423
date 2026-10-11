@@ -1,0 +1,309 @@
+.worksite-note {
+  --tilt: -2deg;
+  --tape-tilt: -6deg;
+  --note-size: clamp(1.375rem, 1rem + 1.35vw, 2.25rem);
+  position: relative;
+  width: max-content;
+  max-width: min(32rem, 100%);
+  margin: 1.65rem 0 0.25rem;
+  padding-top: 16px;
+}
+
+.worksite-note--aside {
+  --tilt: 1.8deg;
+  --tape-tilt: 6deg;
+  --note-size: clamp(1.125rem, 0.95rem + 0.45vw, 1.45rem);
+  max-width: min(24rem, 100%);
+  margin: 0.85rem 0 0.1rem;
+  padding-top: 12px;
+}
+
+.worksite-note__sheet {
+  position: relative;
+  width: max-content;
+  max-width: 100%;
+  transform: rotate(var(--tilt));
+  transform-origin: 16% 0;
+  filter:
+    drop-shadow(0.35px 1px 0.4px rgba(0, 0, 0, 0.5))
+    drop-shadow(1.5px 2.5px 1.1px rgba(0, 0, 0, 0.24))
+    drop-shadow(6px 8px 5px rgba(0, 0, 0, 0.13))
+    drop-shadow(3px 14px 16px rgba(0, 0, 0, 0.1));
+}
+
+.worksite-note__lift {
+  position: absolute;
+  z-index: 0;
+  right: -4px;
+  bottom: -12px;
+  width: 52%;
+  height: 26px;
+  background: radial-gradient(
+    ellipse 90% 80% at 84% 0%,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.32) 40%,
+    transparent 74%
+  );
+  filter: blur(3.5px);
+  pointer-events: none;
+}
+
+.worksite-note__glow {
+  position: absolute;
+  right: -6%;
+  bottom: -10%;
+  width: 58%;
+  height: 52%;
+  background: radial-gradient(
+    ellipse at 82% 84%,
+    rgba(255, 253, 248, 0.78),
+    rgba(255, 248, 234, 0.28) 40%,
+    transparent 68%
+  );
+  pointer-events: none;
+}
+
+.worksite-note__face {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  isolation: isolate;
+  background-color: #f3ead3;
+  background-image:
+    repeating-linear-gradient(
+      96deg,
+      transparent 0 3px,
+      rgba(120, 92, 54, 0.045) 3px 4px
+    ),
+    linear-gradient(
+      122deg,
+      rgba(255, 252, 246, 0) 52%,
+      rgba(255, 252, 246, 0.2) 76%,
+      rgba(255, 250, 238, 0.72) 100%
+    ),
+    radial-gradient(ellipse 78% 68% at 46% 42%, rgba(255, 252, 246, 0.9), rgba(243, 234, 211, 0) 64%),
+    radial-gradient(ellipse 85% 60% at 100% 108%, rgba(150, 116, 70, 0.08), transparent 58%),
+    radial-gradient(ellipse 80% 70% at 0% 0%, rgba(196, 164, 112, 0.14), transparent 52%);
+  box-shadow:
+    inset 14px 10px 16px rgba(120, 90, 48, 0.08),
+    inset -22px -18px 20px rgba(255, 252, 246, 0.42),
+    inset 0 1px 0 rgba(255, 252, 246, 0.7);
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 14%,
+    99.15% 31%,
+    100% 48%,
+    99% 66%,
+    100% 83%,
+    99.2% 100%,
+    84% 98.6%,
+    67% 100%,
+    51% 98.8%,
+    34% 100%,
+    18% 98.7%,
+    6% 100%,
+    0% 97%,
+    0.35% 72%,
+    0% 40%
+  );
+  pointer-events: none;
+}
+
+.worksite-note__grain {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.34;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.worksite-note__crease {
+  position: absolute;
+  left: 7%;
+  right: 14%;
+  top: 61%;
+  height: 7px;
+  background: linear-gradient(
+    180deg,
+    rgba(92, 70, 40, 0.07),
+    rgba(255, 252, 246, 0.28) 46%,
+    rgba(92, 70, 40, 0.05)
+  );
+  transform: rotate(-0.5deg);
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+.worksite-note__text {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  max-width: 100%;
+  padding: 1.35rem 1.15rem 1rem;
+  color: transparent;
+  font-family: 'Covered By Your Grace', cursive;
+  font-size: var(--note-size);
+  font-weight: 400;
+  font-synthesis: none;
+  line-height: 1.26;
+  letter-spacing: 0;
+}
+
+.worksite-note--aside .worksite-note__text {
+  padding: 1.2rem 1rem 0.9rem;
+  line-height: 1.28;
+}
+
+.worksite-note__line {
+  display: block;
+}
+
+.worksite-note__word {
+  display: inline-block;
+  transform-origin: 50% 78%;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-color: #2f2f2f;
+  background-image:
+    linear-gradient(172deg, rgba(0, 0, 0, 0.16) 0%, rgba(47, 47, 47, 0) 38%, rgba(255, 255, 255, 0.12) 50%, rgba(47, 47, 47, 0) 64%, rgba(0, 0, 0, 0.12) 100%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='matrix' values='0 0 0 0 0.18 0 0 0 0 0.18 0 0 0 0 0.18 0 0 0 0.28 0'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>");
+  background-size: 100% 100%, 64px 64px;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.worksite-note__mark {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
+.worksite-note__stroke {
+  position: absolute;
+  left: -2%;
+  width: 106%;
+  height: 0.7em;
+  bottom: -0.3em;
+  transform: rotate(-2deg);
+  transform-origin: 20% 50%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  .worksite-note__br {
+    display: none;
+  }
+}
+
+.worksite-note__tape {
+  position: absolute;
+  z-index: 3;
+  left: 22%;
+  top: -14px;
+  width: 96px;
+  height: 28px;
+  transform: rotate(var(--tape-tilt));
+  filter: drop-shadow(0 1px 0.55px rgba(62, 46, 24, 0.28));
+  pointer-events: none;
+}
+
+.worksite-note__tape--side {
+  left: auto;
+  right: 8%;
+  top: -8px;
+  width: 62px;
+  height: 19px;
+  transform: rotate(8.5deg);
+}
+
+.worksite-note--aside .worksite-note__tape {
+  top: -12px;
+  width: 88px;
+  height: 26px;
+}
+
+@media (max-width: 639px) {
+  .worksite-note {
+    max-width: min(100%, calc(100vw - 48px));
+  }
+
+  .worksite-note--aside {
+    max-width: min(100%, calc(100vw - 52px));
+  }
+
+  .worksite-note__tape {
+    width: 78px;
+    height: 22px;
+    top: -11px;
+  }
+
+  .worksite-note__tape--side {
+    width: 50px;
+    height: 16px;
+    top: -6px;
+    right: 6%;
+  }
+
+  .worksite-note--aside .worksite-note__tape {
+    width: 72px;
+    height: 21px;
+    top: -10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .worksite-note__text {
+    padding: 1.45rem 1.45rem 1.1rem;
+  }
+
+  .worksite-note--aside .worksite-note__text {
+    padding: 1.25rem 1.15rem 0.95rem;
+  }
+}
+
+.hero-cta {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-cta__link {
+  margin-top: 1.15rem;
+}
+
+@media (min-width: 1024px) {
+  .hero-cta {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas:
+      "button note"
+      "link note";
+    column-gap: 1.85rem;
+    row-gap: 0.75rem;
+    align-items: center;
+    justify-content: start;
+  }
+
+  .hero-cta__button {
+    grid-area: button;
+    justify-self: start;
+  }
+
+  .hero-cta__note.worksite-note {
+    grid-area: note;
+    margin: 0;
+    align-self: center;
+  }
+
+  .hero-cta__link {
+    grid-area: link;
+    margin-top: 0;
+    justify-self: start;
+  }
+}
