@@ -72,7 +72,7 @@ function PencilUnderline({ id }: { id: string }) {
       <path
         d="M5 16.5 C24 12.2 46 19.4 74 14.2 C98 10.1 122 18.6 155 13.8"
         fill="none"
-        stroke="#2a2a2a"
+        stroke="#2b2b2b"
         strokeWidth="3.05"
         strokeLinecap="round"
         mask={`url(#${mask})`}
