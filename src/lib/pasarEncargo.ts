@@ -1,6 +1,8 @@
 import { PUBLIC_ACCESS_CODE } from "@/lib/inauguralPhase";
+import { APP_ORIGIN, REGISTER_PATH } from "@/lib/registerUrl";
 
-export const PASAR_ENCARGO_URL = "https://ruana.app";
+/** Lleva al alta con el código ya puesto; la app lo lee de ?codigo= (register.html). */
+export const PASAR_ENCARGO_URL = `${APP_ORIGIN}${REGISTER_PATH}?codigo=${PUBLIC_ACCESS_CODE}`;
 
 export type PasarEncargoDatos = { oficio: string; zona: string; linea: string };
 

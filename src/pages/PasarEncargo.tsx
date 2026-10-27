@@ -13,7 +13,7 @@ const PAGE_URL = "https://ruana.app/pasar-encargo";
 
 const fieldClass =
   "mt-2 w-full rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-base text-white " +
-  "placeholder:text-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8ED400]";
+  "placeholder:text-white/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8ED400]";
 
 /** La página comparte index.html con la portada: ajusta título y canonical solo mientras está abierta. */
 function usePageMeta() {
@@ -107,14 +107,14 @@ export default function PasarEncargo() {
               onChange={(e) => setLinea(e.target.value)}
               className={fieldClass}
             />
-            <p className="mt-2 text-sm text-white/55">
+            <p className="mt-2 text-sm text-white/70">
               No pongas nombres, teléfonos ni direcciones de tu cliente.
             </p>
           </div>
 
           {listo && (
             <div className="rounded-lg border border-white/10 bg-white/5 p-4">
-              <p className="text-sm text-white/55">Así saldrá tu mensaje:</p>
+              <p className="text-sm text-white/70">Así saldrá tu mensaje:</p>
               <p className="mt-2 text-base text-white/90 leading-relaxed">{buildPasarEncargoMessage(datos)}</p>
             </div>
           )}
@@ -141,7 +141,7 @@ export default function PasarEncargo() {
               Mandar por WhatsApp
             </button>
           )}
-          {!listo && <p className="text-sm text-white/55">Rellena los tres campos para ver el mensaje.</p>}
+          {!listo && <p className="text-sm text-white/70">Rellena los tres campos para ver el mensaje.</p>}
         </form>
 
         <p className="mt-10 text-sm" style={{ color: GREEN }}>

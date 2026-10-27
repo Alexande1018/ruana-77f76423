@@ -8,10 +8,10 @@ import {
 const datos = { oficio: "fontanero", zona: "Chamberí", linea: "cambiar un grifo y revisar una fuga." };
 
 describe("pasar encargo", () => {
-  it("escribe el mensaje con el código ALC-IG y el enlace", () => {
+  it("escribe el mensaje con el código ALC-IG y el enlace directo al registro", () => {
     expect(buildPasarEncargoMessage(datos)).toBe(
       "Oye, me ha salido un encargo de fontanero en Chamberí que no puedo coger: cambiar un grifo y revisar una fuga. " +
-        "Si te interesa, apúntate en RUANA con el código ALC-IG, que ahí nos pasamos encargos entre profesionales: https://ruana.app",
+        "Si te interesa, apúntate en RUANA con el código ALC-IG, que ahí nos pasamos encargos entre profesionales: https://ruana-4293f.web.app/register?codigo=ALC-IG",
     );
   });
 
