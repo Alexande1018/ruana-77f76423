@@ -74,7 +74,7 @@ describe("Landing", () => {
     for (const line of [
       "Hoy recomiendas tú,",
       "mañana te recomiendan a ti.",
-      "Apúntate gratis.",
+      "Apúntate, no tiene cuota.",
       "Si no te sale trabajo, no pagas nada.",
     ]) {
       expect(
