@@ -12,6 +12,7 @@ import Profile from "./pages/Profile";
 import Directory from "./pages/Directory";
 import ProfessionalProfile from "./pages/ProfessionalProfile";
 import Admin from "./pages/Admin";
+import PasarEncargo from "./pages/PasarEncargo";
 import NotFound from "./pages/NotFound";
 import { Loader2 } from "lucide-react";
 
@@ -109,6 +110,7 @@ function AppRoutes() {
           </AdminRoute>
         }
       />
+      <Route path="/pasar-encargo" element={<PasarEncargo />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
