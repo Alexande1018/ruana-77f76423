@@ -45,7 +45,7 @@ export function LandingHero() {
           <WorksiteNote
             className="hero-cta__note"
             variant="aside"
-            lines={['Apúntate gratis.', 'Si no te sale trabajo, no pagas nada.']}
+            lines={['Apúntate, no tiene cuota.', 'Si no te sale trabajo, no pagas nada.']}
           />
           <CodeLink className="hero-cta__link" />
         </div>
