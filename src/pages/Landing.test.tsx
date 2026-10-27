@@ -91,6 +91,18 @@ describe("Landing", () => {
     ).toBeInTheDocument();
   });
 
+  it("muestra un aviso con enlace a /pasar-encargo desde la portada", () => {
+    renderLanding();
+
+    expect(
+      screen.getByRole("heading", { name: "¿Te ha salido un encargo que no puedes coger?" }),
+    ).toBeInTheDocument();
+    const link = screen.getByRole("link", { name: "Pásaselo a un colega" });
+    expect(link).toHaveAttribute("href", "/pasar-encargo");
+    expect(link).not.toHaveAttribute("target");
+    expect(link.closest("section")?.textContent).not.toMatch(/gratis/i);
+  });
+
   it("separa el número del título en cómo entrar", () => {
     renderLanding();
 

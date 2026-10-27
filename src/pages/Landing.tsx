@@ -1,5 +1,6 @@
 import { LandingNavbar, LandingFooter } from '@/components/LandingChrome';
 import { LandingHero } from '@/components/LandingHero';
+import { LandingPasarEncargo } from '@/components/LandingPasarEncargo';
 import { LandingAccessInvite } from '@/components/LandingAccessInvite';
 import { LandingAllyExamples } from '@/components/LandingAllyExamples';
 import { LimitedSeatsIdea, GroupExample } from '@/components/LandingGroup';
@@ -31,6 +32,9 @@ export default function Landing() {
       <LandingNavbar />
 
       <LandingHero />
+      <Reveal>
+        <LandingPasarEncargo />
+      </Reveal>
       {INAUGURAL_PHASE_ACTIVE && (
         <Reveal>
           <LandingAccessInvite />
